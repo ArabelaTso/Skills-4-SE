@@ -1,0 +1,81 @@
+{
+  "ambiguity_report": {
+    "metadata": {
+      "requirement_source": "Original requirement document or ID",
+      "analysis_date": "2026-02-14",
+      "total_requirements_analyzed": 0,
+      "total_ambiguities_found": 0
+    },
+    "ambiguities": [
+      {
+        "id": "AMB-001",
+        "severity": "critical",
+        "requirement_id": "REQ-001",
+        "original_text": "The system should handle many concurrent users",
+        "ambiguity_type": "vague_quantifier",
+        "issue": "Undefined quantity: 'many' is not specific",
+        "impact": "Cannot determine system capacity requirements, scaling needs, or performance targets",
+        "questions": [
+          "How many concurrent users should the system support? (e.g., 100? 1,000? 10,000?)",
+          "What is the expected peak load?",
+          "What happens when user count exceeds capacity?"
+        ],
+        "suggested_clarification": "The system must support at least [NUMBER] concurrent users with [RESPONSE_TIME] response time",
+        "examples": [
+          "The system must support at least 1,000 concurrent users with <2s response time",
+          "The system must support 10,000 concurrent users during peak hours (9am-5pm)"
+        ]
+      },
+      {
+        "id": "AMB-002",
+        "severity": "high",
+        "requirement_id": "REQ-002",
+        "original_text": "Users should be able to upload files",
+        "ambiguity_type": "incomplete_specification",
+        "issue": "Missing file type, size limits, error handling, and storage details",
+        "impact": "Cannot implement without knowing constraints, validation rules, and error scenarios",
+        "questions": [
+          "What file types are allowed? (PDF, images, documents?)",
+          "What is the maximum file size?",
+          "Where should files be stored? (local, S3, etc.)",
+          "What error messages for invalid files?",
+          "What happens if upload fails?"
+        ],
+        "suggested_clarification": "Users must be able to upload [FILE_TYPES] files up to [SIZE_LIMIT]. Files are stored in [STORAGE_LOCATION]. Display error '[ERROR_MESSAGE]' if [ERROR_CONDITION]",
+        "examples": [
+          "Users must be able to upload PDF, DOCX, and image files (JPG, PNG) up to 10MB. Files are stored in AWS S3. Display error 'File too large' if >10MB, 'Invalid file type' if not allowed type."
+        ]
+      }
+    ],
+    "summary_by_type": {
+      "vague_quantifier": 0,
+      "temporal_ambiguity": 0,
+      "unclear_scope": 0,
+      "weak_conditional": 0,
+      "undefined_term": 0,
+      "incomplete_specification": 0,
+      "subjective_language": 0,
+      "implicit_assumption": 0,
+      "unclear_reference": 0,
+      "missing_edge_cases": 0
+    },
+    "summary_by_severity": {
+      "critical": 0,
+      "high": 0,
+      "medium": 0,
+      "low": 0
+    },
+    "recommendations": [
+      {
+        "priority": "immediate",
+        "action": "Address all critical severity ambiguities before development begins",
+        "affected_requirements": ["REQ-001"]
+      },
+      {
+        "priority": "high",
+        "action": "Clarify high severity ambiguities to prevent rework",
+        "affected_requirements": ["REQ-002"]
+      }
+    ]
+  }
+}
