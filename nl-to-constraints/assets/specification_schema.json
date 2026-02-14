@@ -1,0 +1,158 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Specification Template",
+  "description": "Template for structured requirements and constraints output",
+  "type": "object",
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "description": "Name of the feature or system being specified"
+        },
+        "version": {
+          "type": "string",
+          "description": "Version of the specification"
+        },
+        "created_date": {
+          "type": "string",
+          "format": "date"
+        },
+        "source": {
+          "type": "string",
+          "description": "Original natural language source"
+        }
+      },
+      "required": ["title"]
+    },
+    "requirements": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/requirement"
+      }
+    },
+    "constraints": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/constraint"
+      }
+    },
+    "test_scenarios": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/test_scenario"
+      }
+    }
+  },
+  "required": ["metadata", "requirements"],
+  "definitions": {
+    "requirement": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^REQ-[0-9]+$"
+        },
+        "type": {
+          "type": "string",
+          "enum": ["functional", "non-functional", "business", "technical", "ui", "security"]
+        },
+        "priority": {
+          "type": "string",
+          "enum": ["critical", "high", "medium", "low"]
+        },
+        "description": {
+          "type": "string"
+        },
+        "acceptance_criteria": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "constraints": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "IDs of related constraints"
+          }
+        },
+        "dependencies": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "IDs of dependent requirements"
+          }
+        }
+      },
+      "required": ["id", "type", "priority", "description"]
+    },
+    "constraint": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^CON-[0-9]+$"
+        },
+        "category": {
+          "type": "string",
+          "enum": ["data", "business_rule", "temporal", "state", "authorization", "cardinality", "performance", "technical"]
+        },
+        "severity": {
+          "type": "string",
+          "enum": ["must", "should", "may"],
+          "description": "RFC 2119 compliance level"
+        },
+        "entity": {
+          "type": "string",
+          "description": "Entity or resource being constrained"
+        },
+        "description": {
+          "type": "string"
+        },
+        "formal_expression": {
+          "type": "string",
+          "description": "Formal representation of the constraint (e.g., logical expression, regex)"
+        },
+        "validation_method": {
+          "type": "string",
+          "description": "How to validate this constraint"
+        },
+        "error_message": {
+          "type": "string",
+          "description": "Message to display when constraint is violated"
+        }
+      },
+      "required": ["id", "category", "severity", "description"]
+    },
+    "test_scenario": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^TEST-[0-9]+$"
+        },
+        "requirement_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "given": {
+          "type": "string",
+          "description": "Preconditions"
+        },
+        "when": {
+          "type": "string",
+          "description": "Action or event"
+        },
+        "then": {
+          "type": "string",
+          "description": "Expected outcome"
+        }
+      },
+      "required": ["id", "given", "when", "then"]
+    }
+  }
+}

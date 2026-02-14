@@ -1,0 +1,124 @@
+{
+  "test_suite": {
+    "name": "Example Test Suite",
+    "description": "Comprehensive test scenarios for [Feature]",
+    "version": "1.0",
+    "created_date": "2026-02-14",
+    "source_requirements": ["REQ-001", "REQ-002"],
+    "test_categories": {
+      "bdd_scenarios": [
+        {
+          "id": "BDD-001",
+          "type": "happy_path",
+          "priority": "critical",
+          "feature": "Feature name",
+          "scenario": "Scenario name",
+          "given": ["Precondition 1", "Precondition 2"],
+          "when": ["Action 1", "Action 2"],
+          "then": ["Expected outcome 1", "Expected outcome 2"],
+          "tags": ["smoke", "regression"]
+        }
+      ],
+      "unit_tests": [
+        {
+          "id": "UNIT-001",
+          "type": "function_test",
+          "priority": "high",
+          "test_name": "test_function_name_condition_outcome",
+          "target": "module.function_name",
+          "setup": ["Initialize dependencies", "Prepare input data"],
+          "input": {"param1": "value1", "param2": "value2"},
+          "expected_output": "expected_value",
+          "expected_side_effects": ["Side effect description"],
+          "assertions": ["Assert condition 1", "Assert condition 2"]
+        }
+      ],
+      "integration_tests": [
+        {
+          "id": "INT-001",
+          "type": "api_integration",
+          "priority": "high",
+          "description": "System A integrates with System B",
+          "systems": ["System A", "System B"],
+          "setup": ["Start services", "Configure authentication"],
+          "steps": [
+            "System A sends request to System B",
+            "System B processes request",
+            "System A receives and processes response"
+          ],
+          "assertions": [
+            "Request format matches contract",
+            "Response is processed correctly",
+            "Data is persisted as expected"
+          ],
+          "cleanup": ["Stop services", "Clear test data"]
+        }
+      ],
+      "e2e_tests": [
+        {
+          "id": "E2E-001",
+          "type": "user_journey",
+          "priority": "critical",
+          "user_role": "end_user",
+          "journey_name": "Complete user registration flow",
+          "steps": [
+            {
+              "step": 1,
+              "action": "Navigate to registration page",
+              "expected": "Registration form is displayed"
+            },
+            {
+              "step": 2,
+              "action": "Fill in registration form",
+              "input": {"email": "user@example.com", "password": "SecurePass123"},
+              "expected": "Form accepts valid inputs"
+            },
+            {
+              "step": 3,
+              "action": "Submit form",
+              "expected": "Success message displayed and redirect to dashboard"
+            }
+          ],
+          "verification": [
+            "User account created in database",
+            "Confirmation email sent",
+            "User can log in with credentials"
+          ]
+        }
+      ]
+    },
+    "test_data": {
+      "valid_inputs": [
+        {"field": "email", "value": "user@example.com"},
+        {"field": "age", "value": 25}
+      ],
+      "invalid_inputs": [
+        {"field": "email", "value": "invalid-email", "expected_error": "Invalid email format"},
+        {"field": "age", "value": -1, "expected_error": "Age must be positive"}
+      ],
+      "boundary_values": [
+        {"field": "age", "value": 18, "description": "Minimum boundary"},
+        {"field": "age", "value": 17, "description": "Below minimum"},
+        {"field": "age", "value": 65, "description": "Maximum boundary"},
+        {"field": "age", "value": 66, "description": "Above maximum"}
+      ]
+    },
+    "coverage_summary": {
+      "total_requirements": 0,
+      "requirements_covered": 0,
+      "total_test_cases": 0,
+      "by_priority": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0
+      },
+      "by_type": {
+        "bdd_scenarios": 0,
+        "unit_tests": 0,
+        "integration_tests": 0,
+        "e2e_tests": 0
+      }
+    }
+  }
+}

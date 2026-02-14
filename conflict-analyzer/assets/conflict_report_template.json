@@ -1,0 +1,164 @@
+{
+  "conflict_analysis_report": {
+    "metadata": {
+      "project_name": "Project Name",
+      "analysis_date": "2026-02-14",
+      "requirements_analyzed": 0,
+      "conflicts_found": 0,
+      "analyzer": "Claude Conflict Analyzer"
+    },
+    "conflicts": [
+      {
+        "id": "CONF-001",
+        "severity": "critical",
+        "type": "logical",
+        "requirements": [
+          {
+            "id": "REQ-001",
+            "text": "System must work offline"
+          },
+          {
+            "id": "REQ-005",
+            "text": "System requires continuous internet connection"
+          }
+        ],
+        "conflict_description": "Requirements specify mutually exclusive connectivity modes - cannot be both offline and require continuous connection",
+        "impact": {
+          "technical": "Impossible to implement both requirements as stated",
+          "business": "User expectations unclear - will users have offline access or not?",
+          "timeline": "Blocks architecture decisions until resolved"
+        },
+        "resolution_options": [
+          {
+            "option": "A",
+            "strategy": "Prioritization",
+            "description": "Choose offline-first architecture",
+            "pros": ["Better user experience in low connectivity", "Supports mobile users"],
+            "cons": ["Some features may be limited offline", "Sync complexity"],
+            "recommendation": true
+          },
+          {
+            "option": "B",
+            "strategy": "Conditional Logic",
+            "description": "Support both online and offline modes",
+            "pros": ["Full flexibility", "Best of both worlds"],
+            "cons": ["Significantly more complex", "Higher development cost"],
+            "recommendation": false
+          }
+        ],
+        "recommended_resolution": "Implement offline-first with sync: Core features work offline, sync when connected. Remove requirement for continuous connection.",
+        "stakeholders": ["Product Manager", "Engineering Lead", "UX Designer"],
+        "dependencies": ["REQ-010 (Data sync)", "REQ-015 (Local storage)"]
+      },
+      {
+        "id": "CONF-002",
+        "severity": "high",
+        "type": "resource",
+        "requirements": [
+          {
+            "id": "REQ-020",
+            "text": "Deliver mobile app by March 1 (requires 3 developers, 8 weeks)"
+          },
+          {
+            "id": "REQ-025",
+            "text": "Complete API redesign by March 1 (requires 3 developers, 8 weeks)"
+          }
+        ],
+        "conflict_description": "Both requirements need same team resource for same duration but have same deadline",
+        "impact": {
+          "technical": "Cannot complete both with available team",
+          "business": "One deliverable will miss deadline",
+          "timeline": "Need to adjust schedule or add resources"
+        },
+        "resolution_options": [
+          {
+            "option": "A",
+            "strategy": "Prioritization",
+            "description": "Prioritize mobile app, defer API redesign to Q2",
+            "pros": ["Clear focus", "Mobile app delivers on time"],
+            "cons": ["Technical debt from old API persists", "API team delayed"],
+            "recommendation": true
+          },
+          {
+            "option": "B",
+            "strategy": "Parallel Tracks",
+            "description": "Add 3 contractors for API work",
+            "pros": ["Both deliver on time"],
+            "cons": ["Budget increase", "Onboarding overhead"],
+            "recommendation": false
+          }
+        ],
+        "recommended_resolution": "Prioritize mobile app for March 1, reschedule API redesign to May 1",
+        "stakeholders": ["VP Engineering", "Product Manager", "Project Manager"],
+        "dependencies": []
+      }
+    ],
+    "conflict_matrix": {
+      "description": "Requirements that conflict with each other",
+      "conflicts": [
+        {
+          "req1": "REQ-001",
+          "req2": "REQ-005",
+          "conflict_id": "CONF-001"
+        },
+        {
+          "req1": "REQ-020",
+          "req2": "REQ-025",
+          "conflict_id": "CONF-002"
+        }
+      ]
+    },
+    "summary_by_type": {
+      "logical": 0,
+      "technical": 0,
+      "resource": 0,
+      "temporal": 0,
+      "data": 0,
+      "state": 0,
+      "priority": 0,
+      "scope": 0
+    },
+    "summary_by_severity": {
+      "critical": 0,
+      "high": 0,
+      "medium": 0,
+      "low": 0
+    },
+    "dependency_graph": {
+      "description": "Requirements with dependencies that may cause conflicts",
+      "dependencies": [
+        {
+          "requirement": "REQ-010",
+          "depends_on": ["REQ-001", "REQ-005"],
+          "conflict_note": "Cannot implement data sync strategy until offline/online conflict resolved"
+        }
+      ]
+    },
+    "recommendations": {
+      "immediate_action": [
+        {
+          "conflict_id": "CONF-001",
+          "action": "Schedule stakeholder meeting to decide on connectivity model",
+          "deadline": "Within 3 days",
+          "blocking": ["Architecture design", "Technology selection"]
+        }
+      ],
+      "high_priority": [
+        {
+          "conflict_id": "CONF-002",
+          "action": "Adjust project timeline or allocate additional resources",
+          "deadline": "Before development starts",
+          "blocking": ["Resource planning", "Sprint scheduling"]
+        }
+      ],
+      "preventive_measures": [
+        "Review new requirements against existing ones before approval",
+        "Maintain requirements dependency map",
+        "Regular conflict scanning during requirements gathering",
+        "Cross-functional requirement reviews"
+      ]
+    },
+    "unresolved_conflicts": 0,
+    "resolved_conflicts": 0
+  }
+}
