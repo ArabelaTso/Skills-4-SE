@@ -1,5 +1,5 @@
-// API endpoint
-const API_BASE = 'http://localhost:8080/api';
+// Data source - static JSON file for GitHub Pages
+const SKILLS_DATA_URL = 'skills-data.json';
 
 // State
 let allSkills = [];
@@ -76,11 +76,11 @@ function setupEventListeners() {
     });
 }
 
-// Load skills from API
+// Load skills from static JSON file
 async function loadSkills() {
     try {
-        const response = await fetch(`${API_BASE}/skills`);
-        if (!response.ok) throw new Error('Failed to load skills');
+        const response = await fetch(SKILLS_DATA_URL);
+        if (!response.ok) throw new Error('Failed to load skills data');
 
         const data = await response.json();
         allSkills = data.skills;
@@ -88,11 +88,11 @@ async function loadSkills() {
         updateStats();
     } catch (error) {
         console.error('Error loading skills:', error);
-        showNotification('Failed to load skills. Make sure the backend server is running.', 'error');
+        showNotification('Failed to load skills data. Please refresh the page.', 'error');
         document.getElementById('skillsList').innerHTML = `
             <div class="loading">
                 ❌ Failed to load skills<br>
-                <small>Make sure the backend server is running on port 5000</small>
+                <small>Error loading skills-data.json</small>
             </div>
         `;
     }
@@ -213,7 +213,7 @@ function updateStats() {
     document.getElementById('selectedCount').textContent = `${selectedSkills.size} selected`;
 }
 
-// Install all skills
+// Install all skills - GitHub Pages version (provides instructions)
 async function installAllSkills() {
     const availableSkills = allSkills.filter(s => !s.installed).map(s => s.name);
 
@@ -222,56 +222,52 @@ async function installAllSkills() {
         return;
     }
 
-    if (!confirm(`Install ${availableSkills.length} skills?`)) {
-        return;
-    }
-
-    await installSkills(availableSkills);
+    showInstallInstructions(availableSkills);
 }
 
-// Install selected skills
+// Install selected skills - GitHub Pages version (provides instructions)
 async function installSelectedSkills() {
     if (selectedSkills.size === 0) {
         showNotification('Please select at least one skill to install', 'info');
         return;
     }
 
-    if (!confirm(`Install ${selectedSkills.size} selected skill(s)?`)) {
-        return;
-    }
-
-    await installSkills(Array.from(selectedSkills));
+    showInstallInstructions(Array.from(selectedSkills));
 }
 
-// Install skills
-async function installSkills(skillNames) {
-    try {
-        showNotification('Installing skills...', 'info');
+// Show installation instructions for GitHub Pages
+function showInstallInstructions(skillNames) {
+    const skillList = skillNames.map(name => `  - ${name}`).join('\n');
+    const commands = skillNames.map(name =>
+        `cp -r ${name} ~/.claude/skills/`
+    ).join('\n');
 
-        const response = await fetch(`${API_BASE}/install`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ skills: skillNames })
-        });
+    const message = `To install these skills, clone the repository and run:\n\n` +
+                   `git clone https://github.com/YOUR_USERNAME/LLM4SE-Skills.git\n` +
+                   `cd LLM4SE-Skills\n` +
+                   `mkdir -p ~/.claude/skills\n` +
+                   commands;
 
-        if (!response.ok) throw new Error('Installation failed');
+    // Create a modal or alert with instructions
+    if (confirm(`Selected ${skillNames.length} skill(s) for installation.\n\n` +
+                `Since this is running on GitHub Pages, you'll need to manually install them.\n\n` +
+                `Click OK to see installation instructions.`)) {
+        alert(message);
 
-        const result = await response.json();
-
-        showNotification(
-            `Successfully installed ${result.installed} skill(s)!`,
-            'success'
-        );
-
-        selectedSkills.clear();
-        loadSkills();
-
-    } catch (error) {
-        console.error('Error installing skills:', error);
-        showNotification('Failed to install skills. Please try again.', 'error');
+        // Also copy to clipboard if available
+        if (navigator.clipboard) {
+            navigator.clipboard.writeText(message).then(() => {
+                showNotification('Installation instructions copied to clipboard!', 'success');
+            }).catch(() => {
+                showNotification('Please copy the installation instructions manually', 'info');
+            });
+        }
     }
+}
+
+// Install skills - kept for compatibility but redirects to instructions
+async function installSkills(skillNames) {
+    showInstallInstructions(skillNames);
 }
 
 // Show notification
