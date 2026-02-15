@@ -6,7 +6,7 @@
 
 **前端界面已部署到 GitHub Pages：**
 
-👉 [https://your-username.github.io/LLM4SE-Skills/skill-manager/frontend/](https://your-username.github.io/LLM4SE-Skills/skill-manager/frontend/)
+👉 [https://ArabelaTso.github.io/Skills-4-SE/](https://ArabelaTso.github.io/Skills-4-SE/)
 
 > 注意：在线版本是完全静态的，不需要后端服务。点击安装按钮会显示安装命令供你复制执行。
 
@@ -17,6 +17,7 @@
 - 🔍 **搜索和筛选** - 按名称、描述或类别筛选技能
 - 📊 **分类展示** - 9 大类别，清晰组织
 - 🎨 **彩色类别标签** - 每个类别都有独特的渐变色
+- 🌐 **双语支持** - 中英文界面和技能描述切换
 - 📖 **双语帮助文档** - 中英文切换的使用指南
 - 🎨 **现代化界面** - 美观易用的用户界面
 - 🚀 **完全静态** - 可部署到 GitHub Pages，无需后端
@@ -25,21 +26,73 @@
 
 ### 在线使用（推荐）
 
-1. 访问 GitHub Pages 部署的版本
-2. 浏览和搜索技能
-3. 选择需要的技能
-4. 点击安装按钮获取安装命令
-5. 在终端执行命令安装
+1. 访问 [GitHub Pages 部署的版本](https://ArabelaTso.github.io/Skills-4-SE/)
+2. 点击右上角切换中英文界面
+3. 浏览和搜索技能
+4. 选择需要的技能
+5. 点击安装按钮获取安装命令
+6. 在终端执行命令安装
 
-### 本地使用
+### 本地部署和启动
+
+#### 方法一：使用 Python HTTP 服务器（推荐）
 
 ```bash
-cd skill-manager/frontend
+# 1. 克隆仓库
+git clone https://github.com/ArabelaTso/Skills-4-SE.git
+cd Skills-4-SE/skill-manager/frontend
+
+# 2. 启动本地服务器
 python3 -m http.server 8000
-# 访问 http://localhost:8000
+
+# 3. 在浏览器中访问
+# http://localhost:8000
 ```
 
-或直接在浏览器中打开 `frontend/index.html`。
+#### 方法二：直接打开 HTML 文件
+
+```bash
+# 1. 克隆仓库
+git clone https://github.com/ArabelaTso/Skills-4-SE.git
+cd Skills-4-SE/skill-manager/frontend
+
+# 2. 直接在浏览器中打开 index.html
+# macOS:
+open index.html
+
+# Linux:
+xdg-open index.html
+
+# Windows:
+start index.html
+```
+
+> **注意**：直接打开 HTML 文件可能会遇到 CORS 限制，推荐使用 HTTP 服务器方式。
+
+#### 方法三：使用 Node.js 服务器
+
+```bash
+# 1. 克隆仓库
+git clone https://github.com/ArabelaTso/Skills-4-SE.git
+cd Skills-4-SE/skill-manager/frontend
+
+# 2. 安装并启动 http-server（如果没有安装）
+npx http-server -p 8000
+
+# 3. 在浏览器中访问
+# http://localhost:8000
+```
+
+#### 更新技能数据
+
+如果你修改了技能或添加了新技能，需要重新生成 `skills-data.json`：
+
+```bash
+cd skill-manager
+python3 generate-skills-data.py
+```
+
+这会扫描仓库中的所有 SKILL.md 文件并生成包含中英文翻译的静态数据文件。
 
 ## 使用方法
 
