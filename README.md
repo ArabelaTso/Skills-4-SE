@@ -100,6 +100,16 @@ A Skill in this repo is more than a prompt:
 - Follows TDD principles
 - Ensures test coverage
 
+**[Incremental Python Programmer](./incremental-python-programmer/)**
+- Implements new features in Python repositories from natural language descriptions
+- Generates comprehensive unit and integration tests
+- Ensures all tests pass and follows existing code patterns
+
+**[Incremental Java Programmer](./incremental-java-programmer/)**
+- Implements new features in Java repositories from natural language descriptions
+- Supports Maven and Gradle build systems
+- Generates JUnit tests and ensures all tests pass successfully
+
 ### Testing
 
 **[Unit Test Generator](./unit-test-generator/)**
@@ -111,6 +121,11 @@ A Skill in this repo is more than a prompt:
 - Creates integration tests for system components
 - Tests component interactions
 - Includes setup and teardown logic
+
+**[Java Test Updater](./java-test-updater/)**
+- Updates Java tests to work with new code versions after refactoring
+- Handles signature changes, refactoring, and behavior modifications
+- Updates method calls, assertions, mocks, and ensures tests pass
 
 **[Flaky Test Detector](./flaky-test-detector/)**
 - Identifies non-deterministic tests
@@ -152,6 +167,11 @@ A Skill in this repo is more than a prompt:
 - Explains test scenarios and expected outcomes
 - Maintains test documentation
 
+**[Python Test Updater](./python-test-updater/)**
+- Updates Python tests to work with new code versions
+- Fixes broken tests due to signature and behavior changes
+- Analyzes code diffs and updates assertions accordingly
+
 **[Requirement to Test](./req-to-test/)**
 - Converts requirements to test cases
 - Ensures requirement coverage
@@ -190,9 +210,14 @@ A Skill in this repo is more than a prompt:
 - Prioritizes debt reduction
 
 **[Code Pattern Extractor](./code-pattern-extractor/)**
-- Extracts recurring code patterns
-- Identifies refactoring opportunities
-- Suggests pattern-based abstractions
+- Analyzes codebases to identify reusable code patterns and duplications
+- Generates pattern catalogs with refactoring suggestions
+- Creates reusable template code for high-value patterns
+
+**[Code Search Assistant](./code-search-assistant/)**
+- Searches repositories for code related to given snippets
+- Ranks results by call chain, textual, and functional similarity
+- Outputs ranked file lists with matching code snippets
 
 **[Component Boundary Identifier](./component-boundary-identifier/)**
 - Identifies module/component boundaries
@@ -211,10 +236,25 @@ A Skill in this repo is more than a prompt:
 - Explains complex logic
 - Follows documentation standards
 
+**[Markdown Document Structurer](./markdown-document-structurer/)**
+- Reorganizes markdown documents into well-structured format
+- Fixes heading hierarchy and generates table of contents
+- Standardizes formatting and improves readability
+
+**[README Generator](./readme-generator/)**
+- Generates comprehensive, user-friendly README.md files
+- Includes project introduction, prerequisites, and setup instructions
+- Provides executable usage examples and repository structure overview
+
 **[Change Log Generator](./change-log-generator/)**
 - Creates change logs from commits
 - Categorizes changes by type
 - Follows semantic versioning
+
+**[Code Change Summarizer](./code-change-summarizer/)**
+- Generates structured pull request descriptions from code changes
+- Documents breaking changes with migration guides
+- Adds testing instructions and context enhancements
 
 **[Release Notes Writer](./release-notes-writer/)**
 - Writes release notes
@@ -225,6 +265,11 @@ A Skill in this repo is more than a prompt:
 - Summarizes legacy codebases
 - Explains code functionality
 - Aids in understanding old code
+
+**[Python Repository Quick Start](./python-repo-quickstart/)**
+- Quickly analyzes Python repositories
+- Identifies project type, entry points, and dependencies
+- Generates setup and execution instructions
 
 **[Error Explanation Generator](./error-explanation-generator/)**
 - Explains error messages
@@ -263,7 +308,12 @@ A Skill in this repo is more than a prompt:
 **[Requirement Coverage Checker](./requirement-coverage-checker/)**
 - Checks requirement coverage
 - Identifies gaps in implementation
-- Traces requirements to code
+- Traces requirements to code and test
+
+**[Requirement Comparison Reporter](./requirement-comparison-reporter/)**
+- Compares old and new requirement documents
+- Maps requirement changes to code components
+- Generates detailed modification plans in Markdown format
 
 **[Ambiguity Detector](./ambiguity-detector/)**
 - Detects ambiguous requirements
@@ -288,14 +338,14 @@ A Skill in this repo is more than a prompt:
 ### DevOps & Deployment
 
 **[CI Pipeline Synthesizer](./ci-pipeline-synthesizer/)**
-- Generates CI pipeline configurations
-- Supports multiple CI platforms (GitHub Actions, GitLab CI, Jenkins)
-- Includes build, test, and lint stages
+- Generates CI pipeline configurations for automated building and testing
+- Supports GitHub Actions with dependency caching and matrix testing
+- Includes templates for Node.js, Python, Go, and Rust projects
 
 **[CD Pipeline Generator](./cd-pipeline-generator/)**
-- Creates CD pipeline configurations
-- Supports deployment strategies
-- Includes rollback mechanisms
+- Creates CD pipeline configurations for automated deployment
+- Supports AWS, GCP, and Azure cloud platforms
+- Includes environment separation, approval gates, and rollback capabilities
 
 **[Containerization Assistant](./containerization-assistant/)**
 - Creates Dockerfiles and container configs
@@ -417,10 +467,10 @@ A Skill in this repo is more than a prompt:
     - [Requirement to Contraints](nl-to-constraints) -- Transforms natural language requirements into into formal specifications and constraints (structured, testable specifications with explicit constraints).
     - [Traceability Matrix Generator](traceability-matrix-generator) – Build a traceability matrix connecting requirements → design → implementation → tests
     - [Requirement Coverage Checker](requirement-coverage-checker) – Check whether existing design/code covers all requirements
+    - [Requirement Comparison Reporter](requirement-comparison-reporter) – Compare requirement versions, map changes to code components, and generate modification plans
 
 - **Documentation & Communication**
-    - [Requirement Doc Formatter]() – Generate clear, standardized requirement documents
-    - [Requirement Summary]() – Generate a brief summary for quick team understanding
+    - [Requirement Doc Formatter](markdown-document-structurer) – Generate clear, standardized requirement documents
 
 
 ### 💡 **Software Design**
@@ -439,6 +489,8 @@ A Skill in this repo is more than a prompt:
     - [Function/Class Generator](function-class-generator) – Generate functions or classes from formal specifications or design descriptions
     - [Module/Component Generator](module-component-generator) – Build larger components or modules based on interface contracts
     - [Template/Skeleton-based Code Generator](template-code-generator) – Produce boilerplate code or project templates/skeleton automatically
+    - [Incremental Python Programmer](incremental-python-programmer) – Implement new features in Python repositories from natural language descriptions with automated testing
+    - [Incremental Java Programmer](incremental-java-programmer) – Implement new features in Java repositories (Maven/Gradle) from natural language descriptions with JUnit test generation
 
 - **Refactoring & Optimization**
     - [Refactoring Assistant](code-refactoring-assistant) – Suggest ongoing code improvements to enhance maintainability
@@ -471,7 +523,6 @@ A Skill in this repo is more than a prompt:
     - [Scenario Generator](scenario-generator) – Generate test scenarios or user stories based on requirements
     - [Edge Case Generator](edge-case-generator) – Automatically identify potential boundary and exception cases from requirements, and create tests targeting boundary conditions or uncommon scenarios
     - [Test Suite Prioritizer](test-suite-prioritizer) – Suggest which tests to run first based on impact
-    - [Requirement Coverage Checker for Test]() – Check whether existing tests covers all requirements
 
 - **Failure Analysis**
     - [Regression Root Cause Analyzer](regression-root-cause-analyzer) – Locate root causes of failing regression tests
@@ -480,6 +531,10 @@ A Skill in this repo is more than a prompt:
 
 - **Test Documentation & Reporting**
     - [Test Case Documentation](test-case-documentation) – Summarize the documentation for test cases
+
+- **Test Maintenance**
+    - [Python Test Updater](python-test-updater) – Update Python tests to work with new code versions, fixing broken tests and updating assertions
+    - [Java Test Updater](java-test-updater) – Update Java tests after code refactoring, handling signature changes, mocks, and assertions
 
 
 ### ✅ **Verification**
@@ -533,12 +588,16 @@ A Skill in this repo is more than a prompt:
 
 - **Documentation & Knowledge Transfer**
     - [api-documentation-generator](api-documentation-generator) - Summarize API documentation for the given repository
+    - [Python Repository Quick Start](python-repo-quickstart) - Quickly analyze Python repositories to understand structure, dependencies, and setup requirements
+    - [Markdown Document Structurer](markdown-document-structurer) - Reorganize markdown documents into well-structured, consistent format with improved readability
     - [Code Comment Generator](code-comment-generator) – Produce meaningful comments for maintenance readability
     - [Change Log Generator](change-log-generator) – Automatically generate change logs from commits or patches
+    - [Code Change Summarizer](code-change-summarizer) – Generate structured PR descriptions from code changes with testing instructions and context
 
 - **Continuous Improvement**
     - [Refactoring Assistant](code-refactoring-assistant) – Suggest ongoing code improvements to enhance maintainability
-    - [Code Pattern Extractor]() – Identify reusable code patterns for future development
+    - [Code Pattern Extractor](code-pattern-extractor) – Identify reusable code patterns for future development
+    - [Code Search Assistant](code-search-assistant) – Search repositories for related code using multi-dimensional similarity analysis
     
 
 

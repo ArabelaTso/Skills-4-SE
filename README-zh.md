@@ -101,6 +101,16 @@
 - 遵循 TDD 原则
 - 确保测试覆盖率
 
+**[增量式 Python 编程器](./incremental-python-programmer/)**
+- 根据自然语言描述在 Python 仓库中实现新功能
+- 生成全面的单元测试和集成测试
+- 确保所有测试通过并遵循现有代码模式
+
+**[增量式 Java 编程器](./incremental-java-programmer/)**
+- 根据自然语言描述在 Java 仓库中实现新功能
+- 支持 Maven 和 Gradle 构建系统
+- 生成 JUnit 测试并确保所有测试成功通过
+
 
 ### 测试
 
@@ -113,6 +123,11 @@
 - 为系统组件创建集成测试
 - 测试组件交互
 - 包含设置和清理逻辑
+
+**[Java 测试更新器](./java-test-updater/)**
+- 在重构后更新 Java 测试以适配新代码版本
+- 处理签名变更、重构和行为修改
+- 更新方法调用、断言、模拟对象并确保测试通过
 
 **[不稳定测试检测器](./flaky-test-detector/)**
 - 识别非确定性测试
@@ -154,6 +169,11 @@
 - 解释测试场景和预期结果
 - 维护测试文档
 
+**[Python 测试更新器](./python-test-updater/)**
+- 更新 Python 测试以适配新代码版本
+- 修复由于签名和行为变更导致的测试失败
+- 分析代码差异并相应更新断言
+
 **[需求到测试转换器](./req-to-test/)**
 - 将需求转换为测试用例
 - 确保需求覆盖
@@ -192,9 +212,14 @@
 - 优先处理债务减少
 
 **[代码模式提取器](./code-pattern-extractor/)**
-- 提取重复的代码模式
-- 识别重构机会
-- 建议基于模式的抽象
+- 分析代码库以识别可重用的代码模式和重复代码
+- 生成包含重构建议的模式目录
+- 为高价值模式创建可重用的模板代码
+
+**[代码搜索助手](./code-search-assistant/)**
+- 在仓库中搜索与给定代码片段相关的代码
+- 根据调用链、文本和功能相似性对结果进行排名
+- 输出带有匹配代码片段的排名文件列表
 
 **[组件边界识别器](./component-boundary-identifier/)**
 - 识别模块/组件边界
@@ -213,10 +238,25 @@
 - 解释复杂逻辑
 - 遵循文档标准
 
+**[Markdown 文档结构化工具](./markdown-document-structurer/)**
+- 将 Markdown 文档重组为结构良好的格式
+- 修复标题层次结构并生成目录
+- 标准化格式并提高可读性
+
+**[README 生成器](./readme-generator/)**
+- 生成全面、用户友好的 README.md 文件
+- 包含项目介绍、先决条件和设置说明
+- 提供可执行的使用示例和仓库结构概览
+
 **[变更日志生成器](./change-log-generator/)**
 - 从提交创建变更日志
 - 按类型分类变更
 - 遵循语义化版本控制
+
+**[代码变更总结器](./code-change-summarizer/)**
+- 从代码变更生成结构化的拉取请求描述
+- 记录带有迁移指南的破坏性变更
+- 添加测试说明和上下文增强
 
 **[发布说明编写器](./release-notes-writer/)**
 - 编写发布说明
@@ -227,6 +267,11 @@
 - 总结遗留代码库
 - 解释代码功能
 - 帮助理解旧代码
+
+**[Python 仓库快速入门](./python-repo-quickstart/)**
+- 快速分析 Python 仓库
+- 识别项目类型、入口点和依赖项
+- 生成设置和执行说明
 
 **[错误解释生成器](./error-explanation-generator/)**
 - 解释错误消息
@@ -267,6 +312,11 @@
 - 识别实现中的差距
 - 将需求追溯到代码
 
+**[需求比较报告器](./requirement-comparison-reporter/)**
+- 比较新旧需求文档
+- 将需求变更映射到代码组件
+- 生成详细的 Markdown 格式修改计划
+
 **[歧义检测器](./ambiguity-detector/)**
 - 检测模糊的需求
 - 突出不清晰的规范
@@ -290,14 +340,14 @@
 ### DevOps 与部署
 
 **[CI 流水线合成器](./ci-pipeline-synthesizer/)**
-- 生成 CI 流水线配置
-- 支持多个 CI 平台（GitHub Actions、GitLab CI、Jenkins）
-- 包含构建、测试和代码检查阶段
+- 生成用于自动化构建和测试的 CI 流水线配置
+- 支持 GitHub Actions，包含依赖缓存和矩阵测试
+- 包含 Node.js、Python、Go 和 Rust 项目的模板
 
 **[CD 流水线生成器](./cd-pipeline-generator/)**
-- 创建 CD 流水线配置
-- 支持部署策略
-- 包含回滚机制
+- 创建用于自动化部署的 CD 流水线配置
+- 支持 AWS、GCP 和 Azure 云平台
+- 包含环境分离、审批门和回滚功能
 
 **[容器化助手](./containerization-assistant/)**
 - 创建 Dockerfile 和容器配置
@@ -407,7 +457,7 @@
 
 > 软件开发生命周期（SDLC）中的阶段
 
-### 📕 **需求**
+### 📕 **需求分析**
 - **需求分析**
     - [歧义检测器](ambiguity-detector) – 自动检测需求中的模糊或含糊陈述
     - [需求总结器（长）](requirement-summarizer) – 从需求文档中提取核心功能、约束和优先级，输出 markdown 文件
@@ -419,10 +469,10 @@
     - [需求到约束转换器](nl-to-constraints) -- 将自然语言需求转换为形式化规范和约束（结构化、可测试的规范，带有明确的约束）
     - [可追溯性矩阵生成器](traceability-matrix-generator) – 构建连接需求 → 设计 → 实现 → 测试的可追溯性矩阵
     - [需求覆盖检查器](requirement-coverage-checker) – 检查现有设计/代码是否覆盖所有需求
+    - [需求比较报告器](requirement-comparison-reporter) – 比较需求版本，将变更映射到代码组件，并生成修改计划
 
 - **文档与沟通**
-    - [需求文档格式化器]() – 生成清晰、标准化的需求文档
-    - [需求摘要]() – 生成简要摘要，便于团队快速理解
+    - [需求文档格式化器](markdown-document-structurer) – 生成清晰、标准化的需求文档
 
 
 ### 💡 **软件设计**
@@ -436,11 +486,13 @@
 - **设计质量与分析**
     - [设计异味检测器](design-smell-detector) – 识别潜在问题，如高耦合或低内聚
 
-### ⌨️ **实现**
+### ⌨️ **代码实现**
 - **规范到代码**
     - [函数/类生成器](function-class-generator) – 从形式化规范或设计描述生成函数或类
     - [模块/组件生成器](module-component-generator) – 基于接口契约构建更大的组件或模块
     - [模板/骨架代码生成器](template-code-generator) – 自动生成样板代码或项目模板/骨架
+    - [增量式 Python 编程器](incremental-python-programmer) – 根据自然语言描述在 Python 仓库中实现新功能，并自动生成测试
+    - [增量式 Java 编程器](incremental-java-programmer) – 根据自然语言描述在 Java 仓库（Maven/Gradle）中实现新功能，并生成 JUnit 测试
 
 - **重构与优化**
     - [重构助手](code-refactoring-assistant) – 建议持续的代码改进以增强可维护性
@@ -473,7 +525,6 @@
     - [场景生成器](scenario-generator) – 基于需求生成测试场景或用户故事
     - [边界情况生成器](edge-case-generator) – 从需求中自动识别潜在的边界和异常情况，并创建针对边界条件或不常见场景的测试
     - [测试套件优先级排序器](test-suite-prioritizer) – 根据影响建议首先运行哪些测试
-    - [测试需求覆盖检查器]() – 检查现有测试是否覆盖所有需求
 
 - **故障分析**
     - [回归根因分析器](regression-root-cause-analyzer) – 定位失败回归测试的根本原因
@@ -482,6 +533,10 @@
 
 - **测试文档与报告**
     - [测试用例文档](test-case-documentation) – 总结测试用例的文档
+
+- **测试维护**
+    - [Python 测试更新器](python-test-updater) – 更新 Python 测试以适配新代码版本，修复失败的测试并更新断言
+    - [Java 测试更新器](java-test-updater) – 在代码重构后更新 Java 测试，处理签名变更、模拟对象和断言
 
 
 ### ✅ **验证**
@@ -518,7 +573,7 @@
     - [发布说明编写器](release-notes-writer) – 自动生成面向用户的发布说明
 
 
-### 🔧 **维护**
+### 🔧 **软件维护**
 - **Bug 与问题处理**
     - [Bug 定位器](bug-localization) – 识别代码或模块中 bug 的位置
     - [回归根因分析器](regression-root-cause-analyzer) – 查找失败回归测试的根本原因
@@ -535,12 +590,15 @@
 
 - **文档与知识转移**
     - [api-documentation-generator](api-documentation-generator) - 为给定仓库总结 API 文档
+    - [Python 仓库快速入门](python-repo-quickstart) - 快速分析 Python 仓库以了解结构、依赖项和设置要求
+    - [Markdown 文档结构化工具](markdown-document-structurer) - 将 Markdown 文档重组为结构良好、一致的格式，提高可读性
     - [代码注释生成器](code-comment-generator) – 生成有意义的注释以提高维护可读性
     - [变更日志生成器](change-log-generator) – 从提交或补丁自动生成变更日志
 
 - **持续改进**
     - [重构助手](code-refactoring-assistant) – 建议持续的代码改进以增强可维护性
-    - [代码模式提取器]() – 识别可重用的代码模式以供未来开发
+    - [代码模式提取器](code-pattern-extractor) – 识别可重用的代码模式以供未来开发
+    - [代码搜索助手](code-search-assistant) – 使用多维相似性分析在仓库中搜索相关代码
     
 
 
