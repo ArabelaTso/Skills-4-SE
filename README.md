@@ -1,9 +1,7 @@
 <h1 align="center"><strong>✨ Skills-4-SE</strong>: Useful Skills for Software Engineering</h1>
 
-<p align="center">
-<a href="https://platform.composio.dev/?utm_source=Github&utm_medium=Youtube&utm_campaign=2025-11&utm_content=AwesomeSkills">
-  <img width="1280" height="640" alt="Composio banner" src="./banner.png">
-</a>
+<img width="1280" height="640" alt="Composio banner" src="./banner.png">
+
 
 
 [![Welcome Contribution](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](./CONTRIBUTING.md)
@@ -16,6 +14,10 @@
 
 **[🚀 Visit Skills Manager](https://ArabelaTso.github.io/Skills-4-SE/)**
 
+<p align="center">
+  <img src="./skill-manager-image.png" alt="Skills Manager Interface" width="100%">
+</p>
+
 Browse, search, and install skills through our interactive web interface. The Skills Manager provides:
 - 📦 One-click installation of all 75+ skills
 - ✅ Selective installation of specific skills
@@ -23,11 +25,13 @@ Browse, search, and install skills through our interactive web interface. The Sk
 - 📖 Bilingual help documentation (English/中文)
 - 🎨 Modern, responsive interface
 
+
+
 ---
 
 This repository is **a comprehensive reusable, task-oriented Skills collection** designed to support **software engineering activities across the entire development lifecycle**, including:
 
-> requirements understanding, system design, implementation, testing, verification, deployment, and maintenance.
+> requirements understanding, system design, implementation, testing, verifica tion, deployment, and maintenance.
 
 ✅ Unlike prompt collections or ad-hoc demos, each Skill in this repository is:
 - **Task-grounded** (solves a concrete software engineering problem)
