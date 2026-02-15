@@ -6,61 +6,60 @@
 
 **前端界面已部署到 GitHub Pages：**
 
-👉 [https://your-username.github.io/LLM4SE-Skills/](https://your-username.github.io/LLM4SE-Skills/)
+👉 [https://your-username.github.io/LLM4SE-Skills/skill-manager/frontend/](https://your-username.github.io/LLM4SE-Skills/skill-manager/frontend/)
 
-> 注意：使用在线版本时，需要在本地运行后端服务（见下方说明）
+> 注意：在线版本是完全静态的，不需要后端服务。点击安装按钮会显示安装命令供你复制执行。
 
 ## 功能特性
 
-- 📦 **一键安装所有技能** - 快速安装所有可用的技能
-- ✅ **选择性安装** - 选择需要的技能进行安装
+- 📦 **浏览所有技能** - 查看 74+ 个可用技能
+- ✅ **选择性安装** - 选择需要的技能获取安装命令
 - 🔍 **搜索和筛选** - 按名称、描述或类别筛选技能
-- 📊 **状态显示** - 清晰显示已安装和可用的技能
+- 📊 **分类展示** - 9 大类别，清晰组织
 - 🎨 **彩色类别标签** - 每个类别都有独特的渐变色
 - 📖 **双语帮助文档** - 中英文切换的使用指南
 - 🎨 **现代化界面** - 美观易用的用户界面
+- 🚀 **完全静态** - 可部署到 GitHub Pages，无需后端
 
 ## 快速开始
 
-### 1. 安装依赖
+### 在线使用（推荐）
+
+1. 访问 GitHub Pages 部署的版本
+2. 浏览和搜索技能
+3. 选择需要的技能
+4. 点击安装按钮获取安装命令
+5. 在终端执行命令安装
+
+### 本地使用
 
 ```bash
-cd skill-manager/backend
-pip install -r requirements.txt
+cd skill-manager/frontend
+python3 -m http.server 8000
+# 访问 http://localhost:8000
 ```
 
-### 2. 启动后端服务
-
-```bash
-python app.py
-```
-
-后端服务将在 `http://localhost:5000` 启动。
-
-### 3. 打开前端界面
-
-在浏览器中打开：
-
-```bash
-open skill-manager/frontend/index.html
-```
-
-或者直接双击 `skill-manager/frontend/index.html` 文件。
+或直接在浏览器中打开 `frontend/index.html`。
 
 ## 使用方法
 
-### 安装所有技能
+### 安装技能
 
-1. 点击 **"📦 Install All Skills"** 按钮
-2. 确认安装
-3. 等待安装完成
+1. 在界面上浏览和搜索技能
+2. 点击技能卡片选择需要的技能
+3. 点击 **"Install Selected Skills"** 按钮
+4. 复制显示的安装命令
+5. 在终端执行命令
 
-### 安装选定的技能
+**示例安装命令：**
 
-1. 浏览技能列表
-2. 点击技能卡片或勾选复选框来选择技能
-3. 点击 **"✅ Install Selected Skills"** 按钮
-4. 确认安装
+```bash
+git clone https://github.com/YOUR_USERNAME/LLM4SE-Skills.git
+cd LLM4SE-Skills
+mkdir -p ~/.claude/skills
+cp -r unit-test-generator ~/.claude/skills/
+cp -r code-review-assistant ~/.claude/skills/
+```
 
 ### 搜索技能
 
@@ -70,15 +69,15 @@ open skill-manager/frontend/index.html
 
 点击顶部的类别标签，可以按以下类别筛选技能：
 
-- Code Generation（代码生成）
-- Testing（测试）
-- Documentation（文档）
-- Code Quality（代码质量）
-- Requirements（需求）
-- DevOps（开发运维）
-- Debugging（调试）
-- Verification（验证）
-- Maintenance（维护）
+- **Code Generation**（代码生成）- 7 个技能
+- **Testing**（测试）- 13 个技能
+- **Documentation**（文档）- 10 个技能
+- **Code Quality**（代码质量）- 9 个技能
+- **Requirements**（需求）- 7 个技能
+- **DevOps**（开发运维）- 5 个技能
+- **Debugging**（调试）- 5 个技能
+- **Verification**（验证）- 7 个技能
+- **Maintenance**（维护）- 3 个技能
 
 ## 技能安装位置
 
@@ -162,12 +161,13 @@ open skill-manager/frontend/index.html
 
 ## 技术栈
 
-### 前端
+### 前端（静态）
 - HTML5
 - CSS3 (现代化渐变设计)
 - Vanilla JavaScript (无框架依赖)
+- 静态 JSON 数据文件
 
-### 后端
+### 后端（可选 - 仅用于本地开发）
 - Python 3.8+
 - Flask (Web 框架)
 - Flask-CORS (跨域支持)
@@ -178,50 +178,36 @@ open skill-manager/frontend/index.html
 ```
 skill-manager/
 ├── frontend/
-│   ├── index.html      # 主页面
-│   ├── styles.css      # 样式文件
-│   └── app.js          # 前端逻辑
+│   ├── index.html           # 主页面
+│   ├── styles.css           # 样式文件
+│   ├── app.js               # 前端逻辑
+│   └── skills-data.json     # 静态技能数据（自动生成）
 ├── backend/
-│   ├── app.py          # Flask 后端服务
-│   └── requirements.txt # Python 依赖
-└── README.md           # 本文件
+│   ├── app.py               # Flask 后端服务（可选）
+│   └── requirements.txt     # Python 依赖
+├── generate-skills-data.py  # 数据生成脚本
+└── README.md                # 本文件
 ```
 
-## 故障排除
+## 更新技能数据
 
-### 后端服务无法启动
+当仓库中添加新技能时，需要重新生成静态数据文件：
 
-确保已安装所有依赖：
 ```bash
-pip install -r backend/requirements.txt
+cd skill-manager
+python3 generate-skills-data.py
 ```
 
-### 前端无法连接后端
+这会扫描所有 SKILL.md 文件并更新 `frontend/skills-data.json`。
 
-1. 确认后端服务正在运行（应该在 `http://localhost:5000`）
-2. 检查浏览器控制台是否有 CORS 错误
-3. 确认防火墙没有阻止 5000 端口
+## 部署到 GitHub Pages
 
-### 技能安装失败
+1. 确保 `frontend/skills-data.json` 是最新的
+2. 将更改推送到 GitHub
+3. 在仓库设置中启用 GitHub Pages
+4. 选择 `main` 分支和 `/` 根目录
+5. 访问 `https://YOUR_USERNAME.github.io/LLM4SE-Skills/skill-manager/frontend/`
 
-1. 确认 `~/.claude/skills/` 目录存在且可写
-2. 检查磁盘空间是否充足
-3. 查看后端控制台的错误信息
+## API 端点（仅后端模式）
 
-## 开发
-
-### 修改前端
-
-编辑 `frontend/` 目录下的文件，刷新浏览器即可看到更改。
-
-### 修改后端
-
-编辑 `backend/app.py`，重启 Flask 服务器以应用更改。
-
-## 许可证
-
-本项目遵循与 LLM4SE-Skills 仓库相同的许可证。
-
-## 贡献
-
-欢迎提交 Issue 和 Pull Request！
+如果使用本地后端服务，提供以下 API 端点：

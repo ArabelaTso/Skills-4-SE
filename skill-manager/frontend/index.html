@@ -11,6 +11,9 @@
         <header>
             <h1>🛠️ Skills Manager</h1>
             <p class="subtitle">Manage and install Claude Code skills for software engineering</p>
+            <div class="info-banner">
+                ℹ️ Running in static mode. Click install buttons to get installation commands.
+            </div>
         </header>
 
         <div class="actions">
@@ -73,12 +76,15 @@
             <div id="helpContentZh" class="help-content">
                 <div class="help-section">
                     <h3>1️⃣ 安装 Skills</h3>
-                    <p>在本页面选择并安装你需要的 skills：</p>
-                    <ul>
-                        <li><strong>一键安装全部：</strong>点击 "📦 Install All Skills" 按钮</li>
-                        <li><strong>选择性安装：</strong>点击技能卡片选中，然后点击 "✅ Install Selected Skills"</li>
-                    </ul>
-                    <p class="note">💡 安装后的 skills 会保存到 <code>~/.claude/skills/</code> 目录</p>
+                    <p>在本页面浏览并选择你需要的 skills，然后按照以下步骤安装：</p>
+                    <ol>
+                        <li><strong>克隆仓库：</strong><code>git clone https://github.com/YOUR_USERNAME/LLM4SE-Skills.git</code></li>
+                        <li><strong>进入目录：</strong><code>cd LLM4SE-Skills</code></li>
+                        <li><strong>创建 skills 目录：</strong><code>mkdir -p ~/.claude/skills</code></li>
+                        <li><strong>复制 skills：</strong><code>cp -r skill-name ~/.claude/skills/</code></li>
+                    </ol>
+                    <p class="note">💡 点击 "Install" 按钮会显示具体的安装命令并复制到剪贴板</p>
+                    <p class="note">📦 安装后的 skills 会保存到 <code>~/.claude/skills/</code> 目录</p>
                 </div>
 
                 <div class="help-section">
@@ -204,12 +210,15 @@
             <div id="helpContentEn" class="help-content" style="display: none;">
                 <div class="help-section">
                     <h3>1️⃣ Installing Skills</h3>
-                    <p>Select and install the skills you need on this page:</p>
-                    <ul>
-                        <li><strong>Install All:</strong> Click the "📦 Install All Skills" button</li>
-                        <li><strong>Selective Install:</strong> Click skill cards to select them, then click "✅ Install Selected Skills"</li>
-                    </ul>
-                    <p class="note">💡 Installed skills are saved to <code>~/.claude/skills/</code> directory</p>
+                    <p>Browse and select the skills you need on this page, then follow these steps to install:</p>
+                    <ol>
+                        <li><strong>Clone the repository:</strong> <code>git clone https://github.com/YOUR_USERNAME/LLM4SE-Skills.git</code></li>
+                        <li><strong>Navigate to directory:</strong> <code>cd LLM4SE-Skills</code></li>
+                        <li><strong>Create skills directory:</strong> <code>mkdir -p ~/.claude/skills</code></li>
+                        <li><strong>Copy skills:</strong> <code>cp -r skill-name ~/.claude/skills/</code></li>
+                    </ol>
+                    <p class="note">💡 Clicking "Install" buttons will show specific installation commands and copy them to clipboard</p>
+                    <p class="note">📦 Installed skills are saved to <code>~/.claude/skills/</code> directory</p>
                 </div>
 
                 <div class="help-section">

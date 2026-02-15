@@ -1,0 +1,530 @@
+{
+  "skills": [
+    {
+      "name": "acsl-annotation-assistant",
+      "displayName": "acsl-annotation-assistant",
+      "description": "Create ACSL (ANSI/ISO C Specification Language) formal annotations for C/C++ programs. Use this skill when working with formal verification, adding function contracts (requires/ensures), loop invarian...",
+      "category": "verification",
+      "installed": false
+    },
+    {
+      "name": "ambiguity-detector",
+      "displayName": "ambiguity-detector",
+      "description": "Detects and analyzes ambiguous language in software requirements and user stories. Use when reviewing requirements documents, user stories, specifications, or any software requirement text to identify...",
+      "category": "requirements",
+      "installed": false
+    },
+    {
+      "name": "api-design-assistant",
+      "displayName": "api-design-assistant",
+      "description": "Design and review APIs with suggestions for endpoints, parameters, return types, and best practices. Use when designing new APIs from requirements, reviewing existing API designs, generating API docum...",
+      "category": "other",
+      "installed": false
+    },
+    {
+      "name": "api-documentation-generator",
+      "displayName": "api-documentation-generator",
+      "description": "Generate comprehensive API documentation from repository sources including OpenAPI specs, code comments, docstrings, and existing documentation. Use when documenting APIs, creating API reference guide...",
+      "category": "documentation",
+      "installed": false
+    },
+    {
+      "name": "assertion-synthesizer",
+      "displayName": "assertion-synthesizer",
+      "description": "Generate test assertions from existing code implementation. Use when the user has implementation code without tests or incomplete test coverage, and needs assertions synthesized by analyzing the code'...",
+      "category": "verification",
+      "installed": false
+    },
+    {
+      "name": "bug-localization",
+      "displayName": "bug-localization",
+      "description": "Identify the precise location of bugs in source code, modules, and systems. Use this skill when debugging applications, investigating test failures, analyzing error reports, tracing runtime issues, or...",
+      "category": "debugging",
+      "installed": false
+    },
+    {
+      "name": "bug-to-patch-generator",
+      "displayName": "bug-to-patch-generator",
+      "description": "Generate code fixes and patches from bug reports, failing test cases, error messages, and stack traces. Use this skill when debugging code, fixing test failures, addressing GitHub issues, resolving ru...",
+      "category": "debugging",
+      "installed": false
+    },
+    {
+      "name": "cd-pipeline-generator",
+      "displayName": "cd-pipeline-generator",
+      "description": "Generate GitHub Actions deployment workflows for automated deployment to staging and production environments on cloud platforms (AWS, GCP, Azure). Use when setting up continuous deployment pipelines, ...",
+      "category": "devops",
+      "installed": false
+    },
+    {
+      "name": "change-log-generator",
+      "displayName": "change-log-generator",
+      "description": "Automatically generates change logs from git commits, patches, and pull requests. Use when preparing software releases, creating version summaries, or maintaining CHANGELOG.md files. Analyzes commit m...",
+      "category": "documentation",
+      "installed": false
+    },
+    {
+      "name": "ci-pipeline-synthesizer",
+      "displayName": "ci-pipeline-synthesizer",
+      "description": "Generate GitHub Actions CI/CD pipeline configurations for automated building and testing of library and package projects. Use when creating or updating CI workflows for npm packages, Python packages, ...",
+      "category": "devops",
+      "installed": false
+    },
+    {
+      "name": "code-change-summarizer",
+      "displayName": "code-change-summarizer",
+      "description": "Generates clear and structured pull request descriptions from code changes. Use when Claude needs to: (1) Create PR descriptions from git diffs or code changes, (2) Summarize what changed and why, (3)...",
+      "category": "documentation",
+      "installed": false
+    },
+    {
+      "name": "code-comment-generator",
+      "displayName": "code-comment-generator",
+      "description": "Generates meaningful comments and documentation for code to improve maintenance and readability. Use when adding documentation to Python or Java code, including function/method docstrings, class docum...",
+      "category": "documentation",
+      "installed": false
+    },
+    {
+      "name": "code-optimizer",
+      "displayName": "code-optimizer",
+      "description": "Analyzes and optimizes code for better performance, memory usage, and efficiency. Use when code is slow, memory-intensive, or inefficient. Supports Python and Java optimization including execution spe...",
+      "category": "quality",
+      "installed": false
+    },
+    {
+      "name": "code-pattern-extractor",
+      "displayName": "code-pattern-extractor",
+      "description": "Analyze codebases to identify reusable code patterns, duplications, and implementation patterns for future development. Use when refactoring code, identifying technical debt, finding opportunities for...",
+      "category": "quality",
+      "installed": false
+    },
+    {
+      "name": "code-refactoring-assistant",
+      "displayName": "code-refactoring-assistant",
+      "description": "Suggest and apply code refactorings to improve readability, maintainability, and code quality. Use this skill when improving existing code structure, eliminating code smells, applying design patterns,...",
+      "category": "maintenance",
+      "installed": false
+    },
+    {
+      "name": "code-review-assistant",
+      "displayName": "code-review-assistant",
+      "description": "Conduct comprehensive code reviews identifying bugs, security issues, performance problems, code quality concerns, and best practice violations. Use when reviewing pull requests, examining code change...",
+      "category": "quality",
+      "installed": false
+    },
+    {
+      "name": "code-search-assistant",
+      "displayName": "code-search-assistant",
+      "description": "Search code repositories for code related to a given code snippet, ranking results by call chain similarity, textual similarity, and functional similarity. Use when finding related code, locating simi...",
+      "category": "quality",
+      "installed": false
+    },
+    {
+      "name": "code-smell-detector",
+      "displayName": "code-smell-detector",
+      "description": "Identify and report code smells indicating poor design or maintainability issues in Python code, including duplicate code, magic numbers, hardcoded values, God classes, feature envy, inappropriate int...",
+      "category": "quality",
+      "installed": false
+    },
+    {
+      "name": "code-translation",
+      "displayName": "code-translation",
+      "description": "Convert code between programming languages while preserving functionality and semantics. Use when: (1) Translating functions, classes, or modules between languages (Python, JavaScript/TypeScript, Java...",
+      "category": "maintenance",
+      "installed": false
+    },
+    {
+      "name": "component-boundary-identifier",
+      "displayName": "component-boundary-identifier",
+      "description": "Identifies boundaries between modules or components in software systems through static code analysis and dependency detection. Use when Claude needs to analyze software architecture, identify module b...",
+      "category": "quality",
+      "installed": false
+    },
+    {
+      "name": "configuration-generator",
+      "displayName": "configuration-generator",
+      "description": "Generate configuration files for applications, services, and infrastructure. Use when: (1) Setting up new projects (package.json, requirements.txt, tsconfig.json), (2) Creating Docker or Kubernetes co...",
+      "category": "other",
+      "installed": false
+    },
+    {
+      "name": "conflict-analyzer",
+      "displayName": "conflict-analyzer",
+      "description": "Identifies and analyzes conflicts in software requirements including logical contradictions, technical incompatibilities, resource constraints, timeline issues, data conflicts, and stakeholder priorit...",
+      "category": "debugging",
+      "installed": false
+    },
+    {
+      "name": "containerization-assistant",
+      "displayName": "containerization-assistant",
+      "description": "Generate Dockerfiles, Docker Compose configurations, and Kubernetes manifests for containerizing applications. Use when: (1) Creating Dockerfiles for Node.js, Python, Java, Go, or other applications, ...",
+      "category": "devops",
+      "installed": false
+    },
+    {
+      "name": "counterexample-explainer",
+      "displayName": "counterexample-explainer",
+      "description": "Explain why counterexamples violate specifications by analyzing formal specifications (temporal logic, invariants, pre/postconditions, code contracts), informal requirements (user stories, acceptance ...",
+      "category": "verification",
+      "installed": false
+    },
+    {
+      "name": "counterexample-generator",
+      "displayName": "counterexample-generator",
+      "description": "Generate concrete counterexamples when formal verification, assertions, or specifications fail. Use this skill when debugging failed proofs, understanding why verification fails, creating minimal repr...",
+      "category": "verification",
+      "installed": false
+    },
+    {
+      "name": "coverage-enhancer",
+      "displayName": "coverage-enhancer",
+      "description": "Analyze existing test suites and source code to suggest additional unit tests that improve test coverage. Use this skill when working with test files and source code to identify untested code paths, m...",
+      "category": "testing",
+      "installed": false
+    },
+    {
+      "name": "dead-code-eliminator",
+      "displayName": "dead-code-eliminator",
+      "description": "Identify and analyze unused or redundant code including unused functions/methods, unused variables/imports, unreachable code, and redundant conditions. Use when cleaning up codebases, improving mainta...",
+      "category": "quality",
+      "installed": false
+    },
+    {
+      "name": "dependency-resolver",
+      "displayName": "dependency-resolver",
+      "description": "Identify, analyze, and manage software dependencies before deployment. Use this skill when preparing applications for deployment, resolving dependency conflicts, updating dependencies, auditing securi...",
+      "category": "other",
+      "installed": false
+    },
+    {
+      "name": "deprecated-api-updater",
+      "displayName": "deprecated-api-updater",
+      "description": "Identify and replace deprecated API usage in source code with modern alternatives. Use when: (1) Modernizing legacy codebases, (2) Upgrading framework versions (React, Django, Spring, etc.), (3) Fixin...",
+      "category": "maintenance",
+      "installed": false
+    },
+    {
+      "name": "design-pattern-suggestor",
+      "displayName": "design-pattern-suggestor",
+      "description": "Recommends appropriate software design patterns based on problem descriptions, requirements, or code scenarios. Use when designing software architecture, refactoring code, solving common design proble...",
+      "category": "other",
+      "installed": false
+    },
+    {
+      "name": "design-smell-detector",
+      "displayName": "design-smell-detector",
+      "description": "Identify design quality issues in code including high coupling, low cohesion, God classes, long methods, and other code smells. Use when: (1) Reviewing code architecture and design quality, (2) Identi...",
+      "category": "quality",
+      "installed": false
+    },
+    {
+      "name": "directed-test-input-generator",
+      "displayName": "directed-test-input-generator",
+      "description": "Generate targeted test inputs to reach specific code paths and hard-to-reach behaviors in Python code. Use when: (1) Targeting uncovered branches or specific execution paths, (2) Need coverage-guided ...",
+      "category": "testing",
+      "installed": false
+    },
+    {
+      "name": "edge-case-generator",
+      "displayName": "edge-case-generator",
+      "description": "Automatically identify potential boundary and exception cases from requirements, specifications, or existing code, and generate comprehensive test cases targeting boundary conditions, edge cases, and ...",
+      "category": "testing",
+      "installed": false
+    },
+    {
+      "name": "environment-setup-assistant",
+      "displayName": "environment-setup-assistant",
+      "description": "Generate setup scripts and instructions for development environments across platforms. Use when: (1) Setting up new development machines (Python, Node.js, Docker, databases), (2) Creating automated se...",
+      "category": "devops",
+      "installed": false
+    },
+    {
+      "name": "error-explanation-generator",
+      "displayName": "error-explanation-generator",
+      "description": "Explains test failures and provides actionable debugging guidance. Use when tests fail (unit, integration, E2E), builds fail, or code throws errors. Analyzes error messages, stack traces, and test out...",
+      "category": "documentation",
+      "installed": false
+    },
+    {
+      "name": "flaky-test-detector",
+      "displayName": "flaky-test-detector",
+      "description": "Identifies non-deterministic or unreliable tests through static code analysis and test result analysis. Use when Claude needs to find flaky tests, analyze test reliability, or investigate intermittent...",
+      "category": "testing",
+      "installed": false
+    },
+    {
+      "name": "function-class-generator",
+      "displayName": "function-class-generator",
+      "description": "Generate complete, production-ready functions and classes from formal specifications, design descriptions, type signatures, or natural language requirements. Use this skill when implementing APIs from...",
+      "category": "code-generation",
+      "installed": false
+    },
+    {
+      "name": "fuzzing-input-generator",
+      "displayName": "fuzzing-input-generator",
+      "description": "Generate randomized and edge-case inputs to detect unexpected failures, bugs, and security vulnerabilities through fuzz testing. Use when creating test cases for robustness testing, generating adversa...",
+      "category": "testing",
+      "installed": false
+    },
+    {
+      "name": "incremental-java-programmer",
+      "displayName": "incremental-java-programmer",
+      "description": "Incrementally implement new features in Java repositories from natural language descriptions. Use when adding functionality to existing Java codebases (Maven or Gradle projects). Takes a feature descr...",
+      "category": "code-generation",
+      "installed": false
+    },
+    {
+      "name": "incremental-python-programmer",
+      "displayName": "incremental-python-programmer",
+      "description": "Takes a Python repository and natural language feature description as input, implements the feature with proper code placement, generates comprehensive tests, and ensures all tests pass. Use when Clau...",
+      "category": "code-generation",
+      "installed": false
+    },
+    {
+      "name": "integration-test-generator",
+      "displayName": "integration-test-generator",
+      "description": "Generate integration tests for multiple interacting components in Python. Use when testing interactions between: (1) Multiple services or APIs (REST/GraphQL endpoints, microservices), (2) Database ope...",
+      "category": "testing",
+      "installed": false
+    },
+    {
+      "name": "interface-specification-generator",
+      "displayName": "interface-specification-generator",
+      "description": [
+        {
+          "TODO": "Complete and informative explanation of what the skill does and when to use it. Include WHEN to use this skill - specific scenarios"
+        },
+        "file types",
+        "or tasks that trigger it."
+      ],
+      "category": "other",
+      "installed": false
+    },
+    {
+      "name": "invariant-inference",
+      "displayName": "invariant-inference",
+      "description": "Automatically infer loop invariants for code verification and correctness proofs. Use when analyzing loops to identify properties that hold throughout execution, generating assertions for verification...",
+      "category": "verification",
+      "installed": false
+    },
+    {
+      "name": "java-test-updater",
+      "displayName": "java-test-updater",
+      "description": "Update Java test classes and methods to work with new code versions after refactoring or modifications. Use when code changes break existing tests due to signature changes, refactoring, or behavior mo...",
+      "category": "testing",
+      "installed": false
+    },
+    {
+      "name": "legacy-code-summarizer",
+      "displayName": "legacy-code-summarizer",
+      "description": "Produces comprehensive summaries and insights about legacy codebases to help understand unfamiliar code. Use when onboarding to a new project, planning refactoring efforts, assessing code for acquisit...",
+      "category": "documentation",
+      "installed": false
+    },
+    {
+      "name": "markdown-document-structurer",
+      "displayName": "markdown-document-structurer",
+      "description": "Reorganizes markdown documents into well-structured, consistent format while preserving content and improving readability. Use when Claude needs to: (1) Fix heading hierarchy issues (skipped levels, m...",
+      "category": "documentation",
+      "installed": false
+    },
+    {
+      "name": "module-component-generator",
+      "displayName": "module-component-generator",
+      "description": "Generates complete modules and components from interface contracts and specifications. Use when Claude needs to build larger software components, implement interfaces, create service layers, or genera...",
+      "category": "code-generation",
+      "installed": false
+    },
+    {
+      "name": "nl-to-constraints",
+      "displayName": "nl-to-constraints",
+      "description": "Transforms natural language requirements (user stories, verbal descriptions, business rules) into formal specifications and constraints. Use when converting informal requirements into structured, test...",
+      "category": "requirements",
+      "installed": false
+    },
+    {
+      "name": "python-repo-quickstart",
+      "displayName": "python-repo-quickstart",
+      "description": "Quickly analyzes Python repositories to understand their purpose, structure, and setup requirements. Use when Claude needs to onboard to a new Python codebase, understand project structure, identify e...",
+      "category": "documentation",
+      "installed": false
+    },
+    {
+      "name": "python-test-updater",
+      "displayName": "python-test-updater",
+      "description": "Updates Python test code to work with new versions of the code being tested. Use when Claude needs to: (1) Update tests after code changes, (2) Fix broken tests due to signature changes, (3) Update as...",
+      "category": "testing",
+      "installed": false
+    },
+    {
+      "name": "readme-generator",
+      "displayName": "readme-generator",
+      "description": "Generate comprehensive, user-friendly README.md files for code repositories. Use when creating documentation for new projects, updating existing READMEs, or improving project onboarding. Produces READ...",
+      "category": "documentation",
+      "installed": false
+    },
+    {
+      "name": "regression-root-cause-analyzer",
+      "displayName": "regression-root-cause-analyzer",
+      "description": "Locate root causes of failing regression tests by analyzing code changes, error messages, and test dependencies. Use when regression tests start failing after code changes, investigating test failures...",
+      "category": "debugging",
+      "installed": false
+    },
+    {
+      "name": "release-notes-writer",
+      "displayName": "release-notes-writer",
+      "description": "Automatically generate user-facing release notes from git commits, pull requests, changelogs, and code changes. Use when preparing software releases, creating version announcements, documenting what c...",
+      "category": "documentation",
+      "installed": false
+    },
+    {
+      "name": "req-to-test",
+      "displayName": "req-to-test",
+      "description": "Generates comprehensive test scenarios from requirements including BDD/Gherkin scenarios, unit tests, integration tests, and end-to-end test cases. Use when converting requirements, user stories, or s...",
+      "category": "testing",
+      "installed": false
+    },
+    {
+      "name": "requirement-comparison-reporter",
+      "displayName": "requirement-comparison-reporter",
+      "description": "Compares old and new requirement documents, analyzes code repository impact, and generates detailed modification plans. Use when Claude needs to: (1) Compare requirement versions and identify changes,...",
+      "category": "requirements",
+      "installed": false
+    },
+    {
+      "name": "requirement-coverage-checker",
+      "displayName": "requirement-coverage-checker",
+      "description": "Verify that design documents, code implementations, and tests fully cover all specified requirements. Use this skill when validating requirement traceability, conducting design reviews, assessing impl...",
+      "category": "requirements",
+      "installed": false
+    },
+    {
+      "name": "requirement-summarizer",
+      "displayName": "requirement-summarizer",
+      "description": "Extract and summarize core features, constraints, and priorities from requirement documents. Use when analyzing PRDs, RFCs, business requirements, user stories, epics, or any requirement documentation...",
+      "category": "requirements",
+      "installed": false
+    },
+    {
+      "name": "requirement-summary",
+      "displayName": "requirement-summary",
+      "description": "Generate concise, structured summaries of requirements for quick team understanding. Use when analyzing requirements from text documents (MD, TXT, DOCX) or technical specifications to create bullet-po...",
+      "category": "other",
+      "installed": false
+    },
+    {
+      "name": "rollback-strategy-advisor",
+      "displayName": "rollback-strategy-advisor",
+      "description": "Suggests rollback strategies for failed deployments across different platforms and failure types. Use when deployments fail and need to be reverted, including application code rollbacks, database migr...",
+      "category": "devops",
+      "installed": false
+    },
+    {
+      "name": "runtime-error-explainer",
+      "displayName": "runtime-error-explainer",
+      "description": "Explains runtime errors and compilation failures with actionable debugging guidance. Use when Python or Java code throws runtime exceptions (NullPointerException, TypeError, AttributeError, etc.), com...",
+      "category": "debugging",
+      "installed": false
+    },
+    {
+      "name": "scenario-generator",
+      "displayName": "scenario-generator",
+      "description": "Generate comprehensive test scenarios, user stories, and acceptance criteria from requirements and specifications. Use this skill when planning testing efforts, writing user stories, creating test cas...",
+      "category": "requirements",
+      "installed": false
+    },
+    {
+      "name": "specification-driven-generation",
+      "displayName": "specification-driven-generation",
+      "description": "Generate implementation code and tests from written specifications. Use when the user provides specifications (natural language descriptions, formal specs, requirements documents, API specs) and asks ...",
+      "category": "code-generation",
+      "installed": false
+    },
+    {
+      "name": "specification-generator",
+      "displayName": "specification-generator",
+      "description": "Generate formal specifications including preconditions, postconditions, invariants, and contracts from code or requirements. Use this skill when documenting APIs, creating formal verification annotati...",
+      "category": "requirements",
+      "installed": false
+    },
+    {
+      "name": "static-reasoning-verifier",
+      "displayName": "static-reasoning-verifier",
+      "description": "Verify code correctness statically against specifications using type checking, contract verification, and formal methods. Use when: (1) Verifying type safety and null safety in Python, Java, or C/C++ ...",
+      "category": "verification",
+      "installed": false
+    },
+    {
+      "name": "symbolic-execution-assistant",
+      "displayName": "symbolic-execution-assistant",
+      "description": "Performs symbolic execution to detect potential errors by exploring execution paths, solving path constraints, and generating test inputs. Use when you need to analyze code for bugs like null derefere...",
+      "category": "verification",
+      "installed": false
+    },
+    {
+      "name": "system-diagram-generator",
+      "displayName": "system-diagram-generator",
+      "description": "Creates visual representations of system structure including architecture diagrams, data flow diagrams, deployment diagrams, and sequence diagrams. Use when Claude needs to visualize system components...",
+      "category": "other",
+      "installed": false
+    },
+    {
+      "name": "technical-debt-analyzer",
+      "displayName": "technical-debt-analyzer",
+      "description": "Detect and analyze areas with high maintenance cost, poor design, or accumulated technical debt. Use this skill when reviewing codebases for quality issues, planning refactoring efforts, conducting co...",
+      "category": "quality",
+      "installed": false
+    },
+    {
+      "name": "template-code-generator",
+      "displayName": "template-code-generator",
+      "description": "Generate boilerplate code and project templates/skeletons automatically. Use when: (1) Creating new projects from scratch (React app, FastAPI backend, Express API), (2) Generating repetitive code patt...",
+      "category": "code-generation",
+      "installed": false
+    },
+    {
+      "name": "test-case-documentation",
+      "displayName": "test-case-documentation",
+      "description": "Generate comprehensive test case documentation from test code, test framework output, existing test docs, and source code context. Use when documenting test suites, creating test specifications, gener...",
+      "category": "testing",
+      "installed": false
+    },
+    {
+      "name": "test-driven-generation",
+      "displayName": "test-driven-generation",
+      "description": "Generate implementation code that passes existing unit tests. Use when the user provides test files (Python pytest/unittest, Java JUnit/TestNG) and asks Claude to implement the code to make those test...",
+      "category": "code-generation",
+      "installed": false
+    },
+    {
+      "name": "test-oracle-generator",
+      "displayName": "test-oracle-generator",
+      "description": "Generates automated test oracles to verify correct software behavior. Creates assertion-based oracles (expected values), property-based oracles (invariants), differential oracles (comparing implementa...",
+      "category": "testing",
+      "installed": false
+    },
+    {
+      "name": "test-suite-prioritizer",
+      "displayName": "test-suite-prioritizer",
+      "description": "Analyzes test suites and suggests optimal test execution order based on code change impact and project requirements. Use when optimizing CI/CD pipelines, deciding which tests to run before committing,...",
+      "category": "testing",
+      "installed": false
+    },
+    {
+      "name": "traceability-matrix-generator",
+      "displayName": "traceability-matrix-generator",
+      "description": "Builds traceability matrices connecting requirements to design documents to source code implementation, tracking the complete development lifecycle. Use when you need to verify implementation complete...",
+      "category": "other",
+      "installed": false
+    },
+    {
+      "name": "unit-test-generator",
+      "displayName": "unit-test-generator",
+      "description": "Automatically generates comprehensive unit tests for functions, classes, and modules. Use when you need to create tests for Python (pytest, unittest) or Java (JUnit, TestNG) code. Generates tests with...",
+      "category": "testing",
+      "installed": false
+    }
+  ],
+  "total": 74,
+  "generated_at": "2026-02-15"
+}

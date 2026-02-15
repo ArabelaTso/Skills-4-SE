@@ -1,0 +1,142 @@
+#!/usr/bin/env python3
+"""
+Generate static skills-data.json for GitHub Pages deployment.
+
+This script scans the repository for all SKILL.md files and creates
+a static JSON file containing all skills metadata.
+"""
+
+import os
+import json
+import yaml
+from pathlib import Path
+from datetime import datetime
+
+# Paths
+SCRIPT_DIR = Path(__file__).parent.resolve()
+REPO_ROOT = SCRIPT_DIR.parent.resolve()
+OUTPUT_FILE = SCRIPT_DIR / 'frontend' / 'skills-data.json'
+
+print(f"Script directory: {SCRIPT_DIR}")
+print(f"Repository root: {REPO_ROOT}")
+print(f"Output file: {OUTPUT_FILE}")
+
+# Directories to exclude
+EXCLUDED_DIRS = ['skill-manager', 'node_modules', 'skill-creator', '.git']
+
+# Category mapping (from app.js)
+CATEGORY_MAP = {
+    'code-generation': ['function-class-generator', 'module-component-generator', 'template-code-generator',
+                        'specification-driven-generation', 'test-driven-generation', 'incremental-python-programmer',
+                        'incremental-java-programmer'],
+    'testing': ['unit-test-generator', 'integration-test-generator', 'java-test-updater', 'flaky-test-detector',
+                'test-oracle-generator', 'edge-case-generator', 'directed-test-input-generator',
+                'fuzzing-input-generator', 'test-suite-prioritizer', 'coverage-enhancer',
+                'test-case-documentation', 'python-test-updater', 'req-to-test'],
+    'documentation': ['api-documentation-generator', 'code-comment-generator', 'markdown-document-structurer',
+                      'readme-generator', 'change-log-generator', 'code-change-summarizer', 'release-notes-writer',
+                      'legacy-code-summarizer', 'python-repo-quickstart', 'error-explanation-generator'],
+    'quality': ['code-review-assistant', 'code-smell-detector', 'design-smell-detector', 'code-optimizer',
+                'dead-code-eliminator', 'technical-debt-analyzer', 'code-pattern-extractor',
+                'code-search-assistant', 'component-boundary-identifier'],
+    'requirements': ['requirement-summarizer', 'requirement-coverage-checker', 'requirement-comparison-reporter',
+                     'ambiguity-detector', 'scenario-generator', 'specification-generator', 'nl-to-constraints'],
+    'devops': ['ci-pipeline-synthesizer', 'cd-pipeline-generator', 'containerization-assistant',
+               'environment-setup-assistant', 'rollback-strategy-advisor'],
+    'debugging': ['bug-localization', 'bug-to-patch-generator', 'runtime-error-explainer',
+                  'regression-root-cause-analyzer', 'conflict-analyzer'],
+    'verification': ['acsl-annotation-assistant', 'assertion-synthesizer', 'invariant-inference',
+                     'static-reasoning-verifier', 'symbolic-execution-assistant', 'counterexample-generator',
+                     'counterexample-explainer'],
+    'maintenance': ['code-refactoring-assistant', 'deprecated-api-updater', 'code-translation']
+}
+
+def get_skill_category(skill_name):
+    """Get category for a skill"""
+    for category, skills in CATEGORY_MAP.items():
+        if skill_name in skills:
+            return category
+    return 'other'
+
+def extract_metadata(skill_path):
+    """Extract metadata from SKILL.md file"""
+    skill_md = skill_path / 'SKILL.md'
+    if not skill_md.exists():
+        return None
+
+    try:
+        with open(skill_md, 'r', encoding='utf-8') as f:
+            content = f.read()
+
+        # Extract YAML frontmatter
+        if content.startswith('---'):
+            parts = content.split('---', 2)
+            if len(parts) >= 3:
+                frontmatter = yaml.safe_load(parts[1])
+
+                # Get description and truncate if needed
+                description = frontmatter.get('description', '')
+                if len(description) > 200:
+                    description = description[:200] + '...'
+
+                return {
+                    'name': skill_path.name,
+                    'displayName': frontmatter.get('name', skill_path.name),
+                    'description': description,
+                    'category': get_skill_category(skill_path.name),
+                    'installed': False
+                }
+    except Exception as e:
+        print(f"Error reading {skill_path.name}: {e}")
+
+    return None
+
+def scan_skills():
+    """Scan repository for all skills"""
+    skills = []
+
+    for item in REPO_ROOT.iterdir():
+        if item.is_dir() and not item.name.startswith('.') and item.name not in EXCLUDED_DIRS:
+            # Check if it's a skill directory (has SKILL.md)
+            if (item / 'SKILL.md').exists():
+                metadata = extract_metadata(item)
+                if metadata:
+                    skills.append(metadata)
+
+    # Sort by name
+    skills.sort(key=lambda x: x['name'])
+
+    return skills
+
+def main():
+    print("Scanning repository for skills...")
+    skills = scan_skills()
+    print(f"Found {len(skills)} skills")
+
+    # Create output data
+    output_data = {
+        'skills': skills,
+        'total': len(skills),
+        'generated_at': datetime.now().strftime('%Y-%m-%d')
+    }
+
+    # Write to file
+    OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)
+    with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
+        json.dump(output_data, f, indent=2, ensure_ascii=False)
+
+    print(f"Generated {OUTPUT_FILE}")
+    print(f"Total skills: {len(skills)}")
+
+    # Show category breakdown
+    categories = {}
+    for skill in skills:
+        cat = skill['category']
+        categories[cat] = categories.get(cat, 0) + 1
+
+    print("\nSkills by category:")
+    for cat, count in sorted(categories.items()):
+        print(f"  {cat}: {count}")
+
+if __name__ == '__main__':
+    main()
