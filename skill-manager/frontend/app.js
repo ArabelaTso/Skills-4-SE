@@ -253,10 +253,14 @@ async function loadSkills() {
 function renderSkills() {
     const container = document.getElementById('skillsList');
     const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+    console.log('Rendering skills with search term:', searchTerm);
 
     let filteredSkills = allSkills.filter(skill => {
+        // Search in both English and Chinese fields
         const matchesSearch = skill.name.toLowerCase().includes(searchTerm) ||
-                            skill.description.toLowerCase().includes(searchTerm);
+                            skill.description.toLowerCase().includes(searchTerm) ||
+                            (skill.displayName_zh && skill.displayName_zh.toLowerCase().includes(searchTerm)) ||
+                            (skill.description_zh && skill.description_zh.toLowerCase().includes(searchTerm));
 
         // Handle "installed" filter
         if (currentCategory === 'installed') {
@@ -267,8 +271,11 @@ function renderSkills() {
         return matchesSearch && matchesCategory;
     });
 
+    console.log('Filtered skills count:', filteredSkills.length);
+
     if (filteredSkills.length === 0) {
-        container.innerHTML = '<div class="loading">No skills found</div>';
+        const noResultsText = currentLang === 'zh' ? '未找到技能' : 'No skills found';
+        container.innerHTML = `<div class="loading">${noResultsText}</div>`;
         return;
     }
 
@@ -369,6 +376,7 @@ function handleSkillSelection(checkbox) {
 
 // Handle search
 function handleSearch() {
+    console.log('Search triggered');
     renderSkills();
 }
 
