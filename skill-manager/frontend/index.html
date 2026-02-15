@@ -176,7 +176,27 @@
                 </div>
 
                 <div class="help-section">
-                    <h3>5️⃣ 提示和技巧</h3>
+                    <h3>5️⃣ 本地部署 Skills Manager</h3>
+                    <p>如果你想在本地运行 Skills Manager：</p>
+
+                    <h4>方法一：Python HTTP 服务器（推荐）</h4>
+                    <div class="code-example">
+                        <code>git clone https://github.com/ArabelaTso/Skills-4-SE.git</code><br>
+                        <code>cd Skills-4-SE/skill-manager/frontend</code><br>
+                        <code>python3 -m http.server 8000</code>
+                    </div>
+                    <p>然后访问 <code>http://localhost:8000</code></p>
+
+                    <h4>方法二：直接打开 HTML</h4>
+                    <div class="code-example">
+                        <code>open index.html</code>
+                        <span class="comment"># macOS</span>
+                    </div>
+                    <p class="note">💡 注意：直接打开可能遇到 CORS 限制，推荐使用 HTTP 服务器</p>
+                </div>
+
+                <div class="help-section">
+                    <h3>6️⃣ 提示和技巧</h3>
                     <ul>
                         <li>💡 <strong>清晰描述需求：</strong>越具体的描述，Claude 越容易选择正确的 skill</li>
                         <li>🎯 <strong>提供上下文：</strong>告诉 Claude 你的代码语言、框架、项目类型</li>
@@ -310,7 +330,27 @@
                 </div>
 
                 <div class="help-section">
-                    <h3>5️⃣ Tips and Tricks</h3>
+                    <h3>5️⃣ Deploy Skills Manager Locally</h3>
+                    <p>If you want to run Skills Manager locally:</p>
+
+                    <h4>Method 1: Python HTTP Server (Recommended)</h4>
+                    <div class="code-example">
+                        <code>git clone https://github.com/ArabelaTso/Skills-4-SE.git</code><br>
+                        <code>cd Skills-4-SE/skill-manager/frontend</code><br>
+                        <code>python3 -m http.server 8000</code>
+                    </div>
+                    <p>Then visit <code>http://localhost:8000</code></p>
+
+                    <h4>Method 2: Open HTML Directly</h4>
+                    <div class="code-example">
+                        <code>open index.html</code>
+                        <span class="comment"># macOS</span>
+                    </div>
+                    <p class="note">💡 Note: Opening directly may encounter CORS restrictions, HTTP server is recommended</p>
+                </div>
+
+                <div class="help-section">
+                    <h3>6️⃣ Tips and Tricks</h3>
                     <ul>
                         <li>💡 <strong>Clear descriptions:</strong> The more specific your description, the easier for Claude to select the right skill</li>
                         <li>🎯 <strong>Provide context:</strong> Tell Claude your code language, framework, and project type</li>
