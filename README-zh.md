@@ -17,6 +17,10 @@
 
 **[🚀 访问 Skills Manager](https://ArabelaTso.github.io/Skills-4-SE/)**
 
+<p align="center">
+  <img src="./skill-manager-image.png" alt="Skills Manager 界面" width="100%">
+</p>
+
 通过我们的交互式网页界面浏览、搜索和安装技能。Skills Manager 提供：
 - 📦 一键安装所有 75+ 个技能
 - ✅ 选择性安装特定技能
