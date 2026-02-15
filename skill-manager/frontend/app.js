@@ -114,6 +114,7 @@ function setupEventListeners() {
     const searchInput = document.getElementById('searchInput');
     const helpBtn = document.getElementById('helpBtn');
     const langToggleMain = document.getElementById('langToggleMain');
+    const langToggle = document.getElementById('langToggle');
 
     if (installAllBtn) installAllBtn.addEventListener('click', installAllSkills);
     if (installSelectedBtn) installSelectedBtn.addEventListener('click', installSelectedSkills);
@@ -121,6 +122,7 @@ function setupEventListeners() {
     if (searchInput) searchInput.addEventListener('input', handleSearch);
     if (helpBtn) helpBtn.addEventListener('click', openHelpModal);
     if (langToggleMain) langToggleMain.addEventListener('click', toggleLanguage);
+    if (langToggle) langToggle.addEventListener('click', toggleHelpLanguage);
 
     // Help modal
     const modal = document.getElementById('helpModal');
@@ -149,6 +151,32 @@ function setupEventListeners() {
 function toggleLanguage() {
     currentLang = currentLang === 'en' ? 'zh' : 'en';
     localStorage.setItem('skillsManagerLang', currentLang);
+    updateLanguage();
+}
+
+// Toggle help modal language
+function toggleHelpLanguage() {
+    currentLang = currentLang === 'en' ? 'zh' : 'en';
+    localStorage.setItem('skillsManagerLang', currentLang);
+
+    const zhContent = document.getElementById('helpContentZh');
+    const enContent = document.getElementById('helpContentEn');
+    const langToggle = document.getElementById('langToggle');
+    const helpTitle = document.getElementById('helpTitle');
+
+    if (currentLang === 'zh') {
+        zhContent.style.display = 'block';
+        enContent.style.display = 'none';
+        langToggle.textContent = 'EN';
+        helpTitle.textContent = '📖 如何使用 Skills';
+    } else {
+        zhContent.style.display = 'none';
+        enContent.style.display = 'block';
+        langToggle.textContent = '中文';
+        helpTitle.textContent = '📖 How to Use Skills';
+    }
+
+    // Also update main UI
     updateLanguage();
 }
 
@@ -398,6 +426,24 @@ function showNotification(message, type = 'info') {
 // Help modal functions
 function openHelpModal() {
     const modal = document.getElementById('helpModal');
+    const zhContent = document.getElementById('helpContentZh');
+    const enContent = document.getElementById('helpContentEn');
+    const helpTitle = document.getElementById('helpTitle');
+    const langToggle = document.getElementById('langToggle');
+
+    // Show content based on current language
+    if (currentLang === 'zh') {
+        zhContent.style.display = 'block';
+        enContent.style.display = 'none';
+        helpTitle.textContent = '📖 如何使用 Skills';
+        if (langToggle) langToggle.textContent = 'EN';
+    } else {
+        zhContent.style.display = 'none';
+        enContent.style.display = 'block';
+        helpTitle.textContent = '📖 How to Use Skills';
+        if (langToggle) langToggle.textContent = '中文';
+    }
+
     modal.classList.add('show');
     document.body.style.overflow = 'hidden';
 }
@@ -407,41 +453,6 @@ function closeHelpModal() {
     modal.classList.remove('show');
     document.body.style.overflow = 'auto';
 }
-
-// Language toggle
-let currentLang = 'zh'; // Default to Chinese
-
-function toggleLanguage() {
-    const zhContent = document.getElementById('helpContentZh');
-    const enContent = document.getElementById('helpContentEn');
-    const langToggle = document.getElementById('langToggle');
-    const helpTitle = document.getElementById('helpTitle');
-
-    if (currentLang === 'zh') {
-        // Switch to English
-        zhContent.style.display = 'none';
-        enContent.style.display = 'block';
-        langToggle.textContent = '中文';
-        helpTitle.textContent = '📖 How to Use Skills';
-        currentLang = 'en';
-    } else {
-        // Switch to Chinese
-        zhContent.style.display = 'block';
-        enContent.style.display = 'none';
-        langToggle.textContent = 'EN';
-        helpTitle.textContent = '📖 如何使用 Skills';
-        currentLang = 'zh';
-    }
-}
-
-// Add language toggle event listener
-document.addEventListener('DOMContentLoaded', () => {
-    const langToggleBtn = document.getElementById('langToggle');
-    if (langToggleBtn) {
-        langToggleBtn.addEventListener('click', toggleLanguage);
-    }
-});
-
 // Keyboard shortcut for help (? key)
 document.addEventListener('keydown', (e) => {
     if (e.key === '?' && !e.ctrlKey && !e.metaKey && !e.altKey) {
