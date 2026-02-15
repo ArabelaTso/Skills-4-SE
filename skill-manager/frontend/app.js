@@ -213,20 +213,34 @@ function updateLanguage() {
 // Load skills from static JSON file
 async function loadSkills() {
     try {
+        console.log('Loading skills from:', SKILLS_DATA_URL);
         const response = await fetch(SKILLS_DATA_URL);
-        if (!response.ok) throw new Error('Failed to load skills data');
+        console.log('Response status:', response.status);
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
 
         const data = await response.json();
+        console.log('Loaded skills data:', data);
+
+        if (!data.skills || !Array.isArray(data.skills)) {
+            throw new Error('Invalid data format: skills array not found');
+        }
+
         allSkills = data.skills;
+        console.log('Total skills loaded:', allSkills.length);
         renderSkills();
         updateStats();
     } catch (error) {
         console.error('Error loading skills:', error);
-        showNotification('Failed to load skills data. Please refresh the page.', 'error');
+        const errorMsg = error.message || 'Unknown error';
+        showNotification(`Failed to load skills: ${errorMsg}`, 'error');
         document.getElementById('skillsList').innerHTML = `
             <div class="loading">
                 ❌ Failed to load skills<br>
-                <small>Error loading skills-data.json</small>
+                <small>Error: ${errorMsg}</small><br>
+                <small>Check browser console for details</small>
             </div>
         `;
     }
