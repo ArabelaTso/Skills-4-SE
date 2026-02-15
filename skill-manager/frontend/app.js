@@ -5,6 +5,69 @@ const SKILLS_DATA_URL = 'skills-data.json';
 let allSkills = [];
 let selectedSkills = new Set();
 let currentCategory = 'all';
+let currentLang = 'en'; // Default language
+
+// i18n translations
+const translations = {
+    en: {
+        subtitle: 'Manage and install Claude Code skills for software engineering',
+        infoBanner: 'ℹ️ Running in static mode. Click install buttons to get installation commands.',
+        installAll: '📦 Install All Skills',
+        installSelected: '✅ Install Selected Skills',
+        refresh: '🔄 Refresh',
+        help: '📖 How to Use',
+        searchPlaceholder: '🔍 Search skills by name or description...',
+        filterAll: 'All',
+        filterInstalled: '✓ Installed',
+        filterCodeGen: 'Code Generation',
+        filterTesting: 'Testing',
+        filterDocs: 'Documentation',
+        filterQuality: 'Code Quality',
+        filterReqs: 'Requirements',
+        filterDevOps: 'DevOps',
+        filterDebug: 'Debugging',
+        filterVerify: 'Verification',
+        filterMaint: 'Maintenance',
+        totalSkills: 'skills available',
+        selected: 'selected',
+        loading: 'Loading skills...',
+        failedLoad: '❌ Failed to load skills',
+        errorLoading: 'Error loading skills-data.json',
+        installCommand: 'Installation Command',
+        copyCommand: 'Copy Command',
+        copied: 'Copied!',
+        close: 'Close'
+    },
+    zh: {
+        subtitle: '管理和安装面向软件工程的 Claude Code 技能',
+        infoBanner: 'ℹ️ 静态模式运行中。点击安装按钮获取安装命令。',
+        installAll: '📦 安装所有技能',
+        installSelected: '✅ 安装选中的技能',
+        refresh: '🔄 刷新',
+        help: '📖 使用说明',
+        searchPlaceholder: '🔍 按名称或描述搜索技能...',
+        filterAll: '全部',
+        filterInstalled: '✓ 已安装',
+        filterCodeGen: '代码生成',
+        filterTesting: '测试',
+        filterDocs: '文档',
+        filterQuality: '代码质量',
+        filterReqs: '需求',
+        filterDevOps: 'DevOps',
+        filterDebug: '调试',
+        filterVerify: '验证',
+        filterMaint: '维护',
+        totalSkills: '个可用技能',
+        selected: '个已选中',
+        loading: '加载技能中...',
+        failedLoad: '❌ 加载技能失败',
+        errorLoading: '加载 skills-data.json 出错',
+        installCommand: '安装命令',
+        copyCommand: '复制命令',
+        copied: '已复制！',
+        close: '关闭'
+    }
+};
 
 // Category mapping
 const categoryMap = {
@@ -35,6 +98,10 @@ const categoryMap = {
 
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
+    // Load saved language preference
+    currentLang = localStorage.getItem('skillsManagerLang') || 'en';
+    updateLanguage();
+
     loadSkills();
     setupEventListeners();
 });
@@ -46,12 +113,14 @@ function setupEventListeners() {
     const refreshBtn = document.getElementById('refresh');
     const searchInput = document.getElementById('searchInput');
     const helpBtn = document.getElementById('helpBtn');
+    const langToggleMain = document.getElementById('langToggleMain');
 
     if (installAllBtn) installAllBtn.addEventListener('click', installAllSkills);
     if (installSelectedBtn) installSelectedBtn.addEventListener('click', installSelectedSkills);
     if (refreshBtn) refreshBtn.addEventListener('click', loadSkills);
     if (searchInput) searchInput.addEventListener('input', handleSearch);
     if (helpBtn) helpBtn.addEventListener('click', openHelpModal);
+    if (langToggleMain) langToggleMain.addEventListener('click', toggleLanguage);
 
     // Help modal
     const modal = document.getElementById('helpModal');
@@ -74,6 +143,43 @@ function setupEventListeners() {
             renderSkills();
         });
     });
+}
+
+// Language toggle
+function toggleLanguage() {
+    currentLang = currentLang === 'en' ? 'zh' : 'en';
+    localStorage.setItem('skillsManagerLang', currentLang);
+    updateLanguage();
+}
+
+// Update UI language
+function updateLanguage() {
+    const t = translations[currentLang];
+
+    // Update all elements with data-i18n attribute
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (t[key]) {
+            el.textContent = t[key];
+        }
+    });
+
+    // Update placeholder
+    const searchInput = document.getElementById('searchInput');
+    if (searchInput && t.searchPlaceholder) {
+        searchInput.placeholder = t.searchPlaceholder;
+    }
+
+    // Update language toggle button
+    const langToggleMain = document.getElementById('langToggleMain');
+    if (langToggleMain) {
+        langToggleMain.textContent = currentLang === 'en' ? '中文' : 'EN';
+    }
+
+    // Update stats if skills are loaded
+    if (allSkills.length > 0) {
+        updateStats();
+    }
 }
 
 // Load skills from static JSON file
@@ -205,12 +311,20 @@ function handleSearch() {
 
 // Update stats
 function updateStats() {
+    const t = translations[currentLang];
     const installedCount = allSkills.filter(s => s.installed).length;
     const availableCount = allSkills.length - installedCount;
 
-    document.getElementById('totalSkills').textContent =
-        `${allSkills.length} skills (${installedCount} installed, ${availableCount} available)`;
-    document.getElementById('selectedCount').textContent = `${selectedSkills.size} selected`;
+    const statsText = currentLang === 'en'
+        ? `${allSkills.length} skills (${installedCount} installed, ${availableCount} available)`
+        : `${allSkills.length} 个技能（${installedCount} 个已安装，${availableCount} 个可用）`;
+
+    const selectedText = currentLang === 'en'
+        ? `${selectedSkills.size} selected`
+        : `${selectedSkills.size} 个已选中`;
+
+    document.getElementById('totalSkills').textContent = statsText;
+    document.getElementById('selectedCount').textContent = selectedText;
 }
 
 // Install all skills - GitHub Pages version (provides instructions)

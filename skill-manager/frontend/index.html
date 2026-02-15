@@ -9,44 +9,49 @@
 <body>
     <div class="container">
         <header>
-            <h1>🛠️ Skills Manager</h1>
-            <p class="subtitle">Manage and install Claude Code skills for software engineering</p>
-            <div class="info-banner">
+            <div class="header-top">
+                <div>
+                    <h1>🛠️ Skills Manager</h1>
+                    <p class="subtitle" data-i18n="subtitle">Manage and install Claude Code skills for software engineering</p>
+                </div>
+                <button id="langToggleMain" class="lang-toggle-main">中文</button>
+            </div>
+            <div class="info-banner" data-i18n="infoBanner">
                 ℹ️ Running in static mode. Click install buttons to get installation commands.
             </div>
         </header>
 
         <div class="actions">
             <button id="installAll" class="btn btn-primary">
-                📦 Install All Skills
+                <span data-i18n="installAll">📦 Install All Skills</span>
             </button>
             <button id="installSelected" class="btn btn-secondary">
-                ✅ Install Selected Skills
+                <span data-i18n="installSelected">✅ Install Selected Skills</span>
             </button>
             <button id="refresh" class="btn btn-tertiary">
-                🔄 Refresh
+                <span data-i18n="refresh">🔄 Refresh</span>
             </button>
             <button id="helpBtn" class="btn btn-help">
-                📖 How to Use
+                <span data-i18n="help">📖 How to Use</span>
             </button>
         </div>
 
         <div class="search-bar">
-            <input type="text" id="searchInput" placeholder="🔍 Search skills by name or description...">
+            <input type="text" id="searchInput" data-i18n-placeholder="searchPlaceholder" placeholder="🔍 Search skills by name or description...">
         </div>
 
         <div class="filter-tabs">
-            <button class="tab active" data-category="all">All</button>
-            <button class="tab" data-category="installed">✓ Installed</button>
-            <button class="tab" data-category="code-generation">Code Generation</button>
-            <button class="tab" data-category="testing">Testing</button>
-            <button class="tab" data-category="documentation">Documentation</button>
-            <button class="tab" data-category="quality">Code Quality</button>
-            <button class="tab" data-category="requirements">Requirements</button>
-            <button class="tab" data-category="devops">DevOps</button>
-            <button class="tab" data-category="debugging">Debugging</button>
-            <button class="tab" data-category="verification">Verification</button>
-            <button class="tab" data-category="maintenance">Maintenance</button>
+            <button class="tab active" data-category="all" data-i18n="filterAll">All</button>
+            <button class="tab" data-category="installed" data-i18n="filterInstalled">✓ Installed</button>
+            <button class="tab" data-category="code-generation" data-i18n="filterCodeGen">Code Generation</button>
+            <button class="tab" data-category="testing" data-i18n="filterTesting">Testing</button>
+            <button class="tab" data-category="documentation" data-i18n="filterDocs">Documentation</button>
+            <button class="tab" data-category="quality" data-i18n="filterQuality">Code Quality</button>
+            <button class="tab" data-category="requirements" data-i18n="filterReqs">Requirements</button>
+            <button class="tab" data-category="devops" data-i18n="filterDevOps">DevOps</button>
+            <button class="tab" data-category="debugging" data-i18n="filterDebug">Debugging</button>
+            <button class="tab" data-category="verification" data-i18n="filterVerify">Verification</button>
+            <button class="tab" data-category="maintenance" data-i18n="filterMaint">Maintenance</button>
         </div>
 
         <div class="stats">
