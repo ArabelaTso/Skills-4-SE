@@ -42,7 +42,6 @@ A Skill in this repo is more than a prompt:
 > 🤗 Think of this repo as a *standard library of software engineering capabilities* for LLM-powered systems.
 
 
-
 ---
 ## 🔁 SE Lifecycle-Oriented Skills
 
@@ -57,37 +56,27 @@ Skills are primarily organized by **Software Engineering phases**:
     - **Traceability & Coverage**
         - [Requirement to Test](req-to-test) – Automatically generate test cases from requirements
         - [Requirement to Contraints](nl-to-constraints) -- Transforms natural language requirements into into formal specifications and constraints (structured, testable specifications with explicit constraints).
-        - [Traceability Matrix Generator]() – Build a traceability matrix connecting requirements → design → implementation → tests
-        - [Requirement Coverage Checker]() – Check whether existing design/code covers all requirements
+        - [Traceability Matrix Generator](traceability-matrix-generator) – Build a traceability matrix connecting requirements → design → implementation → tests
+        - [Requirement Coverage Checker](requirement-coverage-checker) – Check whether existing design/code covers all requirements
 
     - **Documentation & Communication**
         - [Requirement Doc Formatter]() – Generate clear, standardized requirement documents
-        - [Requirement Summary Report]() – Generate summary reports for quick team understanding
-
-
+        - [Requirement Summary]() – Generate a brief summary for quick team understanding
 
 - 💡 **Software Design**
     - **Architecture & High-Level Design**
         - [Architecture Recovery]() – Extract high-level architecture from existing systems or requirements
-        - [Component Boundary Identifier]() – Identify boundaries between modules or components
         - [System Diagram Generator]() – Create visual representations of system structure
         - [Design Pattern Suggestor](design-pattern-suggestor) – Recommend suitable design patterns for a given requirement
 
     - **Interface & API Design**
         - [API Design Assistant](api-design-assistant) – Suggest API endpoints, parameters, and return types
-        - [Data Model Designer]() – Generate entity-relationship models or class diagrams
-        - [Consistency Checker]() – Ensure interfaces and APIs are consistent across modules
 
     - **Design Quality & Analysis**
-        - [Design Smell Detector]() – Identify potential issues like high coupling or low cohesion
+        - [Design Smell Detector](design-smell-detector) – Identify potential issues like high coupling or low cohesion
         - [Complexity Analyzer]() – Measure and analyze design complexity
         - [Impact Analysis Assistant]() – Evaluate the effect of design changes on the system
         - [Trade-off Evaluator]() – Compare alternative designs and suggest trade-offs
-
-    - **Behavioral & Sequence Design**
-        - [Sequence Diagram Generator]() – Create sequence diagrams from requirements or code
-        - [Interaction Flow Synthesizer]() – Generate workflows for components or users
-        - [State Machine Designer]() – Model system states and transitions for components
 
     - **Design Documentation**
         - [Design Doc Formatter]() – Standardize and document design decisions
@@ -102,11 +91,11 @@ Skills are primarily organized by **Software Engineering phases**:
         - [Template/Skeleton-based Code Generator](template-code-generator) – Produce boilerplate code or project templates/skeleton automatically
 
     - **Refactoring & Optimization**
-        - [Code Refactoring Assistant]() – Suggest and apply refactorings to improve readability and maintainability
+        - [Refactoring Assistant](code-refactoring-assistant) – Suggest ongoing code improvements to enhance maintainability
         - [Code Optimizer](code-optimizer) – Improve code performance, memory usage, or efficiency
         - [Dead Code Eliminator](dead-code-eliminator) – Identify and remove unused or redundant code
         - [Code Review Assistant](code-review-assistant) - Identify bugs, security issues, performance problems, code quality concerns, and best practice violations
-        - [Bad Code Smell Detection]() - Identifies and reports code smells that may indicate poor design or maintainability issues
+        - [Bad Code Smell Detection](code-smell-detector) - Identifies and reports code smells that may indicate poor design or maintainability issues
 
     - **TDD & SDD**
         - [Test-Driven Code Generator (TDD)](test-driven-generation) – Generate implementation that passes a given set of unit tests (Support Python and Java primarily; Handle simple unit tests (isolated functions/methods))
@@ -114,7 +103,6 @@ Skills are primarily organized by **Software Engineering phases**:
         
     - **Multi-Language & Translation**
         - [Code Translation](code-translation) – Convert code between programming languages while preserving functionality
-
 
 - 👩🏽‍💻 **Testing and Validation**
     - **Test Generation**
@@ -127,7 +115,7 @@ Skills are primarily organized by **Software Engineering phases**:
     - **Assertion & Oracle Synthesis**
         - [Coverage Enhancer](coverage-enhancer) – Suggest additional unit tests to improve test coverage
         - [Assertion Synthesizer](assertion-synthesizer) – Generate assertions for automated test cases (*Scenarios*: Add tests to untested code, Enhance existing tests, and Capture actual behavior. *Complexity*: Simple and complex assertions. *Programming Languages*: Multi-languages.)
-        - [Test Oracle Generator]() – Create automated oracles to verify correct behavior
+        - [Test Oracle Generator](test-oracle-generator) – Create automated oracles to verify correct behavior
 
     - **Test Coverage Analysis and Enhancement**
         - [Scenario Generator](scenario-generator) – Generate test scenarios or user stories based on requirements
@@ -135,30 +123,29 @@ Skills are primarily organized by **Software Engineering phases**:
         - [Test Suite Prioritizer](test-suite-prioritizer) – Suggest which tests to run first based on impact
         - [Requirement Coverage Checker for Test]() – Check whether existing tests covers all requirements
 
-    - **Flaky & Failure Analysis**
-        - [Flaky Test Detector]() – Identify non-deterministic or unreliable tests
+    - **Failure Analysis**
         - [Regression Root Cause Analyzer](regression-root-cause-analyzer) – Locate root causes of failing regression tests
         - [Error Explanation Generator](error-explanation-generator) – Explain why tests fail and provide actionable guidance
         - [Runtime Error Explanation Generator](runtime-error-explainer) – Explains runtime errors and compilation failures with actionable debugging guidance
 
     - **Test Documentation & Reporting**
-        - [Test Case Documentation]() – Summarize the documentation for test cases
+        - [Test Case Documentation](test-case-documentation) – Summarize the documentation for test cases
 
 
 - ✅ **Formal Verification**
     - **Specification & Annotation**
-        - [Interface Specification Generator]() – Produce formal or structured interface specifications
+        - [Interface Specification Generator](interface-specification-generator) – Produce formal or structured interface specifications
         - [ACSL Annotation Assistant](acsl-annotation-assistant) – Create ACSL or other formal annotations for C/C++ programs
         - [Invariant Inference](invariant-inference) – Automatically infer loop or function invariants
-        - [Specification Generator]() – Generate formal specifications (pre/postconditions, invariants) from code or requirements
+        - [Specification Generator](specification-generator) – Generate formal specifications (pre/postconditions, invariants) from code or requirements
 
     - **Formal Verification**
-        - [Static Reasoning Verifier]() – Check code correctness statically against specifications
-        - [Symbolic Execution Assistant]() – Perform symbolic execution to detect potential errors
+        - [Static Reasoning Verifier](static-reasoning-verifier) – Check code correctness statically against specifications
+        - [Symbolic Execution Assistant](symbolic-execution-assistant) – Perform symbolic execution to detect potential errors
 
     - **Counterexample Analysis**
-        - [Counterexample Generator]() – Produce counterexamples when verification fails
-        - [Counterexample Explainer]() – Explain why a counterexample violates the specification
+        - [Counterexample Generator](counterexample-generator) – Produce counterexamples when verification fails
+        - [Counterexample Explainer](counterexample-explainer) – Explain why a counterexample violates the specification
 
 
 - 💻 **Software Deployment**
@@ -166,17 +153,15 @@ Skills are primarily organized by **Software Engineering phases**:
         - [Environment Setup Assistant](environment-setup-assistant) – Generate setup scripts or instructions for target environments
         - [Configuration Generator](configuration-generator) – Produce configuration files for applications, services, or infrastructure
         - [Dependency Resolver](dependency-resolver) – Identify and manage software dependencies before deployment
-        - [Containerization Assistant]() – Generate Dockerfiles or containerization scripts
+        - [Containerization Assistant](containerization-assistant) – Generate Dockerfiles or containerization scripts
 
     - **Continuous Integration & Delivery (CI/CD)**
         - [CI Pipeline Synthesizer]() – Create CI pipelines for automated building and testing
         - [CD Pipeline Generator]() – Produce scripts for automated deployment to staging or production
-        - [Release Automation Assistant]() – Automate versioning, packaging, and release notes
 
     - **Deployment Verification & Testing**
         - [Integration Validation Assistant]() – Ensure deployed components integrate correctly
         - [Rollback Strategy Advisor](rollback-strategy-advisor) – Suggest rollback strategies for failed deployments
-        - [Monitoring Configuration Assistant]() – Set up automated monitoring or alerting after deployment
 
     - **Monitoring & Maintenance**
         - [Deployment Metrics Analyzer]() – Collect and analyze deployment metrics (uptime, performance, errors)
@@ -214,7 +199,7 @@ Skills are primarily organized by **Software Engineering phases**:
     - **Continuous Improvement**
         - [Refactoring Assistant](code-refactoring-assistant) – Suggest ongoing code improvements to enhance maintainability
         - [Code Pattern Extractor]() – Identify reusable code patterns for future development
-        - [Best Practice Advisor]() – Recommend best practices for code maintainability and quality
+        
 
 
 ---
