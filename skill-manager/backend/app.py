@@ -46,9 +46,12 @@ def get_skills():
     """Get list of all available skills"""
     skills = []
 
+    # Directories to exclude from skill list
+    excluded_dirs = ['skill-manager', 'node_modules', 'skill-creator']
+
     # Scan repository for skill directories
     for item in SKILLS_DIR.iterdir():
-        if item.is_dir() and not item.name.startswith('.') and not item.name in ['skill-manager', 'node_modules']:
+        if item.is_dir() and not item.name.startswith('.') and not item.name in excluded_dirs:
             # Check if it's a skill directory (has SKILL.md)
             if (item / 'SKILL.md').exists():
                 metadata = get_skill_metadata(item)
