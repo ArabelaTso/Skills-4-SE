@@ -3,6 +3,7 @@ const SKILLS_DATA_URL = 'skills-data.json';
 
 // State
 let allSkills = [];
+let allSkillsData = {}; // Store full data including category translations
 let selectedSkills = new Set();
 let currentCategory = 'all';
 let currentLang = 'en'; // Default language
@@ -204,8 +205,9 @@ function updateLanguage() {
         langToggleMain.textContent = currentLang === 'en' ? '中文' : 'EN';
     }
 
-    // Update stats if skills are loaded
+    // Re-render skills with new language
     if (allSkills.length > 0) {
+        renderSkills();
         updateStats();
     }
 }
@@ -228,6 +230,7 @@ async function loadSkills() {
             throw new Error('Invalid data format: skills array not found');
         }
 
+        allSkillsData = data; // Store full data
         allSkills = data.skills;
         console.log('Total skills loaded:', allSkills.length);
         renderSkills();
@@ -293,21 +296,39 @@ function renderSkills() {
 function createSkillCard(skill) {
     const isSelected = selectedSkills.has(skill.name);
     const category = getSkillCategory(skill.name);
-    const categoryLabel = category.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+    const t = translations[currentLang];
+
+    // Get localized category name
+    const categoryLabel = currentLang === 'zh' && allSkillsData.category_names_zh && allSkillsData.category_names_zh[category]
+        ? allSkillsData.category_names_zh[category]
+        : category.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+
+    // Get localized skill name and description
+    const skillName = currentLang === 'zh' && skill.displayName_zh
+        ? skill.displayName_zh
+        : formatSkillName(skill.name);
+
+    const skillDescription = currentLang === 'zh' && skill.description_zh
+        ? skill.description_zh
+        : skill.description;
+
+    const statusText = skill.installed
+        ? (currentLang === 'zh' ? '✓ 已安装' : '✓ Installed')
+        : (currentLang === 'zh' ? '○ 可用' : '○ Available');
 
     return `
         <div class="skill-card ${isSelected ? 'selected' : ''} ${skill.installed ? 'installed' : ''}"
              data-skill="${skill.name}">
             <div class="skill-header">
-                <div class="skill-name">${formatSkillName(skill.name)}</div>
+                <div class="skill-name">${skillName}</div>
                 <input type="checkbox" class="skill-checkbox"
                        ${isSelected ? 'checked' : ''}
                        ${skill.installed ? 'disabled' : ''}>
             </div>
             <div class="skill-category cat-${category}">${categoryLabel}</div>
-            <div class="skill-description">${skill.description}</div>
+            <div class="skill-description">${skillDescription}</div>
             <span class="skill-status ${skill.installed ? 'status-installed' : 'status-available'}">
-                ${skill.installed ? '✓ Installed' : '○ Available'}
+                ${statusText}
             </span>
         </div>
     `;

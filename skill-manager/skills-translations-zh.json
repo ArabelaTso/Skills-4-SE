@@ -1,0 +1,300 @@
+{
+  "category_names": {
+    "code-generation": "代码生成",
+    "testing": "测试",
+    "documentation": "文档",
+    "quality": "代码质量",
+    "requirements": "需求",
+    "devops": "DevOps",
+    "debugging": "调试",
+    "verification": "验证",
+    "maintenance": "维护",
+    "other": "其他"
+  },
+  "skills": {
+    "acsl-annotation-assistant": {
+      "name": "ACSL 注解助手",
+      "description": "为 C/C++ 程序创建 ACSL（ANSI/ISO C 规范语言）形式化注解。用于形式化验证、添加函数契约（requires/ensures）、循环不变量、断言、内存安全注解或任何 ACSL 规范。"
+    },
+    "ambiguity-detector": {
+      "name": "歧义检测器",
+      "description": "检测和分析软件需求和用户故事中的模糊语言。用于审查需求文档、用户故事、规范或任何软件需求文本，以识别可能导致误解的模糊表述。"
+    },
+    "api-design-assistant": {
+      "name": "API 设计助手",
+      "description": "设计和审查 API，提供端点、参数、返回类型和最佳实践建议。用于从需求设计新 API、审查现有 API 设计、生成 API 文档或验证 API 一致性。"
+    },
+    "api-documentation-generator": {
+      "name": "API 文档生成器",
+      "description": "从仓库源代码生成全面的 API 文档，包括 OpenAPI 规范、代码注释、文档字符串和现有文档。用于记录 API、创建 API 参考指南或从代码库总结 API 功能。"
+    },
+    "assertion-synthesizer": {
+      "name": "断言合成器",
+      "description": "为自动化测试用例生成断言。支持简单和复杂的断言，适用于多种编程语言。用于为未测试的代码添加测试、增强现有测试或捕获实际行为。"
+    },
+    "bug-localization": {
+      "name": "Bug 定位器",
+      "description": "在代码中定位 bug。分析堆栈跟踪和日志，建议可能的 bug 位置。"
+    },
+    "bug-to-patch-generator": {
+      "name": "Bug 到补丁生成器",
+      "description": "为识别的 bug 生成补丁。创建最小修复，包含修复的测试用例。"
+    },
+    "cd-pipeline-generator": {
+      "name": "CD 流水线生成器",
+      "description": "创建用于自动化部署的 CD 流水线配置。支持 AWS、GCP 和 Azure 云平台，包含环境分离、审批门和回滚功能。"
+    },
+    "change-log-generator": {
+      "name": "变更日志生成器",
+      "description": "从提交创建变更日志。按类型分类变更，遵循语义化版本控制。"
+    },
+    "ci-pipeline-synthesizer": {
+      "name": "CI 流水线合成器",
+      "description": "生成用于自动化构建和测试的 CI 流水线配置。支持 GitHub Actions，包含依赖缓存和矩阵测试。包含 Node.js、Python、Go 和 Rust 项目的模板。"
+    },
+    "code-change-summarizer": {
+      "name": "代码变更总结器",
+      "description": "从代码变更生成结构化的拉取请求描述。记录带有迁移指南的破坏性变更，添加测试说明和上下文增强。"
+    },
+    "code-comment-generator": {
+      "name": "代码注释生成器",
+      "description": "生成内联代码注释。解释复杂逻辑，遵循文档标准。"
+    },
+    "code-optimizer": {
+      "name": "代码优化器",
+      "description": "优化代码性能。识别瓶颈，建议算法改进。"
+    },
+    "code-pattern-extractor": {
+      "name": "代码模式提取器",
+      "description": "分析代码库以识别可重用的代码模式和重复代码。生成包含重构建议的模式目录，为高价值模式创建可重用的模板代码。"
+    },
+    "code-refactoring-assistant": {
+      "name": "代码重构助手",
+      "description": "建议重构机会。应用重构模式，确保行为保持。"
+    },
+    "code-review-assistant": {
+      "name": "代码审查助手",
+      "description": "执行自动化代码审查。识别问题并提出改进建议，检查编码标准合规性。"
+    },
+    "code-search-assistant": {
+      "name": "代码搜索助手",
+      "description": "在仓库中搜索与给定代码片段相关的代码。根据调用链、文本和功能相似性对结果进行排名，输出带有匹配代码片段的排名文件列表。"
+    },
+    "code-smell-detector": {
+      "name": "代码异味检测器",
+      "description": "检测代码异味和反模式。建议重构机会，按严重程度分类异味。"
+    },
+    "code-translation": {
+      "name": "代码翻译器",
+      "description": "在语言之间翻译代码。保持功能，适应目标语言习惯用法。"
+    },
+    "component-boundary-identifier": {
+      "name": "组件边界识别器",
+      "description": "识别模块/组件边界。检测边界违规，分析架构分离。"
+    },
+    "conflict-analyzer": {
+      "name": "冲突分析器",
+      "description": "分析合并冲突。建议冲突解决方案，解释冲突的变更。"
+    },
+    "containerization-assistant": {
+      "name": "容器化助手",
+      "description": "创建 Dockerfile 和容器配置。优化容器镜像，支持多阶段构建。"
+    },
+    "counterexample-explainer": {
+      "name": "反例解释器",
+      "description": "解释反例。提供调试见解，建议修复方法。"
+    },
+    "counterexample-generator": {
+      "name": "反例生成器",
+      "description": "为失败的证明生成反例。从反例创建测试用例，帮助理解验证失败。"
+    },
+    "coverage-enhancer": {
+      "name": "覆盖率增强器",
+      "description": "识别未覆盖的代码路径。生成测试以提高覆盖率，报告覆盖率指标。"
+    },
+    "dead-code-eliminator": {
+      "name": "死代码消除器",
+      "description": "识别未使用的代码。安全删除死代码，报告消除机会。"
+    },
+    "dependency-resolver": {
+      "name": "依赖解析器",
+      "description": "解决依赖冲突。建议兼容版本，分析依赖树。"
+    },
+    "deprecated-api-updater": {
+      "name": "废弃 API 更新器",
+      "description": "更新废弃的 API 使用。建议现代替代方案，自动化 API 迁移。"
+    },
+    "design-pattern-suggestor": {
+      "name": "设计模式建议器",
+      "description": "建议适当的设计模式。解释模式适用性，提供实现指导。"
+    },
+    "design-smell-detector": {
+      "name": "设计异味检测器",
+      "description": "识别架构和设计问题。检测设计原则违规，建议设计改进。"
+    },
+    "directed-test-input-generator": {
+      "name": "定向测试输入生成器",
+      "description": "生成针对性的测试输入。专注于特定代码路径，使用符号执行技术。"
+    },
+    "edge-case-generator": {
+      "name": "边界情况生成器",
+      "description": "识别并生成边界情况测试。覆盖边界条件，包含极端情况和错误场景。"
+    },
+    "environment-setup-assistant": {
+      "name": "环境设置助手",
+      "description": "生成环境设置脚本。管理依赖和配置，支持多个平台。"
+    },
+    "error-explanation-generator": {
+      "name": "错误解释生成器",
+      "description": "解释错误消息。提供上下文和解决方案，帮助调试。"
+    },
+    "flaky-test-detector": {
+      "name": "不稳定测试检测器",
+      "description": "识别非确定性测试。分析测试执行模式，建议常见不稳定模式的修复方法。"
+    },
+    "function-class-generator": {
+      "name": "函数/类生成器",
+      "description": "从规范生成函数和类。支持多种编程语言，包含类型提示、文档和错误处理。"
+    },
+    "fuzzing-input-generator": {
+      "name": "模糊测试输入生成器",
+      "description": "创建随机化测试输入。发现意外行为，支持基于变异的模糊测试。"
+    },
+    "incremental-java-programmer": {
+      "name": "增量式 Java 编程器",
+      "description": "根据自然语言描述在 Java 仓库中实现新功能。支持 Maven 和 Gradle 构建系统，生成 JUnit 测试并确保所有测试成功通过。"
+    },
+    "incremental-python-programmer": {
+      "name": "增量式 Python 编程器",
+      "description": "根据自然语言描述在 Python 仓库中实现新功能。生成全面的单元测试和集成测试，确保所有测试通过并遵循现有代码模式。"
+    },
+    "integration-test-generator": {
+      "name": "集成测试生成器",
+      "description": "为系统组件创建集成测试。测试组件交互，包含设置和清理逻辑。"
+    },
+    "invariant-inference": {
+      "name": "不变量推断器",
+      "description": "推断循环和程序不变量。使用静态和动态分析，验证推断的不变量。"
+    },
+    "java-test-updater": {
+      "name": "Java 测试更新器",
+      "description": "在重构后更新 Java 测试以适配新代码版本。处理签名变更、重构和行为修改，更新方法调用、断言、模拟对象并确保测试通过。"
+    },
+    "legacy-code-summarizer": {
+      "name": "遗留代码总结器",
+      "description": "总结遗留代码库。解释代码功能，帮助理解旧代码。"
+    },
+    "markdown-document-structurer": {
+      "name": "Markdown 文档结构化工具",
+      "description": "将 Markdown 文档重组为结构良好的格式。修复标题层次结构并生成目录，标准化格式并提高可读性。"
+    },
+    "module-component-generator": {
+      "name": "模块/组件生成器",
+      "description": "从接口契约构建完整模块。生成分层架构（模型、仓储、服务），支持 Python 和 Java 的设计模式。"
+    },
+    "nl-to-constraints": {
+      "name": "自然语言到约束转换器",
+      "description": "将自然语言需求转换为形式化约束。支持约束语言，验证约束一致性。"
+    },
+    "python-repo-quickstart": {
+      "name": "Python 仓库快速入门",
+      "description": "快速分析 Python 仓库。识别项目类型、入口点和依赖项，生成设置和执行说明。"
+    },
+    "python-test-updater": {
+      "name": "Python 测试更新器",
+      "description": "更新 Python 测试以适配新代码版本。修复由于签名和行为变更导致的测试失败，分析代码差异并相应更新断言。"
+    },
+    "readme-generator": {
+      "name": "README 生成器",
+      "description": "生成全面、用户友好的 README.md 文件。包含项目介绍、先决条件和设置说明，提供可执行的使用示例和仓库结构概览。"
+    },
+    "regression-root-cause-analyzer": {
+      "name": "回归根因分析器",
+      "description": "分析回归失败。识别根本原因，建议修复方法。"
+    },
+    "release-notes-writer": {
+      "name": "发布说明编写器",
+      "description": "编写发布说明。突出新功能和修复，面向最终用户。"
+    },
+    "req-to-test": {
+      "name": "需求到测试转换器",
+      "description": "将需求转换为测试用例。确保需求覆盖，将测试追溯到需求。"
+    },
+    "requirement-comparison-reporter": {
+      "name": "需求比较报告器",
+      "description": "比较新旧需求文档。将需求变更映射到代码组件，生成详细的 Markdown 格式修改计划。"
+    },
+    "requirement-coverage-checker": {
+      "name": "需求覆盖检查器",
+      "description": "检查需求覆盖。识别实现中的差距，将需求追溯到代码。"
+    },
+    "requirement-summarizer": {
+      "name": "需求总结器",
+      "description": "总结需求文档。提取关键需求，按优先级组织。"
+    },
+    "rollback-strategy-advisor": {
+      "name": "回滚策略顾问",
+      "description": "建议回滚策略。规划部署回退，最小化停机时间。"
+    },
+    "runtime-error-explainer": {
+      "name": "运行时错误解释器",
+      "description": "解释运行时错误。提供调试指导，建议修复方法。"
+    },
+    "scenario-generator": {
+      "name": "场景生成器",
+      "description": "生成使用场景。创建用户故事，开发测试场景。"
+    },
+    "specification-driven-generation": {
+      "name": "规范驱动生成",
+      "description": "从形式化规范生成代码。确保规范合规性，验证生成的代码是否符合需求。"
+    },
+    "specification-generator": {
+      "name": "规范生成器",
+      "description": "生成形式化规范。将自然语言转换为规范，验证规范完整性。"
+    },
+    "static-reasoning-verifier": {
+      "name": "静态推理验证器",
+      "description": "使用静态分析验证代码。检查正确性属性，报告验证结果。"
+    },
+    "symbolic-execution-assistant": {
+      "name": "符号执行助手",
+      "description": "协助符号执行。生成路径约束，探索执行路径。"
+    },
+    "system-diagram-generator": {
+      "name": "系统图生成器",
+      "description": "创建系统架构图。支持 Mermaid、PlantUML、Graphviz，生成数据流和部署图。"
+    },
+    "technical-debt-analyzer": {
+      "name": "技术债务分析器",
+      "description": "识别技术债务。量化债务影响，优先处理债务减少。"
+    },
+    "template-code-generator": {
+      "name": "模板代码生成器",
+      "description": "从模板创建样板代码。支持常见模式和框架，可定制的模板适用于不同用例。"
+    },
+    "test-case-documentation": {
+      "name": "测试用例文档",
+      "description": "记录测试用例及其目的。解释测试场景和预期结果，维护测试文档。"
+    },
+    "test-driven-generation": {
+      "name": "测试驱动生成",
+      "description": "从测试用例生成实现。遵循 TDD 原则，确保测试覆盖率。"
+    },
+    "test-oracle-generator": {
+      "name": "测试预言生成器",
+      "description": "为测试用例生成预期输出。创建断言和验证逻辑，支持基于属性的测试。"
+    },
+    "test-suite-prioritizer": {
+      "name": "测试套件优先级排序器",
+      "description": "优先排序测试执行顺序。优化早期故障检测，考虑测试依赖关系和覆盖率。"
+    },
+    "unit-test-generator": {
+      "name": "单元测试生成器",
+      "description": "为函数和类生成单元测试。支持多种测试框架，包含边界情况和断言。"
+    },
+    "configuration-generator": {
+      "name": "配置生成器",
+      "description": "生成配置文件。支持多种格式（YAML、JSON、XML），验证配置模式。"
+    }
+  }
+}

@@ -16,10 +16,12 @@ from datetime import datetime
 SCRIPT_DIR = Path(__file__).parent.resolve()
 REPO_ROOT = SCRIPT_DIR.parent.resolve()
 OUTPUT_FILE = SCRIPT_DIR / 'frontend' / 'skills-data.json'
+TRANSLATIONS_FILE = SCRIPT_DIR / 'skills-translations-zh.json'
 
 print(f"Script directory: {SCRIPT_DIR}")
 print(f"Repository root: {REPO_ROOT}")
 print(f"Output file: {OUTPUT_FILE}")
+print(f"Translations file: {TRANSLATIONS_FILE}")
 
 # Directories to exclude
 EXCLUDED_DIRS = ['skill-manager', 'node_modules', 'skill-creator', '.git']
@@ -58,7 +60,16 @@ def get_skill_category(skill_name):
             return category
     return 'other'
 
-def extract_metadata(skill_path):
+def load_translations():
+    """Load Chinese translations"""
+    try:
+        with open(TRANSLATIONS_FILE, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    except Exception as e:
+        print(f"Warning: Could not load translations: {e}")
+        return {'skills': {}, 'category_names': {}}
+
+def extract_metadata(skill_path, translations):
     """Extract metadata from SKILL.md file"""
     skill_md = skill_path / 'SKILL.md'
     if not skill_md.exists():
@@ -79,19 +90,24 @@ def extract_metadata(skill_path):
                 if len(description) > 200:
                     description = description[:200] + '...'
 
+                skill_name = skill_path.name
+                skill_translations = translations['skills'].get(skill_name, {})
+
                 return {
-                    'name': skill_path.name,
-                    'displayName': frontmatter.get('name', skill_path.name),
+                    'name': skill_name,
+                    'displayName': frontmatter.get('name', skill_name),
                     'description': description,
-                    'category': get_skill_category(skill_path.name),
-                    'installed': False
+                    'category': get_skill_category(skill_name),
+                    'installed': False,
+                    'displayName_zh': skill_translations.get('name', frontmatter.get('name', skill_name)),
+                    'description_zh': skill_translations.get('description', description)
                 }
     except Exception as e:
         print(f"Error reading {skill_path.name}: {e}")
 
     return None
 
-def scan_skills():
+def scan_skills(translations):
     """Scan repository for all skills"""
     skills = []
 
@@ -99,7 +115,7 @@ def scan_skills():
         if item.is_dir() and not item.name.startswith('.') and item.name not in EXCLUDED_DIRS:
             # Check if it's a skill directory (has SKILL.md)
             if (item / 'SKILL.md').exists():
-                metadata = extract_metadata(item)
+                metadata = extract_metadata(item, translations)
                 if metadata:
                     skills.append(metadata)
 
@@ -109,14 +125,18 @@ def scan_skills():
     return skills
 
 def main():
+    print("Loading translations...")
+    translations = load_translations()
+
     print("Scanning repository for skills...")
-    skills = scan_skills()
+    skills = scan_skills(translations)
     print(f"Found {len(skills)} skills")
 
     # Create output data
     output_data = {
         'skills': skills,
         'total': len(skills),
+        'category_names_zh': translations.get('category_names', {}),
         'generated_at': datetime.now().strftime('%Y-%m-%d')
     }
 
