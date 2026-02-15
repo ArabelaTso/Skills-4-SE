@@ -1,0 +1,687 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 40px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 1.1em;
+    opacity: 0.9;
+}
+
+.actions {
+    padding: 30px 40px;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    background: #f8f9fa;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-primary {
+    background: #667eea;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #5568d3;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.btn-secondary {
+    background: #48bb78;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: #38a169;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(72, 187, 120, 0.4);
+}
+
+.btn-tertiary {
+    background: white;
+    color: #667eea;
+    border: 2px solid #667eea;
+}
+
+.btn-tertiary:hover {
+    background: #667eea;
+    color: white;
+}
+
+.search-bar {
+    padding: 20px 40px;
+    background: white;
+}
+
+#searchInput {
+    width: 100%;
+    padding: 15px 20px;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+}
+
+#searchInput:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.filter-tabs {
+    padding: 20px 40px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    background: white;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.tab {
+    padding: 8px 16px;
+    border: 2px solid #e9ecef;
+    background: white;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9em;
+}
+
+.tab:hover {
+    border-color: #667eea;
+    color: #667eea;
+}
+
+.tab.active {
+    background: #667eea;
+    color: white;
+    border-color: #667eea;
+}
+
+.stats {
+    padding: 15px 40px;
+    background: #f8f9fa;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9em;
+    color: #6c757d;
+}
+
+.skills-list {
+    padding: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 20px;
+}
+
+.skill-card {
+    background: white;
+    border: 2px solid #e9ecef;
+    border-radius: 12px;
+    padding: 20px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.skill-card:hover {
+    border-color: #667eea;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+    transform: translateY(-2px);
+}
+
+.skill-card.selected {
+    border-color: #48bb78;
+    background: #f0fff4;
+}
+
+.skill-card.installed {
+    border-color: #cbd5e0;
+    background: #f7fafc;
+    opacity: 0.7;
+}
+
+.skill-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-bottom: 12px;
+}
+
+.skill-name {
+    font-size: 1.2em;
+    font-weight: 700;
+    color: #2d3748;
+    flex: 1;
+}
+
+.skill-checkbox {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.skill-category {
+    display: inline-block;
+    padding: 4px 12px;
+    background: #e9ecef;
+    border-radius: 12px;
+    font-size: 0.75em;
+    color: #6c757d;
+    margin-bottom: 12px;
+}
+
+.skill-description {
+    color: #4a5568;
+    font-size: 0.9em;
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+.skill-status {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 0.75em;
+    font-weight: 600;
+}
+
+.status-installed {
+    background: #c6f6d5;
+    color: #22543d;
+}
+
+.status-available {
+    background: #bee3f8;
+    color: #2c5282;
+}
+
+.loading {
+    text-align: center;
+    padding: 60px;
+    color: #6c757d;
+    font-size: 1.2em;
+}
+
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 16px 24px;
+    border-radius: 8px;
+    background: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    display: none;
+    z-index: 1000;
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(400px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.notification.show {
+    display: block;
+}
+
+.notification.success {
+    border-left: 4px solid #48bb78;
+    color: #22543d;
+}
+
+.notification.error {
+    border-left: 4px solid #f56565;
+    color: #742a2a;
+}
+
+.notification.info {
+    border-left: 4px solid #4299e1;
+    color: #2c5282;
+}
+
+@media (max-width: 768px) {
+    .skills-list {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+
+    .actions {
+        padding: 20px;
+    }
+
+    header h1 {
+        font-size: 1.8em;
+    }
+}
+
+/* Help Button */
+.btn-help {
+    background: #f59e0b;
+    color: white;
+}
+
+.btn-help:hover {
+    background: #d97706;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4);
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal.show {
+    display: block;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 3% auto;
+    padding: 0;
+    border-radius: 16px;
+    width: 90%;
+    max-width: 900px;
+    max-height: 85vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal-content h2 {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 30px 40px;
+    margin: 0;
+    border-radius: 16px 16px 0 0;
+    font-size: 2em;
+}
+
+.close {
+    color: white;
+    float: right;
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 1;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    opacity: 1;
+}
+
+.help-section {
+    padding: 30px 40px;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.help-section:last-of-type {
+    border-bottom: none;
+}
+
+.help-section h3 {
+    color: #667eea;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.help-section h4 {
+    color: #4a5568;
+    font-size: 1.2em;
+    margin: 20px 0 10px 0;
+}
+
+.help-section p {
+    color: #4a5568;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.help-section ul {
+    margin-left: 20px;
+    color: #4a5568;
+    line-height: 1.8;
+}
+
+.help-section ul li {
+    margin-bottom: 10px;
+}
+
+.note {
+    background: #fef3c7;
+    border-left: 4px solid #f59e0b;
+    padding: 12px 16px;
+    border-radius: 4px;
+    margin: 15px 0;
+}
+
+.code-example {
+    background: #1e293b;
+    color: #e2e8f0;
+    padding: 15px 20px;
+    border-radius: 8px;
+    font-family: 'Monaco', 'Menlo', 'Courier New', monospace;
+    font-size: 0.9em;
+    margin: 10px 0;
+    position: relative;
+}
+
+.code-example code {
+    color: #a5f3fc;
+}
+
+.code-example .comment {
+    color: #94a3b8;
+    font-style: italic;
+    display: block;
+    margin-top: 8px;
+}
+
+.skill-example {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 15px 0;
+}
+
+.skill-example h4 {
+    margin-top: 0;
+}
+
+.skill-example ul {
+    margin-left: 0;
+    list-style: none;
+}
+
+.skill-example ul li {
+    padding-left: 20px;
+    position: relative;
+}
+
+.skill-example ul li:before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #667eea;
+}
+
+details {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+details summary {
+    font-weight: 600;
+    color: #2d3748;
+    cursor: pointer;
+    user-select: none;
+}
+
+details summary:hover {
+    color: #667eea;
+}
+
+details p {
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+details code {
+    background: #e2e8f0;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+.help-footer {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 30px 40px;
+    text-align: center;
+    border-radius: 0 0 16px 16px;
+}
+
+.help-footer p {
+    color: white;
+    margin: 10px 0;
+}
+
+.help-footer a {
+    color: #fef3c7;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.help-footer a:hover {
+    text-decoration: underline;
+}
+
+/* Scrollbar Styling for Modal */
+.modal-content::-webkit-scrollbar {
+    width: 10px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 0 16px 16px 0;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+    background: #667eea;
+    border-radius: 5px;
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+    background: #5568d3;
+}
+
+/* Modal Header */
+.modal-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 30px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 16px 16px 0 0;
+}
+
+.modal-header h2 {
+    background: none;
+    padding: 0;
+    margin: 0;
+    border-radius: 0;
+    font-size: 2em;
+}
+
+.modal-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Language Toggle Button */
+.lang-toggle {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9em;
+    transition: all 0.3s ease;
+}
+
+.lang-toggle:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: white;
+    transform: scale(1.05);
+}
+
+.lang-toggle:active {
+    transform: scale(0.95);
+}
+
+/* Help Content */
+.help-content {
+    animation: fadeIn 0.3s ease;
+}
+
+/* Keyboard shortcut styling */
+kbd {
+    background: #2d3748;
+    color: #e2e8f0;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-family: 'Monaco', 'Menlo', 'Courier New', monospace;
+    font-size: 0.85em;
+    border: 1px solid #4a5568;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Category Colors */
+.skill-category {
+    font-weight: 600;
+}
+
+.skill-category.cat-code-generation {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.skill-category.cat-testing {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+}
+
+.skill-category.cat-documentation {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    color: white;
+}
+
+.skill-category.cat-quality {
+    background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+    color: white;
+}
+
+.skill-category.cat-requirements {
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+    color: white;
+}
+
+.skill-category.cat-devops {
+    background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
+    color: white;
+}
+
+.skill-category.cat-debugging {
+    background: linear-gradient(135deg, #ff9a56 0%, #ff6a88 100%);
+    color: white;
+}
+
+.skill-category.cat-verification {
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    color: #2d3748;
+}
+
+.skill-category.cat-maintenance {
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    color: #2d3748;
+}
+
+.skill-category.cat-other {
+    background: #e9ecef;
+    color: #6c757d;
+}
+
+/* Installed filter tab highlight */
+.tab[data-category="installed"] {
+    font-weight: 600;
+}
+
+.tab[data-category="installed"].active {
+    background: #48bb78;
+    color: white;
+    border-color: #48bb78;
+}
