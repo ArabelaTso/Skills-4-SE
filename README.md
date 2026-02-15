@@ -1,4 +1,10 @@
-# Skills-4-SE: *Useful Skills Collection for Software Engineering*
+<h1 align="center"><strong>✨ Skills-4-SE</strong>: Useful Skills for Software Engineering</h1>
+
+<p align="center">
+<a href="https://platform.composio.dev/?utm_source=Github&utm_medium=Youtube&utm_campaign=2025-11&utm_content=AwesomeSkills">
+  <img width="1280" height="640" alt="Composio banner" src="./banner.png">
+</a>
+
 
 [![Welcome Contribution](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](./CONTRIBUTING.md)
 [![中文](https://img.shields.io/badge/lang-中文-red)](./README-zh.md)

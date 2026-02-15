@@ -1,10 +1,15 @@
 # 面向软件工程的实用技能集 (Skills-4-SE)
 
+<p align="center">
+<a href="https://platform.composio.dev/?utm_source=Github&utm_medium=Youtube&utm_campaign=2025-11&utm_content=AwesomeSkills">
+  <img width="1280" height="640" alt="Composio banner" src="./banner.png">
+</a>
+
 [![Welcome Contribution](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](./CONTRIBUTING.md)
 [![中文](https://img.shields.io/badge/lang-中文-red)](./README-zh.md)
 [![English](https://img.shields.io/badge/lang-English-blue)](./README.md)
 
-> *本文档由Claude翻译而成*
+> *注：本文档由Claude翻译而成。*
 
 本仓库是**一个全面的、可重用的、面向任务的技能集合**，旨在支持**整个开发生命周期的软件工程活动**，包括：
 
