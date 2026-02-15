@@ -41,17 +41,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Setup event listeners
 function setupEventListeners() {
-    document.getElementById('installAll').addEventListener('click', installAllSkills);
-    document.getElementById('installSelected').addEventListener('click', installSelectedSkills);
-    document.getElementById('refresh').addEventListener('click', loadSkills);
-    document.getElementById('searchInput').addEventListener('input', handleSearch);
-    document.getElementById('helpBtn').addEventListener('click', openHelpModal);
+    const installAllBtn = document.getElementById('installAll');
+    const installSelectedBtn = document.getElementById('installSelected');
+    const refreshBtn = document.getElementById('refresh');
+    const searchInput = document.getElementById('searchInput');
+    const helpBtn = document.getElementById('helpBtn');
+
+    if (installAllBtn) installAllBtn.addEventListener('click', installAllSkills);
+    if (installSelectedBtn) installSelectedBtn.addEventListener('click', installSelectedSkills);
+    if (refreshBtn) refreshBtn.addEventListener('click', loadSkills);
+    if (searchInput) searchInput.addEventListener('input', handleSearch);
+    if (helpBtn) helpBtn.addEventListener('click', openHelpModal);
 
     // Help modal
     const modal = document.getElementById('helpModal');
     const closeBtn = document.querySelector('.close');
 
-    closeBtn.addEventListener('click', closeHelpModal);
+    if (closeBtn) closeBtn.addEventListener('click', closeHelpModal);
 
     window.addEventListener('click', (e) => {
         if (e.target === modal) {
