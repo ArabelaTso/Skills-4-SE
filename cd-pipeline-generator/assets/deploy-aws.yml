@@ -1,0 +1,79 @@
+name: Deploy to AWS
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to deploy to'
+        required: true
+        type: choice
+        options:
+          - staging
+          - production
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: ${{ github.event.inputs.environment || 'staging' }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      # Example: Deploy to AWS Elastic Beanstalk
+      - name: Deploy to Elastic Beanstalk
+        run: |
+          # Create deployment package
+          zip -r deploy.zip . -x "*.git*"
+
+          # Upload to S3
+          aws s3 cp deploy.zip s3://${{ secrets.EB_BUCKET }}/deploy-${{ github.sha }}.zip
+
+          # Create application version
+          aws elasticbeanstalk create-application-version \
+            --application-name ${{ secrets.EB_APPLICATION }} \
+            --version-label ${{ github.sha }} \
+            --source-bundle S3Bucket="${{ secrets.EB_BUCKET }}",S3Key="deploy-${{ github.sha }}.zip"
+
+          # Update environment
+          aws elasticbeanstalk update-environment \
+            --application-name ${{ secrets.EB_APPLICATION }} \
+            --environment-name ${{ secrets.EB_ENVIRONMENT }} \
+            --version-label ${{ github.sha }}
+
+      # Alternative: Deploy to AWS ECS
+      # - name: Deploy to ECS
+      #   run: |
+      #     # Build and push Docker image
+      #     docker build -t ${{ secrets.ECR_REGISTRY }}/${{ secrets.ECR_REPOSITORY }}:${{ github.sha }} .
+      #     aws ecr get-login-password | docker login --username AWS --password-stdin ${{ secrets.ECR_REGISTRY }}
+      #     docker push ${{ secrets.ECR_REGISTRY }}/${{ secrets.ECR_REPOSITORY }}:${{ github.sha }}
+      #
+      #     # Update ECS service
+      #     aws ecs update-service \
+      #       --cluster ${{ secrets.ECS_CLUSTER }} \
+      #       --service ${{ secrets.ECS_SERVICE }} \
+      #       --force-new-deployment
+
+      # Alternative: Deploy Lambda function
+      # - name: Deploy to Lambda
+      #   run: |
+      #     zip -r function.zip .
+      #     aws lambda update-function-code \
+      #       --function-name ${{ secrets.LAMBDA_FUNCTION }} \
+      #       --zip-file fileb://function.zip
+
+      - name: Verify deployment
+        run: |
+          echo "Deployment completed successfully"
+          echo "Environment: ${{ github.event.inputs.environment || 'staging' }}"
+          echo "Commit: ${{ github.sha }}"

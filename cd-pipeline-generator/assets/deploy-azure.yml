@@ -1,0 +1,82 @@
+name: Deploy to Azure
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to deploy to'
+        required: true
+        type: choice
+        options:
+          - staging
+          - production
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: ${{ github.event.inputs.environment || 'staging' }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Login to Azure
+        uses: azure/login@v2
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      # Example: Deploy to Azure App Service
+      - name: Deploy to App Service
+        uses: azure/webapps-deploy@v3
+        with:
+          app-name: ${{ secrets.AZURE_APP_NAME }}
+          package: .
+
+      # Alternative: Deploy to Azure Container Instances
+      # - name: Deploy to Container Instances
+      #   run: |
+      #     # Build and push Docker image
+      #     docker build -t ${{ secrets.ACR_REGISTRY }}.azurecr.io/${{ secrets.IMAGE_NAME }}:${{ github.sha }} .
+      #     az acr login --name ${{ secrets.ACR_REGISTRY }}
+      #     docker push ${{ secrets.ACR_REGISTRY }}.azurecr.io/${{ secrets.IMAGE_NAME }}:${{ github.sha }}
+      #
+      #     # Update container instance
+      #     az container create \
+      #       --resource-group ${{ secrets.RESOURCE_GROUP }} \
+      #       --name ${{ secrets.CONTAINER_NAME }} \
+      #       --image ${{ secrets.ACR_REGISTRY }}.azurecr.io/${{ secrets.IMAGE_NAME }}:${{ github.sha }} \
+      #       --registry-login-server ${{ secrets.ACR_REGISTRY }}.azurecr.io \
+      #       --registry-username ${{ secrets.ACR_USERNAME }} \
+      #       --registry-password ${{ secrets.ACR_PASSWORD }}
+
+      # Alternative: Deploy Azure Function
+      # - name: Deploy to Azure Functions
+      #   uses: Azure/functions-action@v1
+      #   with:
+      #     app-name: ${{ secrets.FUNCTION_APP_NAME }}
+      #     package: .
+
+      # Alternative: Deploy to Azure Kubernetes Service
+      # - name: Deploy to AKS
+      #   run: |
+      #     # Get AKS credentials
+      #     az aks get-credentials \
+      #       --resource-group ${{ secrets.RESOURCE_GROUP }} \
+      #       --name ${{ secrets.AKS_CLUSTER }}
+      #
+      #     # Apply Kubernetes manifests
+      #     kubectl apply -f k8s/
+      #     kubectl set image deployment/${{ secrets.DEPLOYMENT_NAME }} \
+      #       app=${{ secrets.ACR_REGISTRY }}.azurecr.io/${{ secrets.IMAGE_NAME }}:${{ github.sha }}
+
+      - name: Verify deployment
+        run: |
+          echo "Deployment completed successfully"
+          echo "Environment: ${{ github.event.inputs.environment || 'staging' }}"
+          echo "Commit: ${{ github.sha }}"
+
+      - name: Logout from Azure
+        run: az logout
+        if: always()
