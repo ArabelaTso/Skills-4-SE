@@ -256,13 +256,10 @@ function renderSkills() {
     console.log('Rendering skills with search term:', searchTerm);
 
     let filteredSkills = allSkills.filter(skill => {
-        // Search in both English and Chinese fields
-        // Safely check if fields exist and are strings before calling toLowerCase
+        // Search only in skill names (both English and Chinese)
         const matchesSearch =
             (skill.name && skill.name.toLowerCase().includes(searchTerm)) ||
-            (skill.description && skill.description.toLowerCase().includes(searchTerm)) ||
-            (skill.displayName_zh && skill.displayName_zh.toLowerCase().includes(searchTerm)) ||
-            (skill.description_zh && skill.description_zh.toLowerCase().includes(searchTerm));
+            (skill.displayName_zh && skill.displayName_zh.toLowerCase().includes(searchTerm));
 
         // Handle "installed" filter
         if (currentCategory === 'installed') {
