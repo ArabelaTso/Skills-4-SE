@@ -1,37 +1,12 @@
 <h1 align="center"><strong>✨ Skills-4-SE</strong>: Useful Skills for Software Engineering</h1>
 
-<img width="1280" height="640" alt="Composio banner" src="./banner.png">
-
-
-
 [![Welcome Contribution](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](./CONTRIBUTING.md)
 [![中文](https://img.shields.io/badge/lang-中文-red)](./README-zh.md)
 [![English](https://img.shields.io/badge/lang-English-blue)](./README.md)
 
----
-
-## 🌐 Skills Manager Web Interface
-
-**[🚀 Visit Skills Manager](https://ArabelaTso.github.io/Skills-4-SE/)**
-
-<p align="center">
-  <img src="./skill-manager-image.png" alt="Skills Manager Interface" width="100%">
-</p>
-
-Browse, search, and install skills through our interactive web interface. The Skills Manager provides:
-- 📦 One-click installation of all 75+ skills
-- ✅ Selective installation of specific skills
-- 🔍 Search and filter by category
-- 📖 Bilingual help documentation (English/中文)
-- 🎨 Modern, responsive interface
-
-
-
----
-
 This repository is **a comprehensive reusable, task-oriented Skills collection** designed to support **software engineering activities across the entire development lifecycle**, including:
 
-> requirements understanding, system design, implementation, testing, verifica tion, deployment, and maintenance.
+> Requirement understanding, system design, implementation, testing, verification, deployment, and maintenance.
 
 ✅ Unlike prompt collections or ad-hoc demos, each Skill in this repository is:
 - **Task-grounded** (solves a concrete software engineering problem)
@@ -44,6 +19,26 @@ This repository is **a comprehensive reusable, task-oriented Skills collection**
 - Tool-augmented software engineering workflows
 - Research prototypes and empirical studies
 - Industrial automation and developer productivity tools
+
+
+
+## 🌐 Skills Manager Web Interface
+
+**[🚀 Visit Skills Manager](https://ArabelaTso.github.io/Skills-4-SE/)**
+
+> You can also deploy the website locally. 👉 [Guideline](./skill-manager/README.md)
+
+<p align="center">
+  <img src="./skill-manager-image.png" alt="Skills Manager Interface" width="100%">
+</p>
+
+Browse, search, and install skills through our interactive web interface. The Skills Manager provides:
+- 📦 One-click installation of all 75+ skills
+- ✅ Selective installation of specific skills
+- 🔍 Search and filter by category
+- 📖 Bilingual help documentation (English/中文)
+- 🎨 Modern, responsive interface
+
 
 ## ✨ Why Skills (not just prompts)?
 
