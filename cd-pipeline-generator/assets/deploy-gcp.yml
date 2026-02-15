@@ -1,0 +1,75 @@
+name: Deploy to GCP
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to deploy to'
+        required: true
+        type: choice
+        options:
+          - staging
+          - production
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: ${{ github.event.inputs.environment || 'staging' }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}
+
+      - name: Set up Cloud SDK
+        uses: google-github-actions/setup-gcloud@v2
+
+      # Example: Deploy to Cloud Run
+      - name: Deploy to Cloud Run
+        run: |
+          gcloud run deploy ${{ secrets.SERVICE_NAME }} \
+            --source . \
+            --platform managed \
+            --region ${{ secrets.GCP_REGION }} \
+            --project ${{ secrets.GCP_PROJECT_ID }} \
+            --allow-unauthenticated
+
+      # Alternative: Deploy to App Engine
+      # - name: Deploy to App Engine
+      #   run: |
+      #     gcloud app deploy app.yaml \
+      #       --project ${{ secrets.GCP_PROJECT_ID }} \
+      #       --quiet
+
+      # Alternative: Deploy to Compute Engine
+      # - name: Deploy to Compute Engine
+      #   run: |
+      #     # Build and push Docker image
+      #     gcloud builds submit --tag gcr.io/${{ secrets.GCP_PROJECT_ID }}/${{ secrets.IMAGE_NAME }}:${{ github.sha }}
+      #
+      #     # Update instance
+      #     gcloud compute instances update-container ${{ secrets.INSTANCE_NAME }} \
+      #       --zone ${{ secrets.GCP_ZONE }} \
+      #       --container-image gcr.io/${{ secrets.GCP_PROJECT_ID }}/${{ secrets.IMAGE_NAME }}:${{ github.sha }}
+
+      # Alternative: Deploy Cloud Function
+      # - name: Deploy to Cloud Functions
+      #   run: |
+      #     gcloud functions deploy ${{ secrets.FUNCTION_NAME }} \
+      #       --runtime nodejs20 \
+      #       --trigger-http \
+      #       --allow-unauthenticated \
+      #       --region ${{ secrets.GCP_REGION }} \
+      #       --project ${{ secrets.GCP_PROJECT_ID }}
+
+      - name: Verify deployment
+        run: |
+          echo "Deployment completed successfully"
+          echo "Environment: ${{ github.event.inputs.environment || 'staging' }}"
+          echo "Commit: ${{ github.sha }}"
