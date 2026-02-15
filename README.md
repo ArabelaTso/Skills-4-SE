@@ -10,6 +10,21 @@
 [![中文](https://img.shields.io/badge/lang-中文-red)](./README-zh.md)
 [![English](https://img.shields.io/badge/lang-English-blue)](./README.md)
 
+---
+
+## 🌐 Skills Manager Web Interface
+
+**[🚀 Visit Skills Manager](https://ArabelaTso.github.io/Skills-4-SE/)**
+
+Browse, search, and install skills through our interactive web interface. The Skills Manager provides:
+- 📦 One-click installation of all 75+ skills
+- ✅ Selective installation of specific skills
+- 🔍 Search and filter by category
+- 📖 Bilingual help documentation (English/中文)
+- 🎨 Modern, responsive interface
+
+---
+
 This repository is **a comprehensive reusable, task-oriented Skills collection** designed to support **software engineering activities across the entire development lifecycle**, including:
 
 > requirements understanding, system design, implementation, testing, verification, deployment, and maintenance.
