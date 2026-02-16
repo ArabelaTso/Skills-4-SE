@@ -628,6 +628,14 @@
 - **文档与沟通**
     - [需求文档格式化器](markdown-document-structurer) – 生成清晰、标准化的需求文档
 
+- **场景与用户故事生成**
+    - [场景生成器](scenario-generator) – 基于需求生成使用场景和用户故事
+
+- **项目管理与问题跟踪**
+    - [Jira 自动化](awesome-claude-skills-SE-skills/jira-automation) *(来源: awesome-claude-skills)* – 自动化 Jira 任务：问题、项目、冲刺、看板、评论和敏捷工作流
+    - [Linear 自动化](awesome-claude-skills-SE-skills/linear-automation) *(来源: awesome-claude-skills)* – 自动化 Linear 任务：问题、项目、周期、团队和标签，用于现代问题跟踪
+    - [Confluence 自动化](awesome-claude-skills-SE-skills/confluence-automation) *(来源: awesome-claude-skills)* – 自动化 Confluence 页面创建、内容搜索、空间管理和文档
+
 
 ### 💡 **软件设计**
 - **架构与高层设计**
@@ -639,6 +647,9 @@
 
 - **设计质量与分析**
     - [设计异味检测器](design-smell-detector) – 识别潜在问题，如高耦合或低内聚
+    - [组件边界识别器](component-boundary-identifier) – 识别模块/组件边界并检测边界违规
+    - [配置生成器](configuration-generator) – 为应用程序、服务或基础设施生成配置文件
+    - [依赖解析器](dependency-resolver) – 识别和管理软件依赖
 
 ### ⌨️ **代码实现**
 - **规范到代码**
@@ -647,6 +658,7 @@
     - [模板/骨架代码生成器](template-code-generator) – 自动生成样板代码或项目模板/骨架
     - [增量式 Python 编程器](incremental-python-programmer) – 根据自然语言描述在 Python 仓库中实现新功能，并自动生成测试
     - [增量式 Java 编程器](incremental-java-programmer) – 根据自然语言描述在 Java 仓库（Maven/Gradle）中实现新功能，并生成 JUnit 测试
+    - [前端设计](anthropics-skills-SE-skills/frontend-design) *(来源: anthropics-skills)* – 创建具有高设计质量的独特生产级前端界面
 
 - **重构与优化**
     - [重构助手](code-refactoring-assistant) – 建议持续的代码改进以增强可维护性
@@ -654,6 +666,10 @@
     - [死代码消除器](dead-code-eliminator) – 识别并删除未使用或冗余的代码
     - [代码审查助手](code-review-assistant) - 识别 bug、安全问题、性能问题、代码质量问题和最佳实践违规
     - [不良代码异味检测](code-smell-detector) - 识别并报告可能表明设计不良或可维护性问题的代码异味
+    - [技术债务分析器](technical-debt-analyzer) – 识别技术债务并量化债务影响
+    - [代码模式提取器](code-pattern-extractor) – 分析代码库以识别可重用的代码模式和重复代码
+    - [代码搜索助手](code-search-assistant) – 使用相似性分析在仓库中搜索与给定代码片段相关的代码
+    - [组件边界识别器](component-boundary-identifier) – 识别模块/组件边界并分析架构分离
 
 - **TDD 与 SDD**
     - [测试驱动代码生成器（TDD）](test-driven-generation) – 生成通过给定单元测试集的实现（主要支持 Python 和 Java；处理简单的单元测试（隔离的函数/方法））
@@ -661,6 +677,21 @@
     
 - **多语言与翻译**
     - [代码翻译器](code-translation) – 在编程语言之间转换代码，同时保持功能
+
+- **开发工具与构建器**
+    - [Artifacts 构建器](awesome-claude-skills-SE-skills/artifacts-builder) *(来源: awesome-claude-skills)* – 使用 React、Tailwind CSS 和 shadcn/ui 创建精细的多组件 claude.ai HTML 制品
+    - [Web Artifacts 构建器](anthropics-skills-SE-skills/web-artifacts-builder) *(来源: anthropics-skills)* – 用于创建精细的多组件 claude.ai HTML 制品的工具套件，使用现代前端技术
+    - [MCP 构建器](awesome-claude-skills-SE-skills/mcp-builder) *(来源: awesome-claude-skills)* – 创建高质量 MCP 服务器的指南，使 LLM 能够与外部服务交互
+    - [代码解释器自动化](awesome-claude-skills-SE-skills/codeinterpreter-automation) *(来源: awesome-claude-skills)* – 在隔离环境中执行代码，用于数据分析、可视化和计算任务
+
+- **数据库与后端服务**
+    - [Supabase 自动化](awesome-claude-skills-SE-skills/supabase-automation) *(来源: awesome-claude-skills)* – 自动化 Supabase 数据库查询、表管理、存储、边缘函数和 SQL 执行
+
+- **版本控制与协作**
+    - [GitHub 自动化](awesome-claude-skills-SE-skills/github-automation) *(来源: awesome-claude-skills)* – 自动化 GitHub 仓库、问题、拉取请求、分支、CI/CD 和权限
+    - [GitLab 自动化](awesome-claude-skills-SE-skills/gitlab-automation) *(来源: awesome-claude-skills)* – 自动化 GitLab 项目管理、问题、合并请求、流水线和分支
+    - [Bitbucket 自动化](awesome-claude-skills-SE-skills/bitbucket-automation) *(来源: awesome-claude-skills)* – 自动化 Bitbucket 仓库、拉取请求、分支、问题和工作区管理
+    - [Sourcegraph 自动化](awesome-claude-skills-SE-skills/sourcegraph-automation) *(来源: awesome-claude-skills)* – 自动化 Sourcegraph 代码搜索和导航操作
 
 ### 👩🏽‍💻 **测试**
 - **测试生成**
@@ -691,6 +722,12 @@
 - **测试维护**
     - [Python 测试更新器](python-test-updater) – 更新 Python 测试以适配新代码版本，修复失败的测试并更新断言
     - [Java 测试更新器](java-test-updater) – 在代码重构后更新 Java 测试，处理签名变更、模拟对象和断言
+    - [不稳定测试检测器](flaky-test-detector) – 识别非确定性测试并建议常见不稳定模式的修复方法
+
+- **测试自动化与工具**
+    - [测试应用自动化](awesome-claude-skills-SE-skills/test-app-automation) *(来源: awesome-claude-skills)* – 自动化应用程序测试工作流，包括单元测试、集成测试和端到端测试
+    - [WebApp 测试](awesome-claude-skills-SE-skills/webapp-testing) *(来源: awesome-claude-skills)* – 专门用于 Web 应用程序测试的自动化，包括 UI 测试和浏览器自动化
+    - [Web 应用程序测试](anthropics-skills-SE-skills/webapp-testing) *(来源: anthropics-skills)* – 使用 Playwright 与本地 Web 应用程序交互和测试的工具包
 
 
 ### ✅ **验证**
@@ -719,12 +756,34 @@
 - **持续集成与交付（CI/CD）**
     - [CI 流水线合成器](ci-pipeline-synthesizer) – 创建用于自动化构建和测试的 CI 流水线
     - [CD 流水线生成器](cd-pipeline-generator) – 生成用于自动化部署到预发布或生产环境的脚本
+    - [CircleCI 自动化](awesome-claude-skills-SE-skills/circleci-automation) *(来源: awesome-claude-skills)* – 自动化 CircleCI 任务：触发流水线、监控工作流/作业、检索制品和测试元数据
+    - [Buildkite 自动化](awesome-claude-skills-SE-skills/buildkite-automation) *(来源: awesome-claude-skills)* – 自动化 Buildkite CI/CD 操作，用于流水线管理和构建自动化
+    - [AppVeyor 自动化](awesome-claude-skills-SE-skills/appveyor-automation) *(来源: awesome-claude-skills)* – 自动化 AppVeyor 持续集成和部署，用于 Windows、Linux 和 macOS 构建
+    - [Appcircle 自动化](awesome-claude-skills-SE-skills/appcircle-automation) *(来源: awesome-claude-skills)* – 使用 Appcircle 自动化移动 CI/CD 工作流，用于 iOS 和 Android 应用构建
+
+- **云与基础设施部署**
+    - [Docker Hub 自动化](awesome-claude-skills-SE-skills/docker-hub-automation) *(来源: awesome-claude-skills)* – 自动化 Docker Hub 操作 - 管理组织、仓库、团队和 webhooks
+    - [Vercel 自动化](awesome-claude-skills-SE-skills/vercel-automation) *(来源: awesome-claude-skills)* – 自动化 Vercel 部署、域名、DNS、环境变量、项目和团队
+    - [DigitalOcean 自动化](awesome-claude-skills-SE-skills/digital-ocean-automation) *(来源: awesome-claude-skills)* – 自动化 DigitalOcean 云基础设施管理，包括 droplets、数据库和网络
+    - [Cloudflare 自动化](awesome-claude-skills-SE-skills/cloudflare-automation) *(来源: awesome-claude-skills)* – 自动化 Cloudflare CDN、DNS、安全和性能优化任务
+    - [NPM 自动化](awesome-claude-skills-SE-skills/npm-automation) *(来源: awesome-claude-skills)* – 自动化 NPM 包管理任务，用于 JavaScript/Node.js 项目
 
 - **部署验证与测试**
     - [回滚策略顾问](rollback-strategy-advisor) – 为失败的部署建议回滚策略
 
 - **文档与报告**
     - [发布说明编写器](release-notes-writer) – 自动生成面向用户的发布说明
+
+- **监控与错误跟踪**
+    - [Sentry 自动化](awesome-claude-skills-SE-skills/sentry-automation) *(来源: awesome-claude-skills)* – 自动化 Sentry 任务：管理问题/事件、配置警报、跟踪发布和监控项目
+    - [Datadog 自动化](awesome-claude-skills-SE-skills/datadog-automation) *(来源: awesome-claude-skills)* – 自动化 Datadog 任务：查询指标、搜索日志、管理监控器/仪表板，实现全栈可观测性
+    - [Bugsnag 自动化](awesome-claude-skills-SE-skills/bugsnag-automation) *(来源: awesome-claude-skills)* – 自动化 Bugsnag 错误监控和应用程序崩溃报告
+    - [BugBug 自动化](awesome-claude-skills-SE-skills/bugbug-automation) *(来源: awesome-claude-skills)* – 使用 BugBug 自动化错误跟踪和测试自动化工作流
+    - [BugHerd 自动化](awesome-claude-skills-SE-skills/bugherd-automation) *(来源: awesome-claude-skills)* – 使用 BugHerd 直接在网站上管理可视化反馈和错误跟踪
+    - [PagerDuty 自动化](awesome-claude-skills-SE-skills/pagerduty-automation) *(来源: awesome-claude-skills)* – 自动化 PagerDuty 任务：管理事件、服务、排班、升级策略和值班轮换
+
+- **集成与 Webhooks**
+    - [Hookdeck 自动化](awesome-claude-skills-SE-skills/hookdeck-automation) *(来源: awesome-claude-skills)* – 管理 webhook 基础设施、路由和监控，实现可靠的事件驱动架构
 
 
 ### 🔧 **软件维护**
@@ -742,17 +801,29 @@
 - **性能与可靠性监控**
     - [不稳定测试检测器](flaky-test-detector) – 识别不稳定或不可靠的测试用例
 
+- **版本控制与合并冲突**
+    - [冲突分析器](conflict-analyzer) – 分析合并冲突并建议冲突解决方案
+
 - **文档与知识转移**
     - [api-documentation-generator](api-documentation-generator) - 为给定仓库总结 API 文档
+    - [README 生成器](readme-generator) – 生成全面、用户友好的 README.md 文件，包含设置说明和使用示例
     - [Python 仓库快速入门](python-repo-quickstart) - 快速分析 Python 仓库以了解结构、依赖项和设置要求
     - [Markdown 文档结构化工具](markdown-document-structurer) - 将 Markdown 文档重组为结构良好、一致的格式，提高可读性
     - [代码注释生成器](code-comment-generator) – 生成有意义的注释以提高维护可读性
     - [变更日志生成器](change-log-generator) – 从提交或补丁自动生成变更日志
+    - [代码变更总结器](code-change-summarizer) – 从代码变更生成结构化的 PR 描述，包含测试说明和上下文
 
 - **持续改进**
     - [重构助手](code-refactoring-assistant) – 建议持续的代码改进以增强可维护性
     - [代码模式提取器](code-pattern-extractor) – 识别可重用的代码模式以供未来开发
     - [代码搜索助手](code-search-assistant) – 使用多维相似性分析在仓库中搜索相关代码
+    - [组件边界识别器](component-boundary-identifier) – 识别模块/组件边界并检测边界违规
+
+- **团队沟通与协作**
+    - [Slack 自动化](awesome-claude-skills-SE-skills/slack-automation) *(来源: awesome-claude-skills)* – 自动化 Slack 消息、频道管理、搜索、反应和线程
+    - [Slackbot 自动化](awesome-claude-skills-SE-skills/slackbot-automation) *(来源: awesome-claude-skills)* – 创建和管理 Slack 机器人，用于自动化团队沟通和工作流集成
+    - [Discord 自动化](awesome-claude-skills-SE-skills/discord-automation) *(来源: awesome-claude-skills)* – 自动化 Discord 服务器管理、消息和机器人操作，用于开发者社区
+    - [Discordbot 自动化](awesome-claude-skills-SE-skills/discordbot-automation) *(来源: awesome-claude-skills)* – 构建和管理 Discord 机器人，用于自动化社区参与和通知
     
 
 

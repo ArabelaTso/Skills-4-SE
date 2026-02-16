@@ -623,6 +623,14 @@ A Skill in this repo is more than a prompt:
 - **Documentation & Communication**
     - [Requirement Doc Formatter](markdown-document-structurer) – Generate clear, standardized requirement documents
 
+- **Scenario & User Story Generation**
+    - [Scenario Generator](scenario-generator) – Generate usage scenarios and user stories based on requirements
+
+- **Project Management & Issue Tracking**
+    - [Jira Automation](awesome-claude-skills-SE-skills/jira-automation) *(source: awesome-claude-skills)* – Automate Jira tasks: issues, projects, sprints, boards, comments, and agile workflows
+    - [Linear Automation](awesome-claude-skills-SE-skills/linear-automation) *(source: awesome-claude-skills)* – Automate Linear tasks: issues, projects, cycles, teams, and labels for modern issue tracking
+    - [Confluence Automation](awesome-claude-skills-SE-skills/confluence-automation) *(source: awesome-claude-skills)* – Automate Confluence page creation, content search, space management, and documentation
+
 
 ### 💡 **Software Design**
 - **Architecture & High-Level Design**
@@ -634,6 +642,9 @@ A Skill in this repo is more than a prompt:
 
 - **Design Quality & Analysis**
     - [Design Smell Detector](design-smell-detector) – Identify potential issues like high coupling or low cohesion
+    - [Component Boundary Identifier](component-boundary-identifier) – Identify module/component boundaries and detect boundary violations
+    - [Configuration Generator](configuration-generator) – Generate configuration files for applications, services, or infrastructure
+    - [Dependency Resolver](dependency-resolver) – Identify and manage software dependencies
 
 ### ⌨️ **Implementation**
 - **Spec-to-Code**
@@ -642,6 +653,7 @@ A Skill in this repo is more than a prompt:
     - [Template/Skeleton-based Code Generator](template-code-generator) – Produce boilerplate code or project templates/skeleton automatically
     - [Incremental Python Programmer](incremental-python-programmer) – Implement new features in Python repositories from natural language descriptions with automated testing
     - [Incremental Java Programmer](incremental-java-programmer) – Implement new features in Java repositories (Maven/Gradle) from natural language descriptions with JUnit test generation
+    - [Frontend Design](anthropics-skills-SE-skills/frontend-design) *(source: anthropics-skills)* – Create distinctive, production-grade frontend interfaces with high design quality
 
 - **Refactoring & Optimization**
     - [Refactoring Assistant](code-refactoring-assistant) – Suggest ongoing code improvements to enhance maintainability
@@ -649,6 +661,10 @@ A Skill in this repo is more than a prompt:
     - [Dead Code Eliminator](dead-code-eliminator) – Identify and remove unused or redundant code
     - [Code Review Assistant](code-review-assistant) - Identify bugs, security issues, performance problems, code quality concerns, and best practice violations
     - [Bad Code Smell Detection](code-smell-detector) - Identifies and reports code smells that may indicate poor design or maintainability issues
+    - [Technical Debt Analyzer](technical-debt-analyzer) – Identify technical debt and quantify debt impact
+    - [Code Pattern Extractor](code-pattern-extractor) – Analyze codebases to identify reusable code patterns and duplications
+    - [Code Search Assistant](code-search-assistant) – Search repositories for code related to given snippets using similarity analysis
+    - [Component Boundary Identifier](component-boundary-identifier) – Identify module/component boundaries and analyze architectural separation
 
 - **TDD & SDD**
     - [Test-Driven Code Generator (TDD)](test-driven-generation) – Generate implementation that passes a given set of unit tests (Support Python and Java primarily; Handle simple unit tests (isolated functions/methods))
@@ -656,6 +672,21 @@ A Skill in this repo is more than a prompt:
     
 - **Multi-Language & Translation**
     - [Code Translation](code-translation) – Convert code between programming languages while preserving functionality
+
+- **Development Tools & Builders**
+    - [Artifacts Builder](awesome-claude-skills-SE-skills/artifacts-builder) *(source: awesome-claude-skills)* – Create elaborate, multi-component claude.ai HTML artifacts using React, Tailwind CSS, and shadcn/ui
+    - [Web Artifacts Builder](anthropics-skills-SE-skills/web-artifacts-builder) *(source: anthropics-skills)* – Suite of tools for creating elaborate, multi-component claude.ai HTML artifacts with modern frontend technologies
+    - [MCP Builder](awesome-claude-skills-SE-skills/mcp-builder) *(source: awesome-claude-skills)* – Guide for creating high-quality MCP servers that enable LLMs to interact with external services
+    - [Code Interpreter Automation](awesome-claude-skills-SE-skills/codeinterpreter-automation) *(source: awesome-claude-skills)* – Execute code in isolated environments for data analysis, visualization, and computational tasks
+
+- **Database & Backend Services**
+    - [Supabase Automation](awesome-claude-skills-SE-skills/supabase-automation) *(source: awesome-claude-skills)* – Automate Supabase database queries, table management, storage, edge functions, and SQL execution
+
+- **Version Control & Collaboration**
+    - [GitHub Automation](awesome-claude-skills-SE-skills/github-automation) *(source: awesome-claude-skills)* – Automate GitHub repositories, issues, pull requests, branches, CI/CD, and permissions
+    - [GitLab Automation](awesome-claude-skills-SE-skills/gitlab-automation) *(source: awesome-claude-skills)* – Automate GitLab project management, issues, merge requests, pipelines, and branches
+    - [Bitbucket Automation](awesome-claude-skills-SE-skills/bitbucket-automation) *(source: awesome-claude-skills)* – Automate Bitbucket repositories, pull requests, branches, issues, and workspace management
+    - [Sourcegraph Automation](awesome-claude-skills-SE-skills/sourcegraph-automation) *(source: awesome-claude-skills)* – Automate Sourcegraph code search and navigation operations
 
 ### 👩🏽‍💻 **Testing**
 - **Test Generation**
@@ -686,6 +717,12 @@ A Skill in this repo is more than a prompt:
 - **Test Maintenance**
     - [Python Test Updater](python-test-updater) – Update Python tests to work with new code versions, fixing broken tests and updating assertions
     - [Java Test Updater](java-test-updater) – Update Java tests after code refactoring, handling signature changes, mocks, and assertions
+    - [Flaky Test Detector](flaky-test-detector) – Identify non-deterministic tests and suggest fixes for common flaky patterns
+
+- **Testing Automation & Tools**
+    - [Test App Automation](awesome-claude-skills-SE-skills/test-app-automation) *(source: awesome-claude-skills)* – Automate application testing workflows including unit tests, integration tests, and end-to-end testing
+    - [WebApp Testing](awesome-claude-skills-SE-skills/webapp-testing) *(source: awesome-claude-skills)* – Specialized automation for web application testing including UI testing and browser automation
+    - [Web Application Testing](anthropics-skills-SE-skills/webapp-testing) *(source: anthropics-skills)* – Toolkit for interacting with and testing local web applications using Playwright
 
 
 ### ✅ **Verification**
@@ -714,12 +751,34 @@ A Skill in this repo is more than a prompt:
 - **Continuous Integration & Delivery (CI/CD)**
     - [CI Pipeline Synthesizer](ci-pipeline-synthesizer) – Create CI pipelines for automated building and testing
     - [CD Pipeline Generator](cd-pipeline-generator) – Produce scripts for automated deployment to staging or production
+    - [CircleCI Automation](awesome-claude-skills-SE-skills/circleci-automation) *(source: awesome-claude-skills)* – Automate CircleCI tasks: trigger pipelines, monitor workflows/jobs, retrieve artifacts and test metadata
+    - [Buildkite Automation](awesome-claude-skills-SE-skills/buildkite-automation) *(source: awesome-claude-skills)* – Automate Buildkite CI/CD operations for pipeline management and build automation
+    - [AppVeyor Automation](awesome-claude-skills-SE-skills/appveyor-automation) *(source: awesome-claude-skills)* – Automate AppVeyor continuous integration and deployment for Windows, Linux, and macOS builds
+    - [Appcircle Automation](awesome-claude-skills-SE-skills/appcircle-automation) *(source: awesome-claude-skills)* – Automate mobile CI/CD workflows with Appcircle for iOS and Android app builds
+
+- **Cloud & Infrastructure Deployment**
+    - [Docker Hub Automation](awesome-claude-skills-SE-skills/docker-hub-automation) *(source: awesome-claude-skills)* – Automate Docker Hub operations - manage organizations, repositories, teams, and webhooks
+    - [Vercel Automation](awesome-claude-skills-SE-skills/vercel-automation) *(source: awesome-claude-skills)* – Automate Vercel deployments, domains, DNS, environment variables, projects, and teams
+    - [DigitalOcean Automation](awesome-claude-skills-SE-skills/digital-ocean-automation) *(source: awesome-claude-skills)* – Automate DigitalOcean cloud infrastructure management including droplets, databases, and networking
+    - [Cloudflare Automation](awesome-claude-skills-SE-skills/cloudflare-automation) *(source: awesome-claude-skills)* – Automate Cloudflare CDN, DNS, security, and performance optimization tasks
+    - [NPM Automation](awesome-claude-skills-SE-skills/npm-automation) *(source: awesome-claude-skills)* – Automate NPM package management tasks for JavaScript/Node.js projects
 
 - **Deployment Verification & Testing**
     - [Rollback Strategy Advisor](rollback-strategy-advisor) – Suggest rollback strategies for failed deployments
 
 - **Documentation & Reporting**
     - [Release Notes Writer](release-notes-writer) – Automatically generate user-facing release notes
+
+- **Monitoring & Error Tracking**
+    - [Sentry Automation](awesome-claude-skills-SE-skills/sentry-automation) *(source: awesome-claude-skills)* – Automate Sentry tasks: manage issues/events, configure alerts, track releases, and monitor projects
+    - [Datadog Automation](awesome-claude-skills-SE-skills/datadog-automation) *(source: awesome-claude-skills)* – Automate Datadog tasks: query metrics, search logs, manage monitors/dashboards for full-stack observability
+    - [Bugsnag Automation](awesome-claude-skills-SE-skills/bugsnag-automation) *(source: awesome-claude-skills)* – Automate Bugsnag error monitoring and crash reporting for applications
+    - [BugBug Automation](awesome-claude-skills-SE-skills/bugbug-automation) *(source: awesome-claude-skills)* – Automate bug tracking and test automation workflows with BugBug
+    - [BugHerd Automation](awesome-claude-skills-SE-skills/bugherd-automation) *(source: awesome-claude-skills)* – Manage visual feedback and bug tracking directly on websites with BugHerd
+    - [PagerDuty Automation](awesome-claude-skills-SE-skills/pagerduty-automation) *(source: awesome-claude-skills)* – Automate PagerDuty tasks: manage incidents, services, schedules, escalation policies, and on-call rotations
+
+- **Integration & Webhooks**
+    - [Hookdeck Automation](awesome-claude-skills-SE-skills/hookdeck-automation) *(source: awesome-claude-skills)* – Manage webhook infrastructure, routing, and monitoring for reliable event-driven architectures
 
 
 ### 🔧 **Maintenance**
@@ -737,8 +796,12 @@ A Skill in this repo is more than a prompt:
 - **Performance & Reliability Monitoring**
     - [Flaky Test Detector](flaky-test-detector) – Identify unstable or unreliable test cases
 
+- **Version Control & Merge Conflicts**
+    - [Conflict Analyzer](conflict-analyzer) – Analyze merge conflicts and suggest conflict resolutions
+
 - **Documentation & Knowledge Transfer**
     - [api-documentation-generator](api-documentation-generator) - Summarize API documentation for the given repository
+    - [README Generator](readme-generator) – Generate comprehensive, user-friendly README.md files with setup instructions and usage examples
     - [Python Repository Quick Start](python-repo-quickstart) - Quickly analyze Python repositories to understand structure, dependencies, and setup requirements
     - [Markdown Document Structurer](markdown-document-structurer) - Reorganize markdown documents into well-structured, consistent format with improved readability
     - [Code Comment Generator](code-comment-generator) – Produce meaningful comments for maintenance readability
@@ -749,6 +812,13 @@ A Skill in this repo is more than a prompt:
     - [Refactoring Assistant](code-refactoring-assistant) – Suggest ongoing code improvements to enhance maintainability
     - [Code Pattern Extractor](code-pattern-extractor) – Identify reusable code patterns for future development
     - [Code Search Assistant](code-search-assistant) – Search repositories for related code using multi-dimensional similarity analysis
+    - [Component Boundary Identifier](component-boundary-identifier) – Identify module/component boundaries and detect boundary violations
+
+- **Team Communication & Collaboration**
+    - [Slack Automation](awesome-claude-skills-SE-skills/slack-automation) *(source: awesome-claude-skills)* – Automate Slack messaging, channel management, search, reactions, and threads
+    - [Slackbot Automation](awesome-claude-skills-SE-skills/slackbot-automation) *(source: awesome-claude-skills)* – Create and manage Slack bots for automated team communication and workflow integration
+    - [Discord Automation](awesome-claude-skills-SE-skills/discord-automation) *(source: awesome-claude-skills)* – Automate Discord server management, messaging, and bot operations for developer communities
+    - [Discordbot Automation](awesome-claude-skills-SE-skills/discordbot-automation) *(source: awesome-claude-skills)* – Build and manage Discord bots for automated community engagement and notifications
     
 
 
