@@ -72,6 +72,13 @@
   - 💡 [架构与设计](#架构与设计)
   - 📗 [需求与规范](#需求与规范)
   - 💻 [DevOps 与部署](#devops-与部署)
+  - 🔀 [版本控制与协作](#版本控制与协作)
+  - 📋 [项目管理与问题跟踪](#项目管理与问题跟踪)
+  - 💬 [团队沟通](#团队沟通)
+  - 📊 [监控与错误跟踪](#监控与错误跟踪)
+  - 🗄️ [数据库与后端服务](#数据库与后端服务)
+  - 🛠️ [开发工具与构建器](#开发工具与构建器)
+  - 🔗 [集成与 Webhooks](#集成与-webhooks)
   - 🔨 [调试与错误处理](#调试与错误处理)
   - ✅ [形式化方法与验证](#形式化方法与验证)
   - 🔧 [维护与重构](#维护与重构)
@@ -196,6 +203,12 @@
 - 将需求转换为测试用例
 - 确保需求覆盖
 - 将测试追溯到需求
+
+**[Test App Automation](./awesome-claude-skills-SE-skills/test-app-automation/)** *(来源: awesome-claude-skills)*
+- 自动化应用程序测试工作流，包括单元测试、集成测试和端到端测试
+
+**[WebApp Testing](./awesome-claude-skills-SE-skills/webapp-testing/)** *(来源: awesome-claude-skills)*
+- 专门用于 Web 应用程序测试的自动化，包括 UI 测试和浏览器自动化
 
 ### 代码质量与分析
 
@@ -381,6 +394,113 @@
 - 建议回滚策略
 - 规划部署回退
 - 最小化停机时间
+
+**[CircleCI Automation](./awesome-claude-skills-SE-skills/circleci-automation/)** *(来源: awesome-claude-skills)*
+- 自动化 CircleCI 任务：触发流水线、监控工作流/作业、检索构建产物和测试元数据
+
+**[Buildkite Automation](./awesome-claude-skills-SE-skills/buildkite-automation/)** *(来源: awesome-claude-skills)*
+- 自动化 Buildkite CI/CD 操作，用于流水线管理和构建自动化
+
+**[AppVeyor Automation](./awesome-claude-skills-SE-skills/appveyor-automation/)** *(来源: awesome-claude-skills)*
+- 自动化 AppVeyor 持续集成和部署，支持 Windows、Linux 和 macOS 构建
+
+**[Appcircle Automation](./awesome-claude-skills-SE-skills/appcircle-automation/)** *(来源: awesome-claude-skills)*
+- 使用 Appcircle 自动化移动 CI/CD 工作流，用于 iOS 和 Android 应用构建
+
+**[Docker Hub Automation](./awesome-claude-skills-SE-skills/docker-hub-automation/)** *(来源: awesome-claude-skills)*
+- 自动化 Docker Hub 操作 - 管理组织、仓库、团队和 webhooks
+
+**[Vercel Automation](./awesome-claude-skills-SE-skills/vercel-automation/)** *(来源: awesome-claude-skills)*
+- 自动化 Vercel 部署、域名、DNS、环境变量、项目和团队
+
+**[DigitalOcean Automation](./awesome-claude-skills-SE-skills/digital-ocean-automation/)** *(来源: awesome-claude-skills)*
+- 自动化 DigitalOcean 云基础设施管理，包括 Droplets、数据库和网络
+
+**[Cloudflare Automation](./awesome-claude-skills-SE-skills/cloudflare-automation/)** *(来源: awesome-claude-skills)*
+- 自动化 Cloudflare CDN、DNS、安全和性能优化任务
+
+**[NPM Automation](./awesome-claude-skills-SE-skills/npm-automation/)** *(来源: awesome-claude-skills)*
+- 自动化 JavaScript/Node.js 项目的 NPM 包管理任务
+
+### 版本控制与协作
+
+**[GitHub Automation](./awesome-claude-skills-SE-skills/github-automation/)** *(来源: awesome-claude-skills)*
+- 自动化 GitHub 仓库、问题、拉取请求、分支、CI/CD 和权限管理
+
+**[GitLab Automation](./awesome-claude-skills-SE-skills/gitlab-automation/)** *(来源: awesome-claude-skills)*
+- 自动化 GitLab 项目管理、问题、合并请求、流水线和分支
+
+**[Bitbucket Automation](./awesome-claude-skills-SE-skills/bitbucket-automation/)** *(来源: awesome-claude-skills)*
+- 自动化 Bitbucket 仓库、拉取请求、分支、问题和工作区管理
+
+**[Sourcegraph Automation](./awesome-claude-skills-SE-skills/sourcegraph-automation/)** *(来源: awesome-claude-skills)*
+- 自动化 Sourcegraph 代码搜索和导航操作
+
+### 项目管理与问题跟踪
+
+**[Jira Automation](./awesome-claude-skills-SE-skills/jira-automation/)** *(来源: awesome-claude-skills)*
+- 自动化 Jira 任务：问题、项目、冲刺、看板、评论和敏捷工作流
+
+**[Linear Automation](./awesome-claude-skills-SE-skills/linear-automation/)** *(来源: awesome-claude-skills)*
+- 自动化 Linear 任务：问题、项目、周期、团队和标签，用于现代问题跟踪
+
+**[Confluence Automation](./awesome-claude-skills-SE-skills/confluence-automation/)** *(来源: awesome-claude-skills)*
+- 自动化 Confluence 页面创建、内容搜索、空间管理和文档
+
+### 团队沟通
+
+**[Slack Automation](./awesome-claude-skills-SE-skills/slack-automation/)** *(来源: awesome-claude-skills)*
+- 自动化 Slack 消息、频道管理、搜索、反应和线程
+
+**[Slackbot Automation](./awesome-claude-skills-SE-skills/slackbot-automation/)** *(来源: awesome-claude-skills)*
+- 创建和管理 Slack 机器人，用于自动化团队沟通和工作流集成
+
+**[Discord Automation](./awesome-claude-skills-SE-skills/discord-automation/)** *(来源: awesome-claude-skills)*
+- 自动化 Discord 服务器管理、消息和机器人操作，用于开发者社区
+
+**[Discordbot Automation](./awesome-claude-skills-SE-skills/discordbot-automation/)** *(来源: awesome-claude-skills)*
+- 构建和管理 Discord 机器人，用于自动化社区参与和通知
+
+### 监控与错误跟踪
+
+**[Sentry Automation](./awesome-claude-skills-SE-skills/sentry-automation/)** *(来源: awesome-claude-skills)*
+- 自动化 Sentry 任务：管理问题/事件、配置警报、跟踪发布和监控项目
+
+**[Datadog Automation](./awesome-claude-skills-SE-skills/datadog-automation/)** *(来源: awesome-claude-skills)*
+- 自动化 Datadog 任务：查询指标、搜索日志、管理监控器/仪表板，实现全栈可观测性
+
+**[Bugsnag Automation](./awesome-claude-skills-SE-skills/bugsnag-automation/)** *(来源: awesome-claude-skills)*
+- 自动化 Bugsnag 错误监控和应用程序崩溃报告
+
+**[BugBug Automation](./awesome-claude-skills-SE-skills/bugbug-automation/)** *(来源: awesome-claude-skills)*
+- 使用 BugBug 自动化错误跟踪和测试自动化工作流
+
+**[BugHerd Automation](./awesome-claude-skills-SE-skills/bugherd-automation/)** *(来源: awesome-claude-skills)*
+- 使用 BugHerd 直接在网站上管理可视化反馈和错误跟踪
+
+**[PagerDuty Automation](./awesome-claude-skills-SE-skills/pagerduty-automation/)** *(来源: awesome-claude-skills)*
+- 自动化 PagerDuty 任务：管理事件、服务、排班、升级策略和值班轮换
+
+### 数据库与后端服务
+
+**[Supabase Automation](./awesome-claude-skills-SE-skills/supabase-automation/)** *(来源: awesome-claude-skills)*
+- 自动化 Supabase 数据库查询、表管理、存储、边缘函数和 SQL 执行
+
+### 开发工具与构建器
+
+**[Artifacts Builder](./awesome-claude-skills-SE-skills/artifacts-builder/)** *(来源: awesome-claude-skills)*
+- 使用 React、Tailwind CSS 和 shadcn/ui 创建精细的多组件 claude.ai HTML 制品
+
+**[MCP Builder](./awesome-claude-skills-SE-skills/mcp-builder/)** *(来源: awesome-claude-skills)*
+- 创建高质量 MCP 服务器的指南，使 LLM 能够与外部服务交互
+
+**[Code Interpreter Automation](./awesome-claude-skills-SE-skills/codeinterpreter-automation/)** *(来源: awesome-claude-skills)*
+- 在隔离环境中执行代码，用于数据分析、可视化和计算任务
+
+### 集成与 Webhooks
+
+**[Hookdeck Automation](./awesome-claude-skills-SE-skills/hookdeck-automation/)** *(来源: awesome-claude-skills)*
+- 管理 webhook 基础设施、路由和监控，实现可靠的事件驱动架构
 
 ### 调试与错误处理
 
