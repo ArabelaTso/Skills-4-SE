@@ -131,6 +131,11 @@ A Skill in this repo is more than a prompt:
 - Supports Maven and Gradle build systems
 - Generates JUnit tests and ensures all tests pass successfully
 
+**[Frontend Design](./anthropics-skills-SE-skills/frontend-design/)** *(source: anthropics-skills-SE-skills)*
+- Create distinctive, production-grade frontend interfaces with high design quality
+- Generates creative, polished web components, pages, and applications
+- Avoids generic AI aesthetics with bold, intentional design choices
+
 ### Testing
 
 **[Unit Test Generator](./unit-test-generator/)**
@@ -479,19 +484,29 @@ A Skill in this repo is more than a prompt:
 **[Artifacts Builder](./awesome-claude-skills-SE-skills/artifacts-builder/)** *(source: awesome-claude-skills)*
 - Create elaborate, multi-component claude.ai HTML artifacts using React, Tailwind CSS, and shadcn/ui
 
+**[Web Artifacts Builder](./anthropics-skills-SE-skills/web-artifacts-builder/)** *(source: anthropics-skills-SE-skills)*
+- Suite of tools for creating elaborate, multi-component claude.ai HTML artifacts
+- Uses modern frontend web technologies (React, Tailwind CSS, shadcn/ui)
+- Includes bundling scripts for single-file artifact generation
+
 **[MCP Builder](./awesome-claude-skills-SE-skills/mcp-builder/)** *(source: awesome-claude-skills)*
 - Guide for creating high-quality MCP servers that enable LLMs to interact with external services
 
 **[Code Interpreter Automation](./awesome-claude-skills-SE-skills/codeinterpreter-automation/)** *(source: awesome-claude-skills)*
 - Execute code in isolated environments for data analysis, visualization, and computational tasks
 
-### Testing & Quality Assurance (Extended)
+### Testing & Quality Assurance
 
 **[Test App Automation](./awesome-claude-skills-SE-skills/test-app-automation/)** *(source: awesome-claude-skills)*
 - Automate application testing workflows including unit tests, integration tests, and end-to-end testing
 
 **[WebApp Testing](./awesome-claude-skills-SE-skills/webapp-testing/)** *(source: awesome-claude-skills)*
 - Specialized automation for web application testing including UI testing and browser automation
+
+**[Web Application Testing](./anthropics-skills-SE-skills/webapp-testing/)** *(source: anthropics-skills-SE-skills)*
+- Toolkit for interacting with and testing local web applications using Playwright
+- Supports verifying frontend functionality, debugging UI behavior, and capturing screenshots
+- Includes helper scripts for managing server lifecycle
 
 ### Integration & Webhooks
 

@@ -136,6 +136,12 @@
 - 支持 Maven 和 Gradle 构建系统
 - 生成 JUnit 测试并确保所有测试成功通过
 
+**[前端设计](./anthropics-skills-SE-skills/frontend-design/)** *(来源: anthropics-skills-SE-skills)*
+- 创建独特的、生产级别的前端界面，具有高设计质量
+- 生成富有创意、精美的 Web 组件、页面和应用程序
+- 避免通用的 AI 美学，采用大胆、有意图的设计选择
+
+### 测试
 
 ### 测试
 
@@ -209,6 +215,11 @@
 
 **[WebApp Testing](./awesome-claude-skills-SE-skills/webapp-testing/)** *(来源: awesome-claude-skills)*
 - 专门用于 Web 应用程序测试的自动化，包括 UI 测试和浏览器自动化
+
+**[Web Application Testing](./anthropics-skills-SE-skills/webapp-testing/)** *(来源: anthropics-skills-SE-skills)*
+- 使用 Playwright 与本地 Web 应用程序交互和测试的工具包
+- 支持验证前端功能、调试 UI 行为和捕获屏幕截图
+- 包含用于管理服务器生命周期的辅助脚本
 
 ### 代码质量与分析
 
@@ -490,6 +501,11 @@
 
 **[Artifacts Builder](./awesome-claude-skills-SE-skills/artifacts-builder/)** *(来源: awesome-claude-skills)*
 - 使用 React、Tailwind CSS 和 shadcn/ui 创建精细的多组件 claude.ai HTML 制品
+
+**[Web Artifacts Builder](./anthropics-skills-SE-skills/web-artifacts-builder/)** *(来源: anthropics-skills-SE-skills)*
+- 用于创建精细的多组件 claude.ai HTML 制品的工具套件
+- 使用现代前端 Web 技术（React、Tailwind CSS、shadcn/ui）
+- 包含用于生成单文件制品的打包脚本
 
 **[MCP Builder](./awesome-claude-skills-SE-skills/mcp-builder/)** *(来源: awesome-claude-skills)*
 - 创建高质量 MCP 服务器的指南，使 LLM 能够与外部服务交互
