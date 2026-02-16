@@ -67,6 +67,13 @@ A Skill in this repo is more than a prompt:
   - 💡 [Architecture & Design](#architecture--design)
   - 📗 [Requirements & Specifications](#requirements--specifications)
   - 💻 [DevOps & Deployment](#devops--deployment)
+  - 🔀 [Version Control & Collaboration](#version-control--collaboration)
+  - 📋 [Project Management & Issue Tracking](#project-management--issue-tracking)
+  - 💬 [Team Communication](#team-communication)
+  - 📊 [Monitoring & Error Tracking](#monitoring--error-tracking)
+  - 🗄️ [Database & Backend Services](#database--backend-services)
+  - 🛠️ [Development Tools & Builders](#development-tools--builders)
+  - 🔗 [Integration & Webhooks](#integration--webhooks)
   - 🔨 [Debugging & Error Handling](#debugging--error-handling)
   - ✅ [Formal Methods & Verification](#formal-methods--verification)
   - 🔧 [Maintenance & Refactoring](#maintenance--refactoring)
@@ -236,7 +243,7 @@ A Skill in this repo is more than a prompt:
 **[Component Boundary Identifier](./component-boundary-identifier/)**
 - Identifies module/component boundaries
 - Detects boundary violations
-- Analyzes architectural separation
+- Analyzes architectural separation 
 
 ### Documentation
 
@@ -375,6 +382,121 @@ A Skill in this repo is more than a prompt:
 - Suggests rollback strategies
 - Plans deployment reversions
 - Minimizes downtime
+
+**[CircleCI Automation](./awesome-claude-skills-SE-skills/circleci-automation/)** *(source: awesome-claude-skills)*
+- Automate CircleCI tasks: trigger pipelines, monitor workflows/jobs, retrieve artifacts and test metadata
+
+**[Buildkite Automation](./awesome-claude-skills-SE-skills/buildkite-automation/)** *(source: awesome-claude-skills)*
+- Automate Buildkite CI/CD operations for pipeline management and build automation
+
+**[AppVeyor Automation](./awesome-claude-skills-SE-skills/appveyor-automation/)** *(source: awesome-claude-skills)*
+- Automate AppVeyor continuous integration and deployment for Windows, Linux, and macOS builds
+
+**[Appcircle Automation](./awesome-claude-skills-SE-skills/appcircle-automation/)** *(source: awesome-claude-skills)*
+- Automate mobile CI/CD workflows with Appcircle for iOS and Android app builds
+
+**[Docker Hub Automation](./awesome-claude-skills-SE-skills/docker-hub-automation/)** *(source: awesome-claude-skills)*
+- Automate Docker Hub operations - manage organizations, repositories, teams, and webhooks
+
+**[Vercel Automation](./awesome-claude-skills-SE-skills/vercel-automation/)** *(source: awesome-claude-skills)*
+- Automate Vercel deployments, domains, DNS, environment variables, projects, and teams
+
+**[DigitalOcean Automation](./awesome-claude-skills-SE-skills/digital-ocean-automation/)** *(source: awesome-claude-skills)*
+- Automate DigitalOcean cloud infrastructure management including droplets, databases, and networking
+
+**[Cloudflare Automation](./awesome-claude-skills-SE-skills/cloudflare-automation/)** *(source: awesome-claude-skills)*
+- Automate Cloudflare CDN, DNS, security, and performance optimization tasks
+
+**[NPM Automation](./awesome-claude-skills-SE-skills/npm-automation/)** *(source: awesome-claude-skills)*
+- Automate NPM package management tasks for JavaScript/Node.js projects
+
+### Version Control & Collaboration
+
+**[GitHub Automation](./awesome-claude-skills-SE-skills/github-automation/)** *(source: awesome-claude-skills)*
+- Automate GitHub repositories, issues, pull requests, branches, CI/CD, and permissions
+
+**[GitLab Automation](./awesome-claude-skills-SE-skills/gitlab-automation/)** *(source: awesome-claude-skills)*
+- Automate GitLab project management, issues, merge requests, pipelines, and branches
+
+**[Bitbucket Automation](./awesome-claude-skills-SE-skills/bitbucket-automation/)** *(source: awesome-claude-skills)*
+- Automate Bitbucket repositories, pull requests, branches, issues, and workspace management
+
+**[Sourcegraph Automation](./awesome-claude-skills-SE-skills/sourcegraph-automation/)** *(source: awesome-claude-skills)*
+- Automate Sourcegraph code search and navigation operations
+
+### Project Management & Issue Tracking
+
+**[Jira Automation](./awesome-claude-skills-SE-skills/jira-automation/)** *(source: awesome-claude-skills)*
+- Automate Jira tasks: issues, projects, sprints, boards, comments, and agile workflows
+
+**[Linear Automation](./awesome-claude-skills-SE-skills/linear-automation/)** *(source: awesome-claude-skills)*
+- Automate Linear tasks: issues, projects, cycles, teams, and labels for modern issue tracking
+
+**[Confluence Automation](./awesome-claude-skills-SE-skills/confluence-automation/)** *(source: awesome-claude-skills)*
+- Automate Confluence page creation, content search, space management, and documentation
+
+### Team Communication
+
+**[Slack Automation](./awesome-claude-skills-SE-skills/slack-automation/)** *(source: awesome-claude-skills)*
+- Automate Slack messaging, channel management, search, reactions, and threads
+
+**[Slackbot Automation](./awesome-claude-skills-SE-skills/slackbot-automation/)** *(source: awesome-claude-skills)*
+- Create and manage Slack bots for automated team communication and workflow integration
+
+**[Discord Automation](./awesome-claude-skills-SE-skills/discord-automation/)** *(source: awesome-claude-skills)*
+- Automate Discord server management, messaging, and bot operations for developer communities
+
+**[Discordbot Automation](./awesome-claude-skills-SE-skills/discordbot-automation/)** *(source: awesome-claude-skills)*
+- Build and manage Discord bots for automated community engagement and notifications
+
+### Monitoring & Error Tracking
+
+**[Sentry Automation](./awesome-claude-skills-SE-skills/sentry-automation/)** *(source: awesome-claude-skills)*
+- Automate Sentry tasks: manage issues/events, configure alerts, track releases, and monitor projects
+
+**[Datadog Automation](./awesome-claude-skills-SE-skills/datadog-automation/)** *(source: awesome-claude-skills)*
+- Automate Datadog tasks: query metrics, search logs, manage monitors/dashboards for full-stack observability
+
+**[Bugsnag Automation](./awesome-claude-skills-SE-skills/bugsnag-automation/)** *(source: awesome-claude-skills)*
+- Automate Bugsnag error monitoring and crash reporting for applications
+
+**[BugBug Automation](./awesome-claude-skills-SE-skills/bugbug-automation/)** *(source: awesome-claude-skills)*
+- Automate bug tracking and test automation workflows with BugBug
+
+**[BugHerd Automation](./awesome-claude-skills-SE-skills/bugherd-automation/)** *(source: awesome-claude-skills)*
+- Manage visual feedback and bug tracking directly on websites with BugHerd
+
+**[PagerDuty Automation](./awesome-claude-skills-SE-skills/pagerduty-automation/)** *(source: awesome-claude-skills)*
+- Automate PagerDuty tasks: manage incidents, services, schedules, escalation policies, and on-call rotations
+
+### Database & Backend Services
+
+**[Supabase Automation](./awesome-claude-skills-SE-skills/supabase-automation/)** *(source: awesome-claude-skills)*
+- Automate Supabase database queries, table management, storage, edge functions, and SQL execution
+
+### Development Tools & Builders
+
+**[Artifacts Builder](./awesome-claude-skills-SE-skills/artifacts-builder/)** *(source: awesome-claude-skills)*
+- Create elaborate, multi-component claude.ai HTML artifacts using React, Tailwind CSS, and shadcn/ui
+
+**[MCP Builder](./awesome-claude-skills-SE-skills/mcp-builder/)** *(source: awesome-claude-skills)*
+- Guide for creating high-quality MCP servers that enable LLMs to interact with external services
+
+**[Code Interpreter Automation](./awesome-claude-skills-SE-skills/codeinterpreter-automation/)** *(source: awesome-claude-skills)*
+- Execute code in isolated environments for data analysis, visualization, and computational tasks
+
+### Testing & Quality Assurance (Extended)
+
+**[Test App Automation](./awesome-claude-skills-SE-skills/test-app-automation/)** *(source: awesome-claude-skills)*
+- Automate application testing workflows including unit tests, integration tests, and end-to-end testing
+
+**[WebApp Testing](./awesome-claude-skills-SE-skills/webapp-testing/)** *(source: awesome-claude-skills)*
+- Specialized automation for web application testing including UI testing and browser automation
+
+### Integration & Webhooks
+
+**[Hookdeck Automation](./awesome-claude-skills-SE-skills/hookdeck-automation/)** *(source: awesome-claude-skills)*
+- Manage webhook infrastructure, routing, and monitoring for reliable event-driven architectures
 
 ### Debugging & Error Handling
 
