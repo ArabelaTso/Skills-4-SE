@@ -4,7 +4,7 @@
 [![中文](https://img.shields.io/badge/lang-中文-red)](./README-zh.md)
 [![English](https://img.shields.io/badge/lang-English-blue)](./README.md)
 
-This repository is **a comprehensive reusable, task-oriented Skills collection** designed to support **software engineering activities across the entire development lifecycle**, including:
+This repository is **a comprehensive reusable, task-oriented 150+ Skills collection** designed to support **software engineering activities across the entire development lifecycle**, including:
 
 > Requirement understanding, system design, implementation, testing, verification, deployment, and maintenance.
 
@@ -33,7 +33,7 @@ This repository is **a comprehensive reusable, task-oriented Skills collection**
 </p>
 
 Browse, search, and install skills through our interactive web interface. The Skills Manager provides:
-- 📦 One-click installation of all 75+ skills
+- 📦 One-click installation of all 150+ skills
 - ✅ Selective installation of specific skills
 - 🔍 Search and filter by category
 - 📖 Bilingual help documentation (English/中文)
@@ -136,6 +136,11 @@ A Skill in this repo is more than a prompt:
 - Generates creative, polished web components, pages, and applications
 - Avoids generic AI aesthetics with bold, intentional design choices
 
+**[Pseudocode Extractor](./pseudocode-extractor/)**
+- Extracts high-level pseudocode from implementations
+- Simplifies code for specification writing
+- Aids in algorithm understanding
+
 ### Testing
 
 **[Unit Test Generator](./unit-test-generator/)**
@@ -203,6 +208,26 @@ A Skill in this repo is more than a prompt:
 - Ensures requirement coverage
 - Traces tests back to requirements
 
+**[Python Regression Test Generator](./python-regression-test-generator/)**
+- Automatically generates regression tests for Python codebases
+- Analyzes changes between old and new code versions
+- Migrates existing tests and creates mocks for dependencies
+
+**[Java Regression Test Generator](./java-regression-test-generator/)**
+- Automatically generates regression tests for Java codebases
+- Supports JUnit and TestNG frameworks
+- Handles Maven and Gradle build systems
+
+**[Mocking Test Generator](./mocking-test-generator/)**
+- Generates test mocks for external dependencies
+- Creates stubs for I/O operations and side-effect functions
+- Supports multiple mocking frameworks
+
+**[Test-Guided Bug Detector](./test-guided-bug-detector/)**
+- Detects bugs using test execution information
+- Analyzes test failures to identify root causes
+- Suggests bug fixes based on test results
+
 ### Code Quality & Analysis
 
 **[Code Review Assistant](./code-review-assistant/)**
@@ -248,7 +273,47 @@ A Skill in this repo is more than a prompt:
 **[Component Boundary Identifier](./component-boundary-identifier/)**
 - Identifies module/component boundaries
 - Detects boundary violations
-- Analyzes architectural separation 
+- Analyzes architectural separation
+
+**[Static Bug Detector](./static-bug-detector/)**
+- Detects potential functional bugs through static analysis
+- Identifies null dereferences, incorrect conditions, unreachable code
+- Reports suspicious locations with explanations and confidence levels
+
+**[Semantic Bug Detector](./semantic-bug-detector/)**
+- Detects semantic bugs that violate intended program behavior
+- Identifies logic errors, incorrect API usage, and semantic inconsistencies
+- Provides detailed explanations and fix suggestions
+
+**[Static Vulnerability Detector](./static-vulnerability-detector/)**
+- Detects security vulnerabilities through static code analysis
+- Identifies injection flaws, authentication issues, and cryptographic failures
+- Reports vulnerabilities with severity ratings and remediation guidance
+
+**[Vulnerability Pattern Matcher](./vulnerability-pattern-matcher/)**
+- Detects security vulnerabilities by matching known vulnerability patterns
+- Explains why patterns are risky and exploitability conditions
+- Supports CVE-style patterns and insecure coding idioms
+
+**[Exploitability Analyzer](./exploitability-analyzer/)**
+- Analyzes detected vulnerabilities for exploitability
+- Assesses attack complexity, privileges required, and impact
+- Provides CVSS scores and exploitation scenarios
+
+**[Vulnerability Root Cause Analyzer](./vulnerability-root-cause-analyzer/)**
+- Analyzes root causes of security vulnerabilities
+- Traces vulnerability origins through code flow
+- Provides detailed remediation strategies
+
+**[Security Patch Advisor](./security-patch-advisor/)**
+- Recommends security patches for identified vulnerabilities
+- Generates secure code alternatives
+- Validates patch effectiveness
+
+**[Code Summarizer](./code-summarizer/)**
+- Generates concise summaries of code functionality
+- Explains code purpose and key operations
+- Aids in code comprehension and documentation 
 
 ### Documentation
 
@@ -540,6 +605,16 @@ A Skill in this repo is more than a prompt:
 - Suggests conflict resolutions
 - Explains conflicting changes
 
+**[Counterexample Debugger](./counterexample-debugger/)**
+- Debugs formal verification counterexamples
+- Explains why counterexamples violate specifications
+- Suggests fixes to eliminate counterexamples
+
+**[Issue Report Generator](./issue-report-generator/)**
+- Automatically generates issue reports from failing tests
+- Includes root cause analysis and reproduction steps
+- Provides actionable debugging information
+
 ### Formal Methods & Verification
 
 **[ACSL Annotation Assistant](./acsl-annotation-assistant/)**
@@ -577,6 +652,136 @@ A Skill in this repo is more than a prompt:
 - Provides debugging insights
 - Suggests fixes
 
+**[Formal Spec Generator](./formal-spec-generator/)**
+- Generates formal specifications from natural language requirements
+- Supports multiple specification languages (Dafny, Coq, Isabelle)
+- Validates specification completeness and consistency
+
+**[Program to Model Extractor](./program-to-model-extractor/)**
+- Extracts formal models from imperative programs
+- Supports multiple target languages (Dafny, Coq, TLA+)
+- Preserves program semantics in extracted models
+
+**[Imperative to Coq Model Extractor](./imperative-to-coq-model-extractor/)**
+- Extracts Coq models from imperative programs
+- Handles state, control flow, and data structures
+- Generates executable Coq specifications
+
+**[Python to Dafny Translator](./python-to-dafny-translator/)**
+- Translates Python code to Dafny for verification
+- Generates function contracts and loop invariants
+- Preserves Python semantics in Dafny
+
+**[Python to Lean4 Translator](./python-to-lean4-translator/)**
+- Translates Python code to Lean4 for formal verification
+- Generates type-safe Lean4 code with proofs
+- Handles Python idioms and data structures
+
+**[C/C++ to Lean4 Translator](./c-cpp-to-lean4-translator/)**
+- Translates C/C++ code to Lean4 for verification
+- Handles pointers, memory management, and low-level operations
+- Generates safe Lean4 equivalents
+
+**[C++ to Dafny Translator](./cpp-to-dafny-translator/)**
+- Translates C++ code to Dafny for verification
+- Handles object-oriented features and templates
+- Generates verifiable Dafny specifications
+
+**[Program Correctness Prover](./program-correctness-prover/)**
+- Proves program correctness using formal methods
+- Generates proofs for specifications
+- Validates correctness properties
+
+**[Proof Skeleton Generator](./proof-skeleton-generator/)**
+- Generates proof skeletons for verification tasks
+- Provides proof structure and key lemmas
+- Assists in interactive theorem proving
+
+**[Proof Failure Explainer](./proof-failure-explainer/)**
+- Explains why Isabelle or Coq proofs fail
+- Identifies missing assumptions and incorrect goals
+- Suggests proof repair strategies
+
+**[Proof Refactoring Assistant](./proof-refactoring-assistant/)**
+- Restructures proofs for better readability and maintainability
+- Extracts helper lemmas and simplifies proof structure
+- Preserves proof semantics
+
+**[Proof Trace Summarizer](./proof-trace-summarizer/)**
+- Summarizes proof traces from theorem provers
+- Highlights key proof steps and decisions
+- Aids in proof understanding
+
+**[Proof Carrying Code Generator](./proof-carrying-code-generator/)**
+- Generates proof-carrying code with embedded correctness proofs
+- Ensures code correctness at deployment time
+- Supports multiple verification frameworks
+
+**[Verified Spec-Code Mapper](./verified-spec-code-mapper/)**
+- Establishes traceability between formal specifications and verified code
+- Maps specifications to implementation components
+- Reports verification coverage
+
+**[Verification Boundary Reporter](./verification-boundary-reporter/)**
+- Identifies boundaries between verified and unverified code
+- Reports verification coverage gaps
+- Suggests verification priorities
+
+**[Verified Pseudocode Extractor](./verified-pseudocode-extractor/)**
+- Extracts pseudocode with verification annotations
+- Preserves correctness properties in pseudocode
+- Bridges code and specifications
+
+**[Lemma Discovery Assistant](./lemma-discovery-assistant/)**
+- Discovers helper lemmas for proof completion
+- Suggests lemmas based on proof context
+- Assists in interactive theorem proving
+
+**[Tactic Suggestion Assistant](./tactic-suggestion-assistant/)**
+- Suggests proof tactics for Coq, Isabelle, or Lean
+- Recommends tactics based on proof state
+- Accelerates interactive proof development
+
+**[Refinement Step Generator](./refinement-step-generator/)**
+- Generates refinement steps for stepwise program development
+- Ensures refinement correctness
+- Supports refinement calculus
+
+**[Abstract Domain Explorer](./abstract-domain-explorer/)**
+- Applies abstract interpretation using different abstract domains
+- Infers invariants, value ranges, and variable relationships
+- Supports intervals, octagons, polyhedra, and other domains
+
+**[Abstract Invariant Generator](./abstract-invariant-generator/)**
+- Generates program invariants using abstract interpretation
+- Supports multiple abstract domains
+- Validates generated invariants
+
+**[Abstract State Analyzer](./abstract-state-analyzer/)**
+- Analyzes program states using abstract interpretation
+- Computes abstract states at program points
+- Reports reachability and safety properties
+
+**[Abstract Trace Summarizer](./abstract-trace-summarizer/)**
+- Summarizes execution traces using abstraction
+- Identifies key trace patterns
+- Aids in trace analysis and debugging
+
+**[Control Flow Abstraction Generator](./control-flow-abstraction-generator/)**
+- Generates abstract control flow representations
+- Simplifies control flow for analysis
+- Supports predicate abstraction
+
+**[Library for Proof Advisor](./library-for-proof-advisor/)**
+- Recommends verified libraries for specific tasks
+- Suggests libraries with formal correctness guarantees
+- Provides integration guidance
+
+**[Requirement Enhancer](./requirement-enhancer/)**
+- Enhances requirements with formal properties
+- Adds precision and completeness to specifications
+- Validates requirement consistency
+
 ### Maintenance & Refactoring
 
 **[Code Refactoring Assistant](./code-refactoring-assistant/)**
@@ -604,7 +809,7 @@ A Skill in this repo is more than a prompt:
 
 ## 🔁 Skills by Stages
 
-> Stages in Software Deveopment Lifecycle (SDLC)
+> Stages in Software Development Lifecycle (SDLC)
 
 ### 📕 **Requirements**
 - **Requirement Analysis**
@@ -654,6 +859,7 @@ A Skill in this repo is more than a prompt:
     - [Incremental Python Programmer](incremental-python-programmer) – Implement new features in Python repositories from natural language descriptions with automated testing
     - [Incremental Java Programmer](incremental-java-programmer) – Implement new features in Java repositories (Maven/Gradle) from natural language descriptions with JUnit test generation
     - [Frontend Design](anthropics-skills-SE-skills/frontend-design) *(source: anthropics-skills)* – Create distinctive, production-grade frontend interfaces with high design quality
+    - [Pseudocode Extractor](pseudocode-extractor) – Extract high-level pseudocode from implementations for specification writing
 
 - **Refactoring & Optimization**
     - [Refactoring Assistant](code-refactoring-assistant) – Suggest ongoing code improvements to enhance maintainability
@@ -665,6 +871,16 @@ A Skill in this repo is more than a prompt:
     - [Code Pattern Extractor](code-pattern-extractor) – Analyze codebases to identify reusable code patterns and duplications
     - [Code Search Assistant](code-search-assistant) – Search repositories for code related to given snippets using similarity analysis
     - [Component Boundary Identifier](component-boundary-identifier) – Identify module/component boundaries and analyze architectural separation
+    - [Code Summarizer](code-summarizer) – Generate concise summaries of code functionality and purpose
+
+- **Security & Vulnerability Analysis**
+    - [Static Bug Detector](static-bug-detector) – Detect potential functional bugs through static analysis
+    - [Semantic Bug Detector](semantic-bug-detector) – Detect semantic bugs that violate intended program behavior
+    - [Static Vulnerability Detector](static-vulnerability-detector) – Detect security vulnerabilities through static code analysis
+    - [Vulnerability Pattern Matcher](vulnerability-pattern-matcher) – Match code against known vulnerability patterns
+    - [Exploitability Analyzer](exploitability-analyzer) – Analyze vulnerabilities for exploitability and impact
+    - [Vulnerability Root Cause Analyzer](vulnerability-root-cause-analyzer) – Analyze root causes of security vulnerabilities
+    - [Security Patch Advisor](security-patch-advisor) – Recommend security patches for identified vulnerabilities
 
 - **TDD & SDD**
     - [Test-Driven Code Generator (TDD)](test-driven-generation) – Generate implementation that passes a given set of unit tests (Support Python and Java primarily; Handle simple unit tests (isolated functions/methods))
@@ -694,6 +910,9 @@ A Skill in this repo is more than a prompt:
     - [Integration Test Generator](integration-test-generator) – Generate tests for multiple interacting components
     - [Directed Test Input Generator](directed-test-input-generator) – Uses program context and testing objectives to guide LLM-driven test input generation toward hard-to-reach behaviors.
     - [Fuzzing Input Generator](fuzzing-input-generator) -- Produce randomized inputs to detect unexpected failures
+    - [Python Regression Test Generator](python-regression-test-generator) – Automatically generate regression tests for Python codebases by analyzing code changes
+    - [Java Regression Test Generator](java-regression-test-generator) – Automatically generate regression tests for Java codebases with JUnit/TestNG support
+    - [Mocking Test Generator](mocking-test-generator) – Generate test mocks for external dependencies and I/O operations
 
 
 - **Assertion & Oracle Synthesis**
@@ -710,6 +929,7 @@ A Skill in this repo is more than a prompt:
     - [Regression Root Cause Analyzer](regression-root-cause-analyzer) – Locate root causes of failing regression tests
     - [Error Explanation Generator](error-explanation-generator) – Explain why tests fail and provide actionable guidance
     - [Runtime Error Explanation Generator](runtime-error-explainer) – Explains runtime errors and compilation failures with actionable debugging guidance
+    - [Test-Guided Bug Detector](test-guided-bug-detector) – Detect bugs using test execution information and failure analysis
 
 - **Test Documentation & Reporting**
     - [Test Case Documentation](test-case-documentation) – Summarize the documentation for test cases
@@ -731,14 +951,51 @@ A Skill in this repo is more than a prompt:
     - [ACSL Annotation Assistant](acsl-annotation-assistant) – Create ACSL or other formal annotations for C/C++ programs
     - [Invariant Inference](invariant-inference) – Automatically infer loop or function invariants
     - [Specification Generator](specification-generator) – Generate formal specifications (pre/postconditions, invariants) from code or requirements
+    - [Formal Spec Generator](formal-spec-generator) – Generate formal specifications from natural language requirements
+    - [Requirement Enhancer](requirement-enhancer) – Enhance requirements with formal properties and validation
 
 - **Formal Verification**
     - [Static Reasoning Verifier](static-reasoning-verifier) – Check code correctness statically against specifications
     - [Symbolic Execution Assistant](symbolic-execution-assistant) – Perform symbolic execution to detect potential errors
+    - [Program Correctness Prover](program-correctness-prover) – Prove program correctness using formal methods
 
 - **Counterexample Analysis**
     - [Counterexample Generator](counterexample-generator) – Produce counterexamples when verification fails
     - [Counterexample Explainer](counterexample-explainer) – Explain why a counterexample violates the specification
+    - [Counterexample Debugger](counterexample-debugger) – Debug formal verification counterexamples with fix suggestions
+
+- **Code Translation & Model Extraction**
+    - [Program to Model Extractor](program-to-model-extractor) – Extract formal models from imperative programs
+    - [Imperative to Coq Model Extractor](imperative-to-coq-model-extractor) – Extract Coq models from imperative programs
+    - [Python to Dafny Translator](python-to-dafny-translator) – Translate Python code to Dafny for verification
+    - [Python to Lean4 Translator](python-to-lean4-translator) – Translate Python code to Lean4 for formal verification
+    - [C/C++ to Lean4 Translator](c-cpp-to-lean4-translator) – Translate C/C++ code to Lean4 for verification
+    - [C++ to Dafny Translator](cpp-to-dafny-translator) – Translate C++ code to Dafny for verification
+    - [Verified Pseudocode Extractor](verified-pseudocode-extractor) – Extract pseudocode with verification annotations
+
+- **Proof Assistance**
+    - [Proof Skeleton Generator](proof-skeleton-generator) – Generate proof skeletons for verification tasks
+    - [Proof Failure Explainer](proof-failure-explainer) – Explain why Isabelle or Coq proofs fail
+    - [Proof Refactoring Assistant](proof-refactoring-assistant) – Restructure proofs for better readability and maintainability
+    - [Proof Trace Summarizer](proof-trace-summarizer) – Summarize proof traces from theorem provers
+    - [Proof Carrying Code Generator](proof-carrying-code-generator) – Generate proof-carrying code with embedded correctness proofs
+    - [Lemma Discovery Assistant](lemma-discovery-assistant) – Discover helper lemmas for proof completion
+    - [Tactic Suggestion Assistant](tactic-suggestion-assistant) – Suggest proof tactics for Coq, Isabelle, or Lean
+    - [Refinement Step Generator](refinement-step-generator) – Generate refinement steps for stepwise program development
+
+- **Abstract Interpretation**
+    - [Abstract Domain Explorer](abstract-domain-explorer) – Apply abstract interpretation using different abstract domains
+    - [Abstract Invariant Generator](abstract-invariant-generator) – Generate program invariants using abstract interpretation
+    - [Abstract State Analyzer](abstract-state-analyzer) – Analyze program states using abstract interpretation
+    - [Abstract Trace Summarizer](abstract-trace-summarizer) – Summarize execution traces using abstraction
+    - [Control Flow Abstraction Generator](control-flow-abstraction-generator) – Generate abstract control flow representations
+
+- **Verification Coverage & Traceability**
+    - [Verified Spec-Code Mapper](verified-spec-code-mapper) – Establish traceability between formal specifications and verified code
+    - [Verification Boundary Reporter](verification-boundary-reporter) – Identify boundaries between verified and unverified code
+
+- **Library & Tool Support**
+    - [Library for Proof Advisor](library-for-proof-advisor) – Recommend verified libraries for specific tasks
 
 
 ### 💻 **Deployment**
@@ -787,6 +1044,7 @@ A Skill in this repo is more than a prompt:
     - [Regression Root Cause Analyzer](regression-root-cause-analyzer) – Find root causes of failing regression tests
     - [Runtime Error Explanation Generator](runtime-error-explainer) – Explains runtime errors and compilation failures with actionable debugging guidance
     - [Bug-to-Patch Generator](bug-to-patch-generator) – Generate code fixes from bug reports or failing test cases
+    - [Issue Report Generator](issue-report-generator) – Automatically generate issue reports from failing tests with root cause analysis
 
 - **Legacy & Technical Debt Management**
     - [Legacy Code Summarizer](legacy-code-summarizer) – Produce summaries and insights about legacy code bases
@@ -826,6 +1084,11 @@ A Skill in this repo is more than a prompt:
 
 Each skill is packaged as a skill folder containing a `SKILL.md` file and other necessary scripts/references that can be loaded into Claude Code or other compatible LLM systems.
 
+### Setup Claude Code
+
+[Claude Code Doc](https://code.claude.com/docs/en/setup)
+
+
 ### Setup a Skill
 
 ```bash
@@ -844,9 +1107,7 @@ More details of [**how Claude store skills and other configurations**](https://m
 
 ### Using a Skill
 
-Skills are automatically triggered based on user requests that match the skill's description. You can also explicitly invoke a skill:
-
-> Using "requirement-summarizer" to summarize the requirement "path-to-a-doc.md"
+See “**How to Use**” at **[🚀 Visit Skills Manager](https://ArabelaTso.github.io/Skills-4-SE/)**.
 
 
 
@@ -876,7 +1137,7 @@ Our long-term vision is to build:
 - Pull request process
 - Code of conduct
 
-🎉 If you are building or studying LLMs for software engineering, this repo is for you.
+🎉 If you are building or studying AI for software engineering, this repo is for you.
 
 
 

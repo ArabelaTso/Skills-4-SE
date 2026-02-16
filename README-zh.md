@@ -8,7 +8,7 @@
 > *注：本文档由Claude翻译而成。*
 
 ---
-本仓库是**一个全面的、可重用的、面向任务的技能集合**，旨在支持**整个开发生命周期的软件工程活动**，包括：
+本仓库是**一个全面的、可重用的、面向任务的包含150+条技能的集合**，旨在支持**整个开发生命周期的软件工程活动**，包括：
 
 > 需求理解、系统设计、实现、测试、验证、部署和维护。
 
@@ -36,7 +36,7 @@
 </p>
 
 通过我们的交互式网页界面浏览、搜索和安装技能。Skills Manager 提供：
-- 📦 一键安装所有 75+ 个技能
+- 📦 一键安装所有 150+ 个技能
 - ✅ 选择性安装特定技能
 - 🔍 按类别搜索和筛选
 - 📖 中英文双语帮助文档
@@ -141,6 +141,11 @@
 - 生成富有创意、精美的 Web 组件、页面和应用程序
 - 避免通用的 AI 美学，采用大胆、有意图的设计选择
 
+**[伪代码提取器](./pseudocode-extractor/)**
+- 从实现中提取高级伪代码
+- 简化代码以便编写规范
+- 辅助算法理解
+
 ### 测试
 
 ### 测试
@@ -210,6 +215,26 @@
 - 确保需求覆盖
 - 将测试追溯到需求
 
+**[Python 回归测试生成器](./python-regression-test-generator/)**
+- 自动为 Python 代码库生成回归测试
+- 分析新旧代码版本之间的变化
+- 迁移现有测试并为依赖项创建模拟对象
+
+**[Java 回归测试生成器](./java-regression-test-generator/)**
+- 自动为 Java 代码库生成回归测试
+- 支持 JUnit 和 TestNG 框架
+- 处理 Maven 和 Gradle 构建系统
+
+**[模拟测试生成器](./mocking-test-generator/)**
+- 为外部依赖项生成测试模拟对象
+- 为 I/O 操作和副作用函数创建存根
+- 支持多种模拟框架
+
+**[测试引导的错误检测器](./test-guided-bug-detector/)**
+- 使用测试执行信息检测错误
+- 分析测试失败以识别根本原因
+- 根据测试结果建议错误修复
+
 **[Test App Automation](./awesome-claude-skills-SE-skills/test-app-automation/)** *(来源: awesome-claude-skills)*
 - 自动化应用程序测试工作流，包括单元测试、集成测试和端到端测试
 
@@ -267,6 +292,46 @@
 - 识别模块/组件边界
 - 检测边界违规
 - 分析架构分离
+
+**[静态错误检测器](./static-bug-detector/)**
+- 通过静态分析检测潜在的功能性错误
+- 识别空指针解引用、错误条件、不可达代码
+- 报告可疑位置并提供解释和置信度
+
+**[语义错误检测器](./semantic-bug-detector/)**
+- 检测违反预期程序行为的语义错误
+- 识别逻辑错误、不正确的 API 使用和语义不一致
+- 提供详细的解释和修复建议
+
+**[静态漏洞检测器](./static-vulnerability-detector/)**
+- 通过静态代码分析检测安全漏洞
+- 识别注入缺陷、身份验证问题和加密失败
+- 报告漏洞并提供严重性评级和修复指导
+
+**[漏洞模式匹配器](./vulnerability-pattern-matcher/)**
+- 通过匹配已知漏洞模式检测安全漏洞
+- 解释模式为何有风险以及可利用条件
+- 支持 CVE 风格模式和不安全的编码习惯
+
+**[可利用性分析器](./exploitability-analyzer/)**
+- 分析检测到的漏洞的可利用性
+- 评估攻击复杂度、所需权限和影响
+- 提供 CVSS 评分和利用场景
+
+**[漏洞根因分析器](./vulnerability-root-cause-analyzer/)**
+- 分析安全漏洞的根本原因
+- 通过代码流追踪漏洞来源
+- 提供详细的修复策略
+
+**[安全补丁顾问](./security-patch-advisor/)**
+- 为识别的漏洞推荐安全补丁
+- 生成安全的代码替代方案
+- 验证补丁有效性
+
+**[代码摘要生成器](./code-summarizer/)**
+- 生成代码功能的简洁摘要
+- 解释代码目的和关键操作
+- 辅助代码理解和文档编写
 
 ### 文档
 
@@ -545,6 +610,16 @@
 - 建议冲突解决方案
 - 解释冲突的变更
 
+**[反例调试器](./counterexample-debugger/)**
+- 调试形式化验证反例
+- 解释反例为何违反规范
+- 建议消除反例的修复方法
+
+**[问题报告生成器](./issue-report-generator/)**
+- 从失败的测试自动生成问题报告
+- 包含根本原因分析和复现步骤
+- 提供可操作的调试信息
+
 ### 形式化方法与验证
 
 **[ACSL 注解助手](./acsl-annotation-assistant/)**
@@ -581,6 +656,136 @@
 - 解释反例
 - 提供调试见解
 - 建议修复方法
+
+**[形式化规范生成器](./formal-spec-generator/)**
+- 从自然语言需求生成形式化规范
+- 支持多种规范语言（Dafny、Coq、Isabelle）
+- 验证规范的完整性和一致性
+
+**[程序到模型提取器](./program-to-model-extractor/)**
+- 从命令式程序提取形式化模型
+- 支持多种目标语言（Dafny、Coq、TLA+）
+- 在提取的模型中保持程序语义
+
+**[命令式到 Coq 模型提取器](./imperative-to-coq-model-extractor/)**
+- 从命令式程序提取 Coq 模型
+- 处理状态、控制流和数据结构
+- 生成可执行的 Coq 规范
+
+**[Python 到 Dafny 翻译器](./python-to-dafny-translator/)**
+- 将 Python 代码翻译为 Dafny 以进行验证
+- 生成函数契约和循环不变量
+- 在 Dafny 中保持 Python 语义
+
+**[Python 到 Lean4 翻译器](./python-to-lean4-translator/)**
+- 将 Python 代码翻译为 Lean4 以进行形式化验证
+- 生成带有证明的类型安全 Lean4 代码
+- 处理 Python 习惯用法和数据结构
+
+**[C/C++ 到 Lean4 翻译器](./c-cpp-to-lean4-translator/)**
+- 将 C/C++ 代码翻译为 Lean4 以进行验证
+- 处理指针、内存管理和底层操作
+- 生成安全的 Lean4 等价物
+
+**[C++ 到 Dafny 翻译器](./cpp-to-dafny-translator/)**
+- 将 C++ 代码翻译为 Dafny 以进行验证
+- 处理面向对象特性和模板
+- 生成可验证的 Dafny 规范
+
+**[程序正确性证明器](./program-correctness-prover/)**
+- 使用形式化方法证明程序正确性
+- 为规范生成证明
+- 验证正确性属性
+
+**[证明骨架生成器](./proof-skeleton-generator/)**
+- 为验证任务生成证明骨架
+- 提供证明结构和关键引理
+- 辅助交互式定理证明
+
+**[证明失败解释器](./proof-failure-explainer/)**
+- 解释 Isabelle 或 Coq 证明为何失败
+- 识别缺失的假设和不正确的目标
+- 建议证明修复策略
+
+**[证明重构助手](./proof-refactoring-assistant/)**
+- 重构证明以提高可读性和可维护性
+- 提取辅助引理并简化证明结构
+- 保持证明语义
+
+**[证明跟踪摘要器](./proof-trace-summarizer/)**
+- 总结定理证明器的证明跟踪
+- 突出关键证明步骤和决策
+- 辅助证明理解
+
+**[证明携带代码生成器](./proof-carrying-code-generator/)**
+- 生成嵌入正确性证明的证明携带代码
+- 确保部署时的代码正确性
+- 支持多种验证框架
+
+**[已验证规范-代码映射器](./verified-spec-code-mapper/)**
+- 建立形式化规范与已验证代码之间的可追溯性
+- 将规范映射到实现组件
+- 报告验证覆盖率
+
+**[验证边界报告器](./verification-boundary-reporter/)**
+- 识别已验证和未验证代码之间的边界
+- 报告验证覆盖率差距
+- 建议验证优先级
+
+**[已验证伪代码提取器](./verified-pseudocode-extractor/)**
+- 提取带有验证注解的伪代码
+- 在伪代码中保持正确性属性
+- 连接代码和规范
+
+**[引理发现助手](./lemma-discovery-assistant/)**
+- 发现用于完成证明的辅助引理
+- 根据证明上下文建议引理
+- 辅助交互式定理证明
+
+**[策略建议助手](./tactic-suggestion-assistant/)**
+- 为 Coq、Isabelle 或 Lean 建议证明策略
+- 根据证明状态推荐策略
+- 加速交互式证明开发
+
+**[精化步骤生成器](./refinement-step-generator/)**
+- 为逐步程序开发生成精化步骤
+- 确保精化正确性
+- 支持精化演算
+
+**[抽象域探索器](./abstract-domain-explorer/)**
+- 使用不同的抽象域应用抽象解释
+- 推断不变量、值范围和变量关系
+- 支持区间、八边形、多面体和其他域
+
+**[抽象不变量生成器](./abstract-invariant-generator/)**
+- 使用抽象解释生成程序不变量
+- 支持多种抽象域
+- 验证生成的不变量
+
+**[抽象状态分析器](./abstract-state-analyzer/)**
+- 使用抽象解释分析程序状态
+- 计算程序点的抽象状态
+- 报告可达性和安全属性
+
+**[抽象跟踪摘要器](./abstract-trace-summarizer/)**
+- 使用抽象总结执行跟踪
+- 识别关键跟踪模式
+- 辅助跟踪分析和调试
+
+**[控制流抽象生成器](./control-flow-abstraction-generator/)**
+- 生成抽象控制流表示
+- 简化控制流以便分析
+- 支持谓词抽象
+
+**[证明库顾问](./library-for-proof-advisor/)**
+- 为特定任务推荐已验证的库
+- 建议具有形式化正确性保证的库
+- 提供集成指导
+
+**[需求增强器](./requirement-enhancer/)**
+- 用形式化属性增强需求
+- 为规范添加精确性和完整性
+- 验证需求一致性
 
 ### 维护与重构
 
@@ -659,6 +864,7 @@
     - [增量式 Python 编程器](incremental-python-programmer) – 根据自然语言描述在 Python 仓库中实现新功能，并自动生成测试
     - [增量式 Java 编程器](incremental-java-programmer) – 根据自然语言描述在 Java 仓库（Maven/Gradle）中实现新功能，并生成 JUnit 测试
     - [前端设计](anthropics-skills-SE-skills/frontend-design) *(来源: anthropics-skills)* – 创建具有高设计质量的独特生产级前端界面
+    - [伪代码提取器](pseudocode-extractor) – 从实现中提取高级伪代码以便编写规范
 
 - **重构与优化**
     - [重构助手](code-refactoring-assistant) – 建议持续的代码改进以增强可维护性
@@ -670,6 +876,16 @@
     - [代码模式提取器](code-pattern-extractor) – 分析代码库以识别可重用的代码模式和重复代码
     - [代码搜索助手](code-search-assistant) – 使用相似性分析在仓库中搜索与给定代码片段相关的代码
     - [组件边界识别器](component-boundary-identifier) – 识别模块/组件边界并分析架构分离
+    - [代码摘要生成器](code-summarizer) – 生成代码功能和目的的简洁摘要
+
+- **安全与漏洞分析**
+    - [静态错误检测器](static-bug-detector) – 通过静态分析检测潜在的功能性错误
+    - [语义错误检测器](semantic-bug-detector) – 检测违反预期程序行为的语义错误
+    - [静态漏洞检测器](static-vulnerability-detector) – 通过静态代码分析检测安全漏洞
+    - [漏洞模式匹配器](vulnerability-pattern-matcher) – 将代码与已知漏洞模式进行匹配
+    - [可利用性分析器](exploitability-analyzer) – 分析漏洞的可利用性和影响
+    - [漏洞根因分析器](vulnerability-root-cause-analyzer) – 分析安全漏洞的根本原因
+    - [安全补丁顾问](security-patch-advisor) – 为识别的漏洞推荐安全补丁
 
 - **TDD 与 SDD**
     - [测试驱动代码生成器（TDD）](test-driven-generation) – 生成通过给定单元测试集的实现（主要支持 Python 和 Java；处理简单的单元测试（隔离的函数/方法））
@@ -699,6 +915,9 @@
     - [集成测试生成器](integration-test-generator) – 为多个交互组件生成测试
     - [定向测试输入生成器](directed-test-input-generator) – 使用程序上下文和测试目标指导 LLM 驱动的测试输入生成，以达到难以触及的行为
     - [模糊测试输入生成器](fuzzing-input-generator) -- 生成随机化输入以检测意外故障
+    - [Python 回归测试生成器](python-regression-test-generator) – 通过分析代码变化自动为 Python 代码库生成回归测试
+    - [Java 回归测试生成器](java-regression-test-generator) – 自动为 Java 代码库生成回归测试，支持 JUnit/TestNG
+    - [模拟测试生成器](mocking-test-generator) – 为外部依赖项和 I/O 操作生成测试模拟对象
 
 
 - **断言与预言合成**
@@ -715,6 +934,7 @@
     - [回归根因分析器](regression-root-cause-analyzer) – 定位失败回归测试的根本原因
     - [错误解释生成器](error-explanation-generator) – 解释测试失败的原因并提供可操作的指导
     - [运行时错误解释生成器](runtime-error-explainer) – 解释运行时错误和编译失败，提供可操作的调试指导
+    - [测试引导的错误检测器](test-guided-bug-detector) – 使用测试执行信息和故障分析检测错误
 
 - **测试文档与报告**
     - [测试用例文档](test-case-documentation) – 总结测试用例的文档
@@ -736,14 +956,51 @@
     - [ACSL 注解助手](acsl-annotation-assistant) – 为 C/C++ 程序创建 ACSL 或其他形式化注解
     - [不变量推断器](invariant-inference) – 自动推断循环或函数不变量
     - [规范生成器](specification-generator) – 从代码或需求生成形式化规范（前置/后置条件、不变量）
+    - [形式化规范生成器](formal-spec-generator) – 从自然语言需求生成形式化规范
+    - [需求增强器](requirement-enhancer) – 用形式化属性和验证增强需求
 
 - **形式化验证**
     - [静态推理验证器](static-reasoning-verifier) – 根据规范静态检查代码正确性
     - [符号执行助手](symbolic-execution-assistant) – 执行符号执行以检测潜在错误
+    - [程序正确性证明器](program-correctness-prover) – 使用形式化方法证明程序正确性
 
 - **反例分析**
     - [反例生成器](counterexample-generator) – 在验证失败时生成反例
     - [反例解释器](counterexample-explainer) – 解释为什么反例违反规范
+    - [反例调试器](counterexample-debugger) – 调试形式化验证反例并提供修复建议
+
+- **代码翻译与模型提取**
+    - [程序到模型提取器](program-to-model-extractor) – 从命令式程序提取形式化模型
+    - [命令式到 Coq 模型提取器](imperative-to-coq-model-extractor) – 从命令式程序提取 Coq 模型
+    - [Python 到 Dafny 翻译器](python-to-dafny-translator) – 将 Python 代码翻译为 Dafny 以进行验证
+    - [Python 到 Lean4 翻译器](python-to-lean4-translator) – 将 Python 代码翻译为 Lean4 以进行形式化验证
+    - [C/C++ 到 Lean4 翻译器](c-cpp-to-lean4-translator) – 将 C/C++ 代码翻译为 Lean4 以进行验证
+    - [C++ 到 Dafny 翻译器](cpp-to-dafny-translator) – 将 C++ 代码翻译为 Dafny 以进行验证
+    - [已验证伪代码提取器](verified-pseudocode-extractor) – 提取带有验证注解的伪代码
+
+- **证明辅助**
+    - [证明骨架生成器](proof-skeleton-generator) – 为验证任务生成证明骨架
+    - [证明失败解释器](proof-failure-explainer) – 解释 Isabelle 或 Coq 证明为何失败
+    - [证明重构助手](proof-refactoring-assistant) – 重构证明以提高可读性和可维护性
+    - [证明跟踪摘要器](proof-trace-summarizer) – 总结定理证明器的证明跟踪
+    - [证明携带代码生成器](proof-carrying-code-generator) – 生成嵌入正确性证明的证明携带代码
+    - [引理发现助手](lemma-discovery-assistant) – 发现用于完成证明的辅助引理
+    - [策略建议助手](tactic-suggestion-assistant) – 为 Coq、Isabelle 或 Lean 建议证明策略
+    - [精化步骤生成器](refinement-step-generator) – 为逐步程序开发生成精化步骤
+
+- **抽象解释**
+    - [抽象域探索器](abstract-domain-explorer) – 使用不同的抽象域应用抽象解释
+    - [抽象不变量生成器](abstract-invariant-generator) – 使用抽象解释生成程序不变量
+    - [抽象状态分析器](abstract-state-analyzer) – 使用抽象解释分析程序状态
+    - [抽象跟踪摘要器](abstract-trace-summarizer) – 使用抽象总结执行跟踪
+    - [控制流抽象生成器](control-flow-abstraction-generator) – 生成抽象控制流表示
+
+- **验证覆盖率与可追溯性**
+    - [已验证规范-代码映射器](verified-spec-code-mapper) – 建立形式化规范与已验证代码之间的可追溯性
+    - [验证边界报告器](verification-boundary-reporter) – 识别已验证和未验证代码之间的边界
+
+- **库与工具支持**
+    - [证明库顾问](library-for-proof-advisor) – 为特定任务推荐已验证的库
 
 
 ### 💻 **部署**
@@ -792,6 +1049,7 @@
     - [回归根因分析器](regression-root-cause-analyzer) – 查找失败回归测试的根本原因
     - [运行时错误解释生成器](runtime-error-explainer) – 解释运行时错误和编译失败，提供可操作的调试指导
     - [Bug 到补丁生成器](bug-to-patch-generator) – 从 bug 报告或失败的测试用例生成代码修复
+    - [问题报告生成器](issue-report-generator) – 从失败的测试自动生成问题报告，包含根本原因分析
 
 - **遗留代码与技术债务管理**
     - [遗留代码总结器](legacy-code-summarizer) – 生成关于遗留代码库的摘要和见解
@@ -831,7 +1089,11 @@
 
 每个技能都打包为一个包含 `SKILL.md` 文件和其他必要脚本/参考资料的技能文件夹，可以加载到 Claude Code 或其他兼容的 LLM 系统中。
 
-### 设置技能
+### 配置Claude Code
+
+[Claude Code Doc](https://code.claude.com/docs/zh-CN/overview)
+
+### 配置技能
 
 ```bash
 # 将技能文件夹复制到您的技能目录
@@ -849,9 +1111,7 @@ mkdir ~/.claude/skills
 
 ### 使用技能
 
-技能会根据与技能描述匹配的用户请求自动触发。您也可以显式调用技能：
-
-> 使用 "requirement-summarizer" 总结需求文档 "path-to-a-doc.md"
+详见**[🚀 Visit Skills Manager](https://ArabelaTso.github.io/Skills-4-SE/)** 里的 “**使用说明**”。
 
 
 
@@ -874,14 +1134,14 @@ mkdir ~/.claude/skills
 ## 🎯 愿景
 
 我们的长期愿景是构建：
-> **一个用于 LLM 驱动的软件工程系统的共享、开放的技能层** 
+> **一个用于AI驱动的软件工程系统的共享、开放的技能层** 
 
 - 如何提交新技能
 - 技能质量标准
 - 拉取请求流程
 - 行为准则
 
-🎉 如果您正在构建或研究用于软件工程的 LLM，这个仓库适合您。
+🎉 如果您正在构建或研究用于软件工程的自动化方法，这个仓库适合您。
 
 
 
