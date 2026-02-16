@@ -264,26 +264,92 @@ async function loadSkills() {
     }
 }
 
+// Global variable to store current search terms for highlighting
+let currentSearchTerms = [];
+
 // Render skills
 function renderSkills() {
     const container = document.getElementById('skillsList');
-    const searchTerm = document.getElementById('searchInput').value.toLowerCase();
-    console.log('Rendering skills with search term:', searchTerm);
+    const searchInput = document.getElementById('searchInput').value.toLowerCase().trim();
+    console.log('Rendering skills with search term:', searchInput);
+
+    // Split search input into multiple terms by space
+    const searchTerms = searchInput ? searchInput.split(/\s+/).filter(term => term.length > 0) : [];
+    currentSearchTerms = searchTerms; // Store for highlighting
 
     let filteredSkills = allSkills.filter(skill => {
-        // Search only in skill names (both English and Chinese)
-        const matchesSearch =
-            (skill.name && skill.name.toLowerCase().includes(searchTerm)) ||
-            (skill.displayName_zh && skill.displayName_zh.toLowerCase().includes(searchTerm));
-
         // Handle "installed" filter
         if (currentCategory === 'installed') {
-            return matchesSearch && skill.installed;
+            return skill.installed;
         }
 
         const matchesCategory = currentCategory === 'all' || getSkillCategory(skill.name) === currentCategory;
-        return matchesSearch && matchesCategory;
+        return matchesCategory;
     });
+
+    // If there are search terms, filter and rank the skills
+    if (searchTerms.length > 0) {
+        const rankedSkills = [];
+
+        filteredSkills.forEach(skill => {
+            const name = String(skill.name || '').toLowerCase();
+            const displayName = String(skill.displayName || '').toLowerCase();
+            const displayNameZh = String(skill.displayName_zh || '').toLowerCase();
+            const description = String(skill.description || '').toLowerCase();
+            const descriptionZh = String(skill.description_zh || '').toLowerCase();
+
+            let nameMatches = 0;
+            let descriptionMatches = 0;
+
+            // Check each search term
+            searchTerms.forEach(term => {
+                // Escape special regex characters
+                const escapedTerm = term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
+                // Check name matches (English and Chinese)
+                if (name.includes(term) || displayName.includes(term) || displayNameZh.includes(term)) {
+                    nameMatches++;
+                }
+
+                // Count occurrences in description (English and Chinese)
+                try {
+                    const descMatches = (description.match(new RegExp(escapedTerm, 'g')) || []).length;
+                    const descZhMatches = (descriptionZh.match(new RegExp(escapedTerm, 'g')) || []).length;
+                    descriptionMatches += descMatches + descZhMatches;
+                } catch (e) {
+                    console.error('Regex error for term:', term, e);
+                }
+            });
+
+            // Only include skills that match at least one term
+            if (nameMatches > 0 || descriptionMatches > 0) {
+                rankedSkills.push({
+                    skill: skill,
+                    nameMatches: nameMatches,
+                    descriptionMatches: descriptionMatches
+                });
+            }
+        });
+
+        // Sort: name matches first (by count), then description matches (by frequency)
+        rankedSkills.sort((a, b) => {
+            // First priority: skills with name matches come before those without
+            if (a.nameMatches > 0 && b.nameMatches === 0) return -1;
+            if (a.nameMatches === 0 && b.nameMatches > 0) return 1;
+
+            // If both have name matches, sort by number of name matches
+            if (a.nameMatches > 0 && b.nameMatches > 0) {
+                if (a.nameMatches !== b.nameMatches) {
+                    return b.nameMatches - a.nameMatches;
+                }
+            }
+
+            // If both have only description matches (or same name matches), sort by description frequency
+            return b.descriptionMatches - a.descriptionMatches;
+        });
+
+        filteredSkills = rankedSkills.map(item => item.skill);
+    }
 
     console.log('Filtered skills count:', filteredSkills.length);
 
@@ -313,6 +379,33 @@ function renderSkills() {
     });
 }
 
+// Highlight matching text
+function highlightText(text, searchTerms) {
+    if (!text || searchTerms.length === 0) {
+        return text;
+    }
+
+    let highlightedText = String(text);
+
+    // Sort terms by length (longest first) to avoid partial replacements
+    const sortedTerms = [...searchTerms].sort((a, b) => b.length - a.length);
+
+    sortedTerms.forEach(term => {
+        // Escape special regex characters
+        const escapedTerm = term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
+        try {
+            // Case-insensitive replacement with highlight span
+            const regex = new RegExp(`(${escapedTerm})`, 'gi');
+            highlightedText = highlightedText.replace(regex, '<mark class="highlight">$1</mark>');
+        } catch (e) {
+            console.error('Highlight error for term:', term, e);
+        }
+    });
+
+    return highlightedText;
+}
+
 // Create skill card HTML
 function createSkillCard(skill) {
     const isSelected = selectedSkills.has(skill.name);
@@ -325,13 +418,19 @@ function createSkillCard(skill) {
         : category.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
 
     // Get localized skill name and description
-    const skillName = currentLang === 'zh' && skill.displayName_zh
+    let skillName = currentLang === 'zh' && skill.displayName_zh
         ? skill.displayName_zh
         : formatSkillName(skill.name);
 
-    const skillDescription = currentLang === 'zh' && skill.description_zh
+    let skillDescription = currentLang === 'zh' && skill.description_zh
         ? skill.description_zh
         : skill.description;
+
+    // Apply highlighting if there are search terms
+    if (currentSearchTerms.length > 0) {
+        skillName = highlightText(skillName, currentSearchTerms);
+        skillDescription = highlightText(skillDescription, currentSearchTerms);
+    }
 
     const statusText = skill.installed
         ? (currentLang === 'zh' ? '✓ 已安装' : '✓ Installed')
@@ -436,14 +535,17 @@ async function installSelectedSkills() {
 
 // Show installation instructions for GitHub Pages
 function showInstallInstructions(skillNames) {
-    const skillList = skillNames.map(name => `  - ${name}`).join('\n');
-    const commands = skillNames.map(name =>
-        `cp -r ${name} ~/.claude/skills/`
-    ).join('\n');
+    // Get skill objects to access their paths
+    const skills = allSkills.filter(s => skillNames.includes(s.name));
+    const skillList = skills.map(s => `  - ${s.name}`).join('\n');
+    const commands = skills.map(s => {
+        const sourcePath = s.path || s.name;
+        return `cp -r ${sourcePath} ~/.claude/skills/`;
+    }).join('\n');
 
     const message = `To install these skills, clone the repository and run:\n\n` +
-                   `git clone https://github.com/YOUR_USERNAME/LLM4SE-Skills.git\n` +
-                   `cd LLM4SE-Skills\n` +
+                   `git clone https://github.com/ArabelaTso/Skills-4-SE.git\n` +
+                   `cd Skills-4-SE\n` +
                    `mkdir -p ~/.claude/skills\n` +
                    commands;
 

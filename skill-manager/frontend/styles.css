@@ -724,3 +724,13 @@ kbd {
     color: white;
     border-color: #48bb78;
 }
+
+/* Search highlight */
+mark.highlight {
+    background-color: rgba(102, 126, 234, 0.2);
+    color: #667eea;
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-weight: 600;
+    border-bottom: 2px solid #667eea;
+}

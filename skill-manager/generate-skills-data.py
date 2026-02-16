@@ -26,19 +26,19 @@ print(f"Translations file: {TRANSLATIONS_FILE}")
 # Directories to exclude
 EXCLUDED_DIRS = ['skill-manager', 'node_modules', 'skill-creator', '.git', 'awesome-claude-skills']
 
-# Additional directories to include (from awesome-claude-skills-SE-skills)
-ADDITIONAL_SKILL_DIRS = ['awesome-claude-skills-SE-skills']
+# Additional directories to include (from awesome-claude-skills-SE-skills and anthropics-skills-SE-skills)
+ADDITIONAL_SKILL_DIRS = ['awesome-claude-skills-SE-skills', 'anthropics-skills-SE-skills']
 
 # Category mapping (from app.js)
 CATEGORY_MAP = {
     'code-generation': ['function-class-generator', 'module-component-generator', 'template-code-generator',
                         'specification-driven-generation', 'test-driven-generation', 'incremental-python-programmer',
-                        'incremental-java-programmer'],
+                        'incremental-java-programmer', 'frontend-design'],
     'testing': ['unit-test-generator', 'integration-test-generator', 'java-test-updater', 'flaky-test-detector',
                 'test-oracle-generator', 'edge-case-generator', 'directed-test-input-generator',
                 'fuzzing-input-generator', 'test-suite-prioritizer', 'coverage-enhancer',
                 'test-case-documentation', 'python-test-updater', 'req-to-test',
-                'test-app-automation', 'webapp-testing'],
+                'test-app-automation', 'webapp-testing', 'webapp-testing-anthropics'],
     'documentation': ['api-documentation-generator', 'code-comment-generator', 'markdown-document-structurer',
                       'readme-generator', 'change-log-generator', 'code-change-summarizer', 'release-notes-writer',
                       'legacy-code-summarizer', 'python-repo-quickstart', 'error-explanation-generator',
@@ -66,7 +66,8 @@ CATEGORY_MAP = {
                      'static-reasoning-verifier', 'symbolic-execution-assistant', 'counterexample-generator',
                      'counterexample-explainer'],
     'maintenance': ['code-refactoring-assistant', 'deprecated-api-updater', 'code-translation'],
-    'development-tools': ['artifacts-builder', 'mcp-builder', 'codeinterpreter-automation', 'codereadr-automation']
+    'development-tools': ['artifacts-builder', 'mcp-builder', 'codeinterpreter-automation', 'codereadr-automation',
+                          'web-artifacts-builder']
 }
 
 def get_skill_category(skill_name):
@@ -85,7 +86,7 @@ def load_translations():
         print(f"Warning: Could not load translations: {e}")
         return {'skills': {}, 'category_names': {}}
 
-def extract_metadata(skill_path, translations):
+def extract_metadata(skill_path, translations, source_prefix=None, source_dir=None):
     """Extract metadata from SKILL.md file"""
     skill_md = skill_path / 'SKILL.md'
     if not skill_md.exists():
@@ -107,7 +108,16 @@ def extract_metadata(skill_path, translations):
                     description = description[:200] + '...'
 
                 skill_name = skill_path.name
-                skill_translations = translations['skills'].get(skill_name, {})
+                # Determine the relative path for installation
+                if source_dir:
+                    skill_relative_path = f"{source_dir}/{skill_path.name}"
+                else:
+                    skill_relative_path = skill_path.name
+
+                # Add source prefix if provided (for duplicate names)
+                if source_prefix:
+                    skill_name = f"{skill_path.name}-{source_prefix}"
+                skill_translations = translations['skills'].get(skill_path.name, {})
 
                 return {
                     'name': skill_name,
@@ -115,6 +125,7 @@ def extract_metadata(skill_path, translations):
                     'description': description,
                     'category': get_skill_category(skill_name),
                     'installed': False,
+                    'path': skill_relative_path,
                     'displayName_zh': skill_translations.get('name', frontmatter.get('name', skill_name)),
                     'description_zh': skill_translations.get('description', description)
                 }
@@ -132,11 +143,14 @@ def scan_skills(translations):
         if item.is_dir() and not item.name.startswith('.') and item.name not in EXCLUDED_DIRS:
             # Check if it's a skill directory (has SKILL.md)
             if (item / 'SKILL.md').exists():
-                metadata = extract_metadata(item, translations)
+                metadata = extract_metadata(item, translations, source_prefix=None, source_dir=None)
                 if metadata:
                     skills.append(metadata)
 
-    # Scan additional skill directories (awesome-claude-skills-SE-skills)
+    # Scan additional skill directories (awesome-claude-skills-SE-skills and anthropics-skills-SE-skills)
+    # Track skill names to detect duplicates
+    skill_names = {skill['name'] for skill in skills}
+
     for additional_dir_name in ADDITIONAL_SKILL_DIRS:
         additional_dir = REPO_ROOT / additional_dir_name
         if additional_dir.exists() and additional_dir.is_dir():
@@ -145,9 +159,15 @@ def scan_skills(translations):
                 if item.is_dir() and not item.name.startswith('.'):
                     # Check if it's a skill directory (has SKILL.md)
                     if (item / 'SKILL.md').exists():
-                        metadata = extract_metadata(item, translations)
+                        # Check for duplicate names and add suffix if needed
+                        source_prefix = None
+                        if item.name in skill_names and additional_dir_name == 'anthropics-skills-SE-skills':
+                            source_prefix = 'anthropics'
+
+                        metadata = extract_metadata(item, translations, source_prefix, additional_dir_name)
                         if metadata:
                             skills.append(metadata)
+                            skill_names.add(metadata['name'])
 
     # Sort by name
     skills.sort(key=lambda x: x['name'])
