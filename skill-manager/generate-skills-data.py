@@ -24,7 +24,10 @@ print(f"Output file: {OUTPUT_FILE}")
 print(f"Translations file: {TRANSLATIONS_FILE}")
 
 # Directories to exclude
-EXCLUDED_DIRS = ['skill-manager', 'node_modules', 'skill-creator', '.git']
+EXCLUDED_DIRS = ['skill-manager', 'node_modules', 'skill-creator', '.git', 'awesome-claude-skills']
+
+# Additional directories to include (from awesome-claude-skills-SE-skills)
+ADDITIONAL_SKILL_DIRS = ['awesome-claude-skills-SE-skills']
 
 # Category mapping (from app.js)
 CATEGORY_MAP = {
@@ -34,23 +37,36 @@ CATEGORY_MAP = {
     'testing': ['unit-test-generator', 'integration-test-generator', 'java-test-updater', 'flaky-test-detector',
                 'test-oracle-generator', 'edge-case-generator', 'directed-test-input-generator',
                 'fuzzing-input-generator', 'test-suite-prioritizer', 'coverage-enhancer',
-                'test-case-documentation', 'python-test-updater', 'req-to-test'],
+                'test-case-documentation', 'python-test-updater', 'req-to-test',
+                'test-app-automation', 'webapp-testing'],
     'documentation': ['api-documentation-generator', 'code-comment-generator', 'markdown-document-structurer',
                       'readme-generator', 'change-log-generator', 'code-change-summarizer', 'release-notes-writer',
-                      'legacy-code-summarizer', 'python-repo-quickstart', 'error-explanation-generator'],
+                      'legacy-code-summarizer', 'python-repo-quickstart', 'error-explanation-generator',
+                      'confluence-automation'],
     'quality': ['code-review-assistant', 'code-smell-detector', 'design-smell-detector', 'code-optimizer',
                 'dead-code-eliminator', 'technical-debt-analyzer', 'code-pattern-extractor',
-                'code-search-assistant', 'component-boundary-identifier'],
+                'code-search-assistant', 'component-boundary-identifier',
+                'sentry-automation', 'datadog-automation', 'bugsnag-automation', 'bugbug-automation',
+                'bugherd-automation', 'pagerduty-automation'],
     'requirements': ['requirement-summarizer', 'requirement-coverage-checker', 'requirement-comparison-reporter',
-                     'ambiguity-detector', 'scenario-generator', 'specification-generator', 'nl-to-constraints'],
+                     'ambiguity-detector', 'scenario-generator', 'specification-generator', 'nl-to-constraints',
+                     'jira-automation', 'linear-automation'],
     'devops': ['ci-pipeline-synthesizer', 'cd-pipeline-generator', 'containerization-assistant',
-               'environment-setup-assistant', 'rollback-strategy-advisor'],
+               'environment-setup-assistant', 'rollback-strategy-advisor',
+               'circleci-automation', 'buildkite-automation', 'appveyor-automation', 'appcircle-automation',
+               'docker-hub-automation', 'docker_hub-automation', 'vercel-automation',
+               'digital-ocean-automation', 'cloudflare-automation', 'cloudflare-api-key-automation',
+               'cloudflare-browser-rendering-automation', 'npm-automation',
+               'github-automation', 'gitlab-automation', 'bitbucket-automation', 'sourcegraph-automation',
+               'slack-automation', 'slackbot-automation', 'discord-automation', 'discordbot-automation',
+               'slack-gif-creator', 'supabase-automation', 'hookdeck-automation'],
     'debugging': ['bug-localization', 'bug-to-patch-generator', 'runtime-error-explainer',
                   'regression-root-cause-analyzer', 'conflict-analyzer'],
     'verification': ['acsl-annotation-assistant', 'assertion-synthesizer', 'invariant-inference',
                      'static-reasoning-verifier', 'symbolic-execution-assistant', 'counterexample-generator',
                      'counterexample-explainer'],
-    'maintenance': ['code-refactoring-assistant', 'deprecated-api-updater', 'code-translation']
+    'maintenance': ['code-refactoring-assistant', 'deprecated-api-updater', 'code-translation'],
+    'development-tools': ['artifacts-builder', 'mcp-builder', 'codeinterpreter-automation', 'codereadr-automation']
 }
 
 def get_skill_category(skill_name):
@@ -111,6 +127,7 @@ def scan_skills(translations):
     """Scan repository for all skills"""
     skills = []
 
+    # Scan main repository skills
     for item in REPO_ROOT.iterdir():
         if item.is_dir() and not item.name.startswith('.') and item.name not in EXCLUDED_DIRS:
             # Check if it's a skill directory (has SKILL.md)
@@ -118,6 +135,19 @@ def scan_skills(translations):
                 metadata = extract_metadata(item, translations)
                 if metadata:
                     skills.append(metadata)
+
+    # Scan additional skill directories (awesome-claude-skills-SE-skills)
+    for additional_dir_name in ADDITIONAL_SKILL_DIRS:
+        additional_dir = REPO_ROOT / additional_dir_name
+        if additional_dir.exists() and additional_dir.is_dir():
+            print(f"Scanning additional directory: {additional_dir_name}")
+            for item in additional_dir.iterdir():
+                if item.is_dir() and not item.name.startswith('.'):
+                    # Check if it's a skill directory (has SKILL.md)
+                    if (item / 'SKILL.md').exists():
+                        metadata = extract_metadata(item, translations)
+                        if metadata:
+                            skills.append(metadata)
 
     # Sort by name
     skills.sort(key=lambda x: x['name'])

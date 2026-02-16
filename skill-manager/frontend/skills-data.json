@@ -37,6 +37,33 @@
       "description_zh": "从仓库源代码生成全面的 API 文档，包括 OpenAPI 规范、代码注释、文档字符串和现有文档。用于记录 API、创建 API 参考指南或从代码库总结 API 功能。"
     },
     {
+      "name": "appcircle-automation",
+      "displayName": "appcircle-automation",
+      "description": "Automate Appcircle tasks via Rube MCP (Composio). Always search tools first for current schemas.",
+      "category": "devops",
+      "installed": false,
+      "displayName_zh": "appcircle-automation",
+      "description_zh": "Automate Appcircle tasks via Rube MCP (Composio). Always search tools first for current schemas."
+    },
+    {
+      "name": "appveyor-automation",
+      "displayName": "appveyor-automation",
+      "description": "Automate Appveyor tasks via Rube MCP (Composio). Always search tools first for current schemas.",
+      "category": "devops",
+      "installed": false,
+      "displayName_zh": "appveyor-automation",
+      "description_zh": "Automate Appveyor tasks via Rube MCP (Composio). Always search tools first for current schemas."
+    },
+    {
+      "name": "artifacts-builder",
+      "displayName": "artifacts-builder",
+      "description": "Suite of tools for creating elaborate, multi-component claude.ai HTML artifacts using modern frontend web technologies (React, Tailwind CSS, shadcn/ui). Use for complex artifacts requiring state manag...",
+      "category": "development-tools",
+      "installed": false,
+      "displayName_zh": "artifacts-builder",
+      "description_zh": "Suite of tools for creating elaborate, multi-component claude.ai HTML artifacts using modern frontend web technologies (React, Tailwind CSS, shadcn/ui). Use for complex artifacts requiring state manag..."
+    },
+    {
       "name": "assertion-synthesizer",
       "displayName": "assertion-synthesizer",
       "description": "Generate test assertions from existing code implementation. Use when the user has implementation code without tests or incomplete test coverage, and needs assertions synthesized by analyzing the code'...",
@@ -44,6 +71,15 @@
       "installed": false,
       "displayName_zh": "断言合成器",
       "description_zh": "为自动化测试用例生成断言。支持简单和复杂的断言，适用于多种编程语言。用于为未测试的代码添加测试、增强现有测试或捕获实际行为。"
+    },
+    {
+      "name": "bitbucket-automation",
+      "displayName": "bitbucket-automation",
+      "description": "Automate Bitbucket repositories, pull requests, branches, issues, and workspace management via Rube MCP (Composio). Always search tools first for current schemas.",
+      "category": "devops",
+      "installed": false,
+      "displayName_zh": "bitbucket-automation",
+      "description_zh": "Automate Bitbucket repositories, pull requests, branches, issues, and workspace management via Rube MCP (Composio). Always search tools first for current schemas."
     },
     {
       "name": "bug-localization",
@@ -62,6 +98,42 @@
       "installed": false,
       "displayName_zh": "Bug 到补丁生成器",
       "description_zh": "为识别的 bug 生成补丁。创建最小修复，包含修复的测试用例。"
+    },
+    {
+      "name": "bugbug-automation",
+      "displayName": "bugbug-automation",
+      "description": "Automate Bugbug tasks via Rube MCP (Composio). Always search tools first for current schemas.",
+      "category": "quality",
+      "installed": false,
+      "displayName_zh": "bugbug-automation",
+      "description_zh": "Automate Bugbug tasks via Rube MCP (Composio). Always search tools first for current schemas."
+    },
+    {
+      "name": "bugherd-automation",
+      "displayName": "bugherd-automation",
+      "description": "Automate Bugherd tasks via Rube MCP (Composio). Always search tools first for current schemas.",
+      "category": "quality",
+      "installed": false,
+      "displayName_zh": "bugherd-automation",
+      "description_zh": "Automate Bugherd tasks via Rube MCP (Composio). Always search tools first for current schemas."
+    },
+    {
+      "name": "bugsnag-automation",
+      "displayName": "bugsnag-automation",
+      "description": "Automate Bugsnag tasks via Rube MCP (Composio). Always search tools first for current schemas.",
+      "category": "quality",
+      "installed": false,
+      "displayName_zh": "bugsnag-automation",
+      "description_zh": "Automate Bugsnag tasks via Rube MCP (Composio). Always search tools first for current schemas."
+    },
+    {
+      "name": "buildkite-automation",
+      "displayName": "buildkite-automation",
+      "description": "Automate Buildkite tasks via Rube MCP (Composio). Always search tools first for current schemas.",
+      "category": "devops",
+      "installed": false,
+      "displayName_zh": "buildkite-automation",
+      "description_zh": "Automate Buildkite tasks via Rube MCP (Composio). Always search tools first for current schemas."
     },
     {
       "name": "cd-pipeline-generator",
@@ -89,6 +161,42 @@
       "installed": false,
       "displayName_zh": "CI 流水线合成器",
       "description_zh": "生成用于自动化构建和测试的 CI 流水线配置。支持 GitHub Actions，包含依赖缓存和矩阵测试。包含 Node.js、Python、Go 和 Rust 项目的模板。"
+    },
+    {
+      "name": "circleci-automation",
+      "displayName": "circleci-automation",
+      "description": "Automate CircleCI tasks via Rube MCP (Composio): trigger pipelines, monitor workflows/jobs, retrieve artifacts and test metadata. Always search tools first for current schemas.",
+      "category": "devops",
+      "installed": false,
+      "displayName_zh": "circleci-automation",
+      "description_zh": "Automate CircleCI tasks via Rube MCP (Composio): trigger pipelines, monitor workflows/jobs, retrieve artifacts and test metadata. Always search tools first for current schemas."
+    },
+    {
+      "name": "cloudflare-api-key-automation",
+      "displayName": "cloudflare-api-key-automation",
+      "description": "Automate Cloudflare API tasks via Rube MCP (Composio). Always search tools first for current schemas.",
+      "category": "devops",
+      "installed": false,
+      "displayName_zh": "cloudflare-api-key-automation",
+      "description_zh": "Automate Cloudflare API tasks via Rube MCP (Composio). Always search tools first for current schemas."
+    },
+    {
+      "name": "cloudflare-automation",
+      "displayName": "cloudflare-automation",
+      "description": "Automate Cloudflare tasks via Rube MCP (Composio). Always search tools first for current schemas.",
+      "category": "devops",
+      "installed": false,
+      "displayName_zh": "cloudflare-automation",
+      "description_zh": "Automate Cloudflare tasks via Rube MCP (Composio). Always search tools first for current schemas."
+    },
+    {
+      "name": "cloudflare-browser-rendering-automation",
+      "displayName": "cloudflare-browser-rendering-automation",
+      "description": "Automate Cloudflare Browser Rendering tasks via Rube MCP (Composio). Always search tools first for current schemas.",
+      "category": "devops",
+      "installed": false,
+      "displayName_zh": "cloudflare-browser-rendering-automation",
+      "description_zh": "Automate Cloudflare Browser Rendering tasks via Rube MCP (Composio). Always search tools first for current schemas."
     },
     {
       "name": "code-change-summarizer",
@@ -172,6 +280,24 @@
       "description_zh": "在语言之间翻译代码。保持功能，适应目标语言习惯用法。"
     },
     {
+      "name": "codeinterpreter-automation",
+      "displayName": "codeinterpreter-automation",
+      "description": "Automate Codeinterpreter tasks via Rube MCP (Composio). Always search tools first for current schemas.",
+      "category": "development-tools",
+      "installed": false,
+      "displayName_zh": "codeinterpreter-automation",
+      "description_zh": "Automate Codeinterpreter tasks via Rube MCP (Composio). Always search tools first for current schemas."
+    },
+    {
+      "name": "codereadr-automation",
+      "displayName": "codereadr-automation",
+      "description": "Automate Codereadr tasks via Rube MCP (Composio). Always search tools first for current schemas.",
+      "category": "development-tools",
+      "installed": false,
+      "displayName_zh": "codereadr-automation",
+      "description_zh": "Automate Codereadr tasks via Rube MCP (Composio). Always search tools first for current schemas."
+    },
+    {
       "name": "component-boundary-identifier",
       "displayName": "component-boundary-identifier",
       "description": "Identifies boundaries between modules or components in software systems through static code analysis and dependency detection. Use when Claude needs to analyze software architecture, identify module b...",
@@ -197,6 +323,15 @@
       "installed": false,
       "displayName_zh": "冲突分析器",
       "description_zh": "分析合并冲突。建议冲突解决方案，解释冲突的变更。"
+    },
+    {
+      "name": "confluence-automation",
+      "displayName": "confluence-automation",
+      "description": "Automate Confluence page creation, content search, space management, labels, and hierarchy navigation via Rube MCP (Composio). Always search tools first for current schemas.",
+      "category": "documentation",
+      "installed": false,
+      "displayName_zh": "confluence-automation",
+      "description_zh": "Automate Confluence page creation, content search, space management, labels, and hierarchy navigation via Rube MCP (Composio). Always search tools first for current schemas."
     },
     {
       "name": "containerization-assistant",
@@ -233,6 +368,15 @@
       "installed": false,
       "displayName_zh": "覆盖率增强器",
       "description_zh": "识别未覆盖的代码路径。生成测试以提高覆盖率，报告覆盖率指标。"
+    },
+    {
+      "name": "datadog-automation",
+      "displayName": "datadog-automation",
+      "description": "Automate Datadog tasks via Rube MCP (Composio): query metrics, search logs, manage monitors/dashboards, create events and downtimes. Always search tools first for current schemas.",
+      "category": "quality",
+      "installed": false,
+      "displayName_zh": "datadog-automation",
+      "description_zh": "Automate Datadog tasks via Rube MCP (Composio): query metrics, search logs, manage monitors/dashboards, create events and downtimes. Always search tools first for current schemas."
     },
     {
       "name": "dead-code-eliminator",
@@ -280,6 +424,15 @@
       "description_zh": "识别架构和设计问题。检测设计原则违规，建议设计改进。"
     },
     {
+      "name": "digital-ocean-automation",
+      "displayName": "digital-ocean-automation",
+      "description": "Automate DigitalOcean tasks via Rube MCP (Composio). Always search tools first for current schemas.",
+      "category": "devops",
+      "installed": false,
+      "displayName_zh": "digital-ocean-automation",
+      "description_zh": "Automate DigitalOcean tasks via Rube MCP (Composio). Always search tools first for current schemas."
+    },
+    {
       "name": "directed-test-input-generator",
       "displayName": "directed-test-input-generator",
       "description": "Generate targeted test inputs to reach specific code paths and hard-to-reach behaviors in Python code. Use when: (1) Targeting uncovered branches or specific execution paths, (2) Need coverage-guided ...",
@@ -287,6 +440,42 @@
       "installed": false,
       "displayName_zh": "定向测试输入生成器",
       "description_zh": "生成针对性的测试输入。专注于特定代码路径，使用符号执行技术。"
+    },
+    {
+      "name": "discord-automation",
+      "displayName": "discord-automation",
+      "description": "Automate Discord tasks via Rube MCP (Composio): messages, channels, roles, webhooks, reactions. Always search tools first for current schemas.",
+      "category": "devops",
+      "installed": false,
+      "displayName_zh": "discord-automation",
+      "description_zh": "Automate Discord tasks via Rube MCP (Composio): messages, channels, roles, webhooks, reactions. Always search tools first for current schemas."
+    },
+    {
+      "name": "discordbot-automation",
+      "displayName": "discordbot-automation",
+      "description": "Automate Discordbot tasks via Rube MCP (Composio). Always search tools first for current schemas.",
+      "category": "devops",
+      "installed": false,
+      "displayName_zh": "discordbot-automation",
+      "description_zh": "Automate Discordbot tasks via Rube MCP (Composio). Always search tools first for current schemas."
+    },
+    {
+      "name": "docker-hub-automation",
+      "displayName": "Docker Hub Automation",
+      "description": "Automate Docker Hub operations -- manage organizations, repositories, teams, members, and webhooks via the Composio MCP integration.",
+      "category": "devops",
+      "installed": false,
+      "displayName_zh": "Docker Hub Automation",
+      "description_zh": "Automate Docker Hub operations -- manage organizations, repositories, teams, members, and webhooks via the Composio MCP integration."
+    },
+    {
+      "name": "docker_hub-automation",
+      "displayName": "docker_hub-automation",
+      "description": "Automate Docker Hub tasks via Rube MCP (Composio): repositories, images, tags, and container registry management. Always search tools first for current schemas.",
+      "category": "devops",
+      "installed": false,
+      "displayName_zh": "docker_hub-automation",
+      "description_zh": "Automate Docker Hub tasks via Rube MCP (Composio): repositories, images, tags, and container registry management. Always search tools first for current schemas."
     },
     {
       "name": "edge-case-generator",
@@ -341,6 +530,33 @@
       "installed": false,
       "displayName_zh": "模糊测试输入生成器",
       "description_zh": "创建随机化测试输入。发现意外行为，支持基于变异的模糊测试。"
+    },
+    {
+      "name": "github-automation",
+      "displayName": "github-automation",
+      "description": "Automate GitHub repositories, issues, pull requests, branches, CI/CD, and permissions via Rube MCP (Composio). Manage code workflows, review PRs, search code, and handle deployments programmatically.",
+      "category": "devops",
+      "installed": false,
+      "displayName_zh": "github-automation",
+      "description_zh": "Automate GitHub repositories, issues, pull requests, branches, CI/CD, and permissions via Rube MCP (Composio). Manage code workflows, review PRs, search code, and handle deployments programmatically."
+    },
+    {
+      "name": "gitlab-automation",
+      "displayName": "gitlab-automation",
+      "description": "Automate GitLab project management, issues, merge requests, pipelines, branches, and user operations via Rube MCP (Composio). Always search tools first for current schemas.",
+      "category": "devops",
+      "installed": false,
+      "displayName_zh": "gitlab-automation",
+      "description_zh": "Automate GitLab project management, issues, merge requests, pipelines, branches, and user operations via Rube MCP (Composio). Always search tools first for current schemas."
+    },
+    {
+      "name": "hookdeck-automation",
+      "displayName": "hookdeck-automation",
+      "description": "Automate Hookdeck tasks via Rube MCP (Composio). Always search tools first for current schemas.",
+      "category": "devops",
+      "installed": false,
+      "displayName_zh": "hookdeck-automation",
+      "description_zh": "Automate Hookdeck tasks via Rube MCP (Composio). Always search tools first for current schemas."
     },
     {
       "name": "incremental-java-programmer",
@@ -409,6 +625,15 @@
       "description_zh": "在重构后更新 Java 测试以适配新代码版本。处理签名变更、重构和行为修改，更新方法调用、断言、模拟对象并确保测试通过。"
     },
     {
+      "name": "jira-automation",
+      "displayName": "jira-automation",
+      "description": "Automate Jira tasks via Rube MCP (Composio): issues, projects, sprints, boards, comments, users. Always search tools first for current schemas.",
+      "category": "requirements",
+      "installed": false,
+      "displayName_zh": "jira-automation",
+      "description_zh": "Automate Jira tasks via Rube MCP (Composio): issues, projects, sprints, boards, comments, users. Always search tools first for current schemas."
+    },
+    {
       "name": "legacy-code-summarizer",
       "displayName": "legacy-code-summarizer",
       "description": "Produces comprehensive summaries and insights about legacy codebases to help understand unfamiliar code. Use when onboarding to a new project, planning refactoring efforts, assessing code for acquisit...",
@@ -418,6 +643,15 @@
       "description_zh": "总结遗留代码库。解释代码功能，帮助理解旧代码。"
     },
     {
+      "name": "linear-automation",
+      "displayName": "linear-automation",
+      "description": "Automate Linear tasks via Rube MCP (Composio): issues, projects, cycles, teams, labels. Always search tools first for current schemas.",
+      "category": "requirements",
+      "installed": false,
+      "displayName_zh": "linear-automation",
+      "description_zh": "Automate Linear tasks via Rube MCP (Composio): issues, projects, cycles, teams, labels. Always search tools first for current schemas."
+    },
+    {
       "name": "markdown-document-structurer",
       "displayName": "markdown-document-structurer",
       "description": "Reorganizes markdown documents into well-structured, consistent format while preserving content and improving readability. Use when Claude needs to: (1) Fix heading hierarchy issues (skipped levels, m...",
@@ -425,6 +659,15 @@
       "installed": false,
       "displayName_zh": "Markdown 文档结构化工具",
       "description_zh": "将 Markdown 文档重组为结构良好的格式。修复标题层次结构并生成目录，标准化格式并提高可读性。"
+    },
+    {
+      "name": "mcp-builder",
+      "displayName": "mcp-builder",
+      "description": "Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools. Use when building MCP servers to integrate externa...",
+      "category": "development-tools",
+      "installed": false,
+      "displayName_zh": "mcp-builder",
+      "description_zh": "Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools. Use when building MCP servers to integrate externa..."
     },
     {
       "name": "module-component-generator",
@@ -443,6 +686,24 @@
       "installed": false,
       "displayName_zh": "自然语言到约束转换器",
       "description_zh": "将自然语言需求转换为形式化约束。支持约束语言，验证约束一致性。"
+    },
+    {
+      "name": "npm-automation",
+      "displayName": "npm-automation",
+      "description": "Automate NPM tasks via Rube MCP (Composio). Always search tools first for current schemas.",
+      "category": "devops",
+      "installed": false,
+      "displayName_zh": "npm-automation",
+      "description_zh": "Automate NPM tasks via Rube MCP (Composio). Always search tools first for current schemas."
+    },
+    {
+      "name": "pagerduty-automation",
+      "displayName": "pagerduty-automation",
+      "description": "Automate PagerDuty tasks via Rube MCP (Composio): manage incidents, services, schedules, escalation policies, and on-call rotations. Always search tools first for current schemas.",
+      "category": "quality",
+      "installed": false,
+      "displayName_zh": "pagerduty-automation",
+      "description_zh": "Automate PagerDuty tasks via Rube MCP (Composio): manage incidents, services, schedules, escalation policies, and on-call rotations. Always search tools first for current schemas."
     },
     {
       "name": "python-repo-quickstart",
@@ -562,6 +823,51 @@
       "description_zh": "生成使用场景。创建用户故事，开发测试场景。"
     },
     {
+      "name": "sentry-automation",
+      "displayName": "sentry-automation",
+      "description": "Automate Sentry tasks via Rube MCP (Composio): manage issues/events, configure alerts, track releases, monitor projects and teams. Always search tools first for current schemas.",
+      "category": "quality",
+      "installed": false,
+      "displayName_zh": "sentry-automation",
+      "description_zh": "Automate Sentry tasks via Rube MCP (Composio): manage issues/events, configure alerts, track releases, monitor projects and teams. Always search tools first for current schemas."
+    },
+    {
+      "name": "slack-automation",
+      "displayName": "slack-automation",
+      "description": "Automate Slack messaging, channel management, search, reactions, and threads via Rube MCP (Composio). Send messages, search conversations, manage channels/users, and react to messages programmatically...",
+      "category": "devops",
+      "installed": false,
+      "displayName_zh": "slack-automation",
+      "description_zh": "Automate Slack messaging, channel management, search, reactions, and threads via Rube MCP (Composio). Send messages, search conversations, manage channels/users, and react to messages programmatically..."
+    },
+    {
+      "name": "slack-gif-creator",
+      "displayName": "slack-gif-creator",
+      "description": "Toolkit for creating animated GIFs optimized for Slack, with validators for size constraints and composable animation primitives. This skill applies when users request animated GIFs or emoji animation...",
+      "category": "devops",
+      "installed": false,
+      "displayName_zh": "slack-gif-creator",
+      "description_zh": "Toolkit for creating animated GIFs optimized for Slack, with validators for size constraints and composable animation primitives. This skill applies when users request animated GIFs or emoji animation..."
+    },
+    {
+      "name": "slackbot-automation",
+      "displayName": "slackbot-automation",
+      "description": "Automate Slackbot tasks via Rube MCP (Composio). Always search tools first for current schemas.",
+      "category": "devops",
+      "installed": false,
+      "displayName_zh": "slackbot-automation",
+      "description_zh": "Automate Slackbot tasks via Rube MCP (Composio). Always search tools first for current schemas."
+    },
+    {
+      "name": "sourcegraph-automation",
+      "displayName": "sourcegraph-automation",
+      "description": "Automate Sourcegraph tasks via Rube MCP (Composio). Always search tools first for current schemas.",
+      "category": "devops",
+      "installed": false,
+      "displayName_zh": "sourcegraph-automation",
+      "description_zh": "Automate Sourcegraph tasks via Rube MCP (Composio). Always search tools first for current schemas."
+    },
+    {
       "name": "specification-driven-generation",
       "displayName": "specification-driven-generation",
       "description": "Generate implementation code and tests from written specifications. Use when the user provides specifications (natural language descriptions, formal specs, requirements documents, API specs) and asks ...",
@@ -587,6 +893,15 @@
       "installed": false,
       "displayName_zh": "静态推理验证器",
       "description_zh": "使用静态分析验证代码。检查正确性属性，报告验证结果。"
+    },
+    {
+      "name": "supabase-automation",
+      "displayName": "supabase-automation",
+      "description": "Automate Supabase database queries, table management, project administration, storage, edge functions, and SQL execution via Rube MCP (Composio). Always search tools first for current schemas.",
+      "category": "devops",
+      "installed": false,
+      "displayName_zh": "supabase-automation",
+      "description_zh": "Automate Supabase database queries, table management, project administration, storage, edge functions, and SQL execution via Rube MCP (Composio). Always search tools first for current schemas."
     },
     {
       "name": "symbolic-execution-assistant",
@@ -623,6 +938,15 @@
       "installed": false,
       "displayName_zh": "模板代码生成器",
       "description_zh": "从模板创建样板代码。支持常见模式和框架，可定制的模板适用于不同用例。"
+    },
+    {
+      "name": "test-app-automation",
+      "displayName": "test-app-automation",
+      "description": "Automate Test App tasks via Rube MCP (Composio). Always search tools first for current schemas.",
+      "category": "testing",
+      "installed": false,
+      "displayName_zh": "test-app-automation",
+      "description_zh": "Automate Test App tasks via Rube MCP (Composio). Always search tools first for current schemas."
     },
     {
       "name": "test-case-documentation",
@@ -677,9 +1001,27 @@
       "installed": false,
       "displayName_zh": "单元测试生成器",
       "description_zh": "为函数和类生成单元测试。支持多种测试框架，包含边界情况和断言。"
+    },
+    {
+      "name": "vercel-automation",
+      "displayName": "vercel-automation",
+      "description": "Automate Vercel tasks via Rube MCP (Composio): manage deployments, domains, DNS, env vars, projects, and teams. Always search tools first for current schemas.",
+      "category": "devops",
+      "installed": false,
+      "displayName_zh": "vercel-automation",
+      "description_zh": "Automate Vercel tasks via Rube MCP (Composio): manage deployments, domains, DNS, env vars, projects, and teams. Always search tools first for current schemas."
+    },
+    {
+      "name": "webapp-testing",
+      "displayName": "webapp-testing",
+      "description": "Toolkit for interacting with and testing local web applications using Playwright. Supports verifying frontend functionality, debugging UI behavior, capturing browser screenshots, and viewing browser l...",
+      "category": "testing",
+      "installed": false,
+      "displayName_zh": "webapp-testing",
+      "description_zh": "Toolkit for interacting with and testing local web applications using Playwright. Supports verifying frontend functionality, debugging UI behavior, capturing browser screenshots, and viewing browser l..."
     }
   ],
-  "total": 74,
+  "total": 112,
   "category_names_zh": {
     "code-generation": "代码生成",
     "testing": "测试",
@@ -692,5 +1034,5 @@
     "maintenance": "维护",
     "other": "其他"
   },
-  "generated_at": "2026-02-15"
+  "generated_at": "2026-02-17"
 }
