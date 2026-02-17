@@ -7,6 +7,7 @@ let allSkillsData = {}; // Store full data including category translations
 let selectedSkills = new Set();
 let selectedCategories = new Set(['all']); // Changed to Set for multi-select
 let currentLang = 'en'; // Default language
+let currentView = 'category'; // 'category' or 'stage'
 
 // i18n translations
 const translations = {
@@ -18,19 +19,36 @@ const translations = {
         refresh: '🔄 Refresh',
         help: '📖 How to Use',
         searchPlaceholder: '🔍 Search skills by name or description...',
+        viewByCategory: '📂 By Category',
+        viewByStage: '🔄 By Stage',
         filterAll: 'All',
         filterInstalled: '✓ Installed',
         filterCodeGen: 'Code Generation',
         filterTesting: 'Testing',
         filterDocs: 'Documentation',
         filterQuality: 'Code Quality & Analysis',
+        filterArchitecture: 'Architecture & Design',
         filterReqs: 'Requirements & Specifications',
         filterDevOps: 'DevOps & Deployment',
+        filterVersionControl: 'Version Control & Collaboration',
+        filterProjectMgmt: 'Project Management & Issue Tracking',
+        filterTeamComm: 'Team Communication',
+        filterMonitoring: 'Monitoring & Error Tracking',
+        filterDatabase: 'Database & Backend Services',
+        filterDevTools: 'Development Tools & Builders',
+        filterIntegration: 'Integration & Webhooks',
         filterDebug: 'Debugging & Error Handling',
         filterVerify: 'Formal Methods & Verification',
         filterMaint: 'Maintenance & Refactoring',
-        filterDevTools: 'Development Tools',
+        filterVisualization: 'Visualization',
         filterOther: 'Other',
+        stageRequirements: '📕 Requirements',
+        stageDesign: '💡 Software Design',
+        stageImplementation: '⌨️ Implementation',
+        stageTesting: '👩🏽‍💻 Testing',
+        stageVerification: '✅ Verification',
+        stageDeployment: '💻 Deployment',
+        stageMaintenance: '🔧 Maintenance',
         totalSkills: 'skills available',
         selected: 'selected',
         loading: 'Loading skills...',
@@ -49,19 +67,36 @@ const translations = {
         refresh: '🔄 刷新',
         help: '📖 使用说明',
         searchPlaceholder: '🔍 按名称或描述搜索技能...',
+        viewByCategory: '📂 按类别',
+        viewByStage: '🔄 按阶段',
         filterAll: '全部',
         filterInstalled: '✓ 已安装',
         filterCodeGen: '代码生成',
         filterTesting: '测试',
         filterDocs: '文档',
         filterQuality: '代码质量与分析',
+        filterArchitecture: '架构与设计',
         filterReqs: '需求与规范',
         filterDevOps: 'DevOps 与部署',
+        filterVersionControl: '版本控制与协作',
+        filterProjectMgmt: '项目管理与问题跟踪',
+        filterTeamComm: '团队沟通',
+        filterMonitoring: '监控与错误跟踪',
+        filterDatabase: '数据库与后端服务',
+        filterDevTools: '开发工具与构建器',
+        filterIntegration: '集成与 Webhooks',
         filterDebug: '调试与错误处理',
         filterVerify: '形式化方法与验证',
         filterMaint: '维护与重构',
-        filterDevTools: '开发工具',
+        filterVisualization: '可视化',
         filterOther: '其他',
+        stageRequirements: '📕 需求分析',
+        stageDesign: '💡 软件设计',
+        stageImplementation: '⌨️ 实现',
+        stageTesting: '👩🏽‍💻 测试',
+        stageVerification: '✅ 验证',
+        stageDeployment: '💻 部署',
+        stageMaintenance: '🔧 维护',
         totalSkills: '个可用技能',
         selected: '个已选中',
         loading: '加载技能中...',
@@ -122,25 +157,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
     loadSkills();
     setupEventListeners();
+    setupTabListeners();
 });
 
 // Setup event listeners
 function setupEventListeners() {
     const installAllBtn = document.getElementById('installAll');
     const installSelectedBtn = document.getElementById('installSelected');
-    const refreshBtn = document.getElementById('refresh');
     const searchInput = document.getElementById('searchInput');
     const helpBtn = document.getElementById('helpBtn');
     const langToggleMain = document.getElementById('langToggleMain');
     const langToggle = document.getElementById('langToggle');
+    const viewByCategoryBtn = document.getElementById('viewByCategory');
+    const viewByStageBtn = document.getElementById('viewByStage');
 
     if (installAllBtn) installAllBtn.addEventListener('click', installAllSkills);
     if (installSelectedBtn) installSelectedBtn.addEventListener('click', installSelectedSkills);
-    if (refreshBtn) refreshBtn.addEventListener('click', loadSkills);
     if (searchInput) searchInput.addEventListener('input', handleSearch);
     if (helpBtn) helpBtn.addEventListener('click', openHelpModal);
     if (langToggleMain) langToggleMain.addEventListener('click', toggleLanguage);
     if (langToggle) langToggle.addEventListener('click', toggleHelpLanguage);
+    if (viewByCategoryBtn) viewByCategoryBtn.addEventListener('click', () => switchView('category'));
+    if (viewByStageBtn) viewByStageBtn.addEventListener('click', () => switchView('stage'));
 
     // Help modal
     const modal = document.getElementById('helpModal');
@@ -327,9 +365,15 @@ function renderSkills() {
             return true;
         }
 
-        // Handle multi-category filter
-        const skillCategory = getSkillCategory(skill.name);
-        return selectedCategories.has(skillCategory);
+        // Handle multi-category/stage filter
+        if (currentView === 'category') {
+            const skillCategory = getSkillCategory(skill.name);
+            return selectedCategories.has(skillCategory);
+        } else {
+            // Stage view
+            const skillStage = skill.stage ? getStageId(skill.stage) : null;
+            return skillStage && selectedCategories.has(skillStage);
+        }
     });
 
     // If there are search terms, filter and rank the skills
@@ -454,13 +498,30 @@ function highlightText(text, searchTerms) {
 // Create skill card HTML
 function createSkillCard(skill) {
     const isSelected = selectedSkills.has(skill.name);
-    const category = getSkillCategory(skill.name);
     const t = translations[currentLang];
 
-    // Get localized category name
-    const categoryLabel = currentLang === 'zh' && allSkillsData.category_names_zh && allSkillsData.category_names_zh[category]
-        ? allSkillsData.category_names_zh[category]
-        : category.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+    // Get category or stage based on current view
+    let labelText, labelClass;
+    if (currentView === 'category') {
+        const category = getSkillCategory(skill.name);
+        labelClass = `cat-${category}`;
+        // Get localized category name
+        labelText = currentLang === 'zh' && allSkillsData.category_names_zh && allSkillsData.category_names_zh[category]
+            ? allSkillsData.category_names_zh[category]
+            : category.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+    } else {
+        // Stage view
+        const stageName = skill.stage || 'No Stage';
+        const stageId = skill.stage ? getStageId(skill.stage) : 'none';
+        labelClass = `stage-${stageId}`;
+
+        // Use emoji stage name or translate
+        if (skill.stage) {
+            labelText = skill.stage; // Already has emoji like "📕 Requirements"
+        } else {
+            labelText = currentLang === 'zh' ? '未分类' : 'No Stage';
+        }
+    }
 
     // Get localized skill name and description
     let skillName = currentLang === 'zh' && skill.displayName_zh
@@ -512,11 +573,13 @@ function createSkillCard(skill) {
                        ${isSelected ? 'checked' : ''}
                        ${skill.installed ? 'disabled' : ''}>
             </div>
-            <div class="skill-category cat-${category}">${categoryLabel}</div>
-            <div class="skill-description">${skillDescription}</div>
-            <a href="${skillGithubUrl}" target="_blank" class="see-more-link" onclick="event.stopPropagation()">
-                ${currentLang === 'zh' ? '📖 查看详情' : '📖 See more'}
-            </a>
+            <div class="skill-category ${labelClass}">${labelText}</div>
+            <div class="skill-description">
+                ${skillDescription}
+                <a href="${skillGithubUrl}" target="_blank" class="see-more-link" onclick="event.stopPropagation()">
+                    ${currentLang === 'zh' ? '查看详情' : 'See more'}
+                </a>
+            </div>
             <span class="skill-status ${skill.installed ? 'status-installed' : 'status-available'}">
                 ${statusText}
             </span>
@@ -527,12 +590,9 @@ function createSkillCard(skill) {
 
 // Get skill category
 function getSkillCategory(skillName) {
-    for (const [category, skills] of Object.entries(categoryMap)) {
-        if (skills.includes(skillName)) {
-            return category;
-        }
-    }
-    return 'other';
+    // Find skill in allSkills array and return its category
+    const skill = allSkills.find(s => s.name === skillName);
+    return skill ? skill.category : 'other';
 }
 
 // Format skill name
@@ -698,3 +758,127 @@ document.addEventListener('keydown', (e) => {
         closeHelpModal();
     }
 });
+
+// Switch between category and stage view
+function switchView(view) {
+    currentView = view;
+    
+    // Update button states
+    const categoryBtn = document.getElementById('viewByCategory');
+    const stageBtn = document.getElementById('viewByStage');
+    
+    if (view === 'category') {
+        categoryBtn.classList.add('active');
+        stageBtn.classList.remove('active');
+        document.getElementById('categoryTabs').style.display = 'flex';
+        document.getElementById('stageTabs').style.display = 'none';
+    } else {
+        stageBtn.classList.add('active');
+        categoryBtn.classList.remove('active');
+        document.getElementById('categoryTabs').style.display = 'none';
+        document.getElementById('stageTabs').style.display = 'flex';
+    }
+    
+    // Reset selection to 'all'
+    selectedCategories.clear();
+    selectedCategories.add('all');
+    
+    // Update active tab
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    const activeTab = view === 'category' 
+        ? document.querySelector('#categoryTabs .tab[data-category="all"]')
+        : document.querySelector('#stageTabs .tab[data-stage="all"]');
+    if (activeTab) activeTab.classList.add('active');
+    
+    // Re-setup tab listeners
+    setupTabListeners();
+    
+    // Re-render skills
+    renderSkills();
+}
+
+// Setup tab listeners for both category and stage tabs
+function setupTabListeners() {
+    // Category tabs
+    document.querySelectorAll('#categoryTabs .tab').forEach(tab => {
+        tab.replaceWith(tab.cloneNode(true)); // Remove old listeners
+    });
+    
+    document.querySelectorAll('#categoryTabs .tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+            const category = tab.dataset.category;
+            handleTabClick(category, tab, 'category');
+        });
+    });
+    
+    // Stage tabs
+    document.querySelectorAll('#stageTabs .tab').forEach(tab => {
+        tab.replaceWith(tab.cloneNode(true)); // Remove old listeners
+    });
+    
+    document.querySelectorAll('#stageTabs .tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+            const stage = tab.dataset.stage;
+            handleTabClick(stage, tab, 'stage');
+        });
+    });
+}
+
+// Handle tab click for both category and stage
+function handleTabClick(value, tab, type) {
+    const containerSelector = type === 'category' ? '#categoryTabs' : '#stageTabs';
+    
+    // Handle "All" button
+    if (value === 'all') {
+        selectedCategories.clear();
+        selectedCategories.add('all');
+        document.querySelectorAll(`${containerSelector} .tab`).forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+    }
+    // Handle "Installed" button
+    else if (value === 'installed') {
+        selectedCategories.clear();
+        selectedCategories.add('installed');
+        document.querySelectorAll(`${containerSelector} .tab`).forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+    }
+    // Handle other categories/stages - support multi-select
+    else {
+        // Remove "all" and "installed" if present
+        selectedCategories.delete('all');
+        selectedCategories.delete('installed');
+        document.querySelector(`${containerSelector} .tab[data-${type}="all"]`)?.classList.remove('active');
+        document.querySelector(`${containerSelector} .tab[data-${type}="installed"]`)?.classList.remove('active');
+        
+        // Toggle current category/stage
+        if (selectedCategories.has(value)) {
+            selectedCategories.delete(value);
+            tab.classList.remove('active');
+        } else {
+            selectedCategories.add(value);
+            tab.classList.add('active');
+        }
+        
+        // If no categories selected, default to "all"
+        if (selectedCategories.size === 0) {
+            selectedCategories.add('all');
+            document.querySelector(`${containerSelector} .tab[data-${type}="all"]`)?.classList.add('active');
+        }
+    }
+    
+    renderSkills();
+}
+
+// Get skill stage ID from stage name
+function getStageId(stageName) {
+    const stageMap = {
+        '📕 Requirements': 'requirements',
+        '💡 Software Design': 'design',
+        '⌨️ Implementation': 'implementation',
+        '👩🏽‍💻 Testing': 'testing',
+        '✅ Verification': 'verification',
+        '💻 Deployment': 'deployment',
+        '🔧 Maintenance': 'maintenance'
+    };
+    return stageMap[stageName] || null;
+}

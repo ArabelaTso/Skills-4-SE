@@ -360,12 +360,12 @@ header h1 {
 }
 
 .see-more-link {
-    display: inline-block;
+    display: inline;
     color: #667eea;
     font-size: 0.85em;
     font-weight: 600;
     text-decoration: none;
-    margin-bottom: 8px;
+    
     transition: all 0.2s ease;
 }
 
@@ -900,4 +900,142 @@ mark.highlight {
     visibility: visible;
     opacity: 1;
     transform: translateX(-50%) translateY(-5px);
+}
+
+/* View toggle buttons */
+.view-toggle {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.view-toggle-btn {
+    padding: 10px 20px;
+    border: 2px solid #e0e0e0;
+    background: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    color: #666;
+}
+
+.view-toggle-btn:hover {
+    border-color: #4a90e2;
+    color: #4a90e2;
+    transform: translateY(-2px);
+}
+
+.view-toggle-btn.active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-color: transparent;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.view-toggle-btn.active:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(102, 126, 234, 0.5);
+}
+
+/* Missing category colors */
+.tab[data-category="architecture"].active {
+    background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);
+}
+
+.tab[data-category="visualization"].active {
+    background: linear-gradient(135deg, #fdcbf1 0%, #e6dee9 100%);
+    color: #2d3748;
+}
+
+/* Stage-specific colors for tabs */
+.tab[data-stage="all"].active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.tab[data-stage="installed"].active {
+    background: #48bb78;
+}
+
+.tab[data-stage="requirements"].active {
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+}
+
+.tab[data-stage="design"].active {
+    background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);
+}
+
+.tab[data-stage="implementation"].active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.tab[data-stage="testing"].active {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.tab[data-stage="verification"].active {
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    color: #2d3748;
+}
+
+.tab[data-stage="deployment"].active {
+    background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
+}
+
+.tab[data-stage="maintenance"].active {
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    color: #2d3748;
+}
+
+/* Stage-specific colors for skill cards */
+.skill-category.stage-requirements {
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+    color: white;
+}
+
+.skill-category.stage-design {
+    background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);
+    color: white;
+}
+
+.skill-category.stage-implementation {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.skill-category.stage-testing {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+}
+
+.skill-category.stage-verification {
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    color: #2d3748;
+}
+
+.skill-category.stage-deployment {
+    background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
+    color: white;
+}
+
+.skill-category.stage-maintenance {
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    color: #2d3748;
+}
+
+.skill-category.stage-none {
+    background: #e0e0e0;
+    color: #666;
+}
+
+/* Adjust see-more link to flow with description text */
+.skill-description {
+    display: block;
+}
+
+.skill-description .see-more-link {
+    margin-left: 4px;
+    white-space: nowrap;
 }
