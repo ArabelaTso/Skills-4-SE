@@ -1,0 +1,33 @@
+Interval Profiling & Performance Analyzer Skill
+================================================
+
+Installation:
+  Install the .skill file using Claude Code's skill installation command.
+
+Quick Start:
+  1. Ask Claude to profile your program:
+     "Profile my Python script main.py and identify bottlenecks"
+  
+  2. Claude will:
+     - Run the appropriate profiling script
+     - Generate performance analysis
+     - Create HTML visualization report
+     - Provide optimization recommendations
+
+Supported Languages:
+  - Python (cProfile + tracemalloc)
+  - Java (Java Flight Recorder)
+  - C/C++ (perf or gprof)
+
+Example Queries:
+  - "Profile this Python script and show me the hotspots"
+  - "Analyze the performance of my Java application"
+  - "Why is my C++ program slow? Profile it and suggest optimizations"
+  - "Compare performance before and after my optimization"
+
+Output:
+  - profile_results.json: Detailed profiling data
+  - profile_report.html: Interactive visualization with charts
+  - flamegraph.txt: Flame graph data (optional)
+
+For more details, see SKILL.md in the skill directory.

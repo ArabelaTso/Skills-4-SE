@@ -1,0 +1,17 @@
+[
+  {
+    "input": [1, 2, 3, 4, 5],
+    "description": "Example test case with list input"
+  },
+  {
+    "input": 10,
+    "description": "Example test case with numeric input"
+  },
+  {
+    "input": {
+      "list": [5, 3, 8, 1],
+      "operation": "sort"
+    },
+    "description": "Example test case with structured input"
+  }
+]

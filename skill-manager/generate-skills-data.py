@@ -33,12 +33,14 @@ ADDITIONAL_SKILL_DIRS = ['awesome-claude-skills-SE-skills', 'anthropics-skills-S
 CATEGORY_MAP = {
     'code-generation': ['function-class-generator', 'module-component-generator', 'template-code-generator',
                         'specification-driven-generation', 'test-driven-generation', 'incremental-python-programmer',
-                        'incremental-java-programmer', 'frontend-design'],
+                        'incremental-java-programmer', 'frontend-design', 'pseudocode-extractor'],
     'testing': ['unit-test-generator', 'integration-test-generator', 'java-test-updater', 'flaky-test-detector',
                 'test-oracle-generator', 'edge-case-generator', 'directed-test-input-generator',
                 'fuzzing-input-generator', 'test-suite-prioritizer', 'coverage-enhancer',
                 'test-case-documentation', 'python-test-updater', 'req-to-test',
-                'test-app-automation', 'webapp-testing', 'webapp-testing-anthropics'],
+                'test-app-automation', 'webapp-testing', 'webapp-testing-anthropics',
+                'python-regression-test-generator', 'java-regression-test-generator',
+                'mocking-test-generator', 'test-guided-bug-detector'],
     'documentation': ['api-documentation-generator', 'code-comment-generator', 'markdown-document-structurer',
                       'readme-generator', 'change-log-generator', 'code-change-summarizer', 'release-notes-writer',
                       'legacy-code-summarizer', 'python-repo-quickstart', 'error-explanation-generator',
@@ -47,7 +49,10 @@ CATEGORY_MAP = {
                 'dead-code-eliminator', 'technical-debt-analyzer', 'code-pattern-extractor',
                 'code-search-assistant', 'component-boundary-identifier',
                 'sentry-automation', 'datadog-automation', 'bugsnag-automation', 'bugbug-automation',
-                'bugherd-automation', 'pagerduty-automation'],
+                'bugherd-automation', 'pagerduty-automation',
+                'static-bug-detector', 'semantic-bug-detector', 'static-vulnerability-detector',
+                'vulnerability-pattern-matcher', 'exploitability-analyzer', 'vulnerability-root-cause-analyzer',
+                'security-patch-advisor', 'code-summarizer'],
     'requirements': ['requirement-summarizer', 'requirement-coverage-checker', 'requirement-comparison-reporter',
                      'ambiguity-detector', 'scenario-generator', 'specification-generator', 'nl-to-constraints',
                      'jira-automation', 'linear-automation'],
@@ -61,10 +66,20 @@ CATEGORY_MAP = {
                'slack-automation', 'slackbot-automation', 'discord-automation', 'discordbot-automation',
                'slack-gif-creator', 'supabase-automation', 'hookdeck-automation'],
     'debugging': ['bug-localization', 'bug-to-patch-generator', 'runtime-error-explainer',
-                  'regression-root-cause-analyzer', 'conflict-analyzer'],
+                  'regression-root-cause-analyzer', 'conflict-analyzer', 'counterexample-debugger',
+                  'issue-report-generator'],
     'verification': ['acsl-annotation-assistant', 'assertion-synthesizer', 'invariant-inference',
                      'static-reasoning-verifier', 'symbolic-execution-assistant', 'counterexample-generator',
-                     'counterexample-explainer'],
+                     'counterexample-explainer', 'formal-spec-generator', 'program-to-model-extractor',
+                     'imperative-to-coq-model-extractor', 'python-to-dafny-translator', 'python-to-lean4-translator',
+                     'c-cpp-to-lean4-translator', 'cpp-to-dafny-translator', 'program-correctness-prover',
+                     'proof-skeleton-generator', 'proof-failure-explainer', 'proof-refactoring-assistant',
+                     'proof-trace-summarizer', 'proof-carrying-code-generator', 'verified-spec-code-mapper',
+                     'verification-boundary-reporter', 'verified-pseudocode-extractor',
+                     'lemma-discovery-assistant', 'tactic-suggestion-assistant', 'refinement-step-generator',
+                     'abstract-domain-explorer', 'abstract-invariant-generator', 'abstract-state-analyzer',
+                     'abstract-trace-summarizer', 'control-flow-abstraction-generator',
+                     'library-for-proof-advisor', 'requirement-enhancer'],
     'maintenance': ['code-refactoring-assistant', 'deprecated-api-updater', 'code-translation'],
     'development-tools': ['artifacts-builder', 'mcp-builder', 'codeinterpreter-automation', 'codereadr-automation',
                           'web-artifacts-builder']
@@ -102,10 +117,8 @@ def extract_metadata(skill_path, translations, source_prefix=None, source_dir=No
             if len(parts) >= 3:
                 frontmatter = yaml.safe_load(parts[1])
 
-                # Get description and truncate if needed
+                # Get description (no truncation for full display in tooltips)
                 description = frontmatter.get('description', '')
-                if len(description) > 200:
-                    description = description[:200] + '...'
 
                 skill_name = skill_path.name
                 # Determine the relative path for installation

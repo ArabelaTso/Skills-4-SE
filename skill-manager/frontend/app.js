@@ -1,11 +1,11 @@
 // Data source - static JSON file for GitHub Pages
-const SKILLS_DATA_URL = 'skills-data.json';
+const SKILLS_DATA_URL = 'skills-data.json?v=' + Date.now();
 
 // State
 let allSkills = [];
 let allSkillsData = {}; // Store full data including category translations
 let selectedSkills = new Set();
-let currentCategory = 'all';
+let selectedCategories = new Set(['all']); // Changed to Set for multi-select
 let currentLang = 'en'; // Default language
 
 // i18n translations
@@ -30,6 +30,7 @@ const translations = {
         filterVerify: 'Formal Methods & Verification',
         filterMaint: 'Maintenance & Refactoring',
         filterDevTools: 'Development Tools',
+        filterOther: 'Other',
         totalSkills: 'skills available',
         selected: 'selected',
         loading: 'Loading skills...',
@@ -60,6 +61,7 @@ const translations = {
         filterVerify: '形式化方法与验证',
         filterMaint: '维护与重构',
         filterDevTools: '开发工具',
+        filterOther: '其他',
         totalSkills: '个可用技能',
         selected: '个已选中',
         loading: '加载技能中...',
@@ -152,12 +154,49 @@ function setupEventListeners() {
         }
     });
 
-    // Filter tabs
+    // Filter tabs - support multi-select
     document.querySelectorAll('.tab').forEach(tab => {
         tab.addEventListener('click', () => {
-            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-            tab.classList.add('active');
-            currentCategory = tab.dataset.category;
+            const category = tab.dataset.category;
+
+            // Handle "All" button
+            if (category === 'all') {
+                selectedCategories.clear();
+                selectedCategories.add('all');
+                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+            }
+            // Handle "Installed" button (exclusive with other categories)
+            else if (category === 'installed') {
+                selectedCategories.clear();
+                selectedCategories.add('installed');
+                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+            }
+            // Handle regular category buttons (multi-select)
+            else {
+                // Remove "all" and "installed" if selecting specific categories
+                selectedCategories.delete('all');
+                selectedCategories.delete('installed');
+                document.querySelector('.tab[data-category="all"]').classList.remove('active');
+                document.querySelector('.tab[data-category="installed"]').classList.remove('active');
+
+                // Toggle current category
+                if (selectedCategories.has(category)) {
+                    selectedCategories.delete(category);
+                    tab.classList.remove('active');
+                } else {
+                    selectedCategories.add(category);
+                    tab.classList.add('active');
+                }
+
+                // If no categories selected, default to "all"
+                if (selectedCategories.size === 0) {
+                    selectedCategories.add('all');
+                    document.querySelector('.tab[data-category="all"]').classList.add('active');
+                }
+            }
+
             renderSkills();
         });
     });
@@ -279,12 +318,18 @@ function renderSkills() {
 
     let filteredSkills = allSkills.filter(skill => {
         // Handle "installed" filter
-        if (currentCategory === 'installed') {
+        if (selectedCategories.has('installed')) {
             return skill.installed;
         }
 
-        const matchesCategory = currentCategory === 'all' || getSkillCategory(skill.name) === currentCategory;
-        return matchesCategory;
+        // Handle "all" filter
+        if (selectedCategories.has('all')) {
+            return true;
+        }
+
+        // Handle multi-category filter
+        const skillCategory = getSkillCategory(skill.name);
+        return selectedCategories.has(skillCategory);
     });
 
     // If there are search terms, filter and rank the skills
@@ -426,6 +471,12 @@ function createSkillCard(skill) {
         ? skill.description_zh
         : skill.description;
 
+    // Truncate description for card display (keep full description for tooltip)
+    const maxDescriptionLength = 150;
+    if (skillDescription.length > maxDescriptionLength) {
+        skillDescription = skillDescription.substring(0, maxDescriptionLength) + '...';
+    }
+
     // Apply highlighting if there are search terms
     if (currentSearchTerms.length > 0) {
         skillName = highlightText(skillName, currentSearchTerms);
@@ -435,6 +486,22 @@ function createSkillCard(skill) {
     const statusText = skill.installed
         ? (currentLang === 'zh' ? '✓ 已安装' : '✓ Installed')
         : (currentLang === 'zh' ? '○ 可用' : '○ Available');
+
+    // Get full description for tooltip (without truncation)
+    const fullDescription = currentLang === 'zh' && skill.description_zh
+        ? skill.description_zh
+        : skill.description;
+
+    // Escape HTML for tooltip to prevent XSS
+    const escapeHtml = (text) => {
+        const div = document.createElement('div');
+        div.textContent = text;
+        return div.innerHTML;
+    };
+
+    // Generate GitHub URL for the skill
+    const githubBaseUrl = 'https://github.com/ArabelaTso/LLM4SE-Skills/tree/main';
+    const skillGithubUrl = `${githubBaseUrl}/${skill.path}`;
 
     return `
         <div class="skill-card ${isSelected ? 'selected' : ''} ${skill.installed ? 'installed' : ''}"
@@ -447,9 +514,13 @@ function createSkillCard(skill) {
             </div>
             <div class="skill-category cat-${category}">${categoryLabel}</div>
             <div class="skill-description">${skillDescription}</div>
+            <a href="${skillGithubUrl}" target="_blank" class="see-more-link" onclick="event.stopPropagation()">
+                ${currentLang === 'zh' ? '📖 查看详情' : '📖 See more'}
+            </a>
             <span class="skill-status ${skill.installed ? 'status-installed' : 'status-available'}">
                 ${statusText}
             </span>
+            <div class="tooltip">${escapeHtml(fullDescription)}</div>
         </div>
     `;
 }

@@ -1,0 +1,11 @@
+{
+  "properties": [
+    "permutation",
+    "addition",
+    "multiplication",
+    "inverse",
+    "monotonicity",
+    "equivalence"
+  ],
+  "description": "Template for defining metamorphic properties. Uncomment or add properties as needed."
+}

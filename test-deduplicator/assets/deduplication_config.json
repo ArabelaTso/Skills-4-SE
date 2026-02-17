@@ -1,0 +1,61 @@
+{
+  "analysis_config": {
+    "coverage_analysis": {
+      "enabled": true,
+      "tool": "coverage.py",
+      "include_patterns": ["src/**/*.py", "lib/**/*.py"],
+      "exclude_patterns": ["tests/**", "**/__pycache__/**"],
+      "branch_coverage": true
+    },
+    "semantic_analysis": {
+      "enabled": true,
+      "assertion_weight": 0.4,
+      "call_sequence_weight": 0.3,
+      "source_similarity_weight": 0.3,
+      "min_similarity_threshold": 0.7
+    },
+    "execution_analysis": {
+      "enabled": false,
+      "record_outputs": true,
+      "record_exceptions": true,
+      "record_timing": true
+    }
+  },
+  "redundancy_thresholds": {
+    "identical_coverage": 1.0,
+    "highly_similar_coverage": 0.9,
+    "similar_coverage": 0.8,
+    "semantic_similarity": 0.7,
+    "overall_redundancy": 0.8
+  },
+  "prioritization_weights": {
+    "unique_coverage_lines": 10,
+    "execution_speed_bonus": 5,
+    "stability_bonus": 3,
+    "name_clarity_bonus": 2,
+    "recent_update_bonus": 1
+  },
+  "filtering": {
+    "exclude_test_patterns": [
+      "test_integration_*",
+      "test_e2e_*",
+      "*_regression_test"
+    ],
+    "exclude_test_files": [],
+    "min_tests_per_group": 2,
+    "max_group_size": 10
+  },
+  "safety_checks": {
+    "preserve_coverage": true,
+    "preserve_unique_assertions": true,
+    "require_manual_review": true,
+    "min_confidence_for_auto_removal": 0.95
+  },
+  "output": {
+    "format": "json",
+    "include_detailed_analysis": true,
+    "include_code_snippets": false,
+    "generate_html_report": false,
+    "report_file": "deduplication_report.json"
+  }
+}

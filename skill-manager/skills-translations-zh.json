@@ -34,7 +34,7 @@
     },
     "bug-localization": {
       "name": "Bug 定位器",
-      "description": "在代码中定位 bug。分析堆栈跟踪和日志，建议可能的 bug 位置。"
+      "description": "在源代码、模块和系统中识别 bug 的精确位置。用于调试应用程序、调查测试失败、分析错误报告、追踪运行时问题或执行根本原因分析。"
     },
     "bug-to-patch-generator": {
       "name": "Bug 到补丁生成器",
@@ -53,16 +53,16 @@
       "description": "生成用于自动化构建和测试的 CI 流水线配置。支持 GitHub Actions，包含依赖缓存和矩阵测试。包含 Node.js、Python、Go 和 Rust 项目的模板。"
     },
     "code-change-summarizer": {
-      "name": "代码变更总结器",
+      "name": "代码变更摘要器",
       "description": "从代码变更生成结构化的拉取请求描述。记录带有迁移指南的破坏性变更，添加测试说明和上下文增强。"
     },
     "code-comment-generator": {
       "name": "代码注释生成器",
-      "description": "生成内联代码注释。解释复杂逻辑，遵循文档标准。"
+      "description": "为代码生成清晰、有用的注释。分析代码逻辑、参数、返回值和副作用，生成符合项目风格的文档注释。"
     },
     "code-optimizer": {
       "name": "代码优化器",
-      "description": "优化代码性能。识别瓶颈，建议算法改进。"
+      "description": "优化代码性能和效率。识别性能瓶颈、建议算法改进、优化数据结构使用，并提供更高效的实现方案。"
     },
     "code-pattern-extractor": {
       "name": "代码模式提取器",
@@ -70,11 +70,11 @@
     },
     "code-refactoring-assistant": {
       "name": "代码重构助手",
-      "description": "建议重构机会。应用重构模式，确保行为保持。"
+      "description": "协助代码重构以提高可维护性和代码质量。建议重构机会、应用设计模式、消除代码异味，并保持功能等价性。"
     },
     "code-review-assistant": {
       "name": "代码审查助手",
-      "description": "执行自动化代码审查。识别问题并提出改进建议，检查编码标准合规性。"
+      "description": "执行全面的代码审查。检查代码质量、安全漏洞、性能问题、最佳实践违规，并提供改进建议。"
     },
     "code-search-assistant": {
       "name": "代码搜索助手",
@@ -82,10 +82,10 @@
     },
     "code-smell-detector": {
       "name": "代码异味检测器",
-      "description": "检测代码异味和反模式。建议重构机会，按严重程度分类异味。"
+      "description": "检测代码中的异味和反模式。识别长方法、重复代码、复杂条件、紧耦合等问题，并建议重构策略。"
     },
     "code-translation": {
-      "name": "代码翻译器",
+      "name": "代码翻译",
       "description": "在语言之间翻译代码。保持功能，适应目标语言习惯用法。"
     },
     "component-boundary-identifier": {
@@ -110,11 +110,11 @@
     },
     "coverage-enhancer": {
       "name": "覆盖率增强器",
-      "description": "识别未覆盖的代码路径。生成测试以提高覆盖率，报告覆盖率指标。"
+      "description": "提高测试覆盖率。分析未覆盖的代码路径，生成额外的测试用例以提高分支覆盖率、语句覆盖率和条件覆盖率。"
     },
     "dead-code-eliminator": {
       "name": "死代码消除器",
-      "description": "识别未使用的代码。安全删除死代码，报告消除机会。"
+      "description": "识别和移除死代码。检测未使用的函数、变量、导入和代码块，帮助清理代码库并减少维护负担。"
     },
     "dependency-resolver": {
       "name": "依赖解析器",
@@ -126,7 +126,7 @@
     },
     "design-pattern-suggestor": {
       "name": "设计模式建议器",
-      "description": "建议适当的设计模式。解释模式适用性，提供实现指导。"
+      "description": "根据问题描述、需求或代码场景推荐合适的软件设计模式。分析问题上下文，建议适合的创建型、结构型、行为型、架构型或并发模式，并提供实现指导和权衡分析。"
     },
     "design-smell-detector": {
       "name": "设计异味检测器",
@@ -137,8 +137,8 @@
       "description": "生成针对性的测试输入。专注于特定代码路径，使用符号执行技术。"
     },
     "edge-case-generator": {
-      "name": "边界情况生成器",
-      "description": "识别并生成边界情况测试。覆盖边界条件，包含极端情况和错误场景。"
+      "name": "边缘用例生成器",
+      "description": "为函数和方法生成边缘用例测试。识别边界条件、极端值、空输入、特殊字符等，确保代码健壮性。"
     },
     "environment-setup-assistant": {
       "name": "环境设置助手",
@@ -150,27 +150,27 @@
     },
     "flaky-test-detector": {
       "name": "不稳定测试检测器",
-      "description": "识别非确定性测试。分析测试执行模式，建议常见不稳定模式的修复方法。"
+      "description": "检测和分析不稳定的测试。识别间歇性失败的测试，分析失败模式，并建议修复策略以提高测试可靠性。"
     },
     "function-class-generator": {
-      "name": "函数/类生成器",
+      "name": "函数类生成器",
       "description": "从规范生成函数和类。支持多种编程语言，包含类型提示、文档和错误处理。"
     },
     "fuzzing-input-generator": {
-      "name": "模糊测试输入生成器",
+      "name": "模糊输入生成器",
       "description": "创建随机化测试输入。发现意外行为，支持基于变异的模糊测试。"
     },
     "incremental-java-programmer": {
-      "name": "增量式 Java 编程器",
+      "name": "增量 Java 编程器",
       "description": "根据自然语言描述在 Java 仓库中实现新功能。支持 Maven 和 Gradle 构建系统，生成 JUnit 测试并确保所有测试成功通过。"
     },
     "incremental-python-programmer": {
-      "name": "增量式 Python 编程器",
+      "name": "增量 Python 编程器",
       "description": "根据自然语言描述在 Python 仓库中实现新功能。生成全面的单元测试和集成测试，确保所有测试通过并遵循现有代码模式。"
     },
     "integration-test-generator": {
       "name": "集成测试生成器",
-      "description": "为系统组件创建集成测试。测试组件交互，包含设置和清理逻辑。"
+      "description": "生成集成测试以验证组件间的交互。创建测试场景来验证模块集成、API 调用、数据库交互和外部服务集成。"
     },
     "invariant-inference": {
       "name": "不变量推断器",
@@ -181,23 +181,23 @@
       "description": "在重构后更新 Java 测试以适配新代码版本。处理签名变更、重构和行为修改，更新方法调用、断言、模拟对象并确保测试通过。"
     },
     "legacy-code-summarizer": {
-      "name": "遗留代码总结器",
+      "name": "遗留代码摘要器",
       "description": "总结遗留代码库。解释代码功能，帮助理解旧代码。"
     },
     "markdown-document-structurer": {
-      "name": "Markdown 文档结构化工具",
+      "name": "Markdown 文档结构器",
       "description": "将 Markdown 文档重组为结构良好的格式。修复标题层次结构并生成目录，标准化格式并提高可读性。"
     },
     "module-component-generator": {
-      "name": "模块/组件生成器",
+      "name": "模块组件生成器",
       "description": "从接口契约构建完整模块。生成分层架构（模型、仓储、服务），支持 Python 和 Java 的设计模式。"
     },
     "nl-to-constraints": {
-      "name": "自然语言到约束转换器",
+      "name": "自然语言到约束",
       "description": "将自然语言需求转换为形式化约束。支持约束语言，验证约束一致性。"
     },
     "python-repo-quickstart": {
-      "name": "Python 仓库快速入门",
+      "name": "Python 仓库快速开始",
       "description": "快速分析 Python 仓库。识别项目类型、入口点和依赖项，生成设置和执行说明。"
     },
     "python-test-updater": {
@@ -217,7 +217,7 @@
       "description": "编写发布说明。突出新功能和修复，面向最终用户。"
     },
     "req-to-test": {
-      "name": "需求到测试转换器",
+      "name": "需求到测试",
       "description": "将需求转换为测试用例。确保需求覆盖，将测试追溯到需求。"
     },
     "requirement-comparison-reporter": {
@@ -225,12 +225,12 @@
       "description": "比较新旧需求文档。将需求变更映射到代码组件，生成详细的 Markdown 格式修改计划。"
     },
     "requirement-coverage-checker": {
-      "name": "需求覆盖检查器",
+      "name": "需求覆盖率检查器",
       "description": "检查需求覆盖。识别实现中的差距，将需求追溯到代码。"
     },
     "requirement-summarizer": {
-      "name": "需求总结器",
-      "description": "总结需求文档。提取关键需求，按优先级组织。"
+      "name": "需求摘要器",
+      "description": "总结和提取软件需求文档的关键信息。分析需求规范、用户故事和功能描述，生成简洁的摘要和关键点。"
     },
     "rollback-strategy-advisor": {
       "name": "回滚策略顾问",
@@ -266,7 +266,7 @@
     },
     "technical-debt-analyzer": {
       "name": "技术债务分析器",
-      "description": "识别技术债务。量化债务影响，优先处理债务减少。"
+      "description": "检测和分析具有高维护成本、糟糕设计或累积技术债务的区域。用于审查代码库质量问题、规划重构工作、进行代码审计、评估项目健康状况、识别维护热点或优先处理技术改进。"
     },
     "template-code-generator": {
       "name": "模板代码生成器",
@@ -285,16 +285,510 @@
       "description": "为测试用例生成预期输出。创建断言和验证逻辑，支持基于属性的测试。"
     },
     "test-suite-prioritizer": {
-      "name": "测试套件优先级排序器",
+      "name": "测试套件优先级器",
       "description": "优先排序测试执行顺序。优化早期故障检测，考虑测试依赖关系和覆盖率。"
     },
     "unit-test-generator": {
       "name": "单元测试生成器",
-      "description": "为函数和类生成单元测试。支持多种测试框架，包含边界情况和断言。"
+      "description": "为函数和方法生成单元测试。分析代码逻辑，创建测试用例覆盖正常路径、边缘情况和错误条件，支持多种测试框架。"
     },
     "configuration-generator": {
       "name": "配置生成器",
       "description": "生成配置文件。支持多种格式（YAML、JSON、XML），验证配置模式。"
+    },
+    "abstract-domain-explorer": {
+      "name": "抽象域探索器",
+      "description": "使用不同的抽象域（区间、八边形、多面体、符号、同余）对程序变量进行静态分析，推断不变量、值范围和关系。用于分析程序属性、推断循环不变量、检测潜在错误或通过静态分析理解变量关系。"
+    },
+    "abstract-invariant-generator": {
+      "name": "抽象不变量生成器",
+      "description": "使用抽象解释自动推断循环不变量、函数前置条件和后置条件，用于形式化验证。生成捕获程序行为的不变量，支持 Dafny、Isabelle、Coq 等验证系统的正确性证明。"
+    },
+    "abstract-state-analyzer": {
+      "name": "抽象状态分析器",
+      "description": "对源代码执行抽象解释，在不执行程序的情况下推断可能的程序状态、变量范围和数据属性。报告潜在的运行时错误，包括越界访问、空指针引用、类型不一致、除零和整数溢出。"
+    },
+    "abstract-trace-summarizer": {
+      "name": "抽象追踪摘要器",
+      "description": "执行抽象解释以生成摘要的执行轨迹和高级程序行为表示。突出显示关键控制流路径、变量关系、循环不变量、函数契约和抽象状态转换。"
+    },
+    "appcircle-automation": {
+      "name": "AppCircle 自动化",
+      "description": "Automate Appcircle tasks via Rube MCP (Composio). Always search tools first for current schemas."
+    },
+    "appveyor-automation": {
+      "name": "AppVeyor 自动化",
+      "description": "Automate Appveyor tasks via Rube MCP (Composio). Always search tools first for current schemas."
+    },
+    "artifacts-builder": {
+      "name": "构件构建器",
+      "description": "Suite of tools for creating elaborate, multi-component claude.ai HTML artifacts using modern frontend web technologies (React, Tailwind CSS, shadcn/ui). Use for complex artifacts requiring state management, routing, or shadcn/ui components - not for simple single-file HTML/JSX artifacts."
+    },
+    "behavior-preservation-checker": {
+      "name": "行为保持检查器",
+      "description": "Compare runtime behavior between original and migrated repositories to detect behavioral differences, regressions, and semantic changes. Use when validating code migrations, refactorings, language ports, framework upgrades, or any transformation that should preserve behavior. Automatically compares test results, execution traces, API responses, and observable outputs between two repository versions. Provides actionable guidance for fixing deviations and ensuring behavioral equivalence."
+    },
+    "bisect-aware-instrumentation": {
+      "name": "二分感知插桩",
+      "description": "Instrument code to support efficient git bisect by producing deterministic pass/fail signals and concise runtime summaries for each tested commit. Use when debugging regressions with git bisect, automating bisect workflows, creating bisect test scripts, handling flaky tests during bisection, or needing clear exit codes and logging for automated bisect runs. Helps identify the exact commit that introduced a bug through automated testing."
+    },
+    "bitbucket-automation": {
+      "name": "BitBucket 自动化",
+      "description": "Automate Bitbucket repositories, pull requests, branches, issues, and workspace management via Rube MCP (Composio). Always search tools first for current schemas."
+    },
+    "bug-history-summarizer": {
+      "name": "Bug 历史摘要器",
+      "description": "Summarizes the complete lifecycle of a bug across code versions, tracking its introduction, detection, fixing attempts, and regression history. Use when users need to: (1) Understand how a bug evolved over time, (2) Trace when and how a bug was introduced, (3) Analyze fix attempts and their effectiveness, (4) Identify regression patterns, (5) Generate bug lifecycle reports for documentation or post-mortems. Takes a repository, bug identifier, and version history as input."
+    },
+    "bug-reproduction-test-generator": {
+      "name": "Bug 重现测试生成器",
+      "description": "为报告的 bug 生成可重现的测试用例。分析 bug 报告、堆栈跟踪和错误消息，创建最小化的测试用例来一致地重现问题。"
+    },
+    "bugbug-automation": {
+      "name": "BugBug 自动化",
+      "description": "Automate Bugbug tasks via Rube MCP (Composio). Always search tools first for current schemas."
+    },
+    "bugherd-automation": {
+      "name": "BugHerd 自动化",
+      "description": "Automate Bugherd tasks via Rube MCP (Composio). Always search tools first for current schemas."
+    },
+    "bugsnag-automation": {
+      "name": "Bugsnag 自动化",
+      "description": "Automate Bugsnag tasks via Rube MCP (Composio). Always search tools first for current schemas."
+    },
+    "build-ci-migration-assistant": {
+      "name": "构建 CI 迁移助手",
+      "description": "Automatically migrates build systems and CI/CD configurations to target platforms. Use when modernizing build infrastructure, switching CI/CD providers, or standardizing across projects. Supports common migration paths including Maven↔Gradle, npm↔Yarn, Travis CI→GitHub Actions, CircleCI→GitHub Actions, Jenkins→GitLab CI, and GitLab CI→GitHub Actions. Analyzes existing configuration, generates equivalent target configuration, maps dependencies and commands, and provides validation and migration documentation."
+    },
+    "buildkite-automation": {
+      "name": "BuildKite 自动化",
+      "description": "Automate Buildkite tasks via Rube MCP (Composio). Always search tools first for current schemas."
+    },
+    "c-cpp-to-lean4-translator": {
+      "name": "C/C++ 到 Lean4 转换器",
+      "description": "Translate C or C++ programs into equivalent Lean4 code, preserving program semantics and ensuring the generated code is well-typed, executable, and can run successfully. Use when the user asks to convert C/C++ code to Lean4, port C/C++ programs to Lean4, translate imperative code to functional Lean4, or create Lean4 versions of C/C++ algorithms."
+    },
+    "circleci-automation": {
+      "name": "CircleCI 自动化",
+      "description": "Automate CircleCI tasks via Rube MCP (Composio): trigger pipelines, monitor workflows/jobs, retrieve artifacts and test metadata. Always search tools first for current schemas."
+    },
+    "cloudflare-api-key-automation": {
+      "name": "Cloudflare API 密钥自动化",
+      "description": "Automate Cloudflare API tasks via Rube MCP (Composio). Always search tools first for current schemas."
+    },
+    "cloudflare-automation": {
+      "name": "Cloudflare 自动化",
+      "description": "Automate Cloudflare tasks via Rube MCP (Composio). Always search tools first for current schemas."
+    },
+    "cloudflare-browser-rendering-automation": {
+      "name": "Cloudflare 浏览器渲染自动化",
+      "description": "Automate Cloudflare Browser Rendering tasks via Rube MCP (Composio). Always search tools first for current schemas."
+    },
+    "code-instrumentation-generator": {
+      "name": "代码 插桩 生成器",
+      "description": "Automatically instruments source code to collect runtime information such as function calls, branch decisions, variable values, and execution traces while preserving original program semantics. Use when users need to: (1) Add logging or tracing to code for debugging, (2) Collect runtime execution data for analysis, (3) Monitor function calls and control flow, (4) Track variable values during execution, (5) Generate execution traces for testing or profiling. Supports Python, Java, JavaScript, and C/C++ with configurable instrumentation levels."
+    },
+    "code-summarizer": {
+      "name": "代码摘要器",
+      "description": "Generate concise summaries of source code at multiple scales. Use when users ask to summarize, explain, or understand code - whether it's a single function, a class, a module, or an entire codebase. Handles function-level code by explaining intention and core logic, and large codebases by providing high-level overviews with drill-down capabilities for specific modules."
+    },
+    "codeinterpreter-automation": {
+      "name": "Code Interpreter 自动化",
+      "description": "Automate Codeinterpreter tasks via Rube MCP (Composio). Always search tools first for current schemas."
+    },
+    "codereadr-automation": {
+      "name": "CodeReadr 自动化",
+      "description": "Automate Codereadr tasks via Rube MCP (Composio). Always search tools first for current schemas."
+    },
+    "config-consistency-checker": {
+      "name": "Config Consistency 检查器",
+      "description": "Automatically analyzes configuration files to detect inconsistencies, conflicts, missing keys, and divergent values across environments, versions, or modules. Use when managing multi-environment configurations, detecting config drift, validating configuration changes, or ensuring consistency across microservices. Supports JSON, YAML, TOML, INI, XML, .env, and properties files. Identifies security issues like hardcoded secrets and provides actionable resolution guidance."
+    },
+    "confluence-automation": {
+      "name": "Confluence 自动化",
+      "description": "Automate Confluence page creation, content search, space management, labels, and hierarchy navigation via Rube MCP (Composio). Always search tools first for current schemas."
+    },
+    "control-flow-abstraction-generator": {
+      "name": "控制流抽象生成器",
+      "description": "Generate abstract Control Flow Graph (CFG) representations of programs showing loops, branches, and function calls for static analysis or verification. Use when users need to: (1) Visualize program control flow structure, (2) Generate CFGs for static analysis tools, (3) Create control flow abstractions for formal verification, (4) Analyze program paths and reachability, (5) Document program structure. Supports both function-level (intraprocedural) and program-level (interprocedural) analysis with multiple output formats (textual, DOT/Graphviz, JSON)."
+    },
+    "counterexample-debugger": {
+      "name": "反例调试器",
+      "description": "Debug proof failures using counterexamples from Nitpick (Isabelle) or QuickChick (Coq) to identify specification errors, missing preconditions, and proof strategy issues. Use when: (1) A proof attempt fails and you need to understand why, (2) Counterexamples are generated by Nitpick or QuickChick, (3) Specifications may be incorrect or incomplete, (4) Theorems need validation before proving, (5) Missing preconditions or lemmas need identification, or (6) Proof failures need explanation and correction suggestions. Supports both Isabelle/HOL and Coq equally."
+    },
+    "cpp-to-dafny-translator": {
+      "name": "C++ 到 Dafny 转换器",
+      "description": "Translate C/C++ programs to equivalent Dafny code while preserving semantics and ensuring verification. Use when users ask to convert, translate, or port C/C++ code to Dafny, or when they need to formally verify C/C++ algorithms using Dafny's verification capabilities. Handles functions, structs, pointers, arrays, memory management, and ensures the generated Dafny code is well-typed, executable, verifiable, and can successfully run."
+    },
+    "critical-interval-security-checker": {
+      "name": "Critical Interval 安全 检查器",
+      "description": "Analyzes code to identify security-critical time intervals and timing vulnerabilities in authentication, authorization, and time-sensitive security operations. Use this skill when reviewing code for proper timeout enforcement, token expiration, session management, rate limiting, password reset validity, or any time-sensitive security mechanism. Detects missing expiration checks, excessive timeout values, lack of rate limiting, client-side only validation, hardcoded timeouts, and timing attack vulnerabilities. Triggers when users ask to check security timeouts, verify token expiration handling, audit session timeout implementation, review rate limiting, or analyze time-based security controls."
+    },
+    "datadog-automation": {
+      "name": "Datadog 自动化",
+      "description": "Automate Datadog tasks via Rube MCP (Composio): query metrics, search logs, manage monitors/dashboards, create events and downtimes. Always search tools first for current schemas."
+    },
+    "digital-ocean-automation": {
+      "name": "Digital Ocean 自动化",
+      "description": "Automate DigitalOcean tasks via Rube MCP (Composio). Always search tools first for current schemas."
+    },
+    "discord-automation": {
+      "name": "Discord 自动化",
+      "description": "Automate Discord tasks via Rube MCP (Composio): messages, channels, roles, webhooks, reactions. Always search tools first for current schemas."
+    },
+    "discordbot-automation": {
+      "name": "Discord Bot 自动化",
+      "description": "Automate Discordbot tasks via Rube MCP (Composio). Always search tools first for current schemas."
+    },
+    "docker-hub-automation": {
+      "name": "Docker Hub 自动化",
+      "description": "Automate Docker Hub operations -- manage organizations, repositories, teams, members, and webhooks via the Composio MCP integration."
+    },
+    "docker_hub-automation": {
+      "name": "Docker Hub 自动化",
+      "description": "Automate Docker Hub tasks via Rube MCP (Composio): repositories, images, tags, and container registry management. Always search tools first for current schemas."
+    },
+    "exploitability-analyzer": {
+      "name": "可利用性分析器",
+      "description": "Analyze detected vulnerabilities to assess realistic exploitability by examining control flow, input sources, sanitization logic, and execution context. Use when users need to: (1) Determine if a vulnerability is actually exploitable in practice, (2) Assess severity and impact of security issues, (3) Prioritize vulnerability remediation, (4) Understand attack vectors and exploitation conditions, (5) Generate exploitability reports with proof-of-concept scenarios. Focuses on injection vulnerabilities (SQL, command, XSS, path traversal, LDAP) with detailed analysis of reachability, controllability, sanitization, and impact."
+    },
+    "failure-oriented-instrumentation": {
+      "name": "Failure Oriented 插桩",
+      "description": "Selectively instruments code to capture runtime data for debugging failures and bugs. Use when investigating crashes, exceptions, unexpected behavior, test failures, or performance issues. Analyzes stack traces and error messages to identify suspicious code regions, then adds targeted logging, tracing, and assertions to capture variable values, execution paths, timing, and conditional branches. Supports Python, JavaScript/TypeScript, Java, and C/C++."
+    },
+    "formal-spec-generator": {
+      "name": "形式化规范生成器",
+      "description": "Generate formal specifications (definitions, predicates, invariants, pre/post-conditions) in Isabelle/HOL or Coq from informal requirements, source code, pseudocode, or mathematical descriptions. Use when users need to: (1) Formalize algorithms or data structures, (2) Create function specifications with contracts, (3) Generate predicates and properties for verification, (4) Translate informal requirements into formal logic, (5) Specify invariants for loops or data structures, or (6) Create formal definitions for mathematical concepts. Supports both Isabelle/HOL and Coq equally."
+    },
+    "framework-migration-assistant": {
+      "name": "Framework 迁移 助手",
+      "description": "Automatically migrate Python web applications between frameworks (Flask → FastAPI, Django → FastAPI). Use when you need to migrate an existing web application to a modern framework while preserving functionality. The skill analyzes the codebase, updates routes, handlers, configuration, dependency injection patterns, and tests. Creates git commits for each migration phase and generates a comprehensive summary of all changes. Supports automatic dependency updates, code transformations, and test adaptations."
+    },
+    "frontend-design": {
+      "name": "前端设计",
+      "description": "Create distinctive, production-grade frontend interfaces with high design quality. Use this skill when the user asks to build web components, pages, artifacts, posters, or applications (examples include websites, landing pages, dashboards, React components, HTML/CSS layouts, or when styling/beautifying any web UI). Generates creative, polished code and UI design that avoids generic AI aesthetics."
+    },
+    "git-bisect-assistant": {
+      "name": "Git 二分 助手",
+      "description": "Automatically performs git bisect to identify the first bad commit that introduced a bug or failure. Use when debugging regressions, tracking down when a test started failing, or identifying which commit broke functionality. Handles flaky tests with retry logic and provides comprehensive reports with bisect logs and confidence levels."
+    },
+    "github-automation": {
+      "name": "GitHub 自动化",
+      "description": "Automate GitHub repositories, issues, pull requests, branches, CI/CD, and permissions via Rube MCP (Composio). Manage code workflows, review PRs, search code, and handle deployments programmatically."
+    },
+    "gitlab-automation": {
+      "name": "GitLab 自动化",
+      "description": "Automate GitLab project management, issues, merge requests, pipelines, branches, and user operations via Rube MCP (Composio). Always search tools first for current schemas."
+    },
+    "hookdeck-automation": {
+      "name": "Hookdeck 自动化",
+      "description": "Automate Hookdeck tasks via Rube MCP (Composio). Always search tools first for current schemas."
+    },
+    "imperative-to-coq-model-extractor": {
+      "name": "命令式到 Coq 模型提取器",
+      "description": "Extract abstract mathematical models from imperative code (C, C++, Python, Java, etc.) suitable for formal reasoning in Coq. Use when the user asks to model imperative code in Coq, create Coq specifications from imperative programs, extract mathematical models for verification, or translate imperative algorithms to Coq for formal reasoning and proof."
+    },
+    "interface-contract-verifier": {
+      "name": "Interface Contract 验证器",
+      "description": "Verify that interface and class contracts (preconditions, postconditions, invariants) are preserved across program versions. Use when validating refactorings, checking API compatibility, verifying design-by-contract implementations, or ensuring behavioral contracts remain intact after code changes. Automatically detects contract violations, identifies affected methods and classes, and provides actionable guidance for resolving violations while maintaining program correctness."
+    },
+    "interface-specification-generator": {
+      "name": "Interface 规范 生成器",
+      "description": [
+        {
+          "TODO": "Complete and informative explanation of what the skill does and when to use it. Include WHEN to use this skill - specific scenarios"
+        },
+        "file types",
+        "or tasks that trigger it."
+      ]
+    },
+    "interval-difference-analyzer": {
+      "name": "Interval Difference 分析器",
+      "description": "Analyze differences in program intervals between two versions of a program (old and new) to identify added, removed, or modified intervals. Use when comparing program versions, analyzing variable ranges, detecting behavioral changes in numeric computations, validating refactorings, or assessing migration impacts. Supports optional test suite integration to validate interval changes. Generates comprehensive reports highlighting intervals requiring further testing or verification."
+    },
+    "interval-guided-regression-test-update": {
+      "name": "Interval 引导 回归 测试 Update",
+      "description": "Automatically updates regression tests based on interval analysis to maintain coverage of key program intervals. Use when code changes affect value ranges, conditionals, or control flow, and existing tests need updating to maintain interval coverage. Analyzes interval information from updated code, identifies coverage gaps, adjusts test inputs and assertions, removes redundant tests, and generates new tests for uncovered intervals. Supports Python, Java, JavaScript, and C/C++ with various test frameworks (pytest, JUnit, Jest, Google Test)."
+    },
+    "issue-report-generator": {
+      "name": "问题报告生成器",
+      "description": "Automatically generate clear, actionable issue reports from failing tests and repository analysis. Analyze test failures to understand expected vs. actual behavior, identify affected code components, and produce well-structured Markdown reports suitable for GitHub Issues or similar trackers. Use when a test fails, when debugging issues, or when the user asks to create an issue report, generate a bug report, or document a test failure."
+    },
+    "java-api-consistency-validator": {
+      "name": "Java API Consistency Validator",
+      "description": "Validate API consistency between two versions of Java libraries. Use when you need to compare API behavior, signatures, and exceptions between Java library versions to identify breaking changes, incompatible modifications, and behavior differences. The skill performs static analysis of Java code, compares method signatures, class definitions, interface changes, parameter types, return types, exception declarations, and generates a detailed JSON report with breaking changes, warnings, and migration guidance. Supports Java libraries and packages."
+    },
+    "java-regression-test-generator": {
+      "name": "Java 回归测试生成器",
+      "description": "Automatically generate regression tests for Java codebases by analyzing changes between old and new code versions. Use when users need to: (1) Generate tests after refactoring or code changes, (2) Ensure previously tested behavior still works in new versions, (3) Cover modified or newly added code paths, (4) Migrate existing tests to work with updated APIs or signatures, (5) Maintain test coverage during code evolution. Supports JUnit and TestNG frameworks with unit tests, parameterized tests, and exception testing patterns."
+    },
+    "jira-automation": {
+      "name": "Jira 自动化",
+      "description": "Automate Jira tasks via Rube MCP (Composio): issues, projects, sprints, boards, comments, users. Always search tools first for current schemas."
+    },
+    "lemma-discovery-assistant": {
+      "name": "引理发现助手",
+      "description": "Analyze failed or stuck proofs and propose auxiliary lemmas to help complete the proof in Isabelle/HOL or Coq. Use when encountering proof failures, stuck proof states, unprovable subgoals, or when needing to strengthen induction hypotheses. Identifies missing lemmas, suggests proof strategies, and generates helper lemmas with appropriate statements and proof sketches. Supports inductive proofs, case analysis, rewriting, and complex proof obligations."
+    },
+    "library-for-proof-advisor": {
+      "name": "证明库顾问",
+      "description": "Recommend relevant Isabelle/HOL or Coq standard library theories, lemmas, and tactics based on proof goals. Use when: (1) Users need library lemmas for their proof, (2) Proof goals match standard library patterns, (3) Users ask what libraries to import, (4) Specific lemmas are needed for list/set/arithmetic operations, (5) Users are stuck and need to know what library support exists, or (6) Guidance on find_theorems/Search commands is needed. Supports both Isabelle/HOL and Coq standard libraries."
+    },
+    "linear-automation": {
+      "name": "Linear 自动化",
+      "description": "Automate Linear tasks via Rube MCP (Composio): issues, projects, cycles, teams, labels. Always search tools first for current schemas."
+    },
+    "mcp-builder": {
+      "name": "MCP 构建器",
+      "description": "Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools. Use when building MCP servers to integrate external APIs or services, whether in Python (FastMCP) or Node/TypeScript (MCP SDK)."
+    },
+    "mocking-test-generator": {
+      "name": "模拟测试生成器",
+      "description": "Generate unit tests with proper mocking for Python (unittest.mock/pytest) or Java (Mockito/JUnit) code. Use when users request test generation, unit tests with mocks, or testing code that has external dependencies like database calls, API requests, file I/O, or network operations. Automatically identifies dependencies to mock and creates executable, maintainable test code."
+    },
+    "multi-version-behavior-comparator": {
+      "name": "Multi Version 行为 Comparator",
+      "description": "Compare behavior across multiple versions of programs or repositories. Use when you need to analyze how functionality changes between versions, identify regressions, compare outputs and exceptions, or validate upgrades. The skill compares execution behavior, test results, outputs, exceptions, and observable states across versions, generating detailed reports showing behavioral divergences, potential regressions, added/removed functionality, and areas requiring validation. Supports multiple programming languages and can work with test suites or execution traces."
+    },
+    "mutation-test-suite-optimizer": {
+      "name": "变异测试套件优化器",
+      "description": [
+        {
+          "TODO": "Complete and informative explanation of what the skill does and when to use it. Include WHEN to use this skill - specific scenarios"
+        },
+        "file types",
+        "or tasks that trigger it."
+      ]
+    },
+    "npm-automation": {
+      "name": "NPM 自动化",
+      "description": "Automate NPM tasks via Rube MCP (Composio). Always search tools first for current schemas."
+    },
+    "pagerduty-automation": {
+      "name": "PagerDuty 自动化",
+      "description": "Automate PagerDuty tasks via Rube MCP (Composio): manage incidents, services, schedules, escalation policies, and on-call rotations. Always search tools first for current schemas."
+    },
+    "program-correctness-prover": {
+      "name": "程序正确性证明器",
+      "description": "Generate Isabelle or Coq proofs establishing partial or total correctness of imperative programs from code and formal specifications. Use when users need to: (1) Prove program correctness using Hoare logic, (2) Generate verification conditions from pre/postconditions, (3) Construct loop invariants and termination arguments, (4) Verify imperative programs with assignments, conditionals, and loops. Supports both partial correctness (if terminates, postcondition holds) and total correctness (terminates and postcondition holds) for both Isabelle/HOL and Coq."
+    },
+    "program-to-model-extractor": {
+      "name": "程序到模型提取器",
+      "description": "Extract abstract mathematical models from functional code (Haskell, OCaml, F#) for formal reasoning in Isabelle/HOL. Use when users need to: (1) Convert functional programs to Isabelle definitions, (2) Extract high-level algorithm essence from implementation code, (3) Generate formal specifications and properties from code, (4) Create verification-ready models that capture mathematical properties while abstracting away implementation details. Focuses on structural recursion, algebraic data types, higher-order functions, and invariant extraction."
+    },
+    "proof-carrying-code-generator": {
+      "name": "证明携带代码生成器",
+      "description": "Generate executable code together with formal proofs certifying safety and correctness properties in Isabelle/HOL or Coq. Use when building verified software, safety-critical systems, or when formal guarantees are required. Produces code with accompanying proofs for memory safety, bounds checking, functional correctness, invariant preservation, and termination. Supports extraction to OCaml/Haskell/SML and integration with existing codebases."
+    },
+    "proof-failure-explainer": {
+      "name": "证明失败解释器",
+      "description": "Analyze and explain why Isabelle or Coq proofs fail, identifying the root cause such as type mismatches, missing assumptions, incorrect goals, unification failures, or inapplicable tactics. Use when the user encounters proof failures, error messages in formal verification, stuck proof states, or asks why their Isabelle/Coq proof doesn't work."
+    },
+    "proof-refactoring-assistant": {
+      "name": "证明重构助手",
+      "description": "Restructure and improve Isabelle or Coq proofs to enhance readability, modularity, and maintainability without changing semantics. Use when proofs are long and monolithic, have repeated patterns, use unclear naming, lack documentation, or when the user asks to refactor, clean up, improve, or reorganize their formal proofs."
+    },
+    "proof-skeleton-generator": {
+      "name": "证明骨架生成器",
+      "description": "Generate structured proof skeletons with tactics, strategies, and intermediate lemmas for theorems in Isabelle/HOL or Coq. Use when users need to: (1) Create proof outlines for theorem statements, (2) Generate proof structure with tactic placeholders, (3) Identify key lemmas needed for a proof, (4) Plan proof strategies (induction, case analysis, forward/backward reasoning), (5) Scaffold proofs with intermediate steps and subgoals, or (6) Convert theorem statements into detailed proof templates. Supports both Isabelle/HOL and Coq equally."
+    },
+    "proof-trace-summarizer": {
+      "name": "证明追踪摘要器",
+      "description": "Summarize long Isabelle or Coq proof scripts into high-level logical steps and reasoning flow. Use when users need to: (1) Understand the structure of a complex proof, (2) Document proof strategies for others, (3) Extract the key reasoning steps from verbose proof scripts, (4) Create readable proof outlines from detailed tactical proofs. Produces hierarchical outlines with moderate detail showing proof structure, main cases, key lemmas, and reasoning flow for both Isabelle/Isar and Coq proofs."
+    },
+    "pseudocode-extractor": {
+      "name": "伪代码提取器",
+      "description": "Extract programming-language-agnostic pseudocode from source code in any language, preserving control flow and logical structure while filtering out implementation details. Use when the user asks to convert code to pseudocode, abstract code logic, understand code structure without syntax, create language-independent documentation, or analyze algorithmic flow without language-specific details."
+    },
+    "python-api-consistency-validator": {
+      "name": "Python API Consistency Validator",
+      "description": "Validate API consistency between two versions of Python libraries. Use when you need to compare API behavior, signatures, and exceptions between library versions to identify breaking changes, incompatible modifications, and behavior differences. The skill performs static analysis of Python code, compares function signatures, class definitions, parameter types, return types, and generates a detailed JSON report with breaking changes, warnings, and migration guidance. Supports Python libraries and packages."
+    },
+    "python-regression-test-generator": {
+      "name": "Python 回归测试生成器",
+      "description": "Automatically generates regression tests for Python codebases by analyzing changes between old and new code versions and their existing tests. Migrates tests to work with new code, generates tests for new functionality, and creates mocks for external dependencies. Supports unittest and pytest frameworks. Use when refactoring code, adding features, or ensuring backward compatibility."
+    },
+    "python-to-dafny-translator": {
+      "name": "Python 到 Dafny 转换器",
+      "description": "Translate Python programs into equivalent Dafny code, preserving program semantics and ensuring the generated code is well-typed, executable, and verifiable. Use when the user asks to convert Python code to Dafny, port Python programs to Dafny, add formal verification to Python code, or create Dafny versions of Python algorithms with specifications."
+    },
+    "python-to-lean4-translator": {
+      "name": "Python 到 Lean4 转换器",
+      "description": "Translate Python programs to equivalent Lean4 code while preserving semantics and ensuring type safety. Use when users ask to convert, translate, or port Python code to Lean4, or when they need to verify Python algorithms using Lean4's theorem proving capabilities. Handles functions, classes, data structures, control flow, and ensures the generated Lean4 code is well-typed, executable, and can successfully run."
+    },
+    "refinement-step-generator": {
+      "name": "细化步骤生成器",
+      "description": "Generate systematic refinement steps from high-level specifications to concrete implementations in Isabelle/HOL or Coq, preserving correctness obligations at each step. Use when working with formal verification, program refinement, proof development, or when translating abstract specifications into executable code while maintaining formal guarantees. Supports data refinement (abstract types → concrete structures), algorithmic refinement (specifications → algorithms), and stepwise refinement with proof obligations."
+    },
+    "regression-consistency-checker": {
+      "name": "回归 Consistency 检查器",
+      "description": "Checks whether a new version of a repository preserves the behavior observed by tests on the old version. Use this skill when comparing two versions of code to detect regressions, verify refactoring safety, validate bug fixes don't break existing functionality, or ensure backward compatibility. Detects differences in function outputs, exceptions, observable states, and performance between versions. Generates reports highlighting potential regressions (critical, high, medium, low severity), improvements, and areas requiring verification. Triggers when users ask to check for regressions between versions, compare test behavior across versions, verify behavior preservation, or validate that changes don't break existing tests."
+    },
+    "replay-oriented-instrumentation": {
+      "name": "Replay Oriented 插桩",
+      "description": "Instruments programs to record execution information for deterministic replay debugging. Use when debugging hard-to-reproduce bugs (race conditions, timing issues, intermittent failures, heisenbugs), reproducing production failures, or analyzing complex execution sequences. Records non-deterministic events (I/O, threading, randomness, time) to enable exact replay of program executions. Supports Python, JavaScript, Java, and C/C++ with both custom instrumentation and existing replay tools."
+    },
+    "reproduction-trace-instrumenter": {
+      "name": "重现追踪插桩器",
+      "description": "对程序进行插桩以捕获专门用于重现报告的 bug 的执行轨迹，实现一致的重放和故障诊断。用于重现 bug、捕获调试的执行轨迹、插桩代码以记录程序行为、生成 bug 重现的重放脚本、诊断难以重现的故障或执行程序执行的确定性重放。"
+    },
+    "requirement-enhancer": {
+      "name": "需求增强器",
+      "description": "Iteratively enhance user requirements into clear, complete, actionable specifications through analysis and clarification. Use when: (1) Users provide initial requirements that need refinement, (2) Requirements are vague, incomplete, or ambiguous, (3) Creating formal specifications from informal descriptions, (4) Identifying missing constraints, edge cases, or acceptance criteria, (5) Clarifying assumptions and implicit dependencies, or (6) Preparing requirements for design, implementation, or verification. Operates interactively: analyze → ask clarifying questions → refine based on responses."
+    },
+    "requirement-summary": {
+      "name": "需求 Summary",
+      "description": "Generate concise, structured summaries of requirements for quick team understanding. Use when analyzing requirements from text documents (MD, TXT, DOCX) or technical specifications to create bullet-point summaries that highlight core functionality and dependencies/constraints. Ideal for sprint planning, stakeholder updates, team onboarding, or any situation requiring rapid comprehension of requirement documents."
+    },
+    "security-patch-advisor": {
+      "name": "安全补丁顾问",
+      "description": "Proposes secure remediation strategies for detected security vulnerabilities including buffer overflows, injection risks, insecure deserialization, improper authentication, and unsafe cryptographic usage. Provides recommended security checks, safer API alternatives, design-level changes, code examples, trade-off analysis, and prioritized remediation plans. Does NOT automatically modify code unless explicitly requested."
+    },
+    "security-sensitive-path-instrumenter": {
+      "name": "安全 Sensitive Path 插桩器",
+      "description": "Instruments authentication, authorization, and input-handling code paths to monitor security-relevant events and states at runtime. Use this skill when developers need to add security monitoring and logging to their code, including tracking authentication attempts (login/logout), authorization decisions (access control checks), input validation failures, session management events, and other security-critical operations. Supports Python, JavaScript/TypeScript, and Java with structured logging patterns. Triggers when users ask to add security instrumentation, monitor security events, log authentication/authorization, track security-sensitive operations, or add security observability to their codebase."
+    },
+    "semantic-bug-detector": {
+      "name": "语义 Bug 检测器",
+      "description": "Detect semantic-level bugs by analyzing whether code behavior matches its intended purpose inferred from function/variable names, comments, docstrings, and documentation. Use when users need to: (1) Find logic errors where implementation contradicts stated intent, (2) Identify off-by-one errors and boundary mismatches, (3) Detect inverted logic or wrong operators, (4) Catch missing edge case handling, (5) Verify code matches its documentation. Highlights mismatches between intent and implementation across multiple programming languages."
+    },
+    "semantic-equivalence-verifier": {
+      "name": "语义 Equivalence 验证器",
+      "description": "Analyzes and verifies semantic equivalence between two functions, classes, or modules by examining control flow, data flow, and observable behavior. Use when comparing code implementations (refactored vs original, different implementations of same functionality, migration verification), determining if two code artifacts produce identical behavior, identifying behavioral differences between code versions, or validating that code changes preserve semantics. Supports formal reasoning and symbolic execution approaches."
+    },
+    "semantic-szz-analyzer": {
+      "name": "语义 SZZ 分析器",
+      "description": "Identify bug-introducing commits using semantic analysis that extends traditional SZZ algorithm. Distinguishes semantic changes from refactorings or code movements using control-flow and data-flow similarity analysis. Use when analyzing bug-fix commits to trace back to bug-introducing changes, investigating software evolution, conducting empirical studies on defect prediction, or reducing false positives in bug localization. Supports git repositories and provides explanations for why commits are identified as bug-introducing."
+    },
+    "sentry-automation": {
+      "name": "Sentry 自动化",
+      "description": "Automate Sentry tasks via Rube MCP (Composio): manage issues/events, configure alerts, track releases, monitor projects and teams. Always search tools first for current schemas."
+    },
+    "slack-automation": {
+      "name": "Slack 自动化",
+      "description": "Automate Slack messaging, channel management, search, reactions, and threads via Rube MCP (Composio). Send messages, search conversations, manage channels/users, and react to messages programmatically."
+    },
+    "slack-gif-creator": {
+      "name": "Slack GIF 创建器",
+      "description": "Toolkit for creating animated GIFs optimized for Slack, with validators for size constraints and composable animation primitives. This skill applies when users request animated GIFs or emoji animations for Slack from descriptions like \"make me a GIF for Slack of X doing Y\"."
+    },
+    "slackbot-automation": {
+      "name": "Slack Bot 自动化",
+      "description": "Automate Slackbot tasks via Rube MCP (Composio). Always search tools first for current schemas."
+    },
+    "smart-mutation-operator-generator": {
+      "name": "Smart 变异 Operator 生成器",
+      "description": [
+        {
+          "TODO": "Complete and informative explanation of what the skill does and when to use it. Include WHEN to use this skill - specific scenarios"
+        },
+        "file types",
+        "or tasks that trigger it."
+      ]
+    },
+    "sourcegraph-automation": {
+      "name": "Sourcegraph 自动化",
+      "description": "Automate Sourcegraph tasks via Rube MCP (Composio). Always search tools first for current schemas."
+    },
+    "spring-mvc-to-boot-migrator": {
+      "name": "Spring Mvc To Boot Migrator",
+      "description": "Automatically migrate Spring MVC applications to Spring Boot. Use when you need to modernize a Spring MVC project to Spring Boot while preserving functionality. The skill analyzes the codebase, updates build configuration (Maven/Gradle), migrates annotations, converts XML configuration to Java/properties, updates controllers and tests, and creates the Spring Boot main application class. Creates git commits for each migration phase and generates a comprehensive summary. Supports both Maven and Gradle projects."
+    },
+    "state-snapshot-instrumenter": {
+      "name": "状态 Snapshot 插桩器",
+      "description": "Instrument programs (Python, C/C++, Java) to capture snapshots of key program states at runtime, including variables, memory, and call stacks. Use when you need to debug complex issues, reproduce test cases, prepare traces for formal verification, or analyze program execution. Supports manual instrumentation points, automatic function/method instrumentation, and conditional triggers. Outputs structured JSON snapshots for debugging, replay, and verification workflows."
+    },
+    "static-bug-detector": {
+      "name": "静态 Bug 检测器",
+      "description": "Analyze source code statically to detect potential functional bugs including null dereferences, incorrect condition checks, unreachable code, inconsistent state updates, logic errors, resource leaks, and type mismatches. Report suspicious code locations with detailed explanations, severity levels, and confidence assessments. Use when reviewing code for bugs, performing code audits, or when the user asks to find bugs, detect issues, analyze code for problems, or perform static analysis."
+    },
+    "static-vulnerability-detector": {
+      "name": "静态漏洞检测器",
+      "description": "Statically analyze code to detect security vulnerabilities including buffer overflows, injection risks (SQL, command, XSS), insecure deserialization, improper authentication, hard-coded credentials, and unsafe cryptography. Use when: (1) Performing security code review, (2) Analyzing code for OWASP Top 10 vulnerabilities, (3) Identifying CWE-classified weaknesses, (4) Generating security audit reports, (5) Reviewing code before deployment, or (6) Assessing third-party code security. Findings categorized by CWE ID and severity (Critical/High/Medium/Low)."
+    },
+    "supabase-automation": {
+      "name": "Supabase 自动化",
+      "description": "Automate Supabase database queries, table management, project administration, storage, edge functions, and SQL execution via Rube MCP (Composio). Always search tools first for current schemas."
+    },
+    "szz-bug-identifier": {
+      "name": "SZZ Bug 识别器",
+      "description": "使用 SZZ 风格分析识别引入 bug 的提交，基于 bug 修复提交、提交历史和代码归属信息。用于追溯 bug 到其起源、识别哪些提交引入了 bug、分析 bug 修复提交以找到根本原因、执行软件仓库挖掘进行 bug 分析或进行软件缺陷的实证研究。"
+    },
+    "tactic-suggestion-assistant": {
+      "name": "策略建议助手",
+      "description": "Analyze proof states in Isabelle or Coq and suggest applicable tactics to make progress. Use when users need help with: (1) Choosing the next tactic in an interactive proof, (2) Understanding what tactics apply to their current goal, (3) Getting unstuck in a proof, (4) Learning which tactics work for specific goal structures (conjunctions, implications, induction, etc.). Provides 3-5 ranked tactic suggestions with explanations for intermediate-level proofs in both Isabelle/Isar and Coq."
+    },
+    "taint-instrumentation-assistant": {
+      "name": "Taint 插桩 助手",
+      "description": "Instruments code to track the flow of untrusted or sensitive data at runtime, enabling detection of injection vulnerabilities, data leaks, and privilege violations. Use when users need to: (1) Track untrusted input propagation through code, (2) Detect SQL injection, XSS, or command injection vulnerabilities, (3) Identify sensitive data leaks, (4) Monitor privilege escalation paths, (5) Perform dynamic taint analysis for security testing. Supports Python, Java, JavaScript, and C/C++ with configurable taint sources and sinks."
+    },
+    "test-app-automation": {
+      "name": "测试应用自动化",
+      "description": "Automate Test App tasks via Rube MCP (Composio). Always search tools first for current schemas."
+    },
+    "test-case-reducer": {
+      "name": "测试 用例 Reducer",
+      "description": "Automatically reduces bug-triggering test cases to minimal form while preserving the failure. Use when debugging with large, complex test cases that need simplification, reproducing bugs with minimal examples, or creating regression tests from verbose failure scenarios. Takes a failing test and systematically removes unnecessary inputs, steps, assertions, and code using delta debugging and other reduction algorithms. Supports unit tests, integration tests, input files, and multiple programming languages (Python, JavaScript, Java, C/C++)."
+    },
+    "test-deduplicator": {
+      "name": "测试去重器",
+      "description": "分析测试套件，使用覆盖率分析、语义相似度和执行结果识别冗余和重复的测试用例。用于减少测试套件大小、识别冗余测试、优化测试执行时间、分析测试覆盖率重叠、查找具有相同行为的测试或提高测试套件可维护性。"
+    },
+    "test-guided-bug-detector": {
+      "name": "测试引导 Bug 检测器",
+      "description": "Analyze failing tests to detect functional bugs in code. Takes repository and failing test output as input, analyzes execution behavior, assertions, and stack traces to identify suspicious code regions and root causes. Use when debugging test failures, investigating regression bugs, or understanding why tests fail. Explains the bug mechanism, identifies affected code, and suggests fixes based on test expectations vs actual behavior."
+    },
+    "test-guided-debloating": {
+      "name": "测试 引导 Debloating",
+      "description": "Removes unnecessary code from a repository while preserving exactly the behavior exercised by a given test suite. Use this skill when you need to debloat, slim down, or remove unused code from a codebase based on test coverage. The skill analyzes which code elements (files, classes, functions, methods, branches, imports) are exercised by tests, identifies unreachable or unused code, and safely removes it while ensuring all tests continue to pass. Triggers when users ask to remove unused code, debloat based on tests, eliminate dead code guided by test coverage, or slim down a repository to only test-required functionality."
+    },
+    "test-guided-migration-assistant": {
+      "name": "测试 引导 迁移 助手",
+      "description": "Automatically updates a codebase to a new language version, framework version, or library update while ensuring all tests still pass. Use this skill when migrating Python 2→3, upgrading framework versions (React, Django, Angular), updating dependencies, or performing any version migration where tests define correct behavior. The skill analyzes failing tests caused by migration, categorizes errors (import errors, API changes, type errors, behavior changes), proposes systematic fixes, and verifies that test-observable behavior remains unchanged. Triggers when users ask to migrate code versions, upgrade dependencies while keeping tests passing, update framework versions, or perform test-guided version migrations."
+    },
+    "trace-collection-assistant": {
+      "name": "追踪 Collection 助手",
+      "description": "Collect, normalize, and structure execution traces from instrumented programs (strace, ltrace) into JSON format for downstream analysis. Use when working with system call traces, library call traces, or execution logs that need to be analyzed for debugging, test case reproduction, or verification. Supports parsing strace/ltrace output, filtering noise, extracting debug information, and preparing traces for bug analysis or reproduction workflows."
+    },
+    "traceability-matrix-generator": {
+      "name": "Traceability Matrix 生成器",
+      "description": "Builds traceability matrices connecting requirements to design documents to source code implementation, tracking the complete development lifecycle. Use when you need to verify implementation completeness, ensure all requirements are implemented in code, generate compliance documentation, audit requirement coverage, identify orphaned code, or create traceability reports for stakeholders. Supports parsing requirements from Markdown, Word, and PDFs; extracting design from architecture docs and API specs; and scanning source code for implementations. Outputs to Markdown tables, Excel/CSV, and HTML visualizations.\n"
+    },
+    "vercel-automation": {
+      "name": "Vercel 自动化",
+      "description": "Automate Vercel tasks via Rube MCP (Composio): manage deployments, domains, DNS, env vars, projects, and teams. Always search tools first for current schemas."
+    },
+    "verification-boundary-reporter": {
+      "name": "验证边界报告器",
+      "description": "Analyze formal verification artifacts (Isabelle, Coq, Dafny, etc.) and produce structured reports identifying the precise boundary between verified, assumed, and unverified components. Use when assessing verification coverage, understanding trust boundaries, auditing formal proofs, or documenting verification scope. Reports explicitly list verified code, assumptions, axioms, trusted computing base, and unverified components. Conservative and explicit about verification status without attempting to repair or mask gaps."
+    },
+    "verified-pseudocode-extractor": {
+      "name": "已验证伪代码提取器",
+      "description": "Extract language-agnostic pseudocode from formally verified programs (Isabelle/HOL, Coq) while preserving verified control flow, data dependencies, and algorithmic logic. Use when: (1) Users have verified code and need readable pseudocode, (2) Documenting verified algorithms for broader audiences, (3) Translating verified implementations to other languages, (4) Creating algorithm specifications from verified code, (5) Preserving verification guarantees in pseudocode form, or (6) Abstracting proof-heavy code to essential logic. Maintains semantic faithfulness to verified implementation."
+    },
+    "verified-spec-code-mapper": {
+      "name": "已验证规范代码映射器",
+      "description": "Establish explicit traceability between formal specifications (preconditions, postconditions, invariants) and verified code components with their correctness proofs. Produce structured Markdown mapping reports showing verification coverage and proof evidence. Use when auditing formal verification, documenting verified systems, establishing traceability for certification, or when the user asks to map specifications to code, generate verification reports, or analyze verification coverage in Coq, Dafny, Isabelle, or other proof assistants."
+    },
+    "vulnerability-pattern-matcher": {
+      "name": "漏洞模式匹配器",
+      "description": "Detects security vulnerabilities by matching code against known vulnerability patterns, insecure coding idioms, and CVE-style patterns. Explains why patterns are risky and under what conditions they are exploitable. Use when analyzing code for security issues, reviewing for common vulnerabilities, or assessing exploitability of suspicious code patterns."
+    },
+    "vulnerability-root-cause-analyzer": {
+      "name": "漏洞根因分析器",
+      "description": "Analyze vulnerable code to identify underlying root causes such as violated assumptions, incorrect invariants, missing validation checks, or unsafe component interactions. Use when investigating security vulnerabilities, CVEs, exploit code, or security audit findings. Infers why the vulnerability exists beyond surface symptoms, identifies systemic issues, and explains the chain of failures that enable exploitation."
+    },
+    "web-artifacts-builder": {
+      "name": "Web 构件构建器",
+      "description": "Suite of tools for creating elaborate, multi-component claude.ai HTML artifacts using modern frontend web technologies (React, Tailwind CSS, shadcn/ui). Use for complex artifacts requiring state management, routing, or shadcn/ui components - not for simple single-file HTML/JSX artifacts."
+    },
+    "webapp-testing": {
+      "name": "Web 应用测试",
+      "description": "Toolkit for interacting with and testing local web applications using Playwright. Supports verifying frontend functionality, debugging UI behavior, capturing browser screenshots, and viewing browser logs."
+    },
+    "behavioral-mutation-analyzer": {
+      "name": "行为变异分析器",
+      "description": "通过变异测试分析程序行为变化。生成语义变异以测试程序的行为等价性，识别功能差异和潜在的回归问题。"
     }
   }
 }
