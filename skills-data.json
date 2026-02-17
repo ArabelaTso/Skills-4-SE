@@ -1,6 +1,46 @@
 {
   "skills": [
     {
+      "name": "abstract-domain-explorer",
+      "displayName": "abstract-domain-explorer",
+      "description": "Applies abstract interpretation using different abstract domains (intervals, octagons, polyhedra, sign, congruence) to statically analyze program variables and infer invariants, value ranges, and rela...",
+      "category": "verification",
+      "installed": false,
+      "path": "abstract-domain-explorer",
+      "displayName_zh": "abstract-domain-explorer",
+      "description_zh": "Applies abstract interpretation using different abstract domains (intervals, octagons, polyhedra, sign, congruence) to statically analyze program variables and infer invariants, value ranges, and rela..."
+    },
+    {
+      "name": "abstract-invariant-generator",
+      "displayName": "abstract-invariant-generator",
+      "description": "Uses abstract interpretation to automatically infer loop invariants, function preconditions, and postconditions for formal verification. Generates invariants that capture program behavior and support ...",
+      "category": "verification",
+      "installed": false,
+      "path": "abstract-invariant-generator",
+      "displayName_zh": "abstract-invariant-generator",
+      "description_zh": "Uses abstract interpretation to automatically infer loop invariants, function preconditions, and postconditions for formal verification. Generates invariants that capture program behavior and support ..."
+    },
+    {
+      "name": "abstract-state-analyzer",
+      "displayName": "abstract-state-analyzer",
+      "description": "Performs abstract interpretation over source code to infer possible program states, variable ranges, and data properties without executing the program. Reports potential runtime errors including out-o...",
+      "category": "verification",
+      "installed": false,
+      "path": "abstract-state-analyzer",
+      "displayName_zh": "abstract-state-analyzer",
+      "description_zh": "Performs abstract interpretation over source code to infer possible program states, variable ranges, and data properties without executing the program. Reports potential runtime errors including out-o..."
+    },
+    {
+      "name": "abstract-trace-summarizer",
+      "displayName": "abstract-trace-summarizer",
+      "description": "Performs abstract interpretation to produce summarized execution traces and high-level program behavior representations. Highlights key control flow paths, variable relationships, loop invariants, fun...",
+      "category": "verification",
+      "installed": false,
+      "path": "abstract-trace-summarizer",
+      "displayName_zh": "abstract-trace-summarizer",
+      "description_zh": "Performs abstract interpretation to produce summarized execution traces and high-level program behavior representations. Highlights key control flow paths, variable relationships, loop invariants, fun..."
+    },
+    {
       "name": "acsl-annotation-assistant",
       "displayName": "acsl-annotation-assistant",
       "description": "Create ACSL (ANSI/ISO C Specification Language) formal annotations for C/C++ programs. Use this skill when working with formal verification, adding function contracts (requires/ensures), loop invarian...",
@@ -149,6 +189,16 @@
       "path": "awesome-claude-skills-SE-skills/buildkite-automation",
       "displayName_zh": "buildkite-automation",
       "description_zh": "Automate Buildkite tasks via Rube MCP (Composio). Always search tools first for current schemas."
+    },
+    {
+      "name": "c-cpp-to-lean4-translator",
+      "displayName": "c-cpp-to-lean4-translator",
+      "description": "Translate C or C++ programs into equivalent Lean4 code, preserving program semantics and ensuring the generated code is well-typed, executable, and can run successfully. Use when the user asks to conv...",
+      "category": "verification",
+      "installed": false,
+      "path": "c-cpp-to-lean4-translator",
+      "displayName_zh": "c-cpp-to-lean4-translator",
+      "description_zh": "Translate C or C++ programs into equivalent Lean4 code, preserving program semantics and ensuring the generated code is well-typed, executable, and can run successfully. Use when the user asks to conv..."
     },
     {
       "name": "cd-pipeline-generator",
@@ -301,6 +351,16 @@
       "description_zh": "检测代码异味和反模式。建议重构机会，按严重程度分类异味。"
     },
     {
+      "name": "code-summarizer",
+      "displayName": "code-summarizer",
+      "description": "Generate concise summaries of source code at multiple scales. Use when users ask to summarize, explain, or understand code - whether it's a single function, a class, a module, or an entire codebase. H...",
+      "category": "quality",
+      "installed": false,
+      "path": "code-summarizer",
+      "displayName_zh": "code-summarizer",
+      "description_zh": "Generate concise summaries of source code at multiple scales. Use when users ask to summarize, explain, or understand code - whether it's a single function, a class, a module, or an entire codebase. H..."
+    },
+    {
       "name": "code-translation",
       "displayName": "code-translation",
       "description": "Convert code between programming languages while preserving functionality and semantics. Use when: (1) Translating functions, classes, or modules between languages (Python, JavaScript/TypeScript, Java...",
@@ -381,6 +441,26 @@
       "description_zh": "创建 Dockerfile 和容器配置。优化容器镜像，支持多阶段构建。"
     },
     {
+      "name": "control-flow-abstraction-generator",
+      "displayName": "control-flow-abstraction-generator",
+      "description": "Generate abstract Control Flow Graph (CFG) representations of programs showing loops, branches, and function calls for static analysis or verification. Use when users need to: (1) Visualize program co...",
+      "category": "verification",
+      "installed": false,
+      "path": "control-flow-abstraction-generator",
+      "displayName_zh": "control-flow-abstraction-generator",
+      "description_zh": "Generate abstract Control Flow Graph (CFG) representations of programs showing loops, branches, and function calls for static analysis or verification. Use when users need to: (1) Visualize program co..."
+    },
+    {
+      "name": "counterexample-debugger",
+      "displayName": "counterexample-debugger",
+      "description": "Debug proof failures using counterexamples from Nitpick (Isabelle) or QuickChick (Coq) to identify specification errors, missing preconditions, and proof strategy issues. Use when: (1) A proof attempt...",
+      "category": "debugging",
+      "installed": false,
+      "path": "counterexample-debugger",
+      "displayName_zh": "counterexample-debugger",
+      "description_zh": "Debug proof failures using counterexamples from Nitpick (Isabelle) or QuickChick (Coq) to identify specification errors, missing preconditions, and proof strategy issues. Use when: (1) A proof attempt..."
+    },
+    {
       "name": "counterexample-explainer",
       "displayName": "counterexample-explainer",
       "description": "Explain why counterexamples violate specifications by analyzing formal specifications (temporal logic, invariants, pre/postconditions, code contracts), informal requirements (user stories, acceptance ...",
@@ -409,6 +489,16 @@
       "path": "coverage-enhancer",
       "displayName_zh": "覆盖率增强器",
       "description_zh": "识别未覆盖的代码路径。生成测试以提高覆盖率，报告覆盖率指标。"
+    },
+    {
+      "name": "cpp-to-dafny-translator",
+      "displayName": "cpp-to-dafny-translator",
+      "description": "Translate C/C++ programs to equivalent Dafny code while preserving semantics and ensuring verification. Use when users ask to convert, translate, or port C/C++ code to Dafny, or when they need to form...",
+      "category": "verification",
+      "installed": false,
+      "path": "cpp-to-dafny-translator",
+      "displayName_zh": "cpp-to-dafny-translator",
+      "description_zh": "Translate C/C++ programs to equivalent Dafny code while preserving semantics and ensuring verification. Use when users ask to convert, translate, or port C/C++ code to Dafny, or when they need to form..."
     },
     {
       "name": "datadog-automation",
@@ -561,6 +651,16 @@
       "description_zh": "解释错误消息。提供上下文和解决方案，帮助调试。"
     },
     {
+      "name": "exploitability-analyzer",
+      "displayName": "exploitability-analyzer",
+      "description": "Analyze detected vulnerabilities to assess realistic exploitability by examining control flow, input sources, sanitization logic, and execution context. Use when users need to: (1) Determine if a vuln...",
+      "category": "quality",
+      "installed": false,
+      "path": "exploitability-analyzer",
+      "displayName_zh": "exploitability-analyzer",
+      "description_zh": "Analyze detected vulnerabilities to assess realistic exploitability by examining control flow, input sources, sanitization logic, and execution context. Use when users need to: (1) Determine if a vuln..."
+    },
+    {
       "name": "flaky-test-detector",
       "displayName": "flaky-test-detector",
       "description": "Identifies non-deterministic or unreliable tests through static code analysis and test result analysis. Use when Claude needs to find flaky tests, analyze test reliability, or investigate intermittent...",
@@ -569,6 +669,16 @@
       "path": "flaky-test-detector",
       "displayName_zh": "不稳定测试检测器",
       "description_zh": "识别非确定性测试。分析测试执行模式，建议常见不稳定模式的修复方法。"
+    },
+    {
+      "name": "formal-spec-generator",
+      "displayName": "formal-spec-generator",
+      "description": "Generate formal specifications (definitions, predicates, invariants, pre/post-conditions) in Isabelle/HOL or Coq from informal requirements, source code, pseudocode, or mathematical descriptions. Use ...",
+      "category": "verification",
+      "installed": false,
+      "path": "formal-spec-generator",
+      "displayName_zh": "formal-spec-generator",
+      "description_zh": "Generate formal specifications (definitions, predicates, invariants, pre/post-conditions) in Isabelle/HOL or Coq from informal requirements, source code, pseudocode, or mathematical descriptions. Use ..."
     },
     {
       "name": "frontend-design",
@@ -629,6 +739,16 @@
       "path": "awesome-claude-skills-SE-skills/hookdeck-automation",
       "displayName_zh": "hookdeck-automation",
       "description_zh": "Automate Hookdeck tasks via Rube MCP (Composio). Always search tools first for current schemas."
+    },
+    {
+      "name": "imperative-to-coq-model-extractor",
+      "displayName": "imperative-to-coq-model-extractor",
+      "description": "Extract abstract mathematical models from imperative code (C, C++, Python, Java, etc.) suitable for formal reasoning in Coq. Use when the user asks to model imperative code in Coq, create Coq specific...",
+      "category": "verification",
+      "installed": false,
+      "path": "imperative-to-coq-model-extractor",
+      "displayName_zh": "imperative-to-coq-model-extractor",
+      "description_zh": "Extract abstract mathematical models from imperative code (C, C++, Python, Java, etc.) suitable for formal reasoning in Coq. Use when the user asks to model imperative code in Coq, create Coq specific..."
     },
     {
       "name": "incremental-java-programmer",
@@ -693,6 +813,26 @@
       "description_zh": "推断循环和程序不变量。使用静态和动态分析，验证推断的不变量。"
     },
     {
+      "name": "issue-report-generator",
+      "displayName": "issue-report-generator",
+      "description": "Automatically generate clear, actionable issue reports from failing tests and repository analysis. Analyze test failures to understand expected vs. actual behavior, identify affected code components, ...",
+      "category": "debugging",
+      "installed": false,
+      "path": "issue-report-generator",
+      "displayName_zh": "issue-report-generator",
+      "description_zh": "Automatically generate clear, actionable issue reports from failing tests and repository analysis. Analyze test failures to understand expected vs. actual behavior, identify affected code components, ..."
+    },
+    {
+      "name": "java-regression-test-generator",
+      "displayName": "java-regression-test-generator",
+      "description": "Automatically generate regression tests for Java codebases by analyzing changes between old and new code versions. Use when users need to: (1) Generate tests after refactoring or code changes, (2) Ens...",
+      "category": "testing",
+      "installed": false,
+      "path": "java-regression-test-generator",
+      "displayName_zh": "java-regression-test-generator",
+      "description_zh": "Automatically generate regression tests for Java codebases by analyzing changes between old and new code versions. Use when users need to: (1) Generate tests after refactoring or code changes, (2) Ens..."
+    },
+    {
       "name": "java-test-updater",
       "displayName": "java-test-updater",
       "description": "Update Java test classes and methods to work with new code versions after refactoring or modifications. Use when code changes break existing tests due to signature changes, refactoring, or behavior mo...",
@@ -723,6 +863,26 @@
       "description_zh": "总结遗留代码库。解释代码功能，帮助理解旧代码。"
     },
     {
+      "name": "lemma-discovery-assistant",
+      "displayName": "lemma-discovery-assistant",
+      "description": "Analyze failed or stuck proofs and propose auxiliary lemmas to help complete the proof in Isabelle/HOL or Coq. Use when encountering proof failures, stuck proof states, unprovable subgoals, or when ne...",
+      "category": "verification",
+      "installed": false,
+      "path": "lemma-discovery-assistant",
+      "displayName_zh": "lemma-discovery-assistant",
+      "description_zh": "Analyze failed or stuck proofs and propose auxiliary lemmas to help complete the proof in Isabelle/HOL or Coq. Use when encountering proof failures, stuck proof states, unprovable subgoals, or when ne..."
+    },
+    {
+      "name": "library-for-proof-advisor",
+      "displayName": "library-advisor",
+      "description": "Recommend relevant Isabelle/HOL or Coq standard library theories, lemmas, and tactics based on proof goals. Use when: (1) Users need library lemmas for their proof, (2) Proof goals match standard libr...",
+      "category": "verification",
+      "installed": false,
+      "path": "library-for-proof-advisor",
+      "displayName_zh": "library-advisor",
+      "description_zh": "Recommend relevant Isabelle/HOL or Coq standard library theories, lemmas, and tactics based on proof goals. Use when: (1) Users need library lemmas for their proof, (2) Proof goals match standard libr..."
+    },
+    {
       "name": "linear-automation",
       "displayName": "linear-automation",
       "description": "Automate Linear tasks via Rube MCP (Composio): issues, projects, cycles, teams, labels. Always search tools first for current schemas.",
@@ -751,6 +911,16 @@
       "path": "awesome-claude-skills-SE-skills/mcp-builder",
       "displayName_zh": "mcp-builder",
       "description_zh": "Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools. Use when building MCP servers to integrate externa..."
+    },
+    {
+      "name": "mocking-test-generator",
+      "displayName": "mocking-test-generator",
+      "description": "Generate unit tests with proper mocking for Python (unittest.mock/pytest) or Java (Mockito/JUnit) code. Use when users request test generation, unit tests with mocks, or testing code that has external...",
+      "category": "testing",
+      "installed": false,
+      "path": "mocking-test-generator",
+      "displayName_zh": "mocking-test-generator",
+      "description_zh": "Generate unit tests with proper mocking for Python (unittest.mock/pytest) or Java (Mockito/JUnit) code. Use when users request test generation, unit tests with mocks, or testing code that has external..."
     },
     {
       "name": "module-component-generator",
@@ -793,6 +963,96 @@
       "description_zh": "Automate PagerDuty tasks via Rube MCP (Composio): manage incidents, services, schedules, escalation policies, and on-call rotations. Always search tools first for current schemas."
     },
     {
+      "name": "program-correctness-prover",
+      "displayName": "program-correctness-prover",
+      "description": "Generate Isabelle or Coq proofs establishing partial or total correctness of imperative programs from code and formal specifications. Use when users need to: (1) Prove program correctness using Hoare ...",
+      "category": "verification",
+      "installed": false,
+      "path": "program-correctness-prover",
+      "displayName_zh": "program-correctness-prover",
+      "description_zh": "Generate Isabelle or Coq proofs establishing partial or total correctness of imperative programs from code and formal specifications. Use when users need to: (1) Prove program correctness using Hoare ..."
+    },
+    {
+      "name": "program-to-model-extractor",
+      "displayName": "program-to-model-extractor",
+      "description": "Extract abstract mathematical models from functional code (Haskell, OCaml, F#) for formal reasoning in Isabelle/HOL. Use when users need to: (1) Convert functional programs to Isabelle definitions, (2...",
+      "category": "verification",
+      "installed": false,
+      "path": "program-to-model-extractor",
+      "displayName_zh": "program-to-model-extractor",
+      "description_zh": "Extract abstract mathematical models from functional code (Haskell, OCaml, F#) for formal reasoning in Isabelle/HOL. Use when users need to: (1) Convert functional programs to Isabelle definitions, (2..."
+    },
+    {
+      "name": "proof-carrying-code-generator",
+      "displayName": "proof-carrying-code-generator",
+      "description": "Generate executable code together with formal proofs certifying safety and correctness properties in Isabelle/HOL or Coq. Use when building verified software, safety-critical systems, or when formal g...",
+      "category": "verification",
+      "installed": false,
+      "path": "proof-carrying-code-generator",
+      "displayName_zh": "proof-carrying-code-generator",
+      "description_zh": "Generate executable code together with formal proofs certifying safety and correctness properties in Isabelle/HOL or Coq. Use when building verified software, safety-critical systems, or when formal g..."
+    },
+    {
+      "name": "proof-failure-explainer",
+      "displayName": "proof-failure-explainer",
+      "description": "Analyze and explain why Isabelle or Coq proofs fail, identifying the root cause such as type mismatches, missing assumptions, incorrect goals, unification failures, or inapplicable tactics. Use when t...",
+      "category": "verification",
+      "installed": false,
+      "path": "proof-failure-explainer",
+      "displayName_zh": "proof-failure-explainer",
+      "description_zh": "Analyze and explain why Isabelle or Coq proofs fail, identifying the root cause such as type mismatches, missing assumptions, incorrect goals, unification failures, or inapplicable tactics. Use when t..."
+    },
+    {
+      "name": "proof-refactoring-assistant",
+      "displayName": "proof-refactoring-assistant",
+      "description": "Restructure and improve Isabelle or Coq proofs to enhance readability, modularity, and maintainability without changing semantics. Use when proofs are long and monolithic, have repeated patterns, use ...",
+      "category": "verification",
+      "installed": false,
+      "path": "proof-refactoring-assistant",
+      "displayName_zh": "proof-refactoring-assistant",
+      "description_zh": "Restructure and improve Isabelle or Coq proofs to enhance readability, modularity, and maintainability without changing semantics. Use when proofs are long and monolithic, have repeated patterns, use ..."
+    },
+    {
+      "name": "proof-skeleton-generator",
+      "displayName": "proof-skeleton-generator",
+      "description": "Generate structured proof skeletons with tactics, strategies, and intermediate lemmas for theorems in Isabelle/HOL or Coq. Use when users need to: (1) Create proof outlines for theorem statements, (2)...",
+      "category": "verification",
+      "installed": false,
+      "path": "proof-skeleton-generator",
+      "displayName_zh": "proof-skeleton-generator",
+      "description_zh": "Generate structured proof skeletons with tactics, strategies, and intermediate lemmas for theorems in Isabelle/HOL or Coq. Use when users need to: (1) Create proof outlines for theorem statements, (2)..."
+    },
+    {
+      "name": "proof-trace-summarizer",
+      "displayName": "proof-trace-summarizer",
+      "description": "Summarize long Isabelle or Coq proof scripts into high-level logical steps and reasoning flow. Use when users need to: (1) Understand the structure of a complex proof, (2) Document proof strategies fo...",
+      "category": "verification",
+      "installed": false,
+      "path": "proof-trace-summarizer",
+      "displayName_zh": "proof-trace-summarizer",
+      "description_zh": "Summarize long Isabelle or Coq proof scripts into high-level logical steps and reasoning flow. Use when users need to: (1) Understand the structure of a complex proof, (2) Document proof strategies fo..."
+    },
+    {
+      "name": "pseudocode-extractor",
+      "displayName": "pseudocode-extractor",
+      "description": "Extract programming-language-agnostic pseudocode from source code in any language, preserving control flow and logical structure while filtering out implementation details. Use when the user asks to c...",
+      "category": "code-generation",
+      "installed": false,
+      "path": "pseudocode-extractor",
+      "displayName_zh": "pseudocode-extractor",
+      "description_zh": "Extract programming-language-agnostic pseudocode from source code in any language, preserving control flow and logical structure while filtering out implementation details. Use when the user asks to c..."
+    },
+    {
+      "name": "python-regression-test-generator",
+      "displayName": "python-regression-test-generator",
+      "description": "Automatically generates regression tests for Python codebases by analyzing changes between old and new code versions and their existing tests. Migrates tests to work with new code, generates tests for...",
+      "category": "testing",
+      "installed": false,
+      "path": "python-regression-test-generator",
+      "displayName_zh": "python-regression-test-generator",
+      "description_zh": "Automatically generates regression tests for Python codebases by analyzing changes between old and new code versions and their existing tests. Migrates tests to work with new code, generates tests for..."
+    },
+    {
       "name": "python-repo-quickstart",
       "displayName": "python-repo-quickstart",
       "description": "Quickly analyzes Python repositories to understand their purpose, structure, and setup requirements. Use when Claude needs to onboard to a new Python codebase, understand project structure, identify e...",
@@ -813,6 +1073,26 @@
       "description_zh": "更新 Python 测试以适配新代码版本。修复由于签名和行为变更导致的测试失败，分析代码差异并相应更新断言。"
     },
     {
+      "name": "python-to-dafny-translator",
+      "displayName": "python-to-dafny-translator",
+      "description": "Translate Python programs into equivalent Dafny code, preserving program semantics and ensuring the generated code is well-typed, executable, and verifiable. Use when the user asks to convert Python c...",
+      "category": "verification",
+      "installed": false,
+      "path": "python-to-dafny-translator",
+      "displayName_zh": "python-to-dafny-translator",
+      "description_zh": "Translate Python programs into equivalent Dafny code, preserving program semantics and ensuring the generated code is well-typed, executable, and verifiable. Use when the user asks to convert Python c..."
+    },
+    {
+      "name": "python-to-lean4-translator",
+      "displayName": "python-to-lean4-translator",
+      "description": "Translate Python programs to equivalent Lean4 code while preserving semantics and ensuring type safety. Use when users ask to convert, translate, or port Python code to Lean4, or when they need to ver...",
+      "category": "verification",
+      "installed": false,
+      "path": "python-to-lean4-translator",
+      "displayName_zh": "python-to-lean4-translator",
+      "description_zh": "Translate Python programs to equivalent Lean4 code while preserving semantics and ensuring type safety. Use when users ask to convert, translate, or port Python code to Lean4, or when they need to ver..."
+    },
+    {
       "name": "readme-generator",
       "displayName": "readme-generator",
       "description": "Generate comprehensive, user-friendly README.md files for code repositories. Use when creating documentation for new projects, updating existing READMEs, or improving project onboarding. Produces READ...",
@@ -821,6 +1101,16 @@
       "path": "readme-generator",
       "displayName_zh": "README 生成器",
       "description_zh": "生成全面、用户友好的 README.md 文件。包含项目介绍、先决条件和设置说明，提供可执行的使用示例和仓库结构概览。"
+    },
+    {
+      "name": "refinement-step-generator",
+      "displayName": "refinement-step-generator",
+      "description": "Generate systematic refinement steps from high-level specifications to concrete implementations in Isabelle/HOL or Coq, preserving correctness obligations at each step. Use when working with formal ve...",
+      "category": "verification",
+      "installed": false,
+      "path": "refinement-step-generator",
+      "displayName_zh": "refinement-step-generator",
+      "description_zh": "Generate systematic refinement steps from high-level specifications to concrete implementations in Isabelle/HOL or Coq, preserving correctness obligations at each step. Use when working with formal ve..."
     },
     {
       "name": "regression-root-cause-analyzer",
@@ -873,6 +1163,16 @@
       "description_zh": "检查需求覆盖。识别实现中的差距，将需求追溯到代码。"
     },
     {
+      "name": "requirement-enhancer",
+      "displayName": "requirement-enhancer",
+      "description": "Iteratively enhance user requirements into clear, complete, actionable specifications through analysis and clarification. Use when: (1) Users provide initial requirements that need refinement, (2) Req...",
+      "category": "verification",
+      "installed": false,
+      "path": "requirement-enhancer",
+      "displayName_zh": "requirement-enhancer",
+      "description_zh": "Iteratively enhance user requirements into clear, complete, actionable specifications through analysis and clarification. Use when: (1) Users provide initial requirements that need refinement, (2) Req..."
+    },
+    {
       "name": "requirement-summarizer",
       "displayName": "requirement-summarizer",
       "description": "Extract and summarize core features, constraints, and priorities from requirement documents. Use when analyzing PRDs, RFCs, business requirements, user stories, epics, or any requirement documentation...",
@@ -921,6 +1221,26 @@
       "path": "scenario-generator",
       "displayName_zh": "场景生成器",
       "description_zh": "生成使用场景。创建用户故事，开发测试场景。"
+    },
+    {
+      "name": "security-patch-advisor",
+      "displayName": "security-patch-advisor",
+      "description": "Proposes secure remediation strategies for detected security vulnerabilities including buffer overflows, injection risks, insecure deserialization, improper authentication, and unsafe cryptographic us...",
+      "category": "quality",
+      "installed": false,
+      "path": "security-patch-advisor",
+      "displayName_zh": "security-patch-advisor",
+      "description_zh": "Proposes secure remediation strategies for detected security vulnerabilities including buffer overflows, injection risks, insecure deserialization, improper authentication, and unsafe cryptographic us..."
+    },
+    {
+      "name": "semantic-bug-detector",
+      "displayName": "semantic-bug-detector",
+      "description": "Detect semantic-level bugs by analyzing whether code behavior matches its intended purpose inferred from function/variable names, comments, docstrings, and documentation. Use when users need to: (1) F...",
+      "category": "quality",
+      "installed": false,
+      "path": "semantic-bug-detector",
+      "displayName_zh": "semantic-bug-detector",
+      "description_zh": "Detect semantic-level bugs by analyzing whether code behavior matches its intended purpose inferred from function/variable names, comments, docstrings, and documentation. Use when users need to: (1) F..."
     },
     {
       "name": "sentry-automation",
@@ -993,6 +1313,16 @@
       "description_zh": "生成形式化规范。将自然语言转换为规范，验证规范完整性。"
     },
     {
+      "name": "static-bug-detector",
+      "displayName": "static-bug-detector",
+      "description": "Analyze source code statically to detect potential functional bugs including null dereferences, incorrect condition checks, unreachable code, inconsistent state updates, logic errors, resource leaks, ...",
+      "category": "quality",
+      "installed": false,
+      "path": "static-bug-detector",
+      "displayName_zh": "static-bug-detector",
+      "description_zh": "Analyze source code statically to detect potential functional bugs including null dereferences, incorrect condition checks, unreachable code, inconsistent state updates, logic errors, resource leaks, ..."
+    },
+    {
       "name": "static-reasoning-verifier",
       "displayName": "static-reasoning-verifier",
       "description": "Verify code correctness statically against specifications using type checking, contract verification, and formal methods. Use when: (1) Verifying type safety and null safety in Python, Java, or C/C++ ...",
@@ -1001,6 +1331,16 @@
       "path": "static-reasoning-verifier",
       "displayName_zh": "静态推理验证器",
       "description_zh": "使用静态分析验证代码。检查正确性属性，报告验证结果。"
+    },
+    {
+      "name": "static-vulnerability-detector",
+      "displayName": "static-vulnerability-detector",
+      "description": "Statically analyze code to detect security vulnerabilities including buffer overflows, injection risks (SQL, command, XSS), insecure deserialization, improper authentication, hard-coded credentials, a...",
+      "category": "quality",
+      "installed": false,
+      "path": "static-vulnerability-detector",
+      "displayName_zh": "static-vulnerability-detector",
+      "description_zh": "Statically analyze code to detect security vulnerabilities including buffer overflows, injection risks (SQL, command, XSS), insecure deserialization, improper authentication, hard-coded credentials, a..."
     },
     {
       "name": "supabase-automation",
@@ -1031,6 +1371,16 @@
       "path": "system-diagram-generator",
       "displayName_zh": "系统图生成器",
       "description_zh": "创建系统架构图。支持 Mermaid、PlantUML、Graphviz，生成数据流和部署图。"
+    },
+    {
+      "name": "tactic-suggestion-assistant",
+      "displayName": "tactic-suggestion-assistant",
+      "description": "Analyze proof states in Isabelle or Coq and suggest applicable tactics to make progress. Use when users need help with: (1) Choosing the next tactic in an interactive proof, (2) Understanding what tac...",
+      "category": "verification",
+      "installed": false,
+      "path": "tactic-suggestion-assistant",
+      "displayName_zh": "tactic-suggestion-assistant",
+      "description_zh": "Analyze proof states in Isabelle or Coq and suggest applicable tactics to make progress. Use when users need help with: (1) Choosing the next tactic in an interactive proof, (2) Understanding what tac..."
     },
     {
       "name": "technical-debt-analyzer",
@@ -1083,6 +1433,16 @@
       "description_zh": "从测试用例生成实现。遵循 TDD 原则，确保测试覆盖率。"
     },
     {
+      "name": "test-guided-bug-detector",
+      "displayName": "test-guided-bug-detector",
+      "description": "Analyze failing tests to detect functional bugs in code. Takes repository and failing test output as input, analyzes execution behavior, assertions, and stack traces to identify suspicious code region...",
+      "category": "testing",
+      "installed": false,
+      "path": "test-guided-bug-detector",
+      "displayName_zh": "test-guided-bug-detector",
+      "description_zh": "Analyze failing tests to detect functional bugs in code. Takes repository and failing test output as input, analyzes execution behavior, assertions, and stack traces to identify suspicious code region..."
+    },
+    {
       "name": "test-oracle-generator",
       "displayName": "test-oracle-generator",
       "description": "Generates automated test oracles to verify correct software behavior. Creates assertion-based oracles (expected values), property-based oracles (invariants), differential oracles (comparing implementa...",
@@ -1133,6 +1493,56 @@
       "description_zh": "Automate Vercel tasks via Rube MCP (Composio): manage deployments, domains, DNS, env vars, projects, and teams. Always search tools first for current schemas."
     },
     {
+      "name": "verification-boundary-reporter",
+      "displayName": "verification-boundary-reporter",
+      "description": "Analyze formal verification artifacts (Isabelle, Coq, Dafny, etc.) and produce structured reports identifying the precise boundary between verified, assumed, and unverified components. Use when assess...",
+      "category": "verification",
+      "installed": false,
+      "path": "verification-boundary-reporter",
+      "displayName_zh": "verification-boundary-reporter",
+      "description_zh": "Analyze formal verification artifacts (Isabelle, Coq, Dafny, etc.) and produce structured reports identifying the precise boundary between verified, assumed, and unverified components. Use when assess..."
+    },
+    {
+      "name": "verified-pseudocode-extractor",
+      "displayName": "verified-pseudocode-extractor",
+      "description": "Extract language-agnostic pseudocode from formally verified programs (Isabelle/HOL, Coq) while preserving verified control flow, data dependencies, and algorithmic logic. Use when: (1) Users have veri...",
+      "category": "verification",
+      "installed": false,
+      "path": "verified-pseudocode-extractor",
+      "displayName_zh": "verified-pseudocode-extractor",
+      "description_zh": "Extract language-agnostic pseudocode from formally verified programs (Isabelle/HOL, Coq) while preserving verified control flow, data dependencies, and algorithmic logic. Use when: (1) Users have veri..."
+    },
+    {
+      "name": "verified-spec-code-mapper",
+      "displayName": "verified-spec-code-mapper",
+      "description": "Establish explicit traceability between formal specifications (preconditions, postconditions, invariants) and verified code components with their correctness proofs. Produce structured Markdown mappin...",
+      "category": "verification",
+      "installed": false,
+      "path": "verified-spec-code-mapper",
+      "displayName_zh": "verified-spec-code-mapper",
+      "description_zh": "Establish explicit traceability between formal specifications (preconditions, postconditions, invariants) and verified code components with their correctness proofs. Produce structured Markdown mappin..."
+    },
+    {
+      "name": "vulnerability-pattern-matcher",
+      "displayName": "vulnerability-pattern-matcher",
+      "description": "Detects security vulnerabilities by matching code against known vulnerability patterns, insecure coding idioms, and CVE-style patterns. Explains why patterns are risky and under what conditions they a...",
+      "category": "quality",
+      "installed": false,
+      "path": "vulnerability-pattern-matcher",
+      "displayName_zh": "vulnerability-pattern-matcher",
+      "description_zh": "Detects security vulnerabilities by matching code against known vulnerability patterns, insecure coding idioms, and CVE-style patterns. Explains why patterns are risky and under what conditions they a..."
+    },
+    {
+      "name": "vulnerability-root-cause-analyzer",
+      "displayName": "vulnerability-root-cause-analyzer",
+      "description": "Analyze vulnerable code to identify underlying root causes such as violated assumptions, incorrect invariants, missing validation checks, or unsafe component interactions. Use when investigating secur...",
+      "category": "quality",
+      "installed": false,
+      "path": "vulnerability-root-cause-analyzer",
+      "displayName_zh": "vulnerability-root-cause-analyzer",
+      "description_zh": "Analyze vulnerable code to identify underlying root causes such as violated assumptions, incorrect invariants, missing validation checks, or unsafe component interactions. Use when investigating secur..."
+    },
+    {
       "name": "web-artifacts-builder",
       "displayName": "web-artifacts-builder",
       "description": "Suite of tools for creating elaborate, multi-component claude.ai HTML artifacts using modern frontend web technologies (React, Tailwind CSS, shadcn/ui). Use for complex artifacts requiring state manag...",
@@ -1163,7 +1573,7 @@
       "description_zh": "Toolkit for interacting with and testing local web applications using Playwright. Supports verifying frontend functionality, debugging UI behavior, capturing browser screenshots, and viewing browser l..."
     }
   ],
-  "total": 115,
+  "total": 156,
   "category_names_zh": {
     "code-generation": "代码生成",
     "testing": "测试",
