@@ -1,2 +1,5 @@
 *.skill
 .DS_Store
+
+# Local scripts and documentation (not for GitHub)
+.local-scripts/
