@@ -1,0 +1,18 @@
+{
+  "scan_id": "scan_20260218_024534",
+  "timestamp": "2026-02-18T02:45:34.707175Z",
+  "skill_path": "awesome-claude-skills-SE-skills/github-automation",
+  "skill_name": "github-automation",
+  "risk_score": 0.0,
+  "risk_level": "SAFE",
+  "total_files": 1,
+  "summary": {
+    "CRITICAL": 0,
+    "HIGH": 0,
+    "WARNING": 0,
+    "INFO": 0
+  },
+  "issues": [],
+  "total_issues": 0,
+  "recommendation": "SAFE"
+}

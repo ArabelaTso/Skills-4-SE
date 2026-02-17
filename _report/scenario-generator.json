@@ -1,0 +1,442 @@
+{
+  "scan_id": "scan_20260218_024521",
+  "timestamp": "2026-02-18T02:45:21.445957Z",
+  "skill_path": "scenario-generator",
+  "skill_name": "scenario-generator",
+  "risk_score": 10.0,
+  "risk_level": "CRITICAL",
+  "total_files": 1,
+  "summary": {
+    "CRITICAL": 47,
+    "HIGH": 0,
+    "WARNING": 0,
+    "INFO": 0
+  },
+  "issues": [
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "scenario-generator/SKILL.md",
+      "line": 67,
+      "pattern": "Users should be able to log in with email and password.",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "scenario-generator/SKILL.md",
+      "line": 69,
+      "pattern": "Password must be at least 8 characters.",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "scenario-generator/SKILL.md",
+      "line": 74,
+      "pattern": "- **Inputs**: Email, password",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "scenario-generator/SKILL.md",
+      "line": 77,
+      "pattern": "- **Edge cases**: Invalid email, wrong password, locked account, expired session",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "scenario-generator/SKILL.md",
+      "line": 89,
+      "pattern": "| Boundary | Min/max values | Minimum password length, maximum cart items |",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "scenario-generator/SKILL.md",
+      "line": 90,
+      "pattern": "| Error Handling | Invalid inputs | Wrong password, network error |",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "scenario-generator/SKILL.md",
+      "line": 100,
+      "pattern": "- Boundary: Exactly 8 characters password",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "scenario-generator/SKILL.md",
+      "line": 101,
+      "pattern": "- Error: Wrong password (attempt 1, 2, 3)",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "scenario-generator/SKILL.md",
+      "line": 129,
+      "pattern": "And the user enters password \"SecurePass123\"",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "scenario-generator/SKILL.md",
+      "line": 135,
+      "pattern": "Scenario: Failed login with incorrect password",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "scenario-generator/SKILL.md",
+      "line": 139,
+      "pattern": "And the user enters password \"WrongPassword\"",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "scenario-generator/SKILL.md",
+      "line": 142,
+      "pattern": "And an error message \"Invalid email or password\" should be displayed",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "scenario-generator/SKILL.md",
+      "line": 149,
+      "pattern": "And the user enters password \"WrongPassword\"",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "scenario-generator/SKILL.md",
+      "line": 153,
+      "pattern": "And the user cannot login even with correct password",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "scenario-generator/SKILL.md",
+      "line": 155,
+      "pattern": "Scenario: Password does not meet minimum length",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "scenario-generator/SKILL.md",
+      "line": 157,
+      "pattern": "When the user enters password \"Short1\"",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "scenario-generator/SKILL.md",
+      "line": 160,
+      "pattern": "And the error should say \"Password must be at least 8 characters\"",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "scenario-generator/SKILL.md",
+      "line": 182,
+      "pattern": "Scenario Outline: Password validation",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "scenario-generator/SKILL.md",
+      "line": 184,
+      "pattern": "When the user enters password \"<password>\"",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "scenario-generator/SKILL.md",
+      "line": 189,
+      "pattern": "| password      | result  | message                                    |",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "scenario-generator/SKILL.md",
+      "line": 190,
+      "pattern": "| Short1        | invalid | Password must be at least 8 characters     |",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "scenario-generator/SKILL.md",
+      "line": 191,
+      "pattern": "| NoDigits      | invalid | Password must contain at least one digit   |",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "scenario-generator/SKILL.md",
+      "line": 192,
+      "pattern": "| nouppercas1   | invalid | Password must contain an uppercase letter  |",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "scenario-generator/SKILL.md",
+      "line": 193,
+      "pattern": "| NOLOWERCASE1  | invalid | Password must contain a lowercase letter   |",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "scenario-generator/SKILL.md",
+      "line": 194,
+      "pattern": "| ValidPass1    | valid   | Password accepted                          |",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "scenario-generator/SKILL.md",
+      "line": 227,
+      "pattern": "I want to log in with my email and password",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "scenario-generator/SKILL.md",
+      "line": 231,
+      "pattern": "- [ ] User can log in with valid email and password",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "scenario-generator/SKILL.md",
+      "line": 235,
+      "pattern": "- [ ] Password must be at least 8 characters",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "scenario-generator/SKILL.md",
+      "line": 242,
+      "pattern": "- Password exactly 8 characters long",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "scenario-generator/SKILL.md",
+      "line": 414,
+      "pattern": "User registration form with name, email, password validation.",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "scenario-generator/SKILL.md",
+      "line": 438,
+      "pattern": "Scenario Outline: Password strength validation",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "scenario-generator/SKILL.md",
+      "line": 439,
+      "pattern": "When the user enters password \"<password>\"",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "scenario-generator/SKILL.md",
+      "line": 444,
+      "pattern": "| password       | strength | message                        |",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "scenario-generator/SKILL.md",
+      "line": 445,
+      "pattern": "| weak           | weak     | Password too short             |",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "scenario-generator/SKILL.md",
+      "line": 447,
+      "pattern": "| Strong1!       | strong   | Password accepted              |",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "scenario-generator/SKILL.md",
+      "line": 448,
+      "pattern": "| VeryStrong1!@  | strong   | Password accepted              |",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "scenario-generator/SKILL.md",
+      "line": 454,
+      "pattern": "And the user enters password \"SecurePass1!\"",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "scenario-generator/SKILL.md",
+      "line": 455,
+      "pattern": "And the user confirms password \"SecurePass1!\"",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "scenario-generator/SKILL.md",
+      "line": 461,
+      "pattern": "Scenario: Password mismatch",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "scenario-generator/SKILL.md",
+      "line": 462,
+      "pattern": "When the user enters password \"Password1!\"",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "scenario-generator/SKILL.md",
+      "line": 463,
+      "pattern": "And the user confirms password \"Password2!\"",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "scenario-generator/SKILL.md",
+      "line": 466,
+      "pattern": "And the error should say \"Passwords do not match\"",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "scenario-generator/SKILL.md",
+      "line": 519,
+      "pattern": "When I send a POST request to \"/api/posts\" without auth token",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "scenario-generator/SKILL.md",
+      "line": 723,
+      "pattern": "And I enter password \"[password]\"",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "scenario-generator/SKILL.md",
+      "line": 776,
+      "pattern": "Scenario: Password exactly minimum length",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "scenario-generator/SKILL.md",
+      "line": 777,
+      "pattern": "When the user enters an 8-character password",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "scenario-generator/SKILL.md",
+      "line": 778,
+      "pattern": "Then the password should be accepted",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    }
+  ],
+  "total_issues": 47,
+  "recommendation": "DO_NOT_USE"
+}

@@ -1,0 +1,136 @@
+{
+  "scan_id": "scan_20260218_024456",
+  "timestamp": "2026-02-18T02:44:56.128751Z",
+  "skill_path": "bisect-aware-instrumentation",
+  "skill_name": "bisect-aware-instrumentation",
+  "risk_score": 6.0,
+  "risk_level": "HIGH",
+  "total_files": 5,
+  "summary": {
+    "CRITICAL": 13,
+    "HIGH": 0,
+    "WARNING": 0,
+    "INFO": 0
+  },
+  "issues": [
+    {
+      "rule_id": "FILE002",
+      "severity": "CRITICAL",
+      "file": "bisect-aware-instrumentation/SKILL.md",
+      "line": 89,
+      "pattern": "rm -rf /tmp/test_cache",
+      "description": "执行危险的文件操作",
+      "confidence": 0.95
+    },
+    {
+      "rule_id": "CMD001",
+      "severity": "CRITICAL",
+      "file": "bisect-aware-instrumentation/SKILL.md",
+      "line": 39,
+      "pattern": "if ! make build 2>/dev/null; then",
+      "description": "执行可能破坏系统的命令",
+      "confidence": 0.9
+    },
+    {
+      "rule_id": "CMD001",
+      "severity": "CRITICAL",
+      "file": "bisect-aware-instrumentation/SKILL.md",
+      "line": 89,
+      "pattern": "rm -rf /tmp/test_cache",
+      "description": "执行可能破坏系统的命令",
+      "confidence": 0.95
+    },
+    {
+      "rule_id": "CMD001",
+      "severity": "CRITICAL",
+      "file": "bisect-aware-instrumentation/SKILL.md",
+      "line": 228,
+      "pattern": "if ! command -v node &> /dev/null; then",
+      "description": "执行可能破坏系统的命令",
+      "confidence": 0.9
+    },
+    {
+      "rule_id": "FILE002",
+      "severity": "CRITICAL",
+      "file": "bisect-aware-instrumentation/references/git_bisect_guide.md",
+      "line": 296,
+      "pattern": "rm -rf /tmp/cache",
+      "description": "执行危险的文件操作",
+      "confidence": 0.95
+    },
+    {
+      "rule_id": "CMD001",
+      "severity": "CRITICAL",
+      "file": "bisect-aware-instrumentation/references/git_bisect_guide.md",
+      "line": 296,
+      "pattern": "rm -rf /tmp/cache",
+      "description": "执行可能破坏系统的命令",
+      "confidence": 0.95
+    },
+    {
+      "rule_id": "CMD001",
+      "severity": "CRITICAL",
+      "file": "bisect-aware-instrumentation/references/git_bisect_guide.md",
+      "line": 309,
+      "pattern": "if ! make build 2>/dev/null; then",
+      "description": "执行可能破坏系统的命令",
+      "confidence": 0.9
+    },
+    {
+      "rule_id": "CMD001",
+      "severity": "CRITICAL",
+      "file": "bisect-aware-instrumentation/references/exit_codes.md",
+      "line": 69,
+      "pattern": "if ! make build 2>/dev/null; then",
+      "description": "执行可能破坏系统的命令",
+      "confidence": 0.9
+    },
+    {
+      "rule_id": "CMD001",
+      "severity": "CRITICAL",
+      "file": "bisect-aware-instrumentation/references/exit_codes.md",
+      "line": 75,
+      "pattern": "if ! command -v pytest &> /dev/null; then",
+      "description": "执行可能破坏系统的命令",
+      "confidence": 0.9
+    },
+    {
+      "rule_id": "FILE002",
+      "severity": "CRITICAL",
+      "file": "bisect-aware-instrumentation/scripts/bisect_template.sh",
+      "line": 99,
+      "pattern": "rm -rf /tmp/test_cache_*",
+      "description": "执行危险的文件操作",
+      "confidence": 0.95
+    },
+    {
+      "rule_id": "CMD001",
+      "severity": "CRITICAL",
+      "file": "bisect-aware-instrumentation/scripts/bisect_template.sh",
+      "line": 63,
+      "pattern": "if ! make clean > /dev/null 2>&1; then",
+      "description": "执行可能破坏系统的命令",
+      "confidence": 0.9
+    },
+    {
+      "rule_id": "CMD001",
+      "severity": "CRITICAL",
+      "file": "bisect-aware-instrumentation/scripts/bisect_template.sh",
+      "line": 67,
+      "pattern": "if ! make build > /dev/null 2>&1; then",
+      "description": "执行可能破坏系统的命令",
+      "confidence": 0.9
+    },
+    {
+      "rule_id": "CMD001",
+      "severity": "CRITICAL",
+      "file": "bisect-aware-instrumentation/scripts/bisect_template.sh",
+      "line": 99,
+      "pattern": "rm -rf /tmp/test_cache_*",
+      "description": "执行可能破坏系统的命令",
+      "confidence": 0.95
+    }
+  ],
+  "total_issues": 13,
+  "recommendation": "NOT_RECOMMENDED"
+}

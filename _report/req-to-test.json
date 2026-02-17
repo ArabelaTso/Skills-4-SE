@@ -1,0 +1,208 @@
+{
+  "scan_id": "scan_20260218_024519",
+  "timestamp": "2026-02-18T02:45:19.346850Z",
+  "skill_path": "req-to-test",
+  "skill_name": "req-to-test",
+  "risk_score": 9.45,
+  "risk_level": "CRITICAL",
+  "total_files": 4,
+  "summary": {
+    "CRITICAL": 21,
+    "HIGH": 0,
+    "WARNING": 0,
+    "INFO": 0
+  },
+  "issues": [
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "req-to-test/SKILL.md",
+      "line": 84,
+      "pattern": "And I enter password \"SecurePass123\"",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "req-to-test/SKILL.md",
+      "line": 93,
+      "pattern": "And I enter password \"SecurePass123\"",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "req-to-test/SKILL.md",
+      "line": 131,
+      "pattern": "- password = \"SecurePass123\"",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "req-to-test/SKILL.md",
+      "line": 132,
+      "pattern": "Execute: user = create_user(email, password)",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "req-to-test/SKILL.md",
+      "line": 135,
+      "pattern": "- user.password is hashed",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "req-to-test/SKILL.md",
+      "line": 156,
+      "pattern": "3. Verify response contains user ID and token",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "req-to-test/SKILL.md",
+      "line": 162,
+      "pattern": "- Response body contains: {id: <uuid>, token: <jwt>}",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "req-to-test/SKILL.md",
+      "line": 164,
+      "pattern": "- User password is hashed (not plain text)",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "req-to-test/SKILL.md",
+      "line": 166,
+      "pattern": "- Confirmation link in email contains valid token",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "req-to-test/SKILL.md",
+      "line": 189,
+      "pattern": "And user enters password \"SecurePass123\"",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "req-to-test/SKILL.md",
+      "line": 190,
+      "pattern": "And user enters password confirmation \"SecurePass123\"",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "req-to-test/SKILL.md",
+      "line": 201,
+      "pattern": "And user enters password \"SecurePass123\"",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "req-to-test/SKILL.md",
+      "line": 306,
+      "pattern": "Scenario: Login fails with incorrect password [P0]",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "req-to-test/SKILL.md",
+      "line": 318,
+      "pattern": "Test: test_validate_password_strength_accepts_strong_password [P1]",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "req-to-test/SKILL.md",
+      "line": 319,
+      "pattern": "Test: test_validate_password_strength_rejects_weak_password [P1]",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "req-to-test/SKILL.md",
+      "line": 320,
+      "pattern": "Test: test_validate_password_strength_requires_minimum_length [P1]",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "req-to-test/SKILL.md",
+      "line": 324,
+      "pattern": "Test: Authentication API returns JWT token on successful login [P0]",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "req-to-test/SKILL.md",
+      "line": 336,
+      "pattern": "- password: \"SecurePass123!\"",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "req-to-test/SKILL.md",
+      "line": 340,
+      "pattern": "- password: \"wrong\" (incorrect)",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "req-to-test/references/coverage_checklist.md",
+      "line": 88,
+      "pattern": "- [ ] **Password requirements** - Password rules enforced",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "req-to-test/assets/test_suite_template.json",
+      "line": 73,
+      "pattern": "\"input\": {\"email\": \"user@example.com\", \"password\": \"SecurePass123\"},",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    }
+  ],
+  "total_issues": 21,
+  "recommendation": "DO_NOT_USE"
+}

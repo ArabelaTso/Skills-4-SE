@@ -1,0 +1,298 @@
+{
+  "scan_id": "scan_20260218_024535",
+  "timestamp": "2026-02-18T02:45:35.833578Z",
+  "skill_path": "awesome-claude-skills-SE-skills/mcp-builder",
+  "skill_name": "mcp-builder",
+  "risk_score": 10.0,
+  "risk_level": "CRITICAL",
+  "total_files": 9,
+  "summary": {
+    "CRITICAL": 31,
+    "HIGH": 0,
+    "WARNING": 0,
+    "INFO": 0
+  },
+  "issues": [
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "awesome-claude-skills-SE-skills/mcp-builder/SKILL.md",
+      "line": 34,
+      "pattern": "- Agents have constrained context windows - make every token count",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "awesome-claude-skills-SE-skills/mcp-builder/SKILL.md",
+      "line": 109,
+      "pattern": "- Implement character limits and truncation strategies (e.g., 25,000 tokens)",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "awesome-claude-skills-SE-skills/mcp-builder/SKILL.md",
+      "line": 143,
+      "pattern": "- Authentication/token management",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "awesome-claude-skills-SE-skills/mcp-builder/scripts/evaluation.py",
+      "line": 42,
+      "pattern": "- Comment on any errors encountered during tool usage: Did the tool fail to execute? Did the tool return too many tokens?",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "awesome-claude-skills-SE-skills/mcp-builder/scripts/evaluation.py",
+      "line": 99,
+      "pattern": "max_tokens=4096,",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "awesome-claude-skills-SE-skills/mcp-builder/scripts/evaluation.py",
+      "line": 140,
+      "pattern": "max_tokens=4096,",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "awesome-claude-skills-SE-skills/mcp-builder/scripts/evaluation.py",
+      "line": 315,
+      "pattern": "python evaluation.py -t sse -u https://example.com/mcp -H \"Authorization: Bearer token\" eval.xml",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.7
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "awesome-claude-skills-SE-skills/mcp-builder/reference/mcp_best_practices.md",
+      "line": 327,
+      "pattern": "- Validate access tokens before processing requests",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "awesome-claude-skills-SE-skills/mcp-builder/reference/mcp_best_practices.md",
+      "line": 328,
+      "pattern": "- Only accept tokens specifically intended for your server",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "awesome-claude-skills-SE-skills/mcp-builder/reference/mcp_best_practices.md",
+      "line": 329,
+      "pattern": "- Reject tokens without proper audience claims",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "awesome-claude-skills-SE-skills/mcp-builder/reference/mcp_best_practices.md",
+      "line": 330,
+      "pattern": "- Never pass through tokens received from MCP clients",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "NET001",
+      "severity": "CRITICAL",
+      "file": "awesome-claude-skills-SE-skills/mcp-builder/reference/python_mcp_server.md",
+      "line": 240,
+      "pattern": "if isinstance(e, httpx.HTTPStatusError):",
+      "description": "检测到向外发送数据的网络请求",
+      "confidence": 0.7
+    },
+    {
+      "rule_id": "NET001",
+      "severity": "CRITICAL",
+      "file": "awesome-claude-skills-SE-skills/mcp-builder/reference/python_mcp_server.md",
+      "line": 248,
+      "pattern": "elif isinstance(e, httpx.TimeoutException):",
+      "description": "检测到向外发送数据的网络请求",
+      "confidence": 0.7
+    },
+    {
+      "rule_id": "NET001",
+      "severity": "CRITICAL",
+      "file": "awesome-claude-skills-SE-skills/mcp-builder/reference/python_mcp_server.md",
+      "line": 261,
+      "pattern": "async with httpx.AsyncClient() as client:",
+      "description": "检测到向外发送数据的网络请求",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "NET001",
+      "severity": "CRITICAL",
+      "file": "awesome-claude-skills-SE-skills/mcp-builder/reference/python_mcp_server.md",
+      "line": 279,
+      "pattern": "async with httpx.AsyncClient() as client:",
+      "description": "检测到向外发送数据的网络请求",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "NET001",
+      "severity": "CRITICAL",
+      "file": "awesome-claude-skills-SE-skills/mcp-builder/reference/python_mcp_server.md",
+      "line": 286,
+      "pattern": "response = requests.get(f\"{API_URL}/resource/{resource_id}\")  # Blocks",
+      "description": "检测到向外发送数据的网络请求",
+      "confidence": 0.49999999999999994
+    },
+    {
+      "rule_id": "NET001",
+      "severity": "CRITICAL",
+      "file": "awesome-claude-skills-SE-skills/mcp-builder/reference/python_mcp_server.md",
+      "line": 411,
+      "pattern": "async with httpx.AsyncClient() as client:",
+      "description": "检测到向外发送数据的网络请求",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "NET001",
+      "severity": "CRITICAL",
+      "file": "awesome-claude-skills-SE-skills/mcp-builder/reference/python_mcp_server.md",
+      "line": 423,
+      "pattern": "if isinstance(e, httpx.HTTPStatusError):",
+      "description": "检测到向外发送数据的网络请求",
+      "confidence": 0.7
+    },
+    {
+      "rule_id": "NET001",
+      "severity": "CRITICAL",
+      "file": "awesome-claude-skills-SE-skills/mcp-builder/reference/python_mcp_server.md",
+      "line": 431,
+      "pattern": "elif isinstance(e, httpx.TimeoutException):",
+      "description": "检测到向外发送数据的网络请求",
+      "confidence": 0.7
+    },
+    {
+      "rule_id": "NET001",
+      "severity": "CRITICAL",
+      "file": "awesome-claude-skills-SE-skills/mcp-builder/reference/python_mcp_server.md",
+      "line": 696,
+      "pattern": "5. **Error Handling**: Use specific exception types (httpx.HTTPStatusError, not generic Exception)",
+      "description": "检测到向外发送数据的网络请求",
+      "confidence": 0.7
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "awesome-claude-skills-SE-skills/mcp-builder/reference/python_mcp_server.md",
+      "line": 538,
+      "pattern": "api_key = await ctx.elicit(",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "awesome-claude-skills-SE-skills/mcp-builder/reference/python_mcp_server.md",
+      "line": 540,
+      "pattern": "input_type=\"password\"",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "awesome-claude-skills-SE-skills/mcp-builder/reference/python_mcp_server.md",
+      "line": 544,
+      "pattern": "return await api_call(resource_id, api_key)",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "awesome-claude-skills-SE-skills/mcp-builder/reference/node_mcp_server.md",
+      "line": 700,
+      "pattern": "if (!process.env.EXAMPLE_API_KEY) {",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "awesome-claude-skills-SE-skills/mcp-builder/reference/node_mcp_server.md",
+      "line": 701,
+      "pattern": "console.error(\"ERROR: EXAMPLE_API_KEY environment variable is required\");",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "awesome-claude-skills-SE-skills/mcp-builder/reference/evaluation.md",
+      "line": 398,
+      "pattern": "export ANTHROPIC_API_KEY=your_api_key_here",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "awesome-claude-skills-SE-skills/mcp-builder/reference/evaluation.md",
+      "line": 444,
+      "pattern": "-e API_KEY=abc123 \\",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "awesome-claude-skills-SE-skills/mcp-builder/reference/evaluation.md",
+      "line": 457,
+      "pattern": "-H \"Authorization: Bearer token123\" \\",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "awesome-claude-skills-SE-skills/mcp-builder/reference/evaluation.md",
+      "line": 470,
+      "pattern": "-H \"Authorization: Bearer token123\" \\",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "awesome-claude-skills-SE-skills/mcp-builder/reference/evaluation.md",
+      "line": 557,
+      "pattern": "export ANTHROPIC_API_KEY=your_api_key",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "awesome-claude-skills-SE-skills/mcp-builder/reference/evaluation.md",
+      "line": 567,
+      "pattern": "-e GITHUB_TOKEN=ghp_xxx \\",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    }
+  ],
+  "total_issues": 31,
+  "recommendation": "DO_NOT_USE"
+}

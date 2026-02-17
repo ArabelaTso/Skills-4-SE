@@ -1,0 +1,109 @@
+{
+  "scan_id": "scan_20260218_024512",
+  "timestamp": "2026-02-18T02:45:12.676525Z",
+  "skill_path": "module-level-code-translator",
+  "skill_name": "module-level-code-translator",
+  "risk_score": 2.9699999999999993,
+  "risk_level": "LOW",
+  "total_files": 6,
+  "summary": {
+    "CRITICAL": 7,
+    "HIGH": 0,
+    "WARNING": 3,
+    "INFO": 0
+  },
+  "issues": [
+    {
+      "rule_id": "NET001",
+      "severity": "CRITICAL",
+      "file": "module-level-code-translator/references/stdlib_mappings.md",
+      "line": 26,
+      "pattern": "- `requests.get(url)` → `fetch(url)` or `axios.get(url)`",
+      "description": "检测到向外发送数据的网络请求",
+      "confidence": 0.7
+    },
+    {
+      "rule_id": "NET001",
+      "severity": "CRITICAL",
+      "file": "module-level-code-translator/references/stdlib_mappings.md",
+      "line": 27,
+      "pattern": "- `requests.post(url, json=data)` → `fetch(url, {method: 'POST', body: JSON.stringify(data)})`",
+      "description": "检测到向外发送数据的网络请求",
+      "confidence": 0.7
+    },
+    {
+      "rule_id": "NET001",
+      "severity": "CRITICAL",
+      "file": "module-level-code-translator/references/stdlib_mappings.md",
+      "line": 30,
+      "pattern": "- `requests.get(url)` → `HttpClient.newHttpClient().send(request, BodyHandlers.ofString())`",
+      "description": "检测到向外发送数据的网络请求",
+      "confidence": 0.7
+    },
+    {
+      "rule_id": "NET001",
+      "severity": "CRITICAL",
+      "file": "module-level-code-translator/references/stdlib_mappings.md",
+      "line": 33,
+      "pattern": "- `requests.get(url)` → `http.Get(url)`",
+      "description": "检测到向外发送数据的网络请求",
+      "confidence": 0.7
+    },
+    {
+      "rule_id": "NET001",
+      "severity": "CRITICAL",
+      "file": "module-level-code-translator/references/stdlib_mappings.md",
+      "line": 34,
+      "pattern": "- `requests.post(url, json=data)` → `http.Post(url, \"application/json\", bytes.NewBuffer(jsonData))`",
+      "description": "检测到向外发送数据的网络请求",
+      "confidence": 0.7
+    },
+    {
+      "rule_id": "INJ001",
+      "severity": "CRITICAL",
+      "file": "module-level-code-translator/references/stdlib_mappings.md",
+      "line": 75,
+      "pattern": "- `re.search(pattern, text)` → `Pattern.compile(pattern).matcher(text).find()`",
+      "description": "检测到代码注入模式",
+      "confidence": 0.7
+    },
+    {
+      "rule_id": "INJ002",
+      "severity": "WARNING",
+      "file": "module-level-code-translator/references/stdlib_mappings.md",
+      "line": 75,
+      "pattern": "- `re.search(pattern, text)` → `Pattern.compile(pattern).matcher(text).find()`",
+      "description": "动态执行代码片段",
+      "confidence": 0.7
+    },
+    {
+      "rule_id": "OBF001",
+      "severity": "WARNING",
+      "file": "module-level-code-translator/references/stdlib_mappings.md",
+      "line": 75,
+      "pattern": "- `re.search(pattern, text)` → `Pattern.compile(pattern).matcher(text).find()`",
+      "description": "检测到可能的代码混淆",
+      "confidence": 0.7
+    },
+    {
+      "rule_id": "OBF002",
+      "severity": "WARNING",
+      "file": "module-level-code-translator/references/stdlib_mappings.md",
+      "line": 75,
+      "pattern": "- `re.search(pattern, text)` → `Pattern.compile(pattern).matcher(text).find()`",
+      "description": "使用间接方式调用函数",
+      "confidence": 0.7
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "module-level-code-translator/references/language_mappings.md",
+      "line": 14,
+      "pattern": "- Python: `dict.keys()`, `dict.values()`, `dict.items()` → JS: `Object.keys()`, `Object.values()`, `Object.entries()`",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    }
+  ],
+  "total_issues": 10,
+  "recommendation": "USE_WITH_CAUTION"
+}

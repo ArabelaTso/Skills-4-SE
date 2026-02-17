@@ -36,7 +36,7 @@
 </p>
 
 通过我们的交互式网页界面浏览、搜索和安装技能。Skills Manager 提供：
-- 📦 一键安装所有 75+ 个技能
+- 📦 一键安装所有 199 个技能
 - ✅ 选择性安装特定技能
 - 🔍 按类别搜索和筛选
 - 📖 中英文双语帮助文档
@@ -1174,7 +1174,7 @@
     - [测试应用自动化](awesome-claude-skills-SE-skills/test-app-automation) *(来源: awesome-claude-skills)* – 自动化应用程序测试工作流，包括单元测试、集成测试和端到端测试
     - [WebApp 测试](awesome-claude-skills-SE-skills/webapp-testing) *(来源: awesome-claude-skills)* – 专门用于 Web 应用程序测试的自动化，包括 UI 测试和浏览器自动化
     - [Web 应用程序测试](anthropics-skills-SE-skills/webapp-testing) *(来源: anthropics-skills)* – 使用 Playwright 与本地 Web 应用程序交互和测试的工具包
-    - [Web 应用程序测试 (Anthropics)](webapp-testing-anthropics) – 使用 Playwright 测试本地 Web 应用程序的工具包，具有前端功能验证和 UI 调试功能
+    - [Web 应用程序测试 (Anthropics)](webapp-testing) – 使用 Playwright 测试本地 Web 应用程序的工具包，具有前端功能验证和 UI 调试功能
 
 
 ### ✅ **验证**
@@ -1405,6 +1405,45 @@ mkdir ~/.claude/skills
 
 🎉 如果您正在构建或研究用于软件工程的 LLM，这个仓库适合您。
 
+## ⚡ 风险披露
+为了防止技能在本地运行时可能存在的潜在**安全风险**（例如访问 SSH 密钥、API 密钥、向外部服务器发送数据、执行任意系统命令或修改全局依赖项），本项目中的所有技能均已通过 [Skill-Security-Scanner](https://github.com/huifer/skill-security-scan) 进行了**安全扫描**。以下是扫描报告摘要，完整报告可在此处查看：[此处](./_report/)
+
+📊 Risk Level 统计报告
+
+  风险分布：
+
+  - 🔴 CRITICAL: 17 Skills (8.5%) 
+    > Trying to access `\tmp` or other system dirs, installing packages
+    - framework-migration-assistant
+    - vulnerability-pattern-matcher
+    - code-smell-detector
+    - req-to-test
+    - traceability-matrix-generator
+    - python-test-updater
+    - requirement-enhancer
+    - security-sensitive-path-instrumenter
+    - critical-interval-security-checker
+    - mcp-builder
+    - static-vulnerability-detector
+    - environment-setup-assistant
+    - scenario-generator
+    - security-patch-advisor
+    - api-documentation-generator
+    - test-case-documentation
+    - symbolic-execution-assistant
+  - 🟠 HIGH: 5个Skill (2.5%) 
+    > Using `os.system`, `subprocess`, `eval`, `exec`
+    - containerization-assistant
+    - bisect-aware-instrumentation
+    - code-change-summarizer
+    - configuration-generator
+    - code-comment-generator
+  - 🟡 MEDIUM: 7个Skill (3.5%)
+  - 🟢 LOW: 24个Skill (12.0%)
+  - ✅ SAFE: 146个Skill (73.4%)
+
+
+⚠️ 注意：误报高，注意甄别。例如，Skill描述中出现“password”等单词，则被判定为风险级别高。自行决定是否使用。
 
 
 ## 参考

@@ -1,0 +1,28 @@
+{
+  "scan_id": "scan_20260218_024503",
+  "timestamp": "2026-02-18T02:45:03.361327Z",
+  "skill_path": "dead-code-eliminator",
+  "skill_name": "dead-code-eliminator",
+  "risk_score": 0.44999999999999996,
+  "risk_level": "SAFE",
+  "total_files": 4,
+  "summary": {
+    "CRITICAL": 1,
+    "HIGH": 0,
+    "WARNING": 0,
+    "INFO": 0
+  },
+  "issues": [
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "dead-code-eliminator/scripts/find_unused_functions.py",
+      "line": 136,
+      "pattern": "for filepath in sorted(unused.keys()):",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    }
+  ],
+  "total_issues": 1,
+  "recommendation": "SAFE"
+}

@@ -1,0 +1,28 @@
+{
+  "scan_id": "scan_20260218_024524",
+  "timestamp": "2026-02-18T02:45:24.147087Z",
+  "skill_path": "state-snapshot-instrumenter",
+  "skill_name": "state-snapshot-instrumenter",
+  "risk_score": 0.44999999999999996,
+  "risk_level": "SAFE",
+  "total_files": 11,
+  "summary": {
+    "CRITICAL": 1,
+    "HIGH": 0,
+    "WARNING": 0,
+    "INFO": 0
+  },
+  "issues": [
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "state-snapshot-instrumenter/scripts/analyze_snapshots.py",
+      "line": 103,
+      "pattern": "all_vars = set(vars1.keys()) | set(vars2.keys())",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    }
+  ],
+  "total_issues": 1,
+  "recommendation": "SAFE"
+}

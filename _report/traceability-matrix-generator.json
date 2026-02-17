@@ -1,0 +1,262 @@
+{
+  "scan_id": "scan_20260218_024529",
+  "timestamp": "2026-02-18T02:45:29.335440Z",
+  "skill_path": "traceability-matrix-generator",
+  "skill_name": "traceability-matrix-generator",
+  "risk_score": 10.0,
+  "risk_level": "CRITICAL",
+  "total_files": 3,
+  "summary": {
+    "CRITICAL": 27,
+    "HIGH": 0,
+    "WARNING": 0,
+    "INFO": 0
+  },
+  "issues": [
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "traceability-matrix-generator/SKILL.md",
+      "line": 73,
+      "pattern": "The system shall allow users to log in with email and password.",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "traceability-matrix-generator/SKILL.md",
+      "line": 75,
+      "pattern": "## REQ-002: Password Reset",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.7
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "traceability-matrix-generator/SKILL.md",
+      "line": 76,
+      "pattern": "Users shall be able to reset forgotten passwords via email.",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "traceability-matrix-generator/SKILL.md",
+      "line": 156,
+      "pattern": "- Password reset workflow (REQ-002)",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "traceability-matrix-generator/SKILL.md",
+      "line": 220,
+      "pattern": "def authenticate_user(email, password):",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "traceability-matrix-generator/SKILL.md",
+      "line": 227,
+      "pattern": "password: User password",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "traceability-matrix-generator/SKILL.md",
+      "line": 230,
+      "pattern": "Authentication token if successful",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "traceability-matrix-generator/SKILL.md",
+      "line": 250,
+      "pattern": "* Password reset functionality",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "traceability-matrix-generator/SKILL.md",
+      "line": 253,
+      "pattern": "function resetPassword(email) {",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "traceability-matrix-generator/SKILL.md",
+      "line": 373,
+      "pattern": "| REQ-002 | Password Reset | Auth Service | auth/service.py::reset_password() | ✓ Complete |",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "traceability-matrix-generator/references/extraction_patterns.md",
+      "line": 21,
+      "pattern": "The system shall support user authentication via email and password.",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "traceability-matrix-generator/references/extraction_patterns.md",
+      "line": 23,
+      "pattern": "### REQ-002: Password Strength",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.7
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "traceability-matrix-generator/references/extraction_patterns.md",
+      "line": 24,
+      "pattern": "Passwords must be at least 8 characters with mixed case and numbers.",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "traceability-matrix-generator/references/extraction_patterns.md",
+      "line": 51,
+      "pattern": "| REQ-002 | Password Reset | Medium | Draft |",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "traceability-matrix-generator/references/extraction_patterns.md",
+      "line": 345,
+      "pattern": "## 1.2 Password Reset (REQ-AUTH-RESET)",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.7
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "traceability-matrix-generator/references/code_scanning.md",
+      "line": 50,
+      "pattern": "def authenticate_user(email, password):",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "traceability-matrix-generator/references/code_scanning.md",
+      "line": 57,
+      "pattern": "password: User password",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "traceability-matrix-generator/references/code_scanning.md",
+      "line": 60,
+      "pattern": "Token if successful, None otherwise",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "traceability-matrix-generator/references/code_scanning.md",
+      "line": 75,
+      "pattern": "def login(self, email, password):",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "traceability-matrix-generator/references/code_scanning.md",
+      "line": 178,
+      "pattern": "* @implements REQ-LOGIN-001 Email/password login",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "traceability-matrix-generator/references/code_scanning.md",
+      "line": 187,
+      "pattern": "* @param password User password",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "traceability-matrix-generator/references/code_scanning.md",
+      "line": 188,
+      "pattern": "* @return Authentication token",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "traceability-matrix-generator/references/code_scanning.md",
+      "line": 190,
+      "pattern": "public Token authenticate(String email, String password) {",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "traceability-matrix-generator/references/code_scanning.md",
+      "line": 284,
+      "pattern": "* @param {string} password - User password",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "traceability-matrix-generator/references/code_scanning.md",
+      "line": 285,
+      "pattern": "* @returns {Promise<Token>} Authentication token",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "traceability-matrix-generator/references/code_scanning.md",
+      "line": 287,
+      "pattern": "async authenticate(email, password) {",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "traceability-matrix-generator/references/code_scanning.md",
+      "line": 431,
+      "pattern": "- REQ-SECURITY-001: Password hashing",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    }
+  ],
+  "total_issues": 27,
+  "recommendation": "DO_NOT_USE"
+}

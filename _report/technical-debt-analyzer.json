@@ -1,0 +1,18 @@
+{
+  "scan_id": "scan_20260218_024526",
+  "timestamp": "2026-02-18T02:45:26.410224Z",
+  "skill_path": "technical-debt-analyzer",
+  "skill_name": "technical-debt-analyzer",
+  "risk_score": 0.0,
+  "risk_level": "SAFE",
+  "total_files": 1,
+  "summary": {
+    "CRITICAL": 0,
+    "HIGH": 0,
+    "WARNING": 0,
+    "INFO": 0
+  },
+  "issues": [],
+  "total_issues": 0,
+  "recommendation": "SAFE"
+}

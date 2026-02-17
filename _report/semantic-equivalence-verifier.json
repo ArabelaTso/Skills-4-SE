@@ -1,0 +1,73 @@
+{
+  "scan_id": "scan_20260218_024522",
+  "timestamp": "2026-02-18T02:45:22.481384Z",
+  "skill_path": "semantic-equivalence-verifier",
+  "skill_name": "semantic-equivalence-verifier",
+  "risk_score": 1.58,
+  "risk_level": "SAFE",
+  "total_files": 5,
+  "summary": {
+    "CRITICAL": 3,
+    "HIGH": 0,
+    "WARNING": 3,
+    "INFO": 0
+  },
+  "issues": [
+    {
+      "rule_id": "NET001",
+      "severity": "CRITICAL",
+      "file": "semantic-equivalence-verifier/references/language_patterns.md",
+      "line": 279,
+      "pattern": "return fetch(url).then(r => r.json());",
+      "description": "检测到向外发送数据的网络请求",
+      "confidence": 0.7
+    },
+    {
+      "rule_id": "NET001",
+      "severity": "CRITICAL",
+      "file": "semantic-equivalence-verifier/references/language_patterns.md",
+      "line": 284,
+      "pattern": "const response = await fetch(url);",
+      "description": "检测到向外发送数据的网络请求",
+      "confidence": 0.7
+    },
+    {
+      "rule_id": "INJ001",
+      "severity": "CRITICAL",
+      "file": "semantic-equivalence-verifier/references/symbolic_execution.md",
+      "line": 170,
+      "pattern": "print(\"Found difference:\", state_a.solver.eval(x))",
+      "description": "检测到代码注入模式",
+      "confidence": 0.8
+    },
+    {
+      "rule_id": "INJ002",
+      "severity": "WARNING",
+      "file": "semantic-equivalence-verifier/references/symbolic_execution.md",
+      "line": 170,
+      "pattern": "print(\"Found difference:\", state_a.solver.eval(x))",
+      "description": "动态执行代码片段",
+      "confidence": 0.8
+    },
+    {
+      "rule_id": "OBF001",
+      "severity": "WARNING",
+      "file": "semantic-equivalence-verifier/references/symbolic_execution.md",
+      "line": 170,
+      "pattern": "print(\"Found difference:\", state_a.solver.eval(x))",
+      "description": "检测到可能的代码混淆",
+      "confidence": 0.8
+    },
+    {
+      "rule_id": "OBF002",
+      "severity": "WARNING",
+      "file": "semantic-equivalence-verifier/references/symbolic_execution.md",
+      "line": 170,
+      "pattern": "print(\"Found difference:\", state_a.solver.eval(x))",
+      "description": "使用间接方式调用函数",
+      "confidence": 0.8
+    }
+  ],
+  "total_issues": 6,
+  "recommendation": "SAFE"
+}

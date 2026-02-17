@@ -1,0 +1,109 @@
+{
+  "scan_id": "scan_20260218_024523",
+  "timestamp": "2026-02-18T02:45:23.859389Z",
+  "skill_path": "spring-mvc-to-boot-migrator",
+  "skill_name": "spring-mvc-to-boot-migrator",
+  "risk_score": 4.0,
+  "risk_level": "MEDIUM",
+  "total_files": 8,
+  "summary": {
+    "CRITICAL": 10,
+    "HIGH": 0,
+    "WARNING": 0,
+    "INFO": 0
+  },
+  "issues": [
+    {
+      "rule_id": "NET001",
+      "severity": "CRITICAL",
+      "file": "spring-mvc-to-boot-migrator/SKILL.md",
+      "line": 247,
+      "pattern": "curl http://localhost:8080/users",
+      "description": "检测到向外发送数据的网络请求",
+      "confidence": 0.7
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "spring-mvc-to-boot-migrator/references/framework_comparison.md",
+      "line": 143,
+      "pattern": "<property name=\"password\" value=\"password\"/>",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "spring-mvc-to-boot-migrator/references/framework_comparison.md",
+      "line": 167,
+      "pattern": "dataSource.setPassword(\"password\");",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "spring-mvc-to-boot-migrator/references/framework_comparison.md",
+      "line": 193,
+      "pattern": "// spring.datasource.password=password",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.7
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "spring-mvc-to-boot-migrator/references/framework_comparison.md",
+      "line": 204,
+      "pattern": "spring.datasource.password=password",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "NET001",
+      "severity": "CRITICAL",
+      "file": "spring-mvc-to-boot-migrator/references/migration_guide.md",
+      "line": 461,
+      "pattern": "curl http://localhost:8080/users",
+      "description": "检测到向外发送数据的网络请求",
+      "confidence": 0.7
+    },
+    {
+      "rule_id": "NET001",
+      "severity": "CRITICAL",
+      "file": "spring-mvc-to-boot-migrator/references/migration_guide.md",
+      "line": 471,
+      "pattern": "curl http://localhost:8080/actuator/health",
+      "description": "检测到向外发送数据的网络请求",
+      "confidence": 0.7
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "spring-mvc-to-boot-migrator/references/migration_guide.md",
+      "line": 167,
+      "pattern": "spring.datasource.password=password",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "spring-mvc-to-boot-migrator/references/migration_guide.md",
+      "line": 361,
+      "pattern": "spring.datasource.password=password",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "spring-mvc-to-boot-migrator/scripts/migrate_config.py",
+      "line": 138,
+      "pattern": "# spring.datasource.password=",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.7
+    }
+  ],
+  "total_issues": 10,
+  "recommendation": "REVIEW_NEEDED"
+}

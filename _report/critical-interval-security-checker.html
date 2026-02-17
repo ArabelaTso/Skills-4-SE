@@ -1,0 +1,2283 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill 安全扫描报告</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        
+        .finding-card {
+            transition: all 0.3s ease;
+        }
+        .finding-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .severity-badge {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        .collapsible-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .collapsible-content.expanded {
+            max-height: 1000px;
+        }
+        .code-block {
+            background: #1f2937;
+            color: #f3f4f6;
+            border-radius: 0.375rem;
+            padding: 0.75rem;
+            font-family: 'Courier New', monospace;
+            font-size: 0.875rem;
+            overflow-x: auto;
+        }
+        
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div class="min-h-screen">
+        <!-- Header -->
+        <header class="bg-gradient-to-r from-red-600 to-red-800 text-white shadow-lg">
+            <div class="max-w-7xl mx-auto px-4 py-6 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <h1 class="text-3xl font-bold flex items-center">
+                            <i class="fas fa-shield-alt mr-3"></i>
+                            Skill 安全扫描报告
+                        </h1>
+                        <p class="mt-2 text-white/80">
+                            <i class="far fa-clock mr-1"></i>
+                            生成时间: 2026-02-18 02:45:03
+                        </p>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-6xl font-bold">10.0</div>
+                        <div class="text-xl">CRITICAL</div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
+            <!-- Scanned Paths -->
+            
+
+            <!-- Summary Cards -->
+            
+        <div class="bg-white rounded-lg shadow p-6">
+            <div class="flex items-center justify-between mb-4">
+                <h2 class="text-xl font-semibold text-gray-800">
+                    <i class="fas fa-chart-pie text-purple-500 mr-2"></i>
+                    扫描摘要
+                </h2>
+                <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                    <i class="fas fa-flag mr-1"></i>
+                    CRITICAL
+                </span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <!-- Total Files -->
+                <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg p-4">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm text-blue-600 font-medium">文件总数</p>
+                            <p class="text-2xl font-bold text-blue-700">4</p>
+                        </div>
+                        <i class="fas fa-file-alt text-3xl text-blue-300"></i>
+                    </div>
+                </div>
+
+                <!-- Critical -->
+                <div class="bg-gradient-to-br from-red-50 to-red-100 rounded-lg p-4">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm text-red-600 font-medium">Critical</p>
+                            <p class="text-2xl font-bold text-red-700">142</p>
+                        </div>
+                        <i class="fas fa-exclamation-triangle text-3xl text-red-300"></i>
+                    </div>
+                </div>
+
+                <!-- Warning -->
+                <div class="bg-gradient-to-br from-yellow-50 to-yellow-100 rounded-lg p-4">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm text-yellow-600 font-medium">Warning</p>
+                            <p class="text-2xl font-bold text-yellow-700">0</p>
+                        </div>
+                        <i class="fas fa-exclamation-circle text-3xl text-yellow-300"></i>
+                    </div>
+                </div>
+
+                <!-- Info -->
+                <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg p-4">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm text-blue-600 font-medium">Info</p>
+                            <p class="text-2xl font-bold text-blue-700">0</p>
+                        </div>
+                        <i class="fas fa-info-circle text-3xl text-blue-300"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-4 p-4 bg-gray-50 rounded-lg">
+                <div class="flex items-center justify-between">
+                    <span class="text-gray-600">问题总数</span>
+                    <span class="text-2xl font-bold text-red-600">142</span>
+                </div>
+            </div>
+        </div>
+        
+
+            <!-- Filter Controls -->
+            
+        <div class="bg-white rounded-lg shadow p-6 mb-6">
+            <div class="flex flex-wrap items-center gap-3">
+                <span class="text-gray-700 font-medium">筛选:</span>
+                <button onclick="filterFindings('all')" class="filter-btn px-4 py-2 rounded-lg bg-gray-200 hover:bg-gray-300 transition-colors">
+                    <i class="fas fa-list mr-1"></i>全部
+                </button>
+                <button onclick="filterFindings('CRITICAL')" class="filter-btn px-4 py-2 rounded-lg bg-red-100 text-red-700 hover:bg-red-200 transition-colors">
+                    <i class="fas fa-exclamation-triangle mr-1"></i>Critical (142)
+                </button>
+                <button onclick="filterFindings('WARNING')" class="filter-btn px-4 py-2 rounded-lg bg-yellow-100 text-yellow-700 hover:bg-yellow-200 transition-colors">
+                    <i class="fas fa-exclamation-circle mr-1"></i>Warning (0)
+                </button>
+                <button onclick="filterFindings('INFO')" class="filter-btn px-4 py-2 rounded-lg bg-blue-100 text-blue-700 hover:bg-blue-200 transition-colors">
+                    <i class="fas fa-info-circle mr-1"></i>Info (0)
+                </button>
+            </div>
+        </div>
+        
+
+            <!-- Findings -->
+            
+            <div class="finding-section mb-8" data-severity="CRITICAL">
+                <h3 class="text-2xl font-bold text-red-600 mb-4 flex items-center">
+                    <i class="fas fa-exclamation-triangle mr-2"></i>
+                    CRITICAL 问题 (142)
+                </h3>
+                <div class="space-y-4">
+                    
+        <div class="finding-card bg-white rounded-lg shadow-md border-l-4 border-red-500 overflow-hidden">
+            <div class="p-6">
+                <div class="flex items-start justify-between mb-3">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                FILE001
+                            </span>
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm font-medium">
+                                <i class="fas fa-chart-line mr-1"></i>
+                                MEDIUM 置信度
+                            </span>
+                        </div>
+                        <p class="text-gray-600 mb-2">尝试访问敏感文件</p>
+                    </div>
+                    <button onclick="toggleCollapse(0)" class="text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-chevron-down" id="icon-0"></i>
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3 text-sm">
+                    <div class="flex items-center text-gray-600">
+                        <i class="fas fa-file-code mr-2 text-blue-500"></i>
+                        <span class="font-medium">位置:</span>
+                        <code class="ml-2 bg-gray-100 px-2 py-1 rounded text-xs">critical-interval-security-checker/SKILL.md:3</code>
+                    </div>
+                </div>
+
+                <div class="collapsible-content" id="content-0">
+                    <div class="mt-3">
+                        <p class="text-sm text-gray-500 mb-2">
+                            <i class="fas fa-code mr-1"></i>检测到的模式:
+                        </p>
+                        <div class="code-block">
+                            description: Analyzes code to identify security-critical time intervals and timing vulnerabilities in authentication, authorization, and time-sensitive security operations. Use this skill when reviewing code for proper timeout enforcement, token expiration, session management, rate limiting, password reset validity, or any time-sensitive security mechanism. Detects missing expiration checks, excessive timeout values, lack of rate limiting, client-side only validation, hardcoded timeouts, and timing attack vulnerabilities. Triggers when users ask to check security timeouts, verify token expiration handling, audit session timeout implementation, review rate limiting, or analyze time-based security controls.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="finding-card bg-white rounded-lg shadow-md border-l-4 border-red-500 overflow-hidden">
+            <div class="p-6">
+                <div class="flex items-start justify-between mb-3">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                FILE001
+                            </span>
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm font-medium">
+                                <i class="fas fa-chart-line mr-1"></i>
+                                MEDIUM 置信度
+                            </span>
+                        </div>
+                        <p class="text-gray-600 mb-2">尝试访问敏感文件</p>
+                    </div>
+                    <button onclick="toggleCollapse(1)" class="text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-chevron-down" id="icon-1"></i>
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3 text-sm">
+                    <div class="flex items-center text-gray-600">
+                        <i class="fas fa-file-code mr-2 text-blue-500"></i>
+                        <span class="font-medium">位置:</span>
+                        <code class="ml-2 bg-gray-100 px-2 py-1 rounded text-xs">critical-interval-security-checker/SKILL.md:15</code>
+                    </div>
+                </div>
+
+                <div class="collapsible-content" id="content-1">
+                    <div class="mt-3">
+                        <p class="text-sm text-gray-500 mb-2">
+                            <i class="fas fa-code mr-1"></i>检测到的模式:
+                        </p>
+                        <div class="code-block">
+                            - **Authentication**: Login, logout, token generation
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="finding-card bg-white rounded-lg shadow-md border-l-4 border-red-500 overflow-hidden">
+            <div class="p-6">
+                <div class="flex items-start justify-between mb-3">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                FILE001
+                            </span>
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm font-medium">
+                                <i class="fas fa-chart-line mr-1"></i>
+                                MEDIUM 置信度
+                            </span>
+                        </div>
+                        <p class="text-gray-600 mb-2">尝试访问敏感文件</p>
+                    </div>
+                    <button onclick="toggleCollapse(2)" class="text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-chevron-down" id="icon-2"></i>
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3 text-sm">
+                    <div class="flex items-center text-gray-600">
+                        <i class="fas fa-file-code mr-2 text-blue-500"></i>
+                        <span class="font-medium">位置:</span>
+                        <code class="ml-2 bg-gray-100 px-2 py-1 rounded text-xs">critical-interval-security-checker/SKILL.md:17</code>
+                    </div>
+                </div>
+
+                <div class="collapsible-content" id="content-2">
+                    <div class="mt-3">
+                        <p class="text-sm text-gray-500 mb-2">
+                            <i class="fas fa-code mr-1"></i>检测到的模式:
+                        </p>
+                        <div class="code-block">
+                            - **Password operations**: Reset tokens, change requests
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="finding-card bg-white rounded-lg shadow-md border-l-4 border-red-500 overflow-hidden">
+            <div class="p-6">
+                <div class="flex items-start justify-between mb-3">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                FILE001
+                            </span>
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm font-medium">
+                                <i class="fas fa-chart-line mr-1"></i>
+                                MEDIUM 置信度
+                            </span>
+                        </div>
+                        <p class="text-gray-600 mb-2">尝试访问敏感文件</p>
+                    </div>
+                    <button onclick="toggleCollapse(3)" class="text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-chevron-down" id="icon-3"></i>
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3 text-sm">
+                    <div class="flex items-center text-gray-600">
+                        <i class="fas fa-file-code mr-2 text-blue-500"></i>
+                        <span class="font-medium">位置:</span>
+                        <code class="ml-2 bg-gray-100 px-2 py-1 rounded text-xs">critical-interval-security-checker/SKILL.md:18</code>
+                    </div>
+                </div>
+
+                <div class="collapsible-content" id="content-3">
+                    <div class="mt-3">
+                        <p class="text-sm text-gray-500 mb-2">
+                            <i class="fas fa-code mr-1"></i>检测到的模式:
+                        </p>
+                        <div class="code-block">
+                            - **Rate limiting**: Login attempts, API calls, password resets
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="finding-card bg-white rounded-lg shadow-md border-l-4 border-red-500 overflow-hidden">
+            <div class="p-6">
+                <div class="flex items-start justify-between mb-3">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                FILE001
+                            </span>
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm font-medium">
+                                <i class="fas fa-chart-line mr-1"></i>
+                                MEDIUM 置信度
+                            </span>
+                        </div>
+                        <p class="text-gray-600 mb-2">尝试访问敏感文件</p>
+                    </div>
+                    <button onclick="toggleCollapse(4)" class="text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-chevron-down" id="icon-4"></i>
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3 text-sm">
+                    <div class="flex items-center text-gray-600">
+                        <i class="fas fa-file-code mr-2 text-blue-500"></i>
+                        <span class="font-medium">位置:</span>
+                        <code class="ml-2 bg-gray-100 px-2 py-1 rounded text-xs">critical-interval-security-checker/SKILL.md:19</code>
+                    </div>
+                </div>
+
+                <div class="collapsible-content" id="content-4">
+                    <div class="mt-3">
+                        <p class="text-sm text-gray-500 mb-2">
+                            <i class="fas fa-code mr-1"></i>检测到的模式:
+                        </p>
+                        <div class="code-block">
+                            - **Token operations**: JWT, OAuth tokens, API keys
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="finding-card bg-white rounded-lg shadow-md border-l-4 border-red-500 overflow-hidden">
+            <div class="p-6">
+                <div class="flex items-start justify-between mb-3">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                FILE001
+                            </span>
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm font-medium">
+                                <i class="fas fa-chart-line mr-1"></i>
+                                MEDIUM 置信度
+                            </span>
+                        </div>
+                        <p class="text-gray-600 mb-2">尝试访问敏感文件</p>
+                    </div>
+                    <button onclick="toggleCollapse(5)" class="text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-chevron-down" id="icon-5"></i>
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3 text-sm">
+                    <div class="flex items-center text-gray-600">
+                        <i class="fas fa-file-code mr-2 text-blue-500"></i>
+                        <span class="font-medium">位置:</span>
+                        <code class="ml-2 bg-gray-100 px-2 py-1 rounded text-xs">critical-interval-security-checker/SKILL.md:65</code>
+                    </div>
+                </div>
+
+                <div class="collapsible-content" id="content-5">
+                    <div class="mt-3">
+                        <p class="text-sm text-gray-500 mb-2">
+                            <i class="fas fa-code mr-1"></i>检测到的模式:
+                        </p>
+                        <div class="code-block">
+                            token_expiry = datetime.utcnow() + timedelta(hours=1)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="finding-card bg-white rounded-lg shadow-md border-l-4 border-red-500 overflow-hidden">
+            <div class="p-6">
+                <div class="flex items-start justify-between mb-3">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                FILE001
+                            </span>
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm font-medium">
+                                <i class="fas fa-chart-line mr-1"></i>
+                                MEDIUM 置信度
+                            </span>
+                        </div>
+                        <p class="text-gray-600 mb-2">尝试访问敏感文件</p>
+                    </div>
+                    <button onclick="toggleCollapse(6)" class="text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-chevron-down" id="icon-6"></i>
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3 text-sm">
+                    <div class="flex items-center text-gray-600">
+                        <i class="fas fa-file-code mr-2 text-blue-500"></i>
+                        <span class="font-medium">位置:</span>
+                        <code class="ml-2 bg-gray-100 px-2 py-1 rounded text-xs">critical-interval-security-checker/SKILL.md:71</code>
+                    </div>
+                </div>
+
+                <div class="collapsible-content" id="content-6">
+                    <div class="mt-3">
+                        <p class="text-sm text-gray-500 mb-2">
+                            <i class="fas fa-code mr-1"></i>检测到的模式:
+                        </p>
+                        <div class="code-block">
+                            if datetime.utcnow() &gt; token_expiry:
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="finding-card bg-white rounded-lg shadow-md border-l-4 border-red-500 overflow-hidden">
+            <div class="p-6">
+                <div class="flex items-start justify-between mb-3">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                FILE001
+                            </span>
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm font-medium">
+                                <i class="fas fa-chart-line mr-1"></i>
+                                MEDIUM 置信度
+                            </span>
+                        </div>
+                        <p class="text-gray-600 mb-2">尝试访问敏感文件</p>
+                    </div>
+                    <button onclick="toggleCollapse(7)" class="text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-chevron-down" id="icon-7"></i>
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3 text-sm">
+                    <div class="flex items-center text-gray-600">
+                        <i class="fas fa-file-code mr-2 text-blue-500"></i>
+                        <span class="font-medium">位置:</span>
+                        <code class="ml-2 bg-gray-100 px-2 py-1 rounded text-xs">critical-interval-security-checker/SKILL.md:72</code>
+                    </div>
+                </div>
+
+                <div class="collapsible-content" id="content-7">
+                    <div class="mt-3">
+                        <p class="text-sm text-gray-500 mb-2">
+                            <i class="fas fa-code mr-1"></i>检测到的模式:
+                        </p>
+                        <div class="code-block">
+                            raise TokenExpiredError()
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="finding-card bg-white rounded-lg shadow-md border-l-4 border-red-500 overflow-hidden">
+            <div class="p-6">
+                <div class="flex items-start justify-between mb-3">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                FILE001
+                            </span>
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm font-medium">
+                                <i class="fas fa-chart-line mr-1"></i>
+                                MEDIUM 置信度
+                            </span>
+                        </div>
+                        <p class="text-gray-600 mb-2">尝试访问敏感文件</p>
+                    </div>
+                    <button onclick="toggleCollapse(8)" class="text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-chevron-down" id="icon-8"></i>
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3 text-sm">
+                    <div class="flex items-center text-gray-600">
+                        <i class="fas fa-file-code mr-2 text-blue-500"></i>
+                        <span class="font-medium">位置:</span>
+                        <code class="ml-2 bg-gray-100 px-2 py-1 rounded text-xs">critical-interval-security-checker/SKILL.md:77</code>
+                    </div>
+                </div>
+
+                <div class="collapsible-content" id="content-8">
+                    <div class="mt-3">
+                        <p class="text-sm text-gray-500 mb-2">
+                            <i class="fas fa-code mr-1"></i>检测到的模式:
+                        </p>
+                        <div class="code-block">
+                            # Good: 1-hour reset token
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="finding-card bg-white rounded-lg shadow-md border-l-4 border-red-500 overflow-hidden">
+            <div class="p-6">
+                <div class="flex items-start justify-between mb-3">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                FILE001
+                            </span>
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm font-medium">
+                                <i class="fas fa-chart-line mr-1"></i>
+                                MEDIUM 置信度
+                            </span>
+                        </div>
+                        <p class="text-gray-600 mb-2">尝试访问敏感文件</p>
+                    </div>
+                    <button onclick="toggleCollapse(9)" class="text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-chevron-down" id="icon-9"></i>
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3 text-sm">
+                    <div class="flex items-center text-gray-600">
+                        <i class="fas fa-file-code mr-2 text-blue-500"></i>
+                        <span class="font-medium">位置:</span>
+                        <code class="ml-2 bg-gray-100 px-2 py-1 rounded text-xs">critical-interval-security-checker/SKILL.md:78</code>
+                    </div>
+                </div>
+
+                <div class="collapsible-content" id="content-9">
+                    <div class="mt-3">
+                        <p class="text-sm text-gray-500 mb-2">
+                            <i class="fas fa-code mr-1"></i>检测到的模式:
+                        </p>
+                        <div class="code-block">
+                            RESET_TOKEN_EXPIRY = timedelta(hours=1)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="finding-card bg-white rounded-lg shadow-md border-l-4 border-red-500 overflow-hidden">
+            <div class="p-6">
+                <div class="flex items-start justify-between mb-3">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                FILE001
+                            </span>
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm font-medium">
+                                <i class="fas fa-chart-line mr-1"></i>
+                                MEDIUM 置信度
+                            </span>
+                        </div>
+                        <p class="text-gray-600 mb-2">尝试访问敏感文件</p>
+                    </div>
+                    <button onclick="toggleCollapse(10)" class="text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-chevron-down" id="icon-10"></i>
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3 text-sm">
+                    <div class="flex items-center text-gray-600">
+                        <i class="fas fa-file-code mr-2 text-blue-500"></i>
+                        <span class="font-medium">位置:</span>
+                        <code class="ml-2 bg-gray-100 px-2 py-1 rounded text-xs">critical-interval-security-checker/SKILL.md:80</code>
+                    </div>
+                </div>
+
+                <div class="collapsible-content" id="content-10">
+                    <div class="mt-3">
+                        <p class="text-sm text-gray-500 mb-2">
+                            <i class="fas fa-code mr-1"></i>检测到的模式:
+                        </p>
+                        <div class="code-block">
+                            # Bad: 7-day reset token (too long!)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="finding-card bg-white rounded-lg shadow-md border-l-4 border-red-500 overflow-hidden">
+            <div class="p-6">
+                <div class="flex items-start justify-between mb-3">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                FILE001
+                            </span>
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm font-medium">
+                                <i class="fas fa-chart-line mr-1"></i>
+                                MEDIUM 置信度
+                            </span>
+                        </div>
+                        <p class="text-gray-600 mb-2">尝试访问敏感文件</p>
+                    </div>
+                    <button onclick="toggleCollapse(11)" class="text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-chevron-down" id="icon-11"></i>
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3 text-sm">
+                    <div class="flex items-center text-gray-600">
+                        <i class="fas fa-file-code mr-2 text-blue-500"></i>
+                        <span class="font-medium">位置:</span>
+                        <code class="ml-2 bg-gray-100 px-2 py-1 rounded text-xs">critical-interval-security-checker/SKILL.md:81</code>
+                    </div>
+                </div>
+
+                <div class="collapsible-content" id="content-11">
+                    <div class="mt-3">
+                        <p class="text-sm text-gray-500 mb-2">
+                            <i class="fas fa-code mr-1"></i>检测到的模式:
+                        </p>
+                        <div class="code-block">
+                            RESET_TOKEN_EXPIRY = timedelta(days=7)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="finding-card bg-white rounded-lg shadow-md border-l-4 border-red-500 overflow-hidden">
+            <div class="p-6">
+                <div class="flex items-start justify-between mb-3">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                FILE001
+                            </span>
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm font-medium">
+                                <i class="fas fa-chart-line mr-1"></i>
+                                MEDIUM 置信度
+                            </span>
+                        </div>
+                        <p class="text-gray-600 mb-2">尝试访问敏感文件</p>
+                    </div>
+                    <button onclick="toggleCollapse(12)" class="text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-chevron-down" id="icon-12"></i>
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3 text-sm">
+                    <div class="flex items-center text-gray-600">
+                        <i class="fas fa-file-code mr-2 text-blue-500"></i>
+                        <span class="font-medium">位置:</span>
+                        <code class="ml-2 bg-gray-100 px-2 py-1 rounded text-xs">critical-interval-security-checker/SKILL.md:95</code>
+                    </div>
+                </div>
+
+                <div class="collapsible-content" id="content-12">
+                    <div class="mt-3">
+                        <p class="text-sm text-gray-500 mb-2">
+                            <i class="fas fa-code mr-1"></i>检测到的模式:
+                        </p>
+                        <div class="code-block">
+                            decoded = jwt.decode(token, SECRET_KEY)  # Checks exp
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="finding-card bg-white rounded-lg shadow-md border-l-4 border-red-500 overflow-hidden">
+            <div class="p-6">
+                <div class="flex items-start justify-between mb-3">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                FILE001
+                            </span>
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm font-medium">
+                                <i class="fas fa-chart-line mr-1"></i>
+                                MEDIUM 置信度
+                            </span>
+                        </div>
+                        <p class="text-gray-600 mb-2">尝试访问敏感文件</p>
+                    </div>
+                    <button onclick="toggleCollapse(13)" class="text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-chevron-down" id="icon-13"></i>
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3 text-sm">
+                    <div class="flex items-center text-gray-600">
+                        <i class="fas fa-file-code mr-2 text-blue-500"></i>
+                        <span class="font-medium">位置:</span>
+                        <code class="ml-2 bg-gray-100 px-2 py-1 rounded text-xs">critical-interval-security-checker/SKILL.md:98</code>
+                    </div>
+                </div>
+
+                <div class="collapsible-content" id="content-13">
+                    <div class="mt-3">
+                        <p class="text-sm text-gray-500 mb-2">
+                            <i class="fas fa-code mr-1"></i>检测到的模式:
+                        </p>
+                        <div class="code-block">
+                            decoded = jwt.decode(token, options={&quot;verify_signature&quot;: False})
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="finding-card bg-white rounded-lg shadow-md border-l-4 border-red-500 overflow-hidden">
+            <div class="p-6">
+                <div class="flex items-start justify-between mb-3">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                FILE001
+                            </span>
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm font-medium">
+                                <i class="fas fa-chart-line mr-1"></i>
+                                MEDIUM 置信度
+                            </span>
+                        </div>
+                        <p class="text-gray-600 mb-2">尝试访问敏感文件</p>
+                    </div>
+                    <button onclick="toggleCollapse(14)" class="text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-chevron-down" id="icon-14"></i>
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3 text-sm">
+                    <div class="flex items-center text-gray-600">
+                        <i class="fas fa-file-code mr-2 text-blue-500"></i>
+                        <span class="font-medium">位置:</span>
+                        <code class="ml-2 bg-gray-100 px-2 py-1 rounded text-xs">critical-interval-security-checker/SKILL.md:106</code>
+                    </div>
+                </div>
+
+                <div class="collapsible-content" id="content-14">
+                    <div class="mt-3">
+                        <p class="text-sm text-gray-500 mb-2">
+                            <i class="fas fa-code mr-1"></i>检测到的模式:
+                        </p>
+                        <div class="code-block">
+                            - JWT access token: 5-15 minutes
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="finding-card bg-white rounded-lg shadow-md border-l-4 border-red-500 overflow-hidden">
+            <div class="p-6">
+                <div class="flex items-start justify-between mb-3">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                FILE001
+                            </span>
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm font-medium">
+                                <i class="fas fa-chart-line mr-1"></i>
+                                MEDIUM 置信度
+                            </span>
+                        </div>
+                        <p class="text-gray-600 mb-2">尝试访问敏感文件</p>
+                    </div>
+                    <button onclick="toggleCollapse(15)" class="text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-chevron-down" id="icon-15"></i>
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3 text-sm">
+                    <div class="flex items-center text-gray-600">
+                        <i class="fas fa-file-code mr-2 text-blue-500"></i>
+                        <span class="font-medium">位置:</span>
+                        <code class="ml-2 bg-gray-100 px-2 py-1 rounded text-xs">critical-interval-security-checker/SKILL.md:107</code>
+                    </div>
+                </div>
+
+                <div class="collapsible-content" id="content-15">
+                    <div class="mt-3">
+                        <p class="text-sm text-gray-500 mb-2">
+                            <i class="fas fa-code mr-1"></i>检测到的模式:
+                        </p>
+                        <div class="code-block">
+                            - JWT refresh token: 7-30 days
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="finding-card bg-white rounded-lg shadow-md border-l-4 border-red-500 overflow-hidden">
+            <div class="p-6">
+                <div class="flex items-start justify-between mb-3">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                FILE001
+                            </span>
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm font-medium">
+                                <i class="fas fa-chart-line mr-1"></i>
+                                MEDIUM 置信度
+                            </span>
+                        </div>
+                        <p class="text-gray-600 mb-2">尝试访问敏感文件</p>
+                    </div>
+                    <button onclick="toggleCollapse(16)" class="text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-chevron-down" id="icon-16"></i>
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3 text-sm">
+                    <div class="flex items-center text-gray-600">
+                        <i class="fas fa-file-code mr-2 text-blue-500"></i>
+                        <span class="font-medium">位置:</span>
+                        <code class="ml-2 bg-gray-100 px-2 py-1 rounded text-xs">critical-interval-security-checker/SKILL.md:109</code>
+                    </div>
+                </div>
+
+                <div class="collapsible-content" id="content-16">
+                    <div class="mt-3">
+                        <p class="text-sm text-gray-500 mb-2">
+                            <i class="fas fa-code mr-1"></i>检测到的模式:
+                        </p>
+                        <div class="code-block">
+                            - Password reset token: 15-60 minutes
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="finding-card bg-white rounded-lg shadow-md border-l-4 border-red-500 overflow-hidden">
+            <div class="p-6">
+                <div class="flex items-start justify-between mb-3">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                FILE001
+                            </span>
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm font-medium">
+                                <i class="fas fa-chart-line mr-1"></i>
+                                MEDIUM 置信度
+                            </span>
+                        </div>
+                        <p class="text-gray-600 mb-2">尝试访问敏感文件</p>
+                    </div>
+                    <button onclick="toggleCollapse(17)" class="text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-chevron-down" id="icon-17"></i>
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3 text-sm">
+                    <div class="flex items-center text-gray-600">
+                        <i class="fas fa-file-code mr-2 text-blue-500"></i>
+                        <span class="font-medium">位置:</span>
+                        <code class="ml-2 bg-gray-100 px-2 py-1 rounded text-xs">critical-interval-security-checker/SKILL.md:117</code>
+                    </div>
+                </div>
+
+                <div class="collapsible-content" id="content-17">
+                    <div class="mt-3">
+                        <p class="text-sm text-gray-500 mb-2">
+                            <i class="fas fa-code mr-1"></i>检测到的模式:
+                        </p>
+                        <div class="code-block">
+                            - API tokens can be shorter-lived with refresh tokens
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="finding-card bg-white rounded-lg shadow-md border-l-4 border-red-500 overflow-hidden">
+            <div class="p-6">
+                <div class="flex items-start justify-between mb-3">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                FILE001
+                            </span>
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm font-medium">
+                                <i class="fas fa-chart-line mr-1"></i>
+                                MEDIUM 置信度
+                            </span>
+                        </div>
+                        <p class="text-gray-600 mb-2">尝试访问敏感文件</p>
+                    </div>
+                    <button onclick="toggleCollapse(18)" class="text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-chevron-down" id="icon-18"></i>
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3 text-sm">
+                    <div class="flex items-center text-gray-600">
+                        <i class="fas fa-file-code mr-2 text-blue-500"></i>
+                        <span class="font-medium">位置:</span>
+                        <code class="ml-2 bg-gray-100 px-2 py-1 rounded text-xs">critical-interval-security-checker/SKILL.md:124</code>
+                    </div>
+                </div>
+
+                <div class="collapsible-content" id="content-18">
+                    <div class="mt-3">
+                        <p class="text-sm text-gray-500 mb-2">
+                            <i class="fas fa-code mr-1"></i>检测到的模式:
+                        </p>
+                        <div class="code-block">
+                            Issue: Missing expiration check on password reset token
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="finding-card bg-white rounded-lg shadow-md border-l-4 border-red-500 overflow-hidden">
+            <div class="p-6">
+                <div class="flex items-start justify-between mb-3">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                FILE001
+                            </span>
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm font-medium">
+                                <i class="fas fa-chart-line mr-1"></i>
+                                MEDIUM 置信度
+                            </span>
+                        </div>
+                        <p class="text-gray-600 mb-2">尝试访问敏感文件</p>
+                    </div>
+                    <button onclick="toggleCollapse(19)" class="text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-chevron-down" id="icon-19"></i>
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3 text-sm">
+                    <div class="flex items-center text-gray-600">
+                        <i class="fas fa-file-code mr-2 text-blue-500"></i>
+                        <span class="font-medium">位置:</span>
+                        <code class="ml-2 bg-gray-100 px-2 py-1 rounded text-xs">critical-interval-security-checker/SKILL.md:125</code>
+                    </div>
+                </div>
+
+                <div class="collapsible-content" id="content-19">
+                    <div class="mt-3">
+                        <p class="text-sm text-gray-500 mb-2">
+                            <i class="fas fa-code mr-1"></i>检测到的模式:
+                        </p>
+                        <div class="code-block">
+                            Location: auth/reset_password.py:45
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="finding-card bg-white rounded-lg shadow-md border-l-4 border-red-500 overflow-hidden">
+            <div class="p-6">
+                <div class="flex items-start justify-between mb-3">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                FILE001
+                            </span>
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm font-medium">
+                                <i class="fas fa-chart-line mr-1"></i>
+                                MEDIUM 置信度
+                            </span>
+                        </div>
+                        <p class="text-gray-600 mb-2">尝试访问敏感文件</p>
+                    </div>
+                    <button onclick="toggleCollapse(20)" class="text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-chevron-down" id="icon-20"></i>
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3 text-sm">
+                    <div class="flex items-center text-gray-600">
+                        <i class="fas fa-file-code mr-2 text-blue-500"></i>
+                        <span class="font-medium">位置:</span>
+                        <code class="ml-2 bg-gray-100 px-2 py-1 rounded text-xs">critical-interval-security-checker/SKILL.md:127</code>
+                    </div>
+                </div>
+
+                <div class="collapsible-content" id="content-20">
+                    <div class="mt-3">
+                        <p class="text-sm text-gray-500 mb-2">
+                            <i class="fas fa-code mr-1"></i>检测到的模式:
+                        </p>
+                        <div class="code-block">
+                            Current: Token created with expiry but never validated
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="finding-card bg-white rounded-lg shadow-md border-l-4 border-red-500 overflow-hidden">
+            <div class="p-6">
+                <div class="flex items-start justify-between mb-3">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                FILE001
+                            </span>
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm font-medium">
+                                <i class="fas fa-chart-line mr-1"></i>
+                                MEDIUM 置信度
+                            </span>
+                        </div>
+                        <p class="text-gray-600 mb-2">尝试访问敏感文件</p>
+                    </div>
+                    <button onclick="toggleCollapse(21)" class="text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-chevron-down" id="icon-21"></i>
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3 text-sm">
+                    <div class="flex items-center text-gray-600">
+                        <i class="fas fa-file-code mr-2 text-blue-500"></i>
+                        <span class="font-medium">位置:</span>
+                        <code class="ml-2 bg-gray-100 px-2 py-1 rounded text-xs">critical-interval-security-checker/SKILL.md:128</code>
+                    </div>
+                </div>
+
+                <div class="collapsible-content" id="content-21">
+                    <div class="mt-3">
+                        <p class="text-sm text-gray-500 mb-2">
+                            <i class="fas fa-code mr-1"></i>检测到的模式:
+                        </p>
+                        <div class="code-block">
+                            Recommendation: Add expiration check before using token
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="finding-card bg-white rounded-lg shadow-md border-l-4 border-red-500 overflow-hidden">
+            <div class="p-6">
+                <div class="flex items-start justify-between mb-3">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                FILE001
+                            </span>
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm font-medium">
+                                <i class="fas fa-chart-line mr-1"></i>
+                                MEDIUM 置信度
+                            </span>
+                        </div>
+                        <p class="text-gray-600 mb-2">尝试访问敏感文件</p>
+                    </div>
+                    <button onclick="toggleCollapse(22)" class="text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-chevron-down" id="icon-22"></i>
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3 text-sm">
+                    <div class="flex items-center text-gray-600">
+                        <i class="fas fa-file-code mr-2 text-blue-500"></i>
+                        <span class="font-medium">位置:</span>
+                        <code class="ml-2 bg-gray-100 px-2 py-1 rounded text-xs">critical-interval-security-checker/SKILL.md:130</code>
+                    </div>
+                </div>
+
+                <div class="collapsible-content" id="content-22">
+                    <div class="mt-3">
+                        <p class="text-sm text-gray-500 mb-2">
+                            <i class="fas fa-code mr-1"></i>检测到的模式:
+                        </p>
+                        <div class="code-block">
+                            if datetime.utcnow() &gt; token.expires_at:
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="finding-card bg-white rounded-lg shadow-md border-l-4 border-red-500 overflow-hidden">
+            <div class="p-6">
+                <div class="flex items-start justify-between mb-3">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                FILE001
+                            </span>
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm font-medium">
+                                <i class="fas fa-chart-line mr-1"></i>
+                                MEDIUM 置信度
+                            </span>
+                        </div>
+                        <p class="text-gray-600 mb-2">尝试访问敏感文件</p>
+                    </div>
+                    <button onclick="toggleCollapse(23)" class="text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-chevron-down" id="icon-23"></i>
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3 text-sm">
+                    <div class="flex items-center text-gray-600">
+                        <i class="fas fa-file-code mr-2 text-blue-500"></i>
+                        <span class="font-medium">位置:</span>
+                        <code class="ml-2 bg-gray-100 px-2 py-1 rounded text-xs">critical-interval-security-checker/SKILL.md:131</code>
+                    </div>
+                </div>
+
+                <div class="collapsible-content" id="content-23">
+                    <div class="mt-3">
+                        <p class="text-sm text-gray-500 mb-2">
+                            <i class="fas fa-code mr-1"></i>检测到的模式:
+                        </p>
+                        <div class="code-block">
+                            raise TokenExpiredError(&quot;Reset token expired&quot;)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="finding-card bg-white rounded-lg shadow-md border-l-4 border-red-500 overflow-hidden">
+            <div class="p-6">
+                <div class="flex items-start justify-between mb-3">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                FILE001
+                            </span>
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm font-medium">
+                                <i class="fas fa-chart-line mr-1"></i>
+                                MEDIUM 置信度
+                            </span>
+                        </div>
+                        <p class="text-gray-600 mb-2">尝试访问敏感文件</p>
+                    </div>
+                    <button onclick="toggleCollapse(24)" class="text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-chevron-down" id="icon-24"></i>
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3 text-sm">
+                    <div class="flex items-center text-gray-600">
+                        <i class="fas fa-file-code mr-2 text-blue-500"></i>
+                        <span class="font-medium">位置:</span>
+                        <code class="ml-2 bg-gray-100 px-2 py-1 rounded text-xs">critical-interval-security-checker/SKILL.md:139</code>
+                    </div>
+                </div>
+
+                <div class="collapsible-content" id="content-24">
+                    <div class="mt-3">
+                        <p class="text-sm text-gray-500 mb-2">
+                            <i class="fas fa-code mr-1"></i>检测到的模式:
+                        </p>
+                        <div class="code-block">
+                            def validate_token(token):
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="finding-card bg-white rounded-lg shadow-md border-l-4 border-red-500 overflow-hidden">
+            <div class="p-6">
+                <div class="flex items-start justify-between mb-3">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                FILE001
+                            </span>
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm font-medium">
+                                <i class="fas fa-chart-line mr-1"></i>
+                                MEDIUM 置信度
+                            </span>
+                        </div>
+                        <p class="text-gray-600 mb-2">尝试访问敏感文件</p>
+                    </div>
+                    <button onclick="toggleCollapse(25)" class="text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-chevron-down" id="icon-25"></i>
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3 text-sm">
+                    <div class="flex items-center text-gray-600">
+                        <i class="fas fa-file-code mr-2 text-blue-500"></i>
+                        <span class="font-medium">位置:</span>
+                        <code class="ml-2 bg-gray-100 px-2 py-1 rounded text-xs">critical-interval-security-checker/SKILL.md:140</code>
+                    </div>
+                </div>
+
+                <div class="collapsible-content" id="content-25">
+                    <div class="mt-3">
+                        <p class="text-sm text-gray-500 mb-2">
+                            <i class="fas fa-code mr-1"></i>检测到的模式:
+                        </p>
+                        <div class="code-block">
+                            decoded = jwt.decode(token, SECRET_KEY, options={&quot;verify_signature&quot;: False})
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="finding-card bg-white rounded-lg shadow-md border-l-4 border-red-500 overflow-hidden">
+            <div class="p-6">
+                <div class="flex items-start justify-between mb-3">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                FILE001
+                            </span>
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm font-medium">
+                                <i class="fas fa-chart-line mr-1"></i>
+                                MEDIUM 置信度
+                            </span>
+                        </div>
+                        <p class="text-gray-600 mb-2">尝试访问敏感文件</p>
+                    </div>
+                    <button onclick="toggleCollapse(26)" class="text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-chevron-down" id="icon-26"></i>
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3 text-sm">
+                    <div class="flex items-center text-gray-600">
+                        <i class="fas fa-file-code mr-2 text-blue-500"></i>
+                        <span class="font-medium">位置:</span>
+                        <code class="ml-2 bg-gray-100 px-2 py-1 rounded text-xs">critical-interval-security-checker/SKILL.md:144</code>
+                    </div>
+                </div>
+
+                <div class="collapsible-content" id="content-26">
+                    <div class="mt-3">
+                        <p class="text-sm text-gray-500 mb-2">
+                            <i class="fas fa-code mr-1"></i>检测到的模式:
+                        </p>
+                        <div class="code-block">
+                            def validate_token(token):
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="finding-card bg-white rounded-lg shadow-md border-l-4 border-red-500 overflow-hidden">
+            <div class="p-6">
+                <div class="flex items-start justify-between mb-3">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                FILE001
+                            </span>
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm font-medium">
+                                <i class="fas fa-chart-line mr-1"></i>
+                                MEDIUM 置信度
+                            </span>
+                        </div>
+                        <p class="text-gray-600 mb-2">尝试访问敏感文件</p>
+                    </div>
+                    <button onclick="toggleCollapse(27)" class="text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-chevron-down" id="icon-27"></i>
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3 text-sm">
+                    <div class="flex items-center text-gray-600">
+                        <i class="fas fa-file-code mr-2 text-blue-500"></i>
+                        <span class="font-medium">位置:</span>
+                        <code class="ml-2 bg-gray-100 px-2 py-1 rounded text-xs">critical-interval-security-checker/SKILL.md:146</code>
+                    </div>
+                </div>
+
+                <div class="collapsible-content" id="content-27">
+                    <div class="mt-3">
+                        <p class="text-sm text-gray-500 mb-2">
+                            <i class="fas fa-code mr-1"></i>检测到的模式:
+                        </p>
+                        <div class="code-block">
+                            decoded = jwt.decode(token, SECRET_KEY)  # Verifies exp automatically
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="finding-card bg-white rounded-lg shadow-md border-l-4 border-red-500 overflow-hidden">
+            <div class="p-6">
+                <div class="flex items-start justify-between mb-3">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                FILE001
+                            </span>
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm font-medium">
+                                <i class="fas fa-chart-line mr-1"></i>
+                                MEDIUM 置信度
+                            </span>
+                        </div>
+                        <p class="text-gray-600 mb-2">尝试访问敏感文件</p>
+                    </div>
+                    <button onclick="toggleCollapse(28)" class="text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-chevron-down" id="icon-28"></i>
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3 text-sm">
+                    <div class="flex items-center text-gray-600">
+                        <i class="fas fa-file-code mr-2 text-blue-500"></i>
+                        <span class="font-medium">位置:</span>
+                        <code class="ml-2 bg-gray-100 px-2 py-1 rounded text-xs">critical-interval-security-checker/SKILL.md:149</code>
+                    </div>
+                </div>
+
+                <div class="collapsible-content" id="content-28">
+                    <div class="mt-3">
+                        <p class="text-sm text-gray-500 mb-2">
+                            <i class="fas fa-code mr-1"></i>检测到的模式:
+                        </p>
+                        <div class="code-block">
+                            raise AuthenticationError(&quot;Token expired&quot;)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="finding-card bg-white rounded-lg shadow-md border-l-4 border-red-500 overflow-hidden">
+            <div class="p-6">
+                <div class="flex items-start justify-between mb-3">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                FILE001
+                            </span>
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm font-medium">
+                                <i class="fas fa-chart-line mr-1"></i>
+                                MEDIUM 置信度
+                            </span>
+                        </div>
+                        <p class="text-gray-600 mb-2">尝试访问敏感文件</p>
+                    </div>
+                    <button onclick="toggleCollapse(29)" class="text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-chevron-down" id="icon-29"></i>
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3 text-sm">
+                    <div class="flex items-center text-gray-600">
+                        <i class="fas fa-file-code mr-2 text-blue-500"></i>
+                        <span class="font-medium">位置:</span>
+                        <code class="ml-2 bg-gray-100 px-2 py-1 rounded text-xs">critical-interval-security-checker/SKILL.md:155</code>
+                    </div>
+                </div>
+
+                <div class="collapsible-content" id="content-29">
+                    <div class="mt-3">
+                        <p class="text-sm text-gray-500 mb-2">
+                            <i class="fas fa-code mr-1"></i>检测到的模式:
+                        </p>
+                        <div class="code-block">
+                            RESET_TOKEN_EXPIRY = timedelta(days=7)  # Too long!
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="finding-card bg-white rounded-lg shadow-md border-l-4 border-red-500 overflow-hidden">
+            <div class="p-6">
+                <div class="flex items-start justify-between mb-3">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                FILE001
+                            </span>
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm font-medium">
+                                <i class="fas fa-chart-line mr-1"></i>
+                                MEDIUM 置信度
+                            </span>
+                        </div>
+                        <p class="text-gray-600 mb-2">尝试访问敏感文件</p>
+                    </div>
+                    <button onclick="toggleCollapse(30)" class="text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-chevron-down" id="icon-30"></i>
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3 text-sm">
+                    <div class="flex items-center text-gray-600">
+                        <i class="fas fa-file-code mr-2 text-blue-500"></i>
+                        <span class="font-medium">位置:</span>
+                        <code class="ml-2 bg-gray-100 px-2 py-1 rounded text-xs">critical-interval-security-checker/SKILL.md:158</code>
+                    </div>
+                </div>
+
+                <div class="collapsible-content" id="content-30">
+                    <div class="mt-3">
+                        <p class="text-sm text-gray-500 mb-2">
+                            <i class="fas fa-code mr-1"></i>检测到的模式:
+                        </p>
+                        <div class="code-block">
+                            RESET_TOKEN_EXPIRY = timedelta(hours=1)  # Appropriate
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="finding-card bg-white rounded-lg shadow-md border-l-4 border-red-500 overflow-hidden">
+            <div class="p-6">
+                <div class="flex items-start justify-between mb-3">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                FILE001
+                            </span>
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm font-medium">
+                                <i class="fas fa-chart-line mr-1"></i>
+                                MEDIUM 置信度
+                            </span>
+                        </div>
+                        <p class="text-gray-600 mb-2">尝试访问敏感文件</p>
+                    </div>
+                    <button onclick="toggleCollapse(31)" class="text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-chevron-down" id="icon-31"></i>
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3 text-sm">
+                    <div class="flex items-center text-gray-600">
+                        <i class="fas fa-file-code mr-2 text-blue-500"></i>
+                        <span class="font-medium">位置:</span>
+                        <code class="ml-2 bg-gray-100 px-2 py-1 rounded text-xs">critical-interval-security-checker/SKILL.md:190</code>
+                    </div>
+                </div>
+
+                <div class="collapsible-content" id="content-31">
+                    <div class="mt-3">
+                        <p class="text-sm text-gray-500 mb-2">
+                            <i class="fas fa-code mr-1"></i>检测到的模式:
+                        </p>
+                        <div class="code-block">
+                            - Token/session has expiry field but it&#x27;s never validated
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="finding-card bg-white rounded-lg shadow-md border-l-4 border-red-500 overflow-hidden">
+            <div class="p-6">
+                <div class="flex items-start justify-between mb-3">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                FILE001
+                            </span>
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm font-medium">
+                                <i class="fas fa-chart-line mr-1"></i>
+                                MEDIUM 置信度
+                            </span>
+                        </div>
+                        <p class="text-gray-600 mb-2">尝试访问敏感文件</p>
+                    </div>
+                    <button onclick="toggleCollapse(32)" class="text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-chevron-down" id="icon-32"></i>
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3 text-sm">
+                    <div class="flex items-center text-gray-600">
+                        <i class="fas fa-file-code mr-2 text-blue-500"></i>
+                        <span class="font-medium">位置:</span>
+                        <code class="ml-2 bg-gray-100 px-2 py-1 rounded text-xs">critical-interval-security-checker/SKILL.md:191</code>
+                    </div>
+                </div>
+
+                <div class="collapsible-content" id="content-32">
+                    <div class="mt-3">
+                        <p class="text-sm text-gray-500 mb-2">
+                            <i class="fas fa-code mr-1"></i>检测到的模式:
+                        </p>
+                        <div class="code-block">
+                            - High risk: Expired tokens still work
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="finding-card bg-white rounded-lg shadow-md border-l-4 border-red-500 overflow-hidden">
+            <div class="p-6">
+                <div class="flex items-start justify-between mb-3">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                FILE001
+                            </span>
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm font-medium">
+                                <i class="fas fa-chart-line mr-1"></i>
+                                MEDIUM 置信度
+                            </span>
+                        </div>
+                        <p class="text-gray-600 mb-2">尝试访问敏感文件</p>
+                    </div>
+                    <button onclick="toggleCollapse(33)" class="text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-chevron-down" id="icon-33"></i>
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3 text-sm">
+                    <div class="flex items-center text-gray-600">
+                        <i class="fas fa-file-code mr-2 text-blue-500"></i>
+                        <span class="font-medium">位置:</span>
+                        <code class="ml-2 bg-gray-100 px-2 py-1 rounded text-xs">critical-interval-security-checker/SKILL.md:202</code>
+                    </div>
+                </div>
+
+                <div class="collapsible-content" id="content-33">
+                    <div class="mt-3">
+                        <p class="text-sm text-gray-500 mb-2">
+                            <i class="fas fa-code mr-1"></i>检测到的模式:
+                        </p>
+                        <div class="code-block">
+                            - Reset tokens valid for days
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="finding-card bg-white rounded-lg shadow-md border-l-4 border-red-500 overflow-hidden">
+            <div class="p-6">
+                <div class="flex items-start justify-between mb-3">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                FILE001
+                            </span>
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm font-medium">
+                                <i class="fas fa-chart-line mr-1"></i>
+                                MEDIUM 置信度
+                            </span>
+                        </div>
+                        <p class="text-gray-600 mb-2">尝试访问敏感文件</p>
+                    </div>
+                    <button onclick="toggleCollapse(34)" class="text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-chevron-down" id="icon-34"></i>
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3 text-sm">
+                    <div class="flex items-center text-gray-600">
+                        <i class="fas fa-file-code mr-2 text-blue-500"></i>
+                        <span class="font-medium">位置:</span>
+                        <code class="ml-2 bg-gray-100 px-2 py-1 rounded text-xs">critical-interval-security-checker/SKILL.md:258</code>
+                    </div>
+                </div>
+
+                <div class="collapsible-content" id="content-34">
+                    <div class="mt-3">
+                        <p class="text-sm text-gray-500 mb-2">
+                            <i class="fas fa-code mr-1"></i>检测到的模式:
+                        </p>
+                        <div class="code-block">
+                            - Set expiration times for all security tokens
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="finding-card bg-white rounded-lg shadow-md border-l-4 border-red-500 overflow-hidden">
+            <div class="p-6">
+                <div class="flex items-start justify-between mb-3">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                FILE001
+                            </span>
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm font-medium">
+                                <i class="fas fa-chart-line mr-1"></i>
+                                MEDIUM 置信度
+                            </span>
+                        </div>
+                        <p class="text-gray-600 mb-2">尝试访问敏感文件</p>
+                    </div>
+                    <button onclick="toggleCollapse(35)" class="text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-chevron-down" id="icon-35"></i>
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3 text-sm">
+                    <div class="flex items-center text-gray-600">
+                        <i class="fas fa-file-code mr-2 text-blue-500"></i>
+                        <span class="font-medium">位置:</span>
+                        <code class="ml-2 bg-gray-100 px-2 py-1 rounded text-xs">critical-interval-security-checker/references/vulnerability_patterns.md:12</code>
+                    </div>
+                </div>
+
+                <div class="collapsible-content" id="content-35">
+                    <div class="mt-3">
+                        <p class="text-sm text-gray-500 mb-2">
+                            <i class="fas fa-code mr-1"></i>检测到的模式:
+                        </p>
+                        <div class="code-block">
+                            # VULNERABLE: Token has expiration but it&#x27;s never checked
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="finding-card bg-white rounded-lg shadow-md border-l-4 border-red-500 overflow-hidden">
+            <div class="p-6">
+                <div class="flex items-start justify-between mb-3">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                FILE001
+                            </span>
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm font-medium">
+                                <i class="fas fa-chart-line mr-1"></i>
+                                MEDIUM 置信度
+                            </span>
+                        </div>
+                        <p class="text-gray-600 mb-2">尝试访问敏感文件</p>
+                    </div>
+                    <button onclick="toggleCollapse(36)" class="text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-chevron-down" id="icon-36"></i>
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3 text-sm">
+                    <div class="flex items-center text-gray-600">
+                        <i class="fas fa-file-code mr-2 text-blue-500"></i>
+                        <span class="font-medium">位置:</span>
+                        <code class="ml-2 bg-gray-100 px-2 py-1 rounded text-xs">critical-interval-security-checker/references/vulnerability_patterns.md:13</code>
+                    </div>
+                </div>
+
+                <div class="collapsible-content" id="content-36">
+                    <div class="mt-3">
+                        <p class="text-sm text-gray-500 mb-2">
+                            <i class="fas fa-code mr-1"></i>检测到的模式:
+                        </p>
+                        <div class="code-block">
+                            def validate_token(token):
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="finding-card bg-white rounded-lg shadow-md border-l-4 border-red-500 overflow-hidden">
+            <div class="p-6">
+                <div class="flex items-start justify-between mb-3">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                FILE001
+                            </span>
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm font-medium">
+                                <i class="fas fa-chart-line mr-1"></i>
+                                MEDIUM 置信度
+                            </span>
+                        </div>
+                        <p class="text-gray-600 mb-2">尝试访问敏感文件</p>
+                    </div>
+                    <button onclick="toggleCollapse(37)" class="text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-chevron-down" id="icon-37"></i>
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3 text-sm">
+                    <div class="flex items-center text-gray-600">
+                        <i class="fas fa-file-code mr-2 text-blue-500"></i>
+                        <span class="font-medium">位置:</span>
+                        <code class="ml-2 bg-gray-100 px-2 py-1 rounded text-xs">critical-interval-security-checker/references/vulnerability_patterns.md:14</code>
+                    </div>
+                </div>
+
+                <div class="collapsible-content" id="content-37">
+                    <div class="mt-3">
+                        <p class="text-sm text-gray-500 mb-2">
+                            <i class="fas fa-code mr-1"></i>检测到的模式:
+                        </p>
+                        <div class="code-block">
+                            decoded = jwt.decode(token, SECRET_KEY, algorithms=[&#x27;HS256&#x27;])
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="finding-card bg-white rounded-lg shadow-md border-l-4 border-red-500 overflow-hidden">
+            <div class="p-6">
+                <div class="flex items-start justify-between mb-3">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                FILE001
+                            </span>
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm font-medium">
+                                <i class="fas fa-chart-line mr-1"></i>
+                                MEDIUM 置信度
+                            </span>
+                        </div>
+                        <p class="text-gray-600 mb-2">尝试访问敏感文件</p>
+                    </div>
+                    <button onclick="toggleCollapse(38)" class="text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-chevron-down" id="icon-38"></i>
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3 text-sm">
+                    <div class="flex items-center text-gray-600">
+                        <i class="fas fa-file-code mr-2 text-blue-500"></i>
+                        <span class="font-medium">位置:</span>
+                        <code class="ml-2 bg-gray-100 px-2 py-1 rounded text-xs">critical-interval-security-checker/references/vulnerability_patterns.md:20</code>
+                    </div>
+                </div>
+
+                <div class="collapsible-content" id="content-38">
+                    <div class="mt-3">
+                        <p class="text-sm text-gray-500 mb-2">
+                            <i class="fas fa-code mr-1"></i>检测到的模式:
+                        </p>
+                        <div class="code-block">
+                            def validate_token(token):
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="finding-card bg-white rounded-lg shadow-md border-l-4 border-red-500 overflow-hidden">
+            <div class="p-6">
+                <div class="flex items-start justify-between mb-3">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                FILE001
+                            </span>
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm font-medium">
+                                <i class="fas fa-chart-line mr-1"></i>
+                                MEDIUM 置信度
+                            </span>
+                        </div>
+                        <p class="text-gray-600 mb-2">尝试访问敏感文件</p>
+                    </div>
+                    <button onclick="toggleCollapse(39)" class="text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-chevron-down" id="icon-39"></i>
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3 text-sm">
+                    <div class="flex items-center text-gray-600">
+                        <i class="fas fa-file-code mr-2 text-blue-500"></i>
+                        <span class="font-medium">位置:</span>
+                        <code class="ml-2 bg-gray-100 px-2 py-1 rounded text-xs">critical-interval-security-checker/references/vulnerability_patterns.md:22</code>
+                    </div>
+                </div>
+
+                <div class="collapsible-content" id="content-39">
+                    <div class="mt-3">
+                        <p class="text-sm text-gray-500 mb-2">
+                            <i class="fas fa-code mr-1"></i>检测到的模式:
+                        </p>
+                        <div class="code-block">
+                            decoded = jwt.decode(token, SECRET_KEY, algorithms=[&#x27;HS256&#x27;])
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="finding-card bg-white rounded-lg shadow-md border-l-4 border-red-500 overflow-hidden">
+            <div class="p-6">
+                <div class="flex items-start justify-between mb-3">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                FILE001
+                            </span>
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm font-medium">
+                                <i class="fas fa-chart-line mr-1"></i>
+                                MEDIUM 置信度
+                            </span>
+                        </div>
+                        <p class="text-gray-600 mb-2">尝试访问敏感文件</p>
+                    </div>
+                    <button onclick="toggleCollapse(40)" class="text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-chevron-down" id="icon-40"></i>
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3 text-sm">
+                    <div class="flex items-center text-gray-600">
+                        <i class="fas fa-file-code mr-2 text-blue-500"></i>
+                        <span class="font-medium">位置:</span>
+                        <code class="ml-2 bg-gray-100 px-2 py-1 rounded text-xs">critical-interval-security-checker/references/vulnerability_patterns.md:26</code>
+                    </div>
+                </div>
+
+                <div class="collapsible-content" id="content-40">
+                    <div class="mt-3">
+                        <p class="text-sm text-gray-500 mb-2">
+                            <i class="fas fa-code mr-1"></i>检测到的模式:
+                        </p>
+                        <div class="code-block">
+                            raise AuthenticationError(&quot;Token expired&quot;)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="finding-card bg-white rounded-lg shadow-md border-l-4 border-red-500 overflow-hidden">
+            <div class="p-6">
+                <div class="flex items-start justify-between mb-3">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                FILE001
+                            </span>
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm font-medium">
+                                <i class="fas fa-chart-line mr-1"></i>
+                                MEDIUM 置信度
+                            </span>
+                        </div>
+                        <p class="text-gray-600 mb-2">尝试访问敏感文件</p>
+                    </div>
+                    <button onclick="toggleCollapse(41)" class="text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-chevron-down" id="icon-41"></i>
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3 text-sm">
+                    <div class="flex items-center text-gray-600">
+                        <i class="fas fa-file-code mr-2 text-blue-500"></i>
+                        <span class="font-medium">位置:</span>
+                        <code class="ml-2 bg-gray-100 px-2 py-1 rounded text-xs">critical-interval-security-checker/references/vulnerability_patterns.md:30</code>
+                    </div>
+                </div>
+
+                <div class="collapsible-content" id="content-41">
+                    <div class="mt-3">
+                        <p class="text-sm text-gray-500 mb-2">
+                            <i class="fas fa-code mr-1"></i>检测到的模式:
+                        </p>
+                        <div class="code-block">
+                            - Search for token/session creation with expiration field
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="finding-card bg-white rounded-lg shadow-md border-l-4 border-red-500 overflow-hidden">
+            <div class="p-6">
+                <div class="flex items-start justify-between mb-3">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                FILE001
+                            </span>
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm font-medium">
+                                <i class="fas fa-chart-line mr-1"></i>
+                                MEDIUM 置信度
+                            </span>
+                        </div>
+                        <p class="text-gray-600 mb-2">尝试访问敏感文件</p>
+                    </div>
+                    <button onclick="toggleCollapse(42)" class="text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-chevron-down" id="icon-42"></i>
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3 text-sm">
+                    <div class="flex items-center text-gray-600">
+                        <i class="fas fa-file-code mr-2 text-blue-500"></i>
+                        <span class="font-medium">位置:</span>
+                        <code class="ml-2 bg-gray-100 px-2 py-1 rounded text-xs">critical-interval-security-checker/references/vulnerability_patterns.md:67</code>
+                    </div>
+                </div>
+
+                <div class="collapsible-content" id="content-42">
+                    <div class="mt-3">
+                        <p class="text-sm text-gray-500 mb-2">
+                            <i class="fas fa-code mr-1"></i>检测到的模式:
+                        </p>
+                        <div class="code-block">
+                            Security-critical tokens/sessions with unreasonably long expiration times.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="finding-card bg-white rounded-lg shadow-md border-l-4 border-red-500 overflow-hidden">
+            <div class="p-6">
+                <div class="flex items-start justify-between mb-3">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                FILE001
+                            </span>
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm font-medium">
+                                <i class="fas fa-chart-line mr-1"></i>
+                                MEDIUM 置信度
+                            </span>
+                        </div>
+                        <p class="text-gray-600 mb-2">尝试访问敏感文件</p>
+                    </div>
+                    <button onclick="toggleCollapse(43)" class="text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-chevron-down" id="icon-43"></i>
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3 text-sm">
+                    <div class="flex items-center text-gray-600">
+                        <i class="fas fa-file-code mr-2 text-blue-500"></i>
+                        <span class="font-medium">位置:</span>
+                        <code class="ml-2 bg-gray-100 px-2 py-1 rounded text-xs">critical-interval-security-checker/references/vulnerability_patterns.md:71</code>
+                    </div>
+                </div>
+
+                <div class="collapsible-content" id="content-43">
+                    <div class="mt-3">
+                        <p class="text-sm text-gray-500 mb-2">
+                            <i class="fas fa-code mr-1"></i>检测到的模式:
+                        </p>
+                        <div class="code-block">
+                            # VULNERABLE: Password reset token valid for 7 days
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="finding-card bg-white rounded-lg shadow-md border-l-4 border-red-500 overflow-hidden">
+            <div class="p-6">
+                <div class="flex items-start justify-between mb-3">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                FILE001
+                            </span>
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm font-medium">
+                                <i class="fas fa-chart-line mr-1"></i>
+                                MEDIUM 置信度
+                            </span>
+                        </div>
+                        <p class="text-gray-600 mb-2">尝试访问敏感文件</p>
+                    </div>
+                    <button onclick="toggleCollapse(44)" class="text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-chevron-down" id="icon-44"></i>
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3 text-sm">
+                    <div class="flex items-center text-gray-600">
+                        <i class="fas fa-file-code mr-2 text-blue-500"></i>
+                        <span class="font-medium">位置:</span>
+                        <code class="ml-2 bg-gray-100 px-2 py-1 rounded text-xs">critical-interval-security-checker/references/vulnerability_patterns.md:72</code>
+                    </div>
+                </div>
+
+                <div class="collapsible-content" id="content-44">
+                    <div class="mt-3">
+                        <p class="text-sm text-gray-500 mb-2">
+                            <i class="fas fa-code mr-1"></i>检测到的模式:
+                        </p>
+                        <div class="code-block">
+                            def create_reset_token(user):
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="finding-card bg-white rounded-lg shadow-md border-l-4 border-red-500 overflow-hidden">
+            <div class="p-6">
+                <div class="flex items-start justify-between mb-3">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                FILE001
+                            </span>
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm font-medium">
+                                <i class="fas fa-chart-line mr-1"></i>
+                                MEDIUM 置信度
+                            </span>
+                        </div>
+                        <p class="text-gray-600 mb-2">尝试访问敏感文件</p>
+                    </div>
+                    <button onclick="toggleCollapse(45)" class="text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-chevron-down" id="icon-45"></i>
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3 text-sm">
+                    <div class="flex items-center text-gray-600">
+                        <i class="fas fa-file-code mr-2 text-blue-500"></i>
+                        <span class="font-medium">位置:</span>
+                        <code class="ml-2 bg-gray-100 px-2 py-1 rounded text-xs">critical-interval-security-checker/references/vulnerability_patterns.md:73</code>
+                    </div>
+                </div>
+
+                <div class="collapsible-content" id="content-45">
+                    <div class="mt-3">
+                        <p class="text-sm text-gray-500 mb-2">
+                            <i class="fas fa-code mr-1"></i>检测到的模式:
+                        </p>
+                        <div class="code-block">
+                            token = secrets.token_urlsafe(32)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="finding-card bg-white rounded-lg shadow-md border-l-4 border-red-500 overflow-hidden">
+            <div class="p-6">
+                <div class="flex items-start justify-between mb-3">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                FILE001
+                            </span>
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm font-medium">
+                                <i class="fas fa-chart-line mr-1"></i>
+                                MEDIUM 置信度
+                            </span>
+                        </div>
+                        <p class="text-gray-600 mb-2">尝试访问敏感文件</p>
+                    </div>
+                    <button onclick="toggleCollapse(46)" class="text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-chevron-down" id="icon-46"></i>
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3 text-sm">
+                    <div class="flex items-center text-gray-600">
+                        <i class="fas fa-file-code mr-2 text-blue-500"></i>
+                        <span class="font-medium">位置:</span>
+                        <code class="ml-2 bg-gray-100 px-2 py-1 rounded text-xs">critical-interval-security-checker/references/vulnerability_patterns.md:75</code>
+                    </div>
+                </div>
+
+                <div class="collapsible-content" id="content-46">
+                    <div class="mt-3">
+                        <p class="text-sm text-gray-500 mb-2">
+                            <i class="fas fa-code mr-1"></i>检测到的模式:
+                        </p>
+                        <div class="code-block">
+                            save_reset_token(user, token, expiry)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="finding-card bg-white rounded-lg shadow-md border-l-4 border-red-500 overflow-hidden">
+            <div class="p-6">
+                <div class="flex items-start justify-between mb-3">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                FILE001
+                            </span>
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm font-medium">
+                                <i class="fas fa-chart-line mr-1"></i>
+                                MEDIUM 置信度
+                            </span>
+                        </div>
+                        <p class="text-gray-600 mb-2">尝试访问敏感文件</p>
+                    </div>
+                    <button onclick="toggleCollapse(47)" class="text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-chevron-down" id="icon-47"></i>
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3 text-sm">
+                    <div class="flex items-center text-gray-600">
+                        <i class="fas fa-file-code mr-2 text-blue-500"></i>
+                        <span class="font-medium">位置:</span>
+                        <code class="ml-2 bg-gray-100 px-2 py-1 rounded text-xs">critical-interval-security-checker/references/vulnerability_patterns.md:76</code>
+                    </div>
+                </div>
+
+                <div class="collapsible-content" id="content-47">
+                    <div class="mt-3">
+                        <p class="text-sm text-gray-500 mb-2">
+                            <i class="fas fa-code mr-1"></i>检测到的模式:
+                        </p>
+                        <div class="code-block">
+                            return token
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="finding-card bg-white rounded-lg shadow-md border-l-4 border-red-500 overflow-hidden">
+            <div class="p-6">
+                <div class="flex items-start justify-between mb-3">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                FILE001
+                            </span>
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm font-medium">
+                                <i class="fas fa-chart-line mr-1"></i>
+                                MEDIUM 置信度
+                            </span>
+                        </div>
+                        <p class="text-gray-600 mb-2">尝试访问敏感文件</p>
+                    </div>
+                    <button onclick="toggleCollapse(48)" class="text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-chevron-down" id="icon-48"></i>
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3 text-sm">
+                    <div class="flex items-center text-gray-600">
+                        <i class="fas fa-file-code mr-2 text-blue-500"></i>
+                        <span class="font-medium">位置:</span>
+                        <code class="ml-2 bg-gray-100 px-2 py-1 rounded text-xs">critical-interval-security-checker/references/vulnerability_patterns.md:79</code>
+                    </div>
+                </div>
+
+                <div class="collapsible-content" id="content-48">
+                    <div class="mt-3">
+                        <p class="text-sm text-gray-500 mb-2">
+                            <i class="fas fa-code mr-1"></i>检测到的模式:
+                        </p>
+                        <div class="code-block">
+                            def create_reset_token(user):
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="finding-card bg-white rounded-lg shadow-md border-l-4 border-red-500 overflow-hidden">
+            <div class="p-6">
+                <div class="flex items-start justify-between mb-3">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                FILE001
+                            </span>
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm font-medium">
+                                <i class="fas fa-chart-line mr-1"></i>
+                                MEDIUM 置信度
+                            </span>
+                        </div>
+                        <p class="text-gray-600 mb-2">尝试访问敏感文件</p>
+                    </div>
+                    <button onclick="toggleCollapse(49)" class="text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-chevron-down" id="icon-49"></i>
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3 text-sm">
+                    <div class="flex items-center text-gray-600">
+                        <i class="fas fa-file-code mr-2 text-blue-500"></i>
+                        <span class="font-medium">位置:</span>
+                        <code class="ml-2 bg-gray-100 px-2 py-1 rounded text-xs">critical-interval-security-checker/references/vulnerability_patterns.md:80</code>
+                    </div>
+                </div>
+
+                <div class="collapsible-content" id="content-49">
+                    <div class="mt-3">
+                        <p class="text-sm text-gray-500 mb-2">
+                            <i class="fas fa-code mr-1"></i>检测到的模式:
+                        </p>
+                        <div class="code-block">
+                            token = secrets.token_urlsafe(32)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                </div>
+                <p class="text-gray-500 mt-4">... 还有 ... 个 92</p>
+            </div>
+            
+
+            <!-- Recommendation -->
+            
+        <div class="bg-red-50 border-red-500 border-t-4 rounded-lg shadow-lg p-6 mt-8">
+            <div class="flex items-start">
+                <i class="fas fa-exclamation-triangle text-4xl text-red-600 mr-4 mt-1"></i>
+                <div>
+                    <h3 class="text-xl font-bold text-red-600 mb-2">建议</h3>
+                    <p class="text-gray-700 text-lg">请勿使用 - 检测到严重安全风险</p>
+                </div>
+            </div>
+        </div>
+        
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-white border-t mt-12">
+            <div class="max-w-7xl mx-auto px-4 py-6 sm:px-6 lg:px-8">
+                <p class="text-center text-gray-500 text-sm">
+                    <i class="fas fa-code mr-1"></i>
+                    生成工具 skill-security-scan v1.0.0
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    
+        <script>
+            function filterFindings(severity) {
+                const sections = document.querySelectorAll('.finding-section');
+                sections.forEach(section => {
+                    if (severity === 'all' || section.dataset.severity === severity) {
+                        section.style.display = 'block';
+                    } else {
+                        section.style.display = 'none';
+                    }
+                });
+
+                // 更新按钮状态
+                document.querySelectorAll('.filter-btn').forEach(btn => {
+                    btn.classList.remove('ring-2', 'ring-offset-2', 'ring-blue-500');
+                });
+                event.target.classList.add('ring-2', 'ring-offset-2', 'ring-blue-500');
+            }
+
+            function toggleCollapse(index) {
+                const content = document.getElementById('content-' + index);
+                const icon = document.getElementById('icon-' + index);
+
+                content.classList.toggle('expanded');
+                icon.classList.toggle('fa-chevron-down');
+                icon.classList.toggle('fa-chevron-up');
+            }
+        </script>
+        
+</body>
+</html>

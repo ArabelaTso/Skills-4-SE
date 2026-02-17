@@ -1,0 +1,91 @@
+{
+  "scan_id": "scan_20260218_024513",
+  "timestamp": "2026-02-18T02:45:13.307374Z",
+  "skill_path": "nl-to-constraints",
+  "skill_name": "nl-to-constraints",
+  "risk_score": 3.5999999999999996,
+  "risk_level": "LOW",
+  "total_files": 3,
+  "summary": {
+    "CRITICAL": 8,
+    "HIGH": 0,
+    "WARNING": 0,
+    "INFO": 0
+  },
+  "issues": [
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "nl-to-constraints/SKILL.md",
+      "line": 117,
+      "pattern": "\"description\": \"Users must be able to register with email and password\",",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "nl-to-constraints/SKILL.md",
+      "line": 120,
+      "pattern": "\"Password must be at least 8 characters\",",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "nl-to-constraints/SKILL.md",
+      "line": 143,
+      "pattern": "\"when\": \"User enters valid email and password\",",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "nl-to-constraints/SKILL.md",
+      "line": 161,
+      "pattern": "**Description**: Users must be able to register with email and password",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "nl-to-constraints/SKILL.md",
+      "line": 165,
+      "pattern": "- Password must be at least 8 characters",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "nl-to-constraints/SKILL.md",
+      "line": 186,
+      "pattern": "When they enter email \"user@example.com\" and password \"SecurePass123\"",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "nl-to-constraints/references/constraint_patterns.md",
+      "line": 73,
+      "pattern": "Natural Language: \"Password reset links expire 24 hours after creation\"",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "nl-to-constraints/references/constraint_patterns.md",
+      "line": 75,
+      "pattern": "Event: Password_Reset_Link_Expiration",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    }
+  ],
+  "total_issues": 8,
+  "recommendation": "USE_WITH_CAUTION"
+}

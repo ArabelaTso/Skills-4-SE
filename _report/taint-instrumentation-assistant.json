@@ -1,0 +1,136 @@
+{
+  "scan_id": "scan_20260218_024526",
+  "timestamp": "2026-02-18T02:45:26.190009Z",
+  "skill_path": "taint-instrumentation-assistant",
+  "skill_name": "taint-instrumentation-assistant",
+  "risk_score": 3.760000000000001,
+  "risk_level": "LOW",
+  "total_files": 4,
+  "summary": {
+    "CRITICAL": 6,
+    "HIGH": 0,
+    "WARNING": 7,
+    "INFO": 0
+  },
+  "issues": [
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "taint-instrumentation-assistant/SKILL.md",
+      "line": 213,
+      "pattern": "def login(username, password):",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "taint-instrumentation-assistant/SKILL.md",
+      "line": 214,
+      "pattern": "query = f\"SELECT * FROM users WHERE name='{username}' AND pass='{password}'\"",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "taint-instrumentation-assistant/SKILL.md",
+      "line": 218,
+      "pattern": "def login(username, password):",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "taint-instrumentation-assistant/SKILL.md",
+      "line": 221,
+      "pattern": "password = TaintedStr(password, \"HTTP_PARAM:password\")",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "taint-instrumentation-assistant/SKILL.md",
+      "line": 224,
+      "pattern": "query = TaintedStr(f\"SELECT * FROM users WHERE name='\") + username + TaintedStr(\"' AND pass='\") + password + TaintedStr(\"'\")",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "CMD002",
+      "severity": "WARNING",
+      "file": "taint-instrumentation-assistant/SKILL.md",
+      "line": 264,
+      "pattern": "os.system(f\"cat {filename}\")",
+      "description": "调用系统命令执行功能",
+      "confidence": 0.8
+    },
+    {
+      "rule_id": "CMD002",
+      "severity": "WARNING",
+      "file": "taint-instrumentation-assistant/SKILL.md",
+      "line": 280,
+      "pattern": "os.system(str(command))",
+      "description": "调用系统命令执行功能",
+      "confidence": 0.8
+    },
+    {
+      "rule_id": "CMD002",
+      "severity": "WARNING",
+      "file": "taint-instrumentation-assistant/SKILL.md",
+      "line": 296,
+      "pattern": "\"SYSTEM_CMD\": [\"os.system()\", \"subprocess.call()\"],",
+      "description": "调用系统命令执行功能",
+      "confidence": 0.8
+    },
+    {
+      "rule_id": "CMD002",
+      "severity": "WARNING",
+      "file": "taint-instrumentation-assistant/SKILL.md",
+      "line": 299,
+      "pattern": "\"EVAL\": [\"eval()\", \"exec()\"],",
+      "description": "调用系统命令执行功能",
+      "confidence": 0.75
+    },
+    {
+      "rule_id": "INJ001",
+      "severity": "CRITICAL",
+      "file": "taint-instrumentation-assistant/SKILL.md",
+      "line": 299,
+      "pattern": "\"EVAL\": [\"eval()\", \"exec()\"],",
+      "description": "检测到代码注入模式",
+      "confidence": 0.8
+    },
+    {
+      "rule_id": "INJ002",
+      "severity": "WARNING",
+      "file": "taint-instrumentation-assistant/SKILL.md",
+      "line": 299,
+      "pattern": "\"EVAL\": [\"eval()\", \"exec()\"],",
+      "description": "动态执行代码片段",
+      "confidence": 0.8
+    },
+    {
+      "rule_id": "OBF001",
+      "severity": "WARNING",
+      "file": "taint-instrumentation-assistant/SKILL.md",
+      "line": 299,
+      "pattern": "\"EVAL\": [\"eval()\", \"exec()\"],",
+      "description": "检测到可能的代码混淆",
+      "confidence": 0.8
+    },
+    {
+      "rule_id": "OBF002",
+      "severity": "WARNING",
+      "file": "taint-instrumentation-assistant/SKILL.md",
+      "line": 299,
+      "pattern": "\"EVAL\": [\"eval()\", \"exec()\"],",
+      "description": "使用间接方式调用函数",
+      "confidence": 0.8
+    }
+  ],
+  "total_issues": 13,
+  "recommendation": "USE_WITH_CAUTION"
+}

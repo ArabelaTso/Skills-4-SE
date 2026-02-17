@@ -1,0 +1,18 @@
+{
+  "scan_id": "scan_20260218_024501",
+  "timestamp": "2026-02-18T02:45:01.783681Z",
+  "skill_path": "control-flow-abstraction-generator",
+  "skill_name": "control-flow-abstraction-generator",
+  "risk_score": 0.0,
+  "risk_level": "SAFE",
+  "total_files": 2,
+  "summary": {
+    "CRITICAL": 0,
+    "HIGH": 0,
+    "WARNING": 0,
+    "INFO": 0
+  },
+  "issues": [],
+  "total_issues": 0,
+  "recommendation": "SAFE"
+}

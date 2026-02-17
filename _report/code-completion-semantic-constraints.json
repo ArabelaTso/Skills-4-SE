@@ -1,0 +1,18 @@
+{
+  "scan_id": "scan_20260218_024458",
+  "timestamp": "2026-02-18T02:44:58.465135Z",
+  "skill_path": "code-completion-semantic-constraints",
+  "skill_name": "code-completion-semantic-constraints",
+  "risk_score": 0.0,
+  "risk_level": "SAFE",
+  "total_files": 1,
+  "summary": {
+    "CRITICAL": 0,
+    "HIGH": 0,
+    "WARNING": 0,
+    "INFO": 0
+  },
+  "issues": [],
+  "total_issues": 0,
+  "recommendation": "SAFE"
+}

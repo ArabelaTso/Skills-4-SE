@@ -1,0 +1,18 @@
+{
+  "scan_id": "scan_20260218_024528",
+  "timestamp": "2026-02-18T02:45:28.545132Z",
+  "skill_path": "test-oracle-generator",
+  "skill_name": "test-oracle-generator",
+  "risk_score": 0.0,
+  "risk_level": "SAFE",
+  "total_files": 3,
+  "summary": {
+    "CRITICAL": 0,
+    "HIGH": 0,
+    "WARNING": 0,
+    "INFO": 0
+  },
+  "issues": [],
+  "total_issues": 0,
+  "recommendation": "SAFE"
+}

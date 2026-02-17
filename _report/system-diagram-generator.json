@@ -1,0 +1,55 @@
+{
+  "scan_id": "scan_20260218_024525",
+  "timestamp": "2026-02-18T02:45:25.483817Z",
+  "skill_path": "system-diagram-generator",
+  "skill_name": "system-diagram-generator",
+  "risk_score": 1.7999999999999998,
+  "risk_level": "SAFE",
+  "total_files": 4,
+  "summary": {
+    "CRITICAL": 4,
+    "HIGH": 0,
+    "WARNING": 0,
+    "INFO": 0
+  },
+  "issues": [
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "system-diagram-generator/references/plantuml-patterns.md",
+      "line": 97,
+      "pattern": "Auth --> API: JWT Token",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "system-diagram-generator/references/plantuml-patterns.md",
+      "line": 98,
+      "pattern": "API --> FE: Token + User Info",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "system-diagram-generator/references/mermaid-patterns.md",
+      "line": 87,
+      "pattern": "Auth-->>API: JWT Token",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "system-diagram-generator/references/mermaid-patterns.md",
+      "line": 88,
+      "pattern": "API-->>Frontend: Token + User Info",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    }
+  ],
+  "total_issues": 4,
+  "recommendation": "SAFE"
+}

@@ -1,0 +1,100 @@
+{
+  "scan_id": "scan_20260218_024502",
+  "timestamp": "2026-02-18T02:45:02.252211Z",
+  "skill_path": "counterexample-explainer",
+  "skill_name": "counterexample-explainer",
+  "risk_score": 4.050000000000001,
+  "risk_level": "MEDIUM",
+  "total_files": 3,
+  "summary": {
+    "CRITICAL": 9,
+    "HIGH": 0,
+    "WARNING": 0,
+    "INFO": 0
+  },
+  "issues": [
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "counterexample-explainer/references/specification-types.md",
+      "line": 129,
+      "pattern": "As a user, I want to reset my password so that I can regain access to my account.",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "counterexample-explainer/references/specification-types.md",
+      "line": 132,
+      "pattern": "- Password reset link expires after 24 hours",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "counterexample-explainer/references/specification-types.md",
+      "line": 134,
+      "pattern": "- New password must be different from old password",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "counterexample-explainer/references/specification-types.md",
+      "line": 139,
+      "pattern": "Actual: Password reset allowed",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "counterexample-explainer/references/specification-types.md",
+      "line": 149,
+      "pattern": "Action: Failed login with wrong password",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "counterexample-explainer/references/specification-types.md",
+      "line": 321,
+      "pattern": "Specification: Passwords must be hashed",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "counterexample-explainer/references/specification-types.md",
+      "line": 324,
+      "pattern": "User password: \"secret123\"",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "counterexample-explainer/references/specification-types.md",
+      "line": 325,
+      "pattern": "Database: password column contains \"secret123\"",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "counterexample-explainer/references/specification-types.md",
+      "line": 326,
+      "pattern": "Violation: Password stored in plain text",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    }
+  ],
+  "total_issues": 9,
+  "recommendation": "REVIEW_NEEDED"
+}

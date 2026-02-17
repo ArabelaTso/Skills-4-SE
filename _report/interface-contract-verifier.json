@@ -1,0 +1,18 @@
+{
+  "scan_id": "scan_20260218_024508",
+  "timestamp": "2026-02-18T02:45:08.498754Z",
+  "skill_path": "interface-contract-verifier",
+  "skill_name": "interface-contract-verifier",
+  "risk_score": 0.0,
+  "risk_level": "SAFE",
+  "total_files": 4,
+  "summary": {
+    "CRITICAL": 0,
+    "HIGH": 0,
+    "WARNING": 0,
+    "INFO": 0
+  },
+  "issues": [],
+  "total_issues": 0,
+  "recommendation": "SAFE"
+}

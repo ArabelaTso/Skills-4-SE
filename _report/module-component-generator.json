@@ -1,0 +1,109 @@
+{
+  "scan_id": "scan_20260218_024512",
+  "timestamp": "2026-02-18T02:45:12.475093Z",
+  "skill_path": "module-component-generator",
+  "skill_name": "module-component-generator",
+  "risk_score": 3.4699999999999998,
+  "risk_level": "LOW",
+  "total_files": 4,
+  "summary": {
+    "CRITICAL": 7,
+    "HIGH": 0,
+    "WARNING": 3,
+    "INFO": 0
+  },
+  "issues": [
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "module-component-generator/references/java-patterns.md",
+      "line": 79,
+      "pattern": "private final String apiKey;",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "module-component-generator/references/java-patterns.md",
+      "line": 82,
+      "pattern": "public StripePaymentProcessor(String apiKey) {",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "module-component-generator/references/java-patterns.md",
+      "line": 83,
+      "pattern": "this.apiKey = Objects.requireNonNull(apiKey, \"API key cannot be null\");",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "INJ001",
+      "severity": "CRITICAL",
+      "file": "module-component-generator/references/java-patterns.md",
+      "line": 446,
+      "pattern": "Pattern.compile(\"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\\\.[a-zA-Z]{2,}$\");",
+      "description": "检测到代码注入模式",
+      "confidence": 0.7
+    },
+    {
+      "rule_id": "INJ002",
+      "severity": "WARNING",
+      "file": "module-component-generator/references/java-patterns.md",
+      "line": 446,
+      "pattern": "Pattern.compile(\"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\\\.[a-zA-Z]{2,}$\");",
+      "description": "动态执行代码片段",
+      "confidence": 0.7
+    },
+    {
+      "rule_id": "OBF001",
+      "severity": "WARNING",
+      "file": "module-component-generator/references/java-patterns.md",
+      "line": 446,
+      "pattern": "Pattern.compile(\"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\\\.[a-zA-Z]{2,}$\");",
+      "description": "检测到可能的代码混淆",
+      "confidence": 0.7
+    },
+    {
+      "rule_id": "OBF002",
+      "severity": "WARNING",
+      "file": "module-component-generator/references/java-patterns.md",
+      "line": 446,
+      "pattern": "Pattern.compile(\"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\\\.[a-zA-Z]{2,}$\");",
+      "description": "使用间接方式调用函数",
+      "confidence": 0.7
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "module-component-generator/references/python-patterns.md",
+      "line": 74,
+      "pattern": "def __init__(self, api_key: str):",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "module-component-generator/references/python-patterns.md",
+      "line": 75,
+      "pattern": "self.api_key = api_key",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "module-component-generator/references/python-patterns.md",
+      "line": 357,
+      "pattern": "api_key=config.get('api_key'),",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    }
+  ],
+  "total_issues": 10,
+  "recommendation": "USE_WITH_CAUTION"
+}

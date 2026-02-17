@@ -1,0 +1,64 @@
+{
+  "scan_id": "scan_20260218_024504",
+  "timestamp": "2026-02-18T02:45:04.644656Z",
+  "skill_path": "directed-test-input-generator",
+  "skill_name": "directed-test-input-generator",
+  "risk_score": 1.3299999999999998,
+  "risk_level": "SAFE",
+  "total_files": 5,
+  "summary": {
+    "CRITICAL": 2,
+    "HIGH": 0,
+    "WARNING": 3,
+    "INFO": 0
+  },
+  "issues": [
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "directed-test-input-generator/references/coverage_strategies.md",
+      "line": 354,
+      "pattern": "for key in list(mutated.keys()):",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "INJ001",
+      "severity": "CRITICAL",
+      "file": "directed-test-input-generator/references/llm_patterns.md",
+      "line": 474,
+      "pattern": "return eval(code)",
+      "description": "检测到代码注入模式",
+      "confidence": 0.8
+    },
+    {
+      "rule_id": "INJ002",
+      "severity": "WARNING",
+      "file": "directed-test-input-generator/references/llm_patterns.md",
+      "line": 474,
+      "pattern": "return eval(code)",
+      "description": "动态执行代码片段",
+      "confidence": 0.8
+    },
+    {
+      "rule_id": "OBF001",
+      "severity": "WARNING",
+      "file": "directed-test-input-generator/references/llm_patterns.md",
+      "line": 474,
+      "pattern": "return eval(code)",
+      "description": "检测到可能的代码混淆",
+      "confidence": 0.8
+    },
+    {
+      "rule_id": "OBF002",
+      "severity": "WARNING",
+      "file": "directed-test-input-generator/references/llm_patterns.md",
+      "line": 474,
+      "pattern": "return eval(code)",
+      "description": "使用间接方式调用函数",
+      "confidence": 0.8
+    }
+  ],
+  "total_issues": 5,
+  "recommendation": "SAFE"
+}

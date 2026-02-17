@@ -1,0 +1,496 @@
+{
+  "scan_id": "scan_20260218_024521",
+  "timestamp": "2026-02-18T02:45:21.723391Z",
+  "skill_path": "security-patch-advisor",
+  "skill_name": "security-patch-advisor",
+  "risk_score": 10.0,
+  "risk_level": "CRITICAL",
+  "total_files": 3,
+  "summary": {
+    "CRITICAL": 44,
+    "HIGH": 0,
+    "WARNING": 9,
+    "INFO": 0
+  },
+  "issues": [
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "security-patch-advisor/SKILL.md",
+      "line": 206,
+      "pattern": "- Hash passwords with bcrypt/Argon2",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "security-patch-advisor/references/remediation_strategies.md",
+      "line": 189,
+      "pattern": "- Use TOTP or hardware tokens",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "security-patch-advisor/references/remediation_strategies.md",
+      "line": 192,
+      "pattern": "2. **Strong Password Policies**",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "security-patch-advisor/references/remediation_strategies.md",
+      "line": 195,
+      "pattern": "- Password strength meters",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "security-patch-advisor/references/remediation_strategies.md",
+      "line": 212,
+      "pattern": "- Password policies: Improved security, user annoyance",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "security-patch-advisor/references/remediation_strategies.md",
+      "line": 258,
+      "pattern": "- Use Argon2, bcrypt, or scrypt for passwords",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "security-patch-advisor/references/remediation_strategies.md",
+      "line": 293,
+      "pattern": "- Don't use `Math.random()` for tokens",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "security-patch-advisor/references/remediation_strategies.md",
+      "line": 297,
+      "pattern": "- Use at least 128 bits for session tokens",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "security-patch-advisor/references/remediation_strategies.md",
+      "line": 303,
+      "pattern": "- Entropy requirements: Better security, larger tokens",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "security-patch-advisor/references/remediation_strategies.md",
+      "line": 380,
+      "pattern": "- Regular password changes",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "CMD002",
+      "severity": "WARNING",
+      "file": "security-patch-advisor/references/remediation_strategies.md",
+      "line": 87,
+      "pattern": "- `system()`, `exec()`, `popen()` with user input",
+      "description": "调用系统命令执行功能",
+      "confidence": 0.75
+    },
+    {
+      "rule_id": "INJ001",
+      "severity": "CRITICAL",
+      "file": "security-patch-advisor/references/remediation_strategies.md",
+      "line": 87,
+      "pattern": "- `system()`, `exec()`, `popen()` with user input",
+      "description": "检测到代码注入模式",
+      "confidence": 0.8
+    },
+    {
+      "rule_id": "INJ001",
+      "severity": "CRITICAL",
+      "file": "security-patch-advisor/references/remediation_strategies.md",
+      "line": 152,
+      "pattern": "- Using `pickle`, `marshal`, `eval()` on untrusted input",
+      "description": "检测到代码注入模式",
+      "confidence": 0.8
+    },
+    {
+      "rule_id": "INJ002",
+      "severity": "WARNING",
+      "file": "security-patch-advisor/references/remediation_strategies.md",
+      "line": 87,
+      "pattern": "- `system()`, `exec()`, `popen()` with user input",
+      "description": "动态执行代码片段",
+      "confidence": 0.8
+    },
+    {
+      "rule_id": "INJ002",
+      "severity": "WARNING",
+      "file": "security-patch-advisor/references/remediation_strategies.md",
+      "line": 152,
+      "pattern": "- Using `pickle`, `marshal`, `eval()` on untrusted input",
+      "description": "动态执行代码片段",
+      "confidence": 0.8
+    },
+    {
+      "rule_id": "OBF001",
+      "severity": "WARNING",
+      "file": "security-patch-advisor/references/remediation_strategies.md",
+      "line": 87,
+      "pattern": "- `system()`, `exec()`, `popen()` with user input",
+      "description": "检测到可能的代码混淆",
+      "confidence": 0.8
+    },
+    {
+      "rule_id": "OBF001",
+      "severity": "WARNING",
+      "file": "security-patch-advisor/references/remediation_strategies.md",
+      "line": 152,
+      "pattern": "- Using `pickle`, `marshal`, `eval()` on untrusted input",
+      "description": "检测到可能的代码混淆",
+      "confidence": 0.8
+    },
+    {
+      "rule_id": "OBF002",
+      "severity": "WARNING",
+      "file": "security-patch-advisor/references/remediation_strategies.md",
+      "line": 87,
+      "pattern": "- `system()`, `exec()`, `popen()` with user input",
+      "description": "使用间接方式调用函数",
+      "confidence": 0.8
+    },
+    {
+      "rule_id": "OBF002",
+      "severity": "WARNING",
+      "file": "security-patch-advisor/references/remediation_strategies.md",
+      "line": 152,
+      "pattern": "- Using `pickle`, `marshal`, `eval()` on untrusted input",
+      "description": "使用间接方式调用函数",
+      "confidence": 0.8
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "security-patch-advisor/references/examples.md",
+      "line": 385,
+      "pattern": "def hash_password(password):",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "security-patch-advisor/references/examples.md",
+      "line": 386,
+      "pattern": "return hashlib.md5(password.encode()).hexdigest()",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "security-patch-advisor/references/examples.md",
+      "line": 388,
+      "pattern": "def verify_password(password, hash):",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "security-patch-advisor/references/examples.md",
+      "line": 389,
+      "pattern": "return hash_password(password) == hash",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "security-patch-advisor/references/examples.md",
+      "line": 394,
+      "pattern": "**Attack Example:** Pre-computed hash tables can crack passwords",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "security-patch-advisor/references/examples.md",
+      "line": 400,
+      "pattern": "def hash_password(password):",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "security-patch-advisor/references/examples.md",
+      "line": 401,
+      "pattern": "# Generate salt and hash password",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.7
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "security-patch-advisor/references/examples.md",
+      "line": 403,
+      "pattern": "return bcrypt.hashpw(password.encode(), salt)",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "security-patch-advisor/references/examples.md",
+      "line": 405,
+      "pattern": "def verify_password(password, hash):",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "security-patch-advisor/references/examples.md",
+      "line": 406,
+      "pattern": "return bcrypt.checkpw(password.encode(), hash)",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "security-patch-advisor/references/examples.md",
+      "line": 424,
+      "pattern": "from argon2 import PasswordHasher",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "security-patch-advisor/references/examples.md",
+      "line": 426,
+      "pattern": "ph = PasswordHasher()",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "security-patch-advisor/references/examples.md",
+      "line": 428,
+      "pattern": "def hash_password(password):",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "security-patch-advisor/references/examples.md",
+      "line": 429,
+      "pattern": "return ph.hash(password)",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "security-patch-advisor/references/examples.md",
+      "line": 431,
+      "pattern": "def verify_password(password, hash):",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "security-patch-advisor/references/examples.md",
+      "line": 433,
+      "pattern": "ph.verify(hash, password)",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "security-patch-advisor/references/examples.md",
+      "line": 440,
+      "pattern": "- ✅ Winner of Password Hashing Competition",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "security-patch-advisor/references/examples.md",
+      "line": 453,
+      "pattern": "const { username, password } = req.body;",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "security-patch-advisor/references/examples.md",
+      "line": 456,
+      "pattern": "if (users.length > 0 && users[0].password === password) {",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "security-patch-advisor/references/examples.md",
+      "line": 468,
+      "pattern": "- Plain text password comparison",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "security-patch-advisor/references/examples.md",
+      "line": 485,
+      "pattern": "const { username, password } = req.body;",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "security-patch-advisor/references/examples.md",
+      "line": 488,
+      "pattern": "if (!username || !password) {",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "security-patch-advisor/references/examples.md",
+      "line": 495,
+      "pattern": "'SELECT id, password_hash FROM users WHERE username = ?',",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "security-patch-advisor/references/examples.md",
+      "line": 502,
+      "pattern": "isValid = await bcrypt.compare(password, users[0].password_hash);",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "security-patch-advisor/references/examples.md",
+      "line": 505,
+      "pattern": "await bcrypt.compare(password, '$2b$12$dummyhashtopreventtiming');",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "security-patch-advisor/references/examples.md",
+      "line": 541,
+      "pattern": "- ✅ Secure password storage",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "security-patch-advisor/references/examples.md",
+      "line": 681,
+      "pattern": "password=\"SuperSecret123!\"  # Hard-coded!",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.7
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "security-patch-advisor/references/examples.md",
+      "line": 700,
+      "pattern": "password=os.getenv('DB_PASSWORD')",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "security-patch-advisor/references/examples.md",
+      "line": 710,
+      "pattern": "DB_PASSWORD=SuperSecret123!",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "security-patch-advisor/references/examples.md",
+      "line": 743,
+      "pattern": "password=creds['password']",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE002",
+      "severity": "CRITICAL",
+      "file": "security-patch-advisor/references/examples.md",
+      "line": 65,
+      "pattern": "**Attack Example:** `image.jpg; rm -rf /` would delete files",
+      "description": "执行危险的文件操作",
+      "confidence": 0.95
+    },
+    {
+      "rule_id": "CMD001",
+      "severity": "CRITICAL",
+      "file": "security-patch-advisor/references/examples.md",
+      "line": 65,
+      "pattern": "**Attack Example:** `image.jpg; rm -rf /` would delete files",
+      "description": "执行可能破坏系统的命令",
+      "confidence": 0.95
+    },
+    {
+      "rule_id": "CMD002",
+      "severity": "WARNING",
+      "file": "security-patch-advisor/references/examples.md",
+      "line": 60,
+      "pattern": "os.system(cmd)",
+      "description": "调用系统命令执行功能",
+      "confidence": 0.8
+    },
+    {
+      "rule_id": "CMD002",
+      "severity": "WARNING",
+      "file": "security-patch-advisor/references/examples.md",
+      "line": 89,
+      "pattern": "- Replaced `os.system()` with `subprocess.run()`",
+      "description": "调用系统命令执行功能",
+      "confidence": 0.8
+    }
+  ],
+  "total_issues": 53,
+  "recommendation": "DO_NOT_USE"
+}

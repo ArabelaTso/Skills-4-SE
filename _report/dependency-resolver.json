@@ -1,0 +1,46 @@
+{
+  "scan_id": "scan_20260218_024503",
+  "timestamp": "2026-02-18T02:45:03.564339Z",
+  "skill_path": "dependency-resolver",
+  "skill_name": "dependency-resolver",
+  "risk_score": 0.6950000000000001,
+  "risk_level": "SAFE",
+  "total_files": 1,
+  "summary": {
+    "CRITICAL": 1,
+    "HIGH": 0,
+    "WARNING": 2,
+    "INFO": 0
+  },
+  "issues": [
+    {
+      "rule_id": "CMD001",
+      "severity": "CRITICAL",
+      "file": "dependency-resolver/SKILL.md",
+      "line": 779,
+      "pattern": "sudo apt-get install build-essential python3",
+      "description": "执行可能破坏系统的命令",
+      "confidence": 0.75
+    },
+    {
+      "rule_id": "DEP001",
+      "severity": "WARNING",
+      "file": "dependency-resolver/SKILL.md",
+      "line": 776,
+      "pattern": "npm install -g node-gyp",
+      "description": "全局安装可能影响其他项目",
+      "confidence": 0.85
+    },
+    {
+      "rule_id": "DEP002",
+      "severity": "WARNING",
+      "file": "dependency-resolver/SKILL.md",
+      "line": 537,
+      "pattern": "pip install --upgrade package-name",
+      "description": "可能破坏依赖环境",
+      "confidence": 0.75
+    }
+  ],
+  "total_issues": 3,
+  "recommendation": "SAFE"
+}

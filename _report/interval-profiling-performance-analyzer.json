@@ -1,0 +1,163 @@
+{
+  "scan_id": "scan_20260218_024509",
+  "timestamp": "2026-02-18T02:45:09.492519Z",
+  "skill_path": "interval-profiling-performance-analyzer",
+  "skill_name": "interval-profiling-performance-analyzer",
+  "risk_score": 4.425,
+  "risk_level": "MEDIUM",
+  "total_files": 8,
+  "summary": {
+    "CRITICAL": 9,
+    "HIGH": 0,
+    "WARNING": 7,
+    "INFO": 0
+  },
+  "issues": [
+    {
+      "rule_id": "CMD001",
+      "severity": "CRITICAL",
+      "file": "interval-profiling-performance-analyzer/SKILL.md",
+      "line": 160,
+      "pattern": "- May need `sudo` for system-wide profiling",
+      "description": "执行可能破坏系统的命令",
+      "confidence": 0.75
+    },
+    {
+      "rule_id": "CMD001",
+      "severity": "CRITICAL",
+      "file": "interval-profiling-performance-analyzer/SKILL.md",
+      "line": 176,
+      "pattern": "sudo apt-get install linux-tools-generic",
+      "description": "执行可能破坏系统的命令",
+      "confidence": 0.75
+    },
+    {
+      "rule_id": "CMD001",
+      "severity": "CRITICAL",
+      "file": "interval-profiling-performance-analyzer/references/profiling-tools.md",
+      "line": 98,
+      "pattern": "**Installation:** `sudo apt-get install linux-tools-generic`",
+      "description": "执行可能破坏系统的命令",
+      "confidence": 0.75
+    },
+    {
+      "rule_id": "CMD001",
+      "severity": "CRITICAL",
+      "file": "interval-profiling-performance-analyzer/references/profiling-tools.md",
+      "line": 126,
+      "pattern": "**Installation:** `sudo apt-get install valgrind`",
+      "description": "执行可能破坏系统的命令",
+      "confidence": 0.75
+    },
+    {
+      "rule_id": "CMD001",
+      "severity": "CRITICAL",
+      "file": "interval-profiling-performance-analyzer/references/profiling-tools.md",
+      "line": 165,
+      "pattern": "4. **Disable frequency scaling:** `sudo cpupower frequency-set --governor performance`",
+      "description": "执行可能破坏系统的命令",
+      "confidence": 0.75
+    },
+    {
+      "rule_id": "CMD001",
+      "severity": "CRITICAL",
+      "file": "interval-profiling-performance-analyzer/scripts/profile_cpp.py",
+      "line": 38,
+      "pattern": "print(\"Error: perf not found. Install with: sudo apt-get install linux-tools-generic\")",
+      "description": "执行可能破坏系统的命令",
+      "confidence": 0.75
+    },
+    {
+      "rule_id": "CMD001",
+      "severity": "CRITICAL",
+      "file": "interval-profiling-performance-analyzer/scripts/profile_cpp.py",
+      "line": 103,
+      "pattern": "print(\"Error: gprof not found. Install with: sudo apt-get install binutils\")",
+      "description": "执行可能破坏系统的命令",
+      "confidence": 0.75
+    },
+    {
+      "rule_id": "CMD002",
+      "severity": "WARNING",
+      "file": "interval-profiling-performance-analyzer/scripts/profile_python.py",
+      "line": 35,
+      "pattern": "exec(code, script_globals)",
+      "description": "调用系统命令执行功能",
+      "confidence": 0.75
+    },
+    {
+      "rule_id": "INJ001",
+      "severity": "CRITICAL",
+      "file": "interval-profiling-performance-analyzer/scripts/profile_python.py",
+      "line": 30,
+      "pattern": "code = compile(f.read(), script_path, 'exec')",
+      "description": "检测到代码注入模式",
+      "confidence": 0.7
+    },
+    {
+      "rule_id": "INJ001",
+      "severity": "CRITICAL",
+      "file": "interval-profiling-performance-analyzer/scripts/profile_python.py",
+      "line": 35,
+      "pattern": "exec(code, script_globals)",
+      "description": "检测到代码注入模式",
+      "confidence": 0.8
+    },
+    {
+      "rule_id": "INJ002",
+      "severity": "WARNING",
+      "file": "interval-profiling-performance-analyzer/scripts/profile_python.py",
+      "line": 30,
+      "pattern": "code = compile(f.read(), script_path, 'exec')",
+      "description": "动态执行代码片段",
+      "confidence": 0.7
+    },
+    {
+      "rule_id": "INJ002",
+      "severity": "WARNING",
+      "file": "interval-profiling-performance-analyzer/scripts/profile_python.py",
+      "line": 35,
+      "pattern": "exec(code, script_globals)",
+      "description": "动态执行代码片段",
+      "confidence": 0.8
+    },
+    {
+      "rule_id": "OBF001",
+      "severity": "WARNING",
+      "file": "interval-profiling-performance-analyzer/scripts/profile_python.py",
+      "line": 30,
+      "pattern": "code = compile(f.read(), script_path, 'exec')",
+      "description": "检测到可能的代码混淆",
+      "confidence": 0.7
+    },
+    {
+      "rule_id": "OBF001",
+      "severity": "WARNING",
+      "file": "interval-profiling-performance-analyzer/scripts/profile_python.py",
+      "line": 35,
+      "pattern": "exec(code, script_globals)",
+      "description": "检测到可能的代码混淆",
+      "confidence": 0.8
+    },
+    {
+      "rule_id": "OBF002",
+      "severity": "WARNING",
+      "file": "interval-profiling-performance-analyzer/scripts/profile_python.py",
+      "line": 30,
+      "pattern": "code = compile(f.read(), script_path, 'exec')",
+      "description": "使用间接方式调用函数",
+      "confidence": 0.7
+    },
+    {
+      "rule_id": "OBF002",
+      "severity": "WARNING",
+      "file": "interval-profiling-performance-analyzer/scripts/profile_python.py",
+      "line": 35,
+      "pattern": "exec(code, script_globals)",
+      "description": "使用间接方式调用函数",
+      "confidence": 0.8
+    }
+  ],
+  "total_issues": 16,
+  "recommendation": "REVIEW_NEEDED"
+}

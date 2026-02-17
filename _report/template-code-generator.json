@@ -1,0 +1,46 @@
+{
+  "scan_id": "scan_20260218_024526",
+  "timestamp": "2026-02-18T02:45:26.662465Z",
+  "skill_path": "template-code-generator",
+  "skill_name": "template-code-generator",
+  "risk_score": 1.1500000000000001,
+  "risk_level": "SAFE",
+  "total_files": 4,
+  "summary": {
+    "CRITICAL": 3,
+    "HIGH": 0,
+    "WARNING": 0,
+    "INFO": 0
+  },
+  "issues": [
+    {
+      "rule_id": "NET001",
+      "severity": "CRITICAL",
+      "file": "template-code-generator/references/template_patterns.md",
+      "line": 107,
+      "pattern": "const response = await fetch(url);",
+      "description": "检测到向外发送数据的网络请求",
+      "confidence": 0.7
+    },
+    {
+      "rule_id": "NET001",
+      "severity": "CRITICAL",
+      "file": "template-code-generator/references/template_patterns.md",
+      "line": 133,
+      "pattern": "const response = await fetch(`${API_BASE_URL}${endpoint}`, {",
+      "description": "检测到向外发送数据的网络请求",
+      "confidence": 0.7
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "template-code-generator/references/template_patterns.md",
+      "line": 244,
+      "pattern": "ACCESS_TOKEN_EXPIRE_MINUTES: int = 30",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    }
+  ],
+  "total_issues": 3,
+  "recommendation": "SAFE"
+}

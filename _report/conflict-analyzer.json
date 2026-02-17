@@ -1,0 +1,46 @@
+{
+  "scan_id": "scan_20260218_024501",
+  "timestamp": "2026-02-18T02:45:01.313574Z",
+  "skill_path": "conflict-analyzer",
+  "skill_name": "conflict-analyzer",
+  "risk_score": 1.35,
+  "risk_level": "SAFE",
+  "total_files": 4,
+  "summary": {
+    "CRITICAL": 3,
+    "HIGH": 0,
+    "WARNING": 0,
+    "INFO": 0
+  },
+  "issues": [
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "conflict-analyzer/references/conflict_patterns.md",
+      "line": 169,
+      "pattern": "- REQ-A: \"Password must be at least 12 characters\"",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "conflict-analyzer/references/conflict_patterns.md",
+      "line": 170,
+      "pattern": "- REQ-B: \"Support legacy accounts with 6-character passwords\"",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "conflict-analyzer/references/resolution_strategies.md",
+      "line": 153,
+      "pattern": "Conflict: \"Password must be 12+ characters\" vs \"Support legacy 6-character passwords\"",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    }
+  ],
+  "total_issues": 3,
+  "recommendation": "SAFE"
+}

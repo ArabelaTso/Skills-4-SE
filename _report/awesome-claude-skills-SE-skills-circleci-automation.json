@@ -1,0 +1,64 @@
+{
+  "scan_id": "scan_20260218_024532",
+  "timestamp": "2026-02-18T02:45:32.472666Z",
+  "skill_path": "awesome-claude-skills-SE-skills/circleci-automation",
+  "skill_name": "circleci-automation",
+  "risk_score": 2.25,
+  "risk_level": "LOW",
+  "total_files": 1,
+  "summary": {
+    "CRITICAL": 5,
+    "HIGH": 0,
+    "WARNING": 0,
+    "INFO": 0
+  },
+  "issues": [
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "awesome-claude-skills-SE-skills/circleci-automation/SKILL.md",
+      "line": 65,
+      "pattern": "- `page_token`: Pagination cursor for next page of results",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "awesome-claude-skills-SE-skills/circleci-automation/SKILL.md",
+      "line": 71,
+      "pattern": "- `page_token` is returned in responses for pagination; continue until absent",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "awesome-claude-skills-SE-skills/circleci-automation/SKILL.md",
+      "line": 147,
+      "pattern": "- Check response for `next_page_token` field",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "awesome-claude-skills-SE-skills/circleci-automation/SKILL.md",
+      "line": 148,
+      "pattern": "- Pass token as `page_token` in next request",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "awesome-claude-skills-SE-skills/circleci-automation/SKILL.md",
+      "line": 149,
+      "pattern": "- Continue until `next_page_token` is absent or null",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    }
+  ],
+  "total_issues": 5,
+  "recommendation": "USE_WITH_CAUTION"
+}

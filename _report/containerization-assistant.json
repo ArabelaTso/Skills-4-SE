@@ -1,0 +1,163 @@
+{
+  "scan_id": "scan_20260218_024501",
+  "timestamp": "2026-02-18T02:45:01.569449Z",
+  "skill_path": "containerization-assistant",
+  "skill_name": "containerization-assistant",
+  "risk_score": 6.8500000000000005,
+  "risk_level": "HIGH",
+  "total_files": 4,
+  "summary": {
+    "CRITICAL": 16,
+    "HIGH": 0,
+    "WARNING": 0,
+    "INFO": 0
+  },
+  "issues": [
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "containerization-assistant/SKILL.md",
+      "line": 36,
+      "pattern": "cp assets/.env.example ./.env",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.7
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "containerization-assistant/SKILL.md",
+      "line": 86,
+      "pattern": "**Environment template** (`assets/.env.example`):",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.7
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "containerization-assistant/SKILL.md",
+      "line": 384,
+      "pattern": "api_key: \"secret-key\"",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "containerization-assistant/SKILL.md",
+      "line": 506,
+      "pattern": "echo ${{ secrets.DOCKER_PASSWORD }} | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "containerization-assistant/SKILL.md",
+      "line": 520,
+      "pattern": "aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 123456789.dkr.ecr.us-east-1.amazonaws.com",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "containerization-assistant/references/kubernetes_patterns.md",
+      "line": 97,
+      "pattern": "database_password: \"changeme\"",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "containerization-assistant/references/kubernetes_patterns.md",
+      "line": 98,
+      "pattern": "api_key: \"secret-api-key\"",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "containerization-assistant/references/kubernetes_patterns.md",
+      "line": 130,
+      "pattern": "- name: DATABASE_PASSWORD",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "containerization-assistant/references/kubernetes_patterns.md",
+      "line": 134,
+      "pattern": "key: database_password",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "containerization-assistant/references/kubernetes_patterns.md",
+      "line": 242,
+      "pattern": "- name: POSTGRES_PASSWORD",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "containerization-assistant/references/kubernetes_patterns.md",
+      "line": 246,
+      "pattern": "key: password",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "NET001",
+      "severity": "CRITICAL",
+      "file": "containerization-assistant/references/dockerfile_best_practices.md",
+      "line": 112,
+      "pattern": "CMD curl -f http://localhost:3000/health || exit 1",
+      "description": "检测到向外发送数据的网络请求",
+      "confidence": 0.7
+    },
+    {
+      "rule_id": "FILE002",
+      "severity": "CRITICAL",
+      "file": "containerization-assistant/references/dockerfile_best_practices.md",
+      "line": 99,
+      "pattern": "rm -rf /var/lib/apt/lists/*",
+      "description": "执行危险的文件操作",
+      "confidence": 0.95
+    },
+    {
+      "rule_id": "CMD001",
+      "severity": "CRITICAL",
+      "file": "containerization-assistant/references/dockerfile_best_practices.md",
+      "line": 99,
+      "pattern": "rm -rf /var/lib/apt/lists/*",
+      "description": "执行可能破坏系统的命令",
+      "confidence": 0.95
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "containerization-assistant/assets/docker-compose.yml",
+      "line": 12,
+      "pattern": "- DATABASE_URL=postgresql://${POSTGRES_USER:-postgres}:${POSTGRES_PASSWORD:-postgres}@db:5432/${POSTGRES_DB:-myapp}",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.7
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "containerization-assistant/assets/docker-compose.yml",
+      "line": 25,
+      "pattern": "- POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-postgres}",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    }
+  ],
+  "total_issues": 16,
+  "recommendation": "NOT_RECOMMENDED"
+}

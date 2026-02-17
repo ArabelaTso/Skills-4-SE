@@ -1,0 +1,18 @@
+{
+  "scan_id": "scan_20260218_024456",
+  "timestamp": "2026-02-18T02:44:56.853728Z",
+  "skill_path": "bug-to-patch-generator",
+  "skill_name": "bug-to-patch-generator",
+  "risk_score": 0.0,
+  "risk_level": "SAFE",
+  "total_files": 1,
+  "summary": {
+    "CRITICAL": 0,
+    "HIGH": 0,
+    "WARNING": 0,
+    "INFO": 0
+  },
+  "issues": [],
+  "total_issues": 0,
+  "recommendation": "SAFE"
+}

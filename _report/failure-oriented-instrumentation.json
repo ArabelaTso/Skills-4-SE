@@ -1,0 +1,28 @@
+{
+  "scan_id": "scan_20260218_024505",
+  "timestamp": "2026-02-18T02:45:05.951447Z",
+  "skill_path": "failure-oriented-instrumentation",
+  "skill_name": "failure-oriented-instrumentation",
+  "risk_score": 0.44999999999999996,
+  "risk_level": "SAFE",
+  "total_files": 5,
+  "summary": {
+    "CRITICAL": 1,
+    "HIGH": 0,
+    "WARNING": 0,
+    "INFO": 0
+  },
+  "issues": [
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "failure-oriented-instrumentation/SKILL.md",
+      "line": 228,
+      "pattern": "- Security-sensitive operations (passwords, tokens)",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    }
+  ],
+  "total_issues": 1,
+  "recommendation": "SAFE"
+}

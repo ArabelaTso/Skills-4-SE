@@ -33,7 +33,7 @@ This repository is **a comprehensive reusable, task-oriented Skills collection**
 </p>
 
 Browse, search, and install skills through our interactive web interface. The Skills Manager provides:
-- 📦 One-click installation of all 75+ skills
+- 📦 One-click installation of all 199+ skills
 - ✅ Selective installation of specific skills
 - 🔍 Search and filter by category
 - 📖 Bilingual help documentation (English/中文)
@@ -1416,6 +1416,48 @@ Our long-term vision is to build:
 - Code of conduct
 
 🎉 If you are building or studying LLMs for software engineering, this repo is for you.
+
+
+## ⚡ Risk Disclosure
+To prevent potential **security risks** that skills may pose when running locally (such as accessing SSH keys, API keys, sending data to external servers, executing arbitrary system commands, or modifying global dependencies), all skills in this project have undergone **security scans** via [Skill-Security-Scanner](https://github.com/huifer/skill-security-scan). The summarized report is provided below, and the full report can be accessed at [here](./_report/):
+
+📊 Risk Level Statistical Report 
+
+- Risk distribution: 
+
+- 🔴 CRITICAL: 17 Skills (8.5%) 
+    > Trying to access `\tmp` or other system dirs, installing packages 
+    - framework-migration-assistant 
+    - vulnerability-pattern-matcher 
+    - code-smell-detector 
+    - req-to-test 
+    - traceability-matrix-generator 
+    - python-test-updater 
+    - requirement-enhancer 
+    - security-sensitive-path-instrumenter 
+    - critical-interval-security-checker 
+    - mcp-builder 
+    - static-vulnerability-detector 
+    - environment-setup-assistant 
+    - scenario-generator 
+    - security-patch-advisor 
+    - api-documentation-generator 
+    - test-case-documentation 
+    - symbolic-execution-assistant 
+- 🟠 HIGH: 5 files (2.5%)
+    > Using `os.system`, `subprocess`, `eval`, `exec`
+    - containerization-assistant
+    - bisect-aware-instrumentation
+    - code-change-summarizer
+    - configuration-generator
+    - code-comment-generator
+- 🟡 MEDIUM: 7 files (3.5%)
+    > Requesting network
+- 🟢 LOW: 24 files (12.0%)
+- ✅ SAFE: 146 files (73.4%)
+
+⚠️ **Note**: High false positive rate; please carefully verify. For example, if the description contains words like "password," it is considered a high-risk skill. Decide for yourself whether to use it.
+
 
 
 

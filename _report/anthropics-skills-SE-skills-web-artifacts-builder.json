@@ -1,0 +1,46 @@
+{
+  "scan_id": "scan_20260218_024538",
+  "timestamp": "2026-02-18T02:45:38.719603Z",
+  "skill_path": "anthropics-skills-SE-skills/web-artifacts-builder",
+  "skill_name": "web-artifacts-builder",
+  "risk_score": 0.79,
+  "risk_level": "SAFE",
+  "total_files": 4,
+  "summary": {
+    "CRITICAL": 1,
+    "HIGH": 0,
+    "WARNING": 2,
+    "INFO": 0
+  },
+  "issues": [
+    {
+      "rule_id": "CMD001",
+      "severity": "CRITICAL",
+      "file": "anthropics-skills-SE-skills/web-artifacts-builder/scripts/init-artifact.sh",
+      "line": 34,
+      "pattern": "if ! command -v pnpm &> /dev/null; then",
+      "description": "执行可能破坏系统的命令",
+      "confidence": 0.9
+    },
+    {
+      "rule_id": "DEP001",
+      "severity": "WARNING",
+      "file": "anthropics-skills-SE-skills/web-artifacts-builder/scripts/init-artifact.sh",
+      "line": 36,
+      "pattern": "npm install -g pnpm",
+      "description": "全局安装可能影响其他项目",
+      "confidence": 0.85
+    },
+    {
+      "rule_id": "DEP001",
+      "severity": "WARNING",
+      "file": "anthropics-skills-SE-skills/web-artifacts-builder/scripts/init-artifact.sh",
+      "line": 272,
+      "pattern": "pnpm install @radix-ui/react-accordion @radix-ui/react-aspect-ratio @radix-ui/react-avatar @radix-ui/react-checkbox @radix-ui/react-collapsible @radix-ui/react-context-menu @radix-ui/react-dialog @radix-ui/react-dropdown-menu @radix-ui/react-hover-card @radix-ui/react-label @radix-ui/react-menubar @radix-ui/react-navigation-menu @radix-ui/react-popover @radix-ui/react-progress @radix-ui/react-radio-group @radix-ui/react-scroll-area @radix-ui/react-select @radix-ui/react-separator @radix-ui/react-slider @radix-ui/react-slot @radix-ui/react-switch @radix-ui/react-tabs @radix-ui/react-toast @radix-ui/react-toggle @radix-ui/react-toggle-group @radix-ui/react-tooltip",
+      "description": "全局安装可能影响其他项目",
+      "confidence": 0.85
+    }
+  ],
+  "total_issues": 3,
+  "recommendation": "SAFE"
+}

@@ -1,0 +1,100 @@
+{
+  "scan_id": "scan_20260218_024459",
+  "timestamp": "2026-02-18T02:44:59.749735Z",
+  "skill_path": "code-search-assistant",
+  "skill_name": "code-search-assistant",
+  "risk_score": 3.05,
+  "risk_level": "LOW",
+  "total_files": 1,
+  "summary": {
+    "CRITICAL": 9,
+    "HIGH": 0,
+    "WARNING": 0,
+    "INFO": 0
+  },
+  "issues": [
+    {
+      "rule_id": "NET001",
+      "severity": "CRITICAL",
+      "file": "code-search-assistant/SKILL.md",
+      "line": 63,
+      "pattern": "// Input snippet calls: fetch(), JSON.parse(), setState()",
+      "description": "检测到向外发送数据的网络请求",
+      "confidence": 0.49999999999999994
+    },
+    {
+      "rule_id": "NET001",
+      "severity": "CRITICAL",
+      "file": "code-search-assistant/SKILL.md",
+      "line": 64,
+      "pattern": "// High match: Code that calls fetch() → JSON.parse() → setState()",
+      "description": "检测到向外发送数据的网络请求",
+      "confidence": 0.49999999999999994
+    },
+    {
+      "rule_id": "NET001",
+      "severity": "CRITICAL",
+      "file": "code-search-assistant/SKILL.md",
+      "line": 65,
+      "pattern": "// Medium match: Code that calls fetch() and setState() in different order",
+      "description": "检测到向外发送数据的网络请求",
+      "confidence": 0.49999999999999994
+    },
+    {
+      "rule_id": "NET001",
+      "severity": "CRITICAL",
+      "file": "code-search-assistant/SKILL.md",
+      "line": 66,
+      "pattern": "// Low match: Code that only calls fetch()",
+      "description": "检测到向外发送数据的网络请求",
+      "confidence": 0.49999999999999994
+    },
+    {
+      "rule_id": "NET001",
+      "severity": "CRITICAL",
+      "file": "code-search-assistant/SKILL.md",
+      "line": 203,
+      "pattern": "const response = await fetch(`/api/users/${userId}`);",
+      "description": "检测到向外发送数据的网络请求",
+      "confidence": 0.7
+    },
+    {
+      "rule_id": "NET001",
+      "severity": "CRITICAL",
+      "file": "code-search-assistant/SKILL.md",
+      "line": 214,
+      "pattern": "1. Call chain: Search for `fetch()`, `response.json()`, `console.error()`",
+      "description": "检测到向外发送数据的网络请求",
+      "confidence": 0.7
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "code-search-assistant/SKILL.md",
+      "line": 34,
+      "pattern": "- Code tokens and keywords",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "code-search-assistant/SKILL.md",
+      "line": 71,
+      "pattern": "Find code with similar structure and token patterns.",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "code-search-assistant/SKILL.md",
+      "line": 105,
+      "pattern": "- **Authentication/Authorization**: Login, permission checks, token handling",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    }
+  ],
+  "total_issues": 9,
+  "recommendation": "USE_WITH_CAUTION"
+}

@@ -1,0 +1,73 @@
+{
+  "scan_id": "scan_20260218_024455",
+  "timestamp": "2026-02-18T02:44:55.608524Z",
+  "skill_path": "behavior-preservation-checker",
+  "skill_name": "behavior-preservation-checker",
+  "risk_score": 2.2,
+  "risk_level": "LOW",
+  "total_files": 7,
+  "summary": {
+    "CRITICAL": 6,
+    "HIGH": 0,
+    "WARNING": 0,
+    "INFO": 0
+  },
+  "issues": [
+    {
+      "rule_id": "NET001",
+      "severity": "CRITICAL",
+      "file": "behavior-preservation-checker/references/comparison_techniques.md",
+      "line": 177,
+      "pattern": "orig_resp = requests.get(f\"{original_url}{endpoint}\")",
+      "description": "检测到向外发送数据的网络请求",
+      "confidence": 0.7
+    },
+    {
+      "rule_id": "NET001",
+      "severity": "CRITICAL",
+      "file": "behavior-preservation-checker/references/comparison_techniques.md",
+      "line": 178,
+      "pattern": "mig_resp = requests.get(f\"{migrated_url}{endpoint}\")",
+      "description": "检测到向外发送数据的网络请求",
+      "confidence": 0.7
+    },
+    {
+      "rule_id": "NET001",
+      "severity": "CRITICAL",
+      "file": "behavior-preservation-checker/references/difference_patterns.md",
+      "line": 547,
+      "pattern": "response = requests.get(url, timeout=30)",
+      "description": "检测到向外发送数据的网络请求",
+      "confidence": 0.7
+    },
+    {
+      "rule_id": "NET001",
+      "severity": "CRITICAL",
+      "file": "behavior-preservation-checker/references/difference_patterns.md",
+      "line": 550,
+      "pattern": "response = requests.get(url)  # No timeout!",
+      "description": "检测到向外发送数据的网络请求",
+      "confidence": 0.49999999999999994
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "behavior-preservation-checker/scripts/compare_test_results.py",
+      "line": 82,
+      "pattern": "all_tests = set(original_tests.keys()) | set(migrated_tests.keys())",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "behavior-preservation-checker/scripts/behavior_checker.py",
+      "line": 90,
+      "pattern": "all_test_names = set(original_tests.keys()) | set(migrated_tests.keys())",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    }
+  ],
+  "total_issues": 6,
+  "recommendation": "USE_WITH_CAUTION"
+}

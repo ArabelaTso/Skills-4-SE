@@ -1,0 +1,109 @@
+{
+  "scan_id": "scan_20260218_024510",
+  "timestamp": "2026-02-18T02:45:10.841218Z",
+  "skill_path": "legacy-code-summarizer",
+  "skill_name": "legacy-code-summarizer",
+  "risk_score": 3.2849999999999997,
+  "risk_level": "LOW",
+  "total_files": 4,
+  "summary": {
+    "CRITICAL": 7,
+    "HIGH": 0,
+    "WARNING": 3,
+    "INFO": 0
+  },
+  "issues": [
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "legacy-code-summarizer/SKILL.md",
+      "line": 269,
+      "pattern": "# pmd cpd --minimum-tokens 100 --files src/",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.7
+    },
+    {
+      "rule_id": "CMD001",
+      "severity": "CRITICAL",
+      "file": "legacy-code-summarizer/references/dependency_analysis.md",
+      "line": 453,
+      "pattern": "sudo apt-get install graphviz",
+      "description": "执行可能破坏系统的命令",
+      "confidence": 0.75
+    },
+    {
+      "rule_id": "DEP001",
+      "severity": "WARNING",
+      "file": "legacy-code-summarizer/references/dependency_analysis.md",
+      "line": 348,
+      "pattern": "npm install -g madge",
+      "description": "全局安装可能影响其他项目",
+      "confidence": 0.85
+    },
+    {
+      "rule_id": "DEP001",
+      "severity": "WARNING",
+      "file": "legacy-code-summarizer/references/dependency_analysis.md",
+      "line": 375,
+      "pattern": "npm install -g dependency-cruiser",
+      "description": "全局安装可能影响其他项目",
+      "confidence": 0.85
+    },
+    {
+      "rule_id": "DEP001",
+      "severity": "WARNING",
+      "file": "legacy-code-summarizer/references/dependency_analysis.md",
+      "line": 416,
+      "pattern": "npm install -g depcheck",
+      "description": "全局安装可能影响其他项目",
+      "confidence": 0.85
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "legacy-code-summarizer/references/code_quality_checklist.md",
+      "line": 128,
+      "pattern": "pmd cpd --minimum-tokens 100 --files src/",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "legacy-code-summarizer/references/code_quality_checklist.md",
+      "line": 177,
+      "pattern": "pmd cpd --minimum-tokens 50 --files src/ --language python",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "legacy-code-summarizer/references/code_quality_checklist.md",
+      "line": 183,
+      "pattern": "pmd cpd --minimum-tokens 100 --files src/",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "legacy-code-summarizer/references/code_quality_checklist.md",
+      "line": 434,
+      "pattern": "grep -rni \"password\\|secret\\|api_key\" --include=\"*.py\" --include=\"*.java\" src/ | \\",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "rule_id": "NET001",
+      "severity": "CRITICAL",
+      "file": "legacy-code-summarizer/references/architecture_patterns.md",
+      "line": 184,
+      "pattern": "const response = await fetch('http://payment-service:8080/process', {",
+      "description": "检测到向外发送数据的网络请求",
+      "confidence": 0.49999999999999994
+    }
+  ],
+  "total_issues": 10,
+  "recommendation": "USE_WITH_CAUTION"
+}

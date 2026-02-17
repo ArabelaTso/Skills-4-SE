@@ -1,0 +1,28 @@
+{
+  "scan_id": "scan_20260218_024527",
+  "timestamp": "2026-02-18T02:45:27.160718Z",
+  "skill_path": "test-case-reducer",
+  "skill_name": "test-case-reducer",
+  "risk_score": 0.44999999999999996,
+  "risk_level": "SAFE",
+  "total_files": 4,
+  "summary": {
+    "CRITICAL": 1,
+    "HIGH": 0,
+    "WARNING": 0,
+    "INFO": 0
+  },
+  "issues": [
+    {
+      "rule_id": "FILE001",
+      "severity": "CRITICAL",
+      "file": "test-case-reducer/SKILL.md",
+      "line": 142,
+      "pattern": ".set('Authorization', 'Bearer token')",
+      "description": "尝试访问敏感文件",
+      "confidence": 0.8999999999999999
+    }
+  ],
+  "total_issues": 1,
+  "recommendation": "SAFE"
+}
