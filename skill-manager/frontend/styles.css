@@ -32,10 +32,21 @@ header {
     justify-content: space-between;
     align-items: flex-start;
     margin-bottom: 15px;
+    position: relative;
 }
 
-.header-top > div {
+.header-top > div:first-child {
     flex: 1;
+    text-align: center;
+}
+
+.header-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    position: absolute;
+    right: 0;
+    top: 0;
 }
 
 header h1 {
@@ -46,6 +57,31 @@ header h1 {
 .subtitle {
     font-size: 1.1em;
     opacity: 0.9;
+}
+
+.github-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.github-link:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.6);
+    transform: translateY(-2px) scale(1.05);
+}
+
+.github-link svg {
+    width: 24px;
+    height: 24px;
 }
 
 .lang-toggle-main {

@@ -351,6 +351,16 @@
       "description_zh": "为代码生成清晰、有用的注释。分析代码逻辑、参数、返回值和副作用，生成符合项目风格的文档注释。"
     },
     {
+      "name": "code-completion-semantic-constraints",
+      "displayName": "code-completion-semantic-constraints",
+      "description": "Automatically complete partial code snippets while satisfying semantic constraints including variable types, invariants, pre/post-conditions, interface contracts, and expected input/output behavior. Use when users provide incomplete code with specific requirements like \"complete this function that takes a list and returns sorted unique elements\" or \"fill in this method body that must maintain the invariant that x stays positive\" or \"implement this interface method with these type constraints.\" Produces compilable, executable code with tests and a constraint satisfaction report.",
+      "category": "other",
+      "installed": false,
+      "path": "code-completion-semantic-constraints",
+      "displayName_zh": "code-completion-semantic-constraints",
+      "description_zh": "Automatically complete partial code snippets while satisfying semantic constraints including variable types, invariants, pre/post-conditions, interface contracts, and expected input/output behavior. Use when users provide incomplete code with specific requirements like \"complete this function that takes a list and returns sorted unique elements\" or \"fill in this method body that must maintain the invariant that x stays positive\" or \"implement this interface method with these type constraints.\" Produces compilable, executable code with tests and a constraint satisfaction report."
+    },
+    {
       "name": "code-instrumentation-generator",
       "displayName": "code-instrumentation-generator",
       "description": "Automatically instruments source code to collect runtime information such as function calls, branch decisions, variable values, and execution traces while preserving original program semantics. Use when users need to: (1) Add logging or tracing to code for debugging, (2) Collect runtime execution data for analysis, (3) Monitor function calls and control flow, (4) Track variable values during execution, (5) Generate execution traces for testing or profiling. Supports Python, Java, JavaScript, and C/C++ with configurable instrumentation levels.",
@@ -389,6 +399,16 @@
       "path": "code-refactoring-assistant",
       "displayName_zh": "代码重构助手",
       "description_zh": "协助代码重构以提高可维护性和代码质量。建议重构机会、应用设计模式、消除代码异味，并保持功能等价性。"
+    },
+    {
+      "name": "code-repair-generation-combo",
+      "displayName": "code-repair-generation-combo",
+      "description": "Automatically repair buggy code and generate comprehensive tests for Python, Java, and C++ programs. Use when users need to fix logic errors or runtime errors in functions, modules, or repositories. Accepts specifications via natural language descriptions, existing test cases, or input/output examples. Generates corrected code, creates or updates tests to verify correctness and prevent regressions, and produces a detailed report explaining the bug, fix, and testing strategy. Triggers on requests like \"fix this bug\", \"repair this code\", \"debug this function\", or \"this code is broken\".",
+      "category": "other",
+      "installed": false,
+      "path": "code-repair-generation-combo",
+      "displayName_zh": "code-repair-generation-combo",
+      "description_zh": "Automatically repair buggy code and generate comprehensive tests for Python, Java, and C++ programs. Use when users need to fix logic errors or runtime errors in functions, modules, or repositories. Accepts specifications via natural language descriptions, existing test cases, or input/output examples. Generates corrected code, creates or updates tests to verify correctness and prevent regressions, and produces a detailed report explaining the bug, fix, and testing strategy. Triggers on requests like \"fix this bug\", \"repair this code\", \"debug this function\", or \"this code is broken\"."
     },
     {
       "name": "code-review-assistant",
@@ -953,6 +973,16 @@
       "description_zh": "Automatically updates regression tests based on interval analysis to maintain coverage of key program intervals. Use when code changes affect value ranges, conditionals, or control flow, and existing tests need updating to maintain interval coverage. Analyzes interval information from updated code, identifies coverage gaps, adjusts test inputs and assertions, removes redundant tests, and generates new tests for uncovered intervals. Supports Python, Java, JavaScript, and C/C++ with various test frameworks (pytest, JUnit, Jest, Google Test)."
     },
     {
+      "name": "interval-profiling-performance-analyzer",
+      "displayName": "interval-profiling-performance-analyzer",
+      "description": "Profile programs at the function/method level to identify performance hotspots, bottlenecks, and optimization opportunities. Records execution time, memory usage, and call frequency for each interval. Generates actionable recommendations and visualizations. Use when users need to (1) analyze program performance, (2) identify slow functions or bottlenecks, (3) optimize execution time or memory usage, (4) profile Python, Java, or C/C++ programs with test cases or workload scenarios, or (5) generate performance reports with flame graphs and recommendations.",
+      "category": "other",
+      "installed": false,
+      "path": "interval-profiling-performance-analyzer",
+      "displayName_zh": "interval-profiling-performance-analyzer",
+      "description_zh": "Profile programs at the function/method level to identify performance hotspots, bottlenecks, and optimization opportunities. Records execution time, memory usage, and call frequency for each interval. Generates actionable recommendations and visualizations. Use when users need to (1) analyze program performance, (2) identify slow functions or bottlenecks, (3) optimize execution time or memory usage, (4) profile Python, Java, or C/C++ programs with test cases or workload scenarios, or (5) generate performance reports with flame graphs and recommendations."
+    },
+    {
       "name": "invariant-inference",
       "displayName": "invariant-inference",
       "description": "Automatically infer loop invariants for code verification and correctness proofs. Use when analyzing loops to identify properties that hold throughout execution, generating assertions for verification, proving loop correctness, or documenting loop behavior. Supports Python, Java, C/C++, and language-agnostic analysis. Generates invariants as code assertions (assert statements). Triggers when users ask to infer invariants, find loop properties, generate loop assertions, prove loop correctness, or verify loop behavior.",
@@ -1113,6 +1143,16 @@
       "description_zh": "从接口契约构建完整模块。生成分层架构（模型、仓储、服务），支持 Python 和 Java 的设计模式。"
     },
     {
+      "name": "module-level-code-translator",
+      "displayName": "module-level-code-translator",
+      "description": "Translate source code between programming languages at function, class, and module levels while preserving behavior and generating verification tests. Use when translating code from one language to another (e.g., \"translate this Python module to JavaScript\", \"convert this Java class to C#\", \"port this code to Go and generate tests\"), migrating codebases between languages, or creating equivalent implementations across different technology stacks. Handles idiom adaptation, standard library mappings, and test generation.",
+      "category": "other",
+      "installed": false,
+      "path": "module-level-code-translator",
+      "displayName_zh": "module-level-code-translator",
+      "description_zh": "Translate source code between programming languages at function, class, and module levels while preserving behavior and generating verification tests. Use when translating code from one language to another (e.g., \"translate this Python module to JavaScript\", \"convert this Java class to C#\", \"port this code to Go and generate tests\"), migrating codebases between languages, or creating equivalent implementations across different technology stacks. Handles idiom adaptation, standard library mappings, and test generation."
+    },
+    {
       "name": "multi-version-behavior-comparator",
       "displayName": "multi-version-behavior-comparator",
       "description": "Compare behavior across multiple versions of programs or repositories. Use when you need to analyze how functionality changes between versions, identify regressions, compare outputs and exceptions, or validate upgrades. The skill compares execution behavior, test results, outputs, exceptions, and observable states across versions, generating detailed reports showing behavioral divergences, potential regressions, added/removed functionality, and areas requiring validation. Supports multiple programming languages and can work with test suites or execution traces.",
@@ -1247,6 +1287,26 @@
       "path": "pseudocode-extractor",
       "displayName_zh": "伪代码提取器",
       "description_zh": "Extract programming-language-agnostic pseudocode from source code in any language, preserving control flow and logical structure while filtering out implementation details. Use when the user asks to convert code to pseudocode, abstract code logic, understand code structure without syntax, create language-independent documentation, or analyze algorithmic flow without language-specific details."
+    },
+    {
+      "name": "pseudocode-to-java-code",
+      "displayName": "pseudocode-to-java-code",
+      "description": "Converts pseudocode descriptions and algorithm specifications into complete, executable Java code. Use this skill when you need to implement algorithms from pseudocode, translate algorithm descriptions to Java, generate Java code from specifications, convert textbook algorithms to working code, or create executable implementations from high-level descriptions. Preserves logic and control flow while handling Java idioms, data structures, and includes test cases for verification.",
+      "category": "other",
+      "installed": false,
+      "path": "pseudocode-to-java-code",
+      "displayName_zh": "pseudocode-to-java-code",
+      "description_zh": "Converts pseudocode descriptions and algorithm specifications into complete, executable Java code. Use this skill when you need to implement algorithms from pseudocode, translate algorithm descriptions to Java, generate Java code from specifications, convert textbook algorithms to working code, or create executable implementations from high-level descriptions. Preserves logic and control flow while handling Java idioms, data structures, and includes test cases for verification."
+    },
+    {
+      "name": "pseudocode-to-python-code",
+      "displayName": "pseudocode-to-python-code",
+      "description": "Convert pseudocode, algorithm descriptions, or specifications into complete, executable Python code. Handles natural language descriptions, structured pseudocode, and formal algorithm specifications. Generates production-ready code with type hints, docstrings, error handling, and test cases. Use when users need to (1) convert pseudocode to Python, (2) implement algorithms from descriptions, (3) translate algorithm specifications to code, (4) generate Python implementations from textbook pseudocode, or (5) create executable code from high-level algorithm designs.",
+      "category": "other",
+      "installed": false,
+      "path": "pseudocode-to-python-code",
+      "displayName_zh": "pseudocode-to-python-code",
+      "description_zh": "Convert pseudocode, algorithm descriptions, or specifications into complete, executable Python code. Handles natural language descriptions, structured pseudocode, and formal algorithm specifications. Generates production-ready code with type hints, docstrings, error handling, and test cases. Use when users need to (1) convert pseudocode to Python, (2) implement algorithms from descriptions, (3) translate algorithm specifications to code, (4) generate Python implementations from textbook pseudocode, or (5) create executable code from high-level algorithm designs."
     },
     {
       "name": "python-api-consistency-validator",
@@ -1955,7 +2015,7 @@
       "description_zh": "Toolkit for interacting with and testing local web applications using Playwright. Supports verifying frontend functionality, debugging UI behavior, capturing browser screenshots, and viewing browser logs."
     }
   ],
-  "total": 193,
+  "total": 199,
   "category_names_zh": {
     "code-generation": "代码生成",
     "testing": "测试",
@@ -1968,5 +2028,5 @@
     "maintenance": "维护",
     "other": "其他"
   },
-  "generated_at": "2026-02-17"
+  "generated_at": "2026-02-18"
 }
