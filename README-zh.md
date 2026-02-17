@@ -205,6 +205,12 @@
 - 修复由于签名和行为变更导致的测试失败
 - 分析代码差异并相应更新断言
 
+**[Bug 重现测试生成器](./bug-reproduction-test-generator/)**
+- 根据问题报告自动生成重现 bug 的测试
+- 分析 bug 症状、堆栈跟踪和触发条件
+- 创建最小化、聚焦的测试来可靠地触发 bug
+- 支持 Python、Java 和 JavaScript 测试框架
+
 **[需求到测试转换器](./req-to-test/)**
 - 将需求转换为测试用例
 - 确保需求覆盖
@@ -699,6 +705,7 @@
     - [集成测试生成器](integration-test-generator) – 为多个交互组件生成测试
     - [定向测试输入生成器](directed-test-input-generator) – 使用程序上下文和测试目标指导 LLM 驱动的测试输入生成，以达到难以触及的行为
     - [模糊测试输入生成器](fuzzing-input-generator) -- 生成随机化输入以检测意外故障
+    - [Bug 重现测试生成器](bug-reproduction-test-generator) – 根据问题报告和堆栈跟踪自动生成重现 bug 的测试
 
 
 - **断言与预言合成**

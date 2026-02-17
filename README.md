@@ -198,6 +198,12 @@ A Skill in this repo is more than a prompt:
 - Fixes broken tests due to signature and behavior changes
 - Analyzes code diffs and updates assertions accordingly
 
+**[Bug Reproduction Test Generator](./bug-reproduction-test-generator/)**
+- Automatically generates tests that reproduce reported bugs from issue reports
+- Analyzes bug symptoms, stack traces, and triggering conditions
+- Creates minimal, focused tests that reliably trigger the bug
+- Supports Python, Java, and JavaScript test frameworks
+
 **[Requirement to Test](./req-to-test/)**
 - Converts requirements to test cases
 - Ensures requirement coverage
@@ -694,6 +700,7 @@ A Skill in this repo is more than a prompt:
     - [Integration Test Generator](integration-test-generator) – Generate tests for multiple interacting components
     - [Directed Test Input Generator](directed-test-input-generator) – Uses program context and testing objectives to guide LLM-driven test input generation toward hard-to-reach behaviors.
     - [Fuzzing Input Generator](fuzzing-input-generator) -- Produce randomized inputs to detect unexpected failures
+    - [Bug Reproduction Test Generator](bug-reproduction-test-generator) – Automatically generate tests that reproduce reported bugs from issue reports and stack traces
 
 
 - **Assertion & Oracle Synthesis**

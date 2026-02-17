@@ -1,5 +1,5 @@
 // Data source - static JSON file for GitHub Pages
-const SKILLS_DATA_URL = 'skills-data.json';
+const SKILLS_DATA_URL = 'skills-data.json?v=' + Date.now();
 
 // State
 let allSkills = [];
@@ -471,6 +471,12 @@ function createSkillCard(skill) {
         ? skill.description_zh
         : skill.description;
 
+    // Truncate description for card display (keep full description for tooltip)
+    const maxDescriptionLength = 150;
+    if (skillDescription.length > maxDescriptionLength) {
+        skillDescription = skillDescription.substring(0, maxDescriptionLength) + '...';
+    }
+
     // Apply highlighting if there are search terms
     if (currentSearchTerms.length > 0) {
         skillName = highlightText(skillName, currentSearchTerms);
@@ -493,6 +499,10 @@ function createSkillCard(skill) {
         return div.innerHTML;
     };
 
+    // Generate GitHub URL for the skill
+    const githubBaseUrl = 'https://github.com/ArabelaTso/LLM4SE-Skills/tree/main';
+    const skillGithubUrl = `${githubBaseUrl}/${skill.path}`;
+
     return `
         <div class="skill-card ${isSelected ? 'selected' : ''} ${skill.installed ? 'installed' : ''}"
              data-skill="${skill.name}">
@@ -504,6 +514,9 @@ function createSkillCard(skill) {
             </div>
             <div class="skill-category cat-${category}">${categoryLabel}</div>
             <div class="skill-description">${skillDescription}</div>
+            <a href="${skillGithubUrl}" target="_blank" class="see-more-link" onclick="event.stopPropagation()">
+                ${currentLang === 'zh' ? '📖 查看详情' : '📖 See more'}
+            </a>
             <span class="skill-status ${skill.installed ? 'status-installed' : 'status-available'}">
                 ${statusText}
             </span>

@@ -1,0 +1,99 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "State Snapshot Format",
+  "description": "Schema for runtime state snapshots from instrumented programs",
+  "type": "object",
+  "required": ["format_version", "language", "total_snapshots", "snapshots"],
+  "properties": {
+    "format_version": {
+      "type": "string",
+      "description": "Version of the snapshot format",
+      "const": "1.0"
+    },
+    "language": {
+      "type": "string",
+      "enum": ["python", "c", "java", "cpp"],
+      "description": "Source language of instrumented program"
+    },
+    "total_snapshots": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Total number of snapshots captured"
+    },
+    "snapshots": {
+      "type": "array",
+      "description": "Array of snapshot objects",
+      "items": {
+        "type": "object",
+        "required": ["snapshot_id", "timestamp", "location", "type"],
+        "properties": {
+          "snapshot_id": {
+            "type": "integer",
+            "minimum": 1,
+            "description": "Unique snapshot identifier"
+          },
+          "timestamp": {
+            "type": "string",
+            "description": "ISO 8601 timestamp"
+          },
+          "location": {
+            "type": "string",
+            "description": "Location identifier (e.g., function:entry)"
+          },
+          "type": {
+            "type": "string",
+            "enum": ["manual", "function_entry", "function_exit", "method_entry", "method_exit"],
+            "description": "Type of snapshot"
+          },
+          "call_stack": {
+            "type": "array",
+            "description": "Call stack at snapshot time",
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                  "description": "Stack frame as string (C/Java)"
+                },
+                {
+                  "type": "object",
+                  "description": "Stack frame as object (Python)",
+                  "properties": {
+                    "function": {"type": "string"},
+                    "filename": {"type": "string"},
+                    "lineno": {"type": "integer"}
+                  }
+                }
+              ]
+            }
+          },
+          "local_variables": {
+            "type": "object",
+            "description": "Local variables (Python/Java)",
+            "additionalProperties": true
+          },
+          "variables": {
+            "type": "object",
+            "description": "Variables with metadata (C/C++)",
+            "additionalProperties": {
+              "type": "object",
+              "properties": {
+                "size": {
+                  "type": "integer",
+                  "description": "Size in bytes"
+                },
+                "data": {
+                  "type": "string",
+                  "description": "Hex-encoded data"
+                }
+              }
+            }
+          },
+          "thread_id": {
+            "type": ["integer", "null"],
+            "description": "Thread identifier (if applicable)"
+          }
+        }
+      }
+    }
+  }
+}

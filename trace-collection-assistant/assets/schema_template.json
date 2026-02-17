@@ -1,0 +1,101 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Normalized Trace Format",
+  "description": "Schema for normalized execution traces from strace/ltrace",
+  "type": "object",
+  "required": ["trace_type", "source_file", "total_calls", "traces"],
+  "properties": {
+    "trace_type": {
+      "type": "string",
+      "enum": ["strace", "ltrace"],
+      "description": "Type of trace"
+    },
+    "source_file": {
+      "type": "string",
+      "description": "Path to original trace file"
+    },
+    "total_calls": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Total number of traced calls"
+    },
+    "filtered": {
+      "type": "boolean",
+      "description": "Whether filtering has been applied"
+    },
+    "traces": {
+      "type": "array",
+      "description": "Array of trace entries",
+      "items": {
+        "oneOf": [
+          {
+            "type": "object",
+            "description": "strace entry",
+            "required": ["syscall", "arguments", "return_value", "line_number", "raw_line"],
+            "properties": {
+              "syscall": {
+                "type": "string",
+                "description": "System call name"
+              },
+              "arguments": {
+                "type": "array",
+                "items": {"type": "string"},
+                "description": "System call arguments"
+              },
+              "return_value": {
+                "type": "string",
+                "description": "Return value"
+              },
+              "extra_info": {
+                "type": ["string", "null"],
+                "description": "Additional information"
+              },
+              "line_number": {
+                "type": "integer",
+                "minimum": 1,
+                "description": "Line number in original file"
+              },
+              "raw_line": {
+                "type": "string",
+                "description": "Original trace line"
+              }
+            }
+          },
+          {
+            "type": "object",
+            "description": "ltrace entry",
+            "required": ["function", "arguments", "return_value", "line_number", "raw_line"],
+            "properties": {
+              "function": {
+                "type": "string",
+                "description": "Library function name"
+              },
+              "arguments": {
+                "type": "array",
+                "items": {"type": "string"},
+                "description": "Function arguments"
+              },
+              "return_value": {
+                "type": "string",
+                "description": "Return value"
+              },
+              "timing": {
+                "type": ["string", "null"],
+                "description": "Execution time"
+              },
+              "line_number": {
+                "type": "integer",
+                "minimum": 1,
+                "description": "Line number in original file"
+              },
+              "raw_line": {
+                "type": "string",
+                "description": "Original trace line"
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

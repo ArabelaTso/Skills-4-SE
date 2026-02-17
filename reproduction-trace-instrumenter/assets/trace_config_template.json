@@ -1,0 +1,49 @@
+{
+  "trace_config": {
+    "output_file": "trace.json",
+    "max_trace_size_mb": 100,
+    "compression": "gzip",
+    "format": "json"
+  },
+  "instrumentation": {
+    "trace_functions": true,
+    "trace_variables": true,
+    "trace_control_flow": true,
+    "trace_exceptions": true,
+    "trace_external_calls": false
+  },
+  "filtering": {
+    "exclude_patterns": [
+      "__init__",
+      "__str__",
+      "__repr__",
+      "test_*",
+      "*_test"
+    ],
+    "exclude_modules": [
+      "logging",
+      "unittest",
+      "pytest"
+    ],
+    "max_string_length": 200,
+    "max_collection_size": 50,
+    "max_call_depth": 50
+  },
+  "sampling": {
+    "enabled": false,
+    "sample_rate": 0.1,
+    "adaptive": false
+  },
+  "replay": {
+    "deterministic_mode": true,
+    "record_timestamps": true,
+    "record_thread_info": false,
+    "seed_random": true,
+    "random_seed": 12345
+  },
+  "performance": {
+    "buffer_size": 1000,
+    "async_write": true,
+    "lazy_serialization": true
+  }
+}

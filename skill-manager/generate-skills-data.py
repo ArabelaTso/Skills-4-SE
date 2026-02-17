@@ -117,10 +117,8 @@ def extract_metadata(skill_path, translations, source_prefix=None, source_dir=No
             if len(parts) >= 3:
                 frontmatter = yaml.safe_load(parts[1])
 
-                # Get description and truncate if needed
+                # Get description (no truncation for full display in tooltips)
                 description = frontmatter.get('description', '')
-                if len(description) > 200:
-                    description = description[:200] + '...'
 
                 skill_name = skill_path.name
                 # Determine the relative path for installation
