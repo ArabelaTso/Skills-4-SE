@@ -275,6 +275,11 @@ A Skill in this repo is more than a prompt:
 - Applies transformations based on metamorphic properties
 - Expands test suites and detects bugs through input-output relationships
 
+**[Counterexample to Test Generator](./counterexample-to-test-generator/)**
+- Converts formal verification counterexamples into executable test cases
+- Transforms model checker outputs into unit or integration tests
+- Bridges formal verification and testing workflows
+
 **[Mutation Test Suite Optimizer](./mutation-test-suite-optimizer/)**
 - Optimizes test suites using mutation testing analysis
 - Selects minimal subset of tests maximizing mutation kill rate
@@ -376,6 +381,21 @@ A Skill in this repo is more than a prompt:
 - Proposes secure remediation strategies for security vulnerabilities
 - Addresses buffer overflows, injection risks, insecure deserialization
 - Provides fixes for improper authentication and unsafe cryptographic usage
+
+**[CVE Reachability Analyzer](./cve-reachability-analyzer/)**
+- Analyzes whether CVE vulnerabilities in dependencies are reachable from application code
+- Performs static and dynamic reachability analysis
+- Prioritizes CVE remediation based on actual exploitability
+
+**[CVE Watchlist Action Recommendation Generator](./cve-watchlist-action-recommendation-generator/)**
+- Generates actionable recommendations for CVEs in dependency watchlists
+- Prioritizes CVEs based on severity, exploitability, and impact
+- Suggests patching, mitigation, or monitoring strategies
+
+**[Time-Aware Dependency CVE Scanner](./time-aware-dependency-cve-scanner/)**
+- Scans dependencies for CVEs with temporal context awareness
+- Tracks CVE disclosure timelines and patch availability
+- Provides time-sensitive vulnerability management recommendations
 
 **[Semantic Bug Detector](./semantic-bug-detector/)**
 - Detects semantic-level bugs by analyzing code behavior vs. intent
@@ -984,6 +1004,61 @@ A Skill in this repo is more than a prompt:
 - Produces compilable code with verification tests
 - Explains how each constraint was satisfied
 
+**[Model-Guided Code Repair](./model-guided-code-repair/)**
+- Automatically repairs code violations of temporal properties using counterexamples
+- Reasons about model-level causes and proposes minimal fixes
+- Validates repairs through re-verification or test generation
+
+**[TLA+ Guided Code Repair](./tlaplus-guided-code-repair/)**
+- Repairs code based on TLA+ specification violations
+- Uses TLA+ model checking results to guide repair strategies
+- Ensures repaired code satisfies temporal properties
+
+**[Program to TLA+ Spec Generator](./program-to-tlaplus-spec-generator/)**
+- Automatically generates TLA+ specifications from program code
+- Identifies state variables, actions, and invariants
+- Creates formal models for verification
+
+**[TLA+ Spec Generator](./tlaplus-spec-generator/)**
+- Generates TLA+ specifications from requirements or designs
+- Creates formal specifications with proper syntax
+- Supports concurrent and distributed system modeling
+
+**[Requirement to TLA+ Property Generator](./requirement-to-tlaplus-property-generator/)**
+- Converts natural language requirements to TLA+ temporal properties
+- Formalizes safety and liveness properties
+- Generates verifiable specifications from informal descriptions
+
+**[Specification to Temporal Logic Generator](./specification-to-temporal-logic-generator/)**
+- Translates specifications into temporal logic formulas (LTL, CTL)
+- Supports multiple temporal logic notations
+- Enables formal verification of system properties
+
+**[TLA+ Model Reduction](./tlaplus-model-reduction/)**
+- Reduces TLA+ model complexity while preserving properties
+- Applies abstraction and symmetry reduction techniques
+- Improves model checking performance
+
+**[SMV Model Extractor](./smv-model-extractor/)**
+- Extracts SMV models from program code or specifications
+- Generates models suitable for symbolic model checking
+- Supports NuSMV and nuXmv verification tools
+
+**[RTL Specification Consistency Checker](./rtl-specification-consistency-checker/)**
+- Checks behavioral consistency between RTL and specifications
+- Identifies satisfied, violated, underspecified, and uncheckable requirements
+- Provides detailed violation reports with execution traces
+
+**[RTL Equivalence Checker](./rtl-equivalence-checker/)**
+- Verifies equivalence between two RTL implementations
+- Detects functional differences in hardware designs
+- Supports formal equivalence checking workflows
+
+**[RTL Property Inference](./rtl-property-inference/)**
+- Automatically infers temporal properties from RTL code
+- Discovers invariants and protocol properties
+- Generates assertions for hardware verification
+
 ### Maintenance & Refactoring
 
 **[Code Refactoring Assistant](./code-refactoring-assistant/)**
@@ -1144,6 +1219,7 @@ A Skill in this repo is more than a prompt:
     - [Python Regression Test Generator](python-regression-test-generator) – Automatically generate regression tests for Python codebases by analyzing changes between code versions and migrating existing tests
     - [Mocking Test Generator](mocking-test-generator) – Generate unit tests with proper mocking for Python (unittest.mock/pytest) or Java (Mockito/JUnit) code with external dependencies
     - [Metamorphic Test Generator](metamorphic-test-generator) – Generate test cases using metamorphic testing principles by applying transformations based on metamorphic properties
+    - [Counterexample to Test Generator](counterexample-to-test-generator) – Convert formal verification counterexamples into executable test cases for bridging verification and testing
 
 
 - **Assertion & Oracle Synthesis**
@@ -1242,6 +1318,24 @@ A Skill in this repo is more than a prompt:
     - [Semantic Equivalence Verifier](semantic-equivalence-verifier) – Analyze semantic equivalence between two code artifacts
     - [Regression Consistency Checker](regression-consistency-checker) – Check whether new version preserves behavior observed by tests on old version
 
+- **TLA+ Specification & Verification**
+    - [Program to TLA+ Spec Generator](program-to-tlaplus-spec-generator) – Automatically generate TLA+ specifications from program code by identifying state variables, actions, and invariants
+    - [TLA+ Spec Generator](tlaplus-spec-generator) – Generate TLA+ specifications from requirements or designs for concurrent and distributed system modeling
+    - [Requirement to TLA+ Property Generator](requirement-to-tlaplus-property-generator) – Convert natural language requirements to TLA+ temporal properties and formal specifications
+    - [Specification to Temporal Logic Generator](specification-to-temporal-logic-generator) – Translate specifications into temporal logic formulas (LTL, CTL) for formal verification
+    - [TLA+ Model Reduction](tlaplus-model-reduction) – Reduce TLA+ model complexity while preserving properties using abstraction and symmetry reduction
+    - [TLA+ Guided Code Repair](tlaplus-guided-code-repair) – Repair code based on TLA+ specification violations using model checking results
+    - [Model-Guided Code Repair](model-guided-code-repair) – Automatically repair code violations of temporal properties using counterexamples and model-level reasoning
+
+- **Hardware Verification**
+    - [RTL Specification Consistency Checker](rtl-specification-consistency-checker) – Check behavioral consistency between RTL and specifications with detailed violation reports
+    - [RTL Equivalence Checker](rtl-equivalence-checker) – Verify equivalence between two RTL implementations and detect functional differences
+    - [RTL Property Inference](rtl-property-inference) – Automatically infer temporal properties and invariants from RTL code
+
+- **Model Checking & Extraction**
+    - [SMV Model Extractor](smv-model-extractor) – Extract SMV models from program code or specifications for symbolic model checking
+    - [Counterexample to Test Generator](counterexample-to-test-generator) – Convert formal verification counterexamples into executable test cases
+
 
 ### 💻 **Deployment**
 - **Deployment Preparation**
@@ -1318,6 +1412,9 @@ A Skill in this repo is more than a prompt:
     - [Exploitability Analyzer](exploitability-analyzer) – Assess realistic exploitability of detected vulnerabilities by examining control flow, input sources, and sanitization logic
     - [Security Patch Advisor](security-patch-advisor) – Propose secure remediation strategies for detected security vulnerabilities
     - [Semantic Bug Detector](semantic-bug-detector) – Detect semantic-level bugs by analyzing whether code behavior matches its intended purpose inferred from names, comments, and documentation
+    - [CVE Reachability Analyzer](cve-reachability-analyzer) – Analyze whether CVE vulnerabilities in dependencies are reachable from application code
+    - [CVE Watchlist Action Recommendation Generator](cve-watchlist-action-recommendation-generator) – Generate actionable recommendations for CVEs in dependency watchlists
+    - [Time-Aware Dependency CVE Scanner](time-aware-dependency-cve-scanner) – Scan dependencies for CVEs with temporal context awareness and time-sensitive recommendations
 
 - **Legacy & Technical Debt Management**
     - [Legacy Code Summarizer](legacy-code-summarizer) – Produce summaries and insights about legacy code bases

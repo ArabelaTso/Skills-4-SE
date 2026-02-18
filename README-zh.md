@@ -282,6 +282,11 @@
 - 基于变形属性应用转换
 - 通过输入输出关系扩展测试套件并检测 bug
 
+**[反例到测试生成器](./counterexample-to-test-generator/)**
+- 将形式化验证反例转换为可执行测试用例
+- 将模型检查器输出转换为单元测试或集成测试
+- 连接形式化验证和测试工作流
+
 **[变异测试套件优化器](./mutation-test-suite-optimizer/)**
 - 使用变异测试分析优化测试套件
 - 选择最大化变异杀死率的最小测试子集
@@ -394,6 +399,21 @@
 - 为安全漏洞提出安全的修复策略
 - 解决缓冲区溢出、注入风险、不安全的反序列化
 - 提供不当身份验证和不安全加密使用的修复方案
+
+**[CVE 可达性分析器](./cve-reachability-analyzer/)**
+- 分析依赖项中的 CVE 漏洞是否可从应用程序代码到达
+- 执行静态和动态可达性分析
+- 基于实际可利用性优先处理 CVE 修复
+
+**[CVE 监控列表行动建议生成器](./cve-watchlist-action-recommendation-generator/)**
+- 为依赖项监控列表中的 CVE 生成可操作的建议
+- 基于严重性、可利用性和影响优先处理 CVE
+- 建议修补、缓解或监控策略
+
+**[时间感知依赖 CVE 扫描器](./time-aware-dependency-cve-scanner/)**
+- 扫描具有时间上下文感知的依赖项 CVE
+- 跟踪 CVE 披露时间线和补丁可用性
+- 提供时间敏感的漏洞管理建议
 
 **[语义 Bug 检测器](./semantic-bug-detector/)**
 - 通过分析代码行为与意图来检测语义级 bug
@@ -974,6 +994,61 @@
 - 生成带有验证测试的可编译代码
 - 解释如何满足每个约束
 
+**[模型引导代码修复](./model-guided-code-repair/)**
+- 使用反例自动修复时序属性的代码违规
+- 推理模型级原因并提出最小化修复
+- 通过重新验证或测试生成验证修复
+
+**[TLA+ 引导代码修复](./tlaplus-guided-code-repair/)**
+- 基于 TLA+ 规范违规修复代码
+- 使用 TLA+ 模型检查结果指导修复策略
+- 确保修复后的代码满足时序属性
+
+**[程序到 TLA+ 规范生成器](./program-to-tlaplus-spec-generator/)**
+- 从程序代码自动生成 TLA+ 规范
+- 识别状态变量、动作和不变量
+- 创建用于验证的形式化模型
+
+**[TLA+ 规范生成器](./tlaplus-spec-generator/)**
+- 从需求或设计生成 TLA+ 规范
+- 创建具有正确语法的形式化规范
+- 支持并发和分布式系统建模
+
+**[需求到 TLA+ 属性生成器](./requirement-to-tlaplus-property-generator/)**
+- 将自然语言需求转换为 TLA+ 时序属性
+- 形式化安全性和活性属性
+- 从非形式化描述生成可验证的规范
+
+**[规范到时序逻辑生成器](./specification-to-temporal-logic-generator/)**
+- 将规范翻译为时序逻辑公式（LTL、CTL）
+- 支持多种时序逻辑表示法
+- 实现系统属性的形式化验证
+
+**[TLA+ 模型简化](./tlaplus-model-reduction/)**
+- 在保留属性的同时降低 TLA+ 模型复杂度
+- 应用抽象和对称性简化技术
+- 提高模型检查性能
+
+**[SMV 模型提取器](./smv-model-extractor/)**
+- 从程序代码或规范中提取 SMV 模型
+- 生成适合符号模型检查的模型
+- 支持 NuSMV 和 nuXmv 验证工具
+
+**[RTL 规范一致性检查器](./rtl-specification-consistency-checker/)**
+- 检查 RTL 和规范之间的行为一致性
+- 识别满足、违规、欠规范和不可检查的需求
+- 提供带有执行跟踪的详细违规报告
+
+**[RTL 等价检查器](./rtl-equivalence-checker/)**
+- 验证两个 RTL 实现之间的等价性
+- 检测硬件设计中的功能差异
+- 支持形式化等价检查工作流
+
+**[RTL 属性推断](./rtl-property-inference/)**
+- 从 RTL 代码自动推断时序属性
+- 发现不变量和协议属性
+- 为硬件验证生成断言
+
 ### 维护与重构
 
 **[代码重构助手](./code-refactoring-assistant/)**
@@ -1134,6 +1209,7 @@
     - [Python 回归测试生成器](python-regression-test-generator) – 通过分析代码版本之间的变更自动为 Python 代码库生成回归测试并迁移现有测试
     - [模拟测试生成器](mocking-test-generator) – 为具有外部依赖的 Python (unittest.mock/pytest) 或 Java (Mockito/JUnit) 代码生成带有适当模拟的单元测试
     - [变形测试生成器](metamorphic-test-generator) – 使用变形测试原则通过基于变形属性应用转换来生成测试用例
+    - [反例到测试生成器](counterexample-to-test-generator) – 将形式化验证反例转换为可执行测试用例以连接验证和测试工作流
 
 
 - **断言与预言合成**
@@ -1230,6 +1306,24 @@
     - [语义等价验证器](semantic-equivalence-verifier) – 分析两个代码制品之间的语义等价性
     - [回归一致性检查器](regression-consistency-checker) – 检查新版本是否保留旧版本测试观察到的行为
 
+- **TLA+ 规范与验证**
+    - [程序到 TLA+ 规范生成器](program-to-tlaplus-spec-generator) – 通过识别状态变量、动作和不变量从程序代码自动生成 TLA+ 规范
+    - [TLA+ 规范生成器](tlaplus-spec-generator) – 从需求或设计生成 TLA+ 规范，用于并发和分布式系统建模
+    - [需求到 TLA+ 属性生成器](requirement-to-tlaplus-property-generator) – 将自然语言需求转换为 TLA+ 时序属性和形式化规范
+    - [规范到时序逻辑生成器](specification-to-temporal-logic-generator) – 将规范翻译为时序逻辑公式（LTL、CTL）以进行形式化验证
+    - [TLA+ 模型简化](tlaplus-model-reduction) – 使用抽象和对称性简化在保留属性的同时降低 TLA+ 模型复杂度
+    - [TLA+ 引导代码修复](tlaplus-guided-code-repair) – 基于 TLA+ 规范违规使用模型检查结果修复代码
+    - [模型引导代码修复](model-guided-code-repair) – 使用反例和模型级推理自动修复时序属性的代码违规
+
+- **硬件验证**
+    - [RTL 规范一致性检查器](rtl-specification-consistency-checker) – 检查 RTL 和规范之间的行为一致性，提供详细的违规报告
+    - [RTL 等价检查器](rtl-equivalence-checker) – 验证两个 RTL 实现之间的等价性并检测功能差异
+    - [RTL 属性推断](rtl-property-inference) – 从 RTL 代码自动推断时序属性和不变量
+
+- **模型检查与提取**
+    - [SMV 模型提取器](smv-model-extractor) – 从程序代码或规范中提取 SMV 模型以进行符号模型检查
+    - [反例到测试生成器](counterexample-to-test-generator) – 将形式化验证反例转换为可执行测试用例
+
 
 ### 💻 **部署**
 - **部署准备**
@@ -1306,6 +1400,9 @@
     - [可利用性分析器](exploitability-analyzer) – 通过检查控制流、输入源和清理逻辑来评估检测到的漏洞的实际可利用性
     - [安全补丁顾问](security-patch-advisor) – 为检测到的安全漏洞提出安全的修复策略
     - [语义 Bug 检测器](semantic-bug-detector) – 通过分析代码行为是否与从名称、注释和文档推断的预期目的匹配来检测语义级 bug
+    - [CVE 可达性分析器](cve-reachability-analyzer) – 分析依赖项中的 CVE 漏洞是否可从应用程序代码到达
+    - [CVE 监控列表行动建议生成器](cve-watchlist-action-recommendation-generator) – 为依赖项监控列表中的 CVE 生成可操作的建议
+    - [时间感知依赖 CVE 扫描器](time-aware-dependency-cve-scanner) – 扫描具有时间上下文感知的依赖项 CVE 并提供时间敏感的建议
 
 - **遗留代码与技术债务管理**
     - [遗留代码总结器](legacy-code-summarizer) – 生成关于遗留代码库的摘要和见解
