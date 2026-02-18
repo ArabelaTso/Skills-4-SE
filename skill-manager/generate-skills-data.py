@@ -24,7 +24,7 @@ print(f"Output file: {OUTPUT_FILE}")
 print(f"Translations file: {TRANSLATIONS_FILE}")
 
 # Directories to exclude
-EXCLUDED_DIRS = ['skill-manager', 'node_modules', 'skill-creator', '.git', 'awesome-claude-skills']
+EXCLUDED_DIRS = ['skill-manager', 'node_modules', 'skill-creator', '.git', 'awesome-claude-skills', '_report']
 
 # Additional directories to include (from awesome-claude-skills-SE-skills and anthropics-skills-SE-skills)
 ADDITIONAL_SKILL_DIRS = ['awesome-claude-skills-SE-skills', 'anthropics-skills-SE-skills']

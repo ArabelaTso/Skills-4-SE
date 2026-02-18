@@ -2330,6 +2330,38 @@ Scanning: counterexample-generator
 [*] Recommendation: SAFE - 未检测到明显安全问题
 
 Report saved to: report/counterexample-generator.json
+Scanning: counterexample-to-test-generator
+
+[*] Scanning Skill: counterexample-to-test-generator
+
+[OK] Risk Level: SAFE (0.0/10)
+
+[*] Summary:
+  Total Files Scanned: 4
+  Critical Issues: 0
+  Warning Issues: 0
+  Info Issues: 0
+  Total Issues: 0
+
+[*] Recommendation: SAFE - 未检测到明显安全问题
+
+Report saved to: report/counterexample-to-test-generator.html
+Scanning: counterexample-to-test-generator
+
+[*] Scanning Skill: counterexample-to-test-generator
+
+[OK] Risk Level: SAFE (0.0/10)
+
+[*] Summary:
+  Total Files Scanned: 4
+  Critical Issues: 0
+  Warning Issues: 0
+  Info Issues: 0
+  Total Issues: 0
+
+[*] Recommendation: SAFE - 未检测到明显安全问题
+
+Report saved to: report/counterexample-to-test-generator.json
 Scanning: coverage-enhancer
 
 [*] Scanning Skill: coverage-enhancer
@@ -2492,6 +2524,192 @@ Scanning: critical-interval-security-checker
 [*] Recommendation: DO NOT USE THIS SKILL - 检测到严重安全风险
 
 Report saved to: report/critical-interval-security-checker.json
+Scanning: cve-reachability-analyzer
+
+[*] Scanning Skill: cve-reachability-analyzer
+
+[?] Risk Level: MEDIUM (5.4/10)
+
+[!] CRITICAL Issues (7):
+  [INJ001] in cve-reachability-analyzer/SKILL.md:112
+    Pattern: - Search for `eval()`, `exec()`, `Function()` constructor
+    Confidence: MEDIUM
+  [NET002] in cve-reachability-analyzer/references/language_guide.md:52
+    Pattern: const { func } = require('vulnerable-lib');
+    Confidence: MEDIUM
+  [NET002] in cve-reachability-analyzer/references/language_guide.md:56
+    Pattern: import { func } from 'vulnerable-lib';
+    Confidence: MEDIUM
+  [INJ001] in cve-reachability-analyzer/references/language_guide.md:27
+    Pattern: - Check for `getattr()`, `__import__()`, `importlib.import_module()`
+    Confidence: MEDIUM
+  [INJ001] in cve-reachability-analyzer/references/language_guide.md:66
+    Pattern: - Check for `eval()`, `Function()` constructor
+    Confidence: MEDIUM
+  [INJ001] in cve-reachability-analyzer/references/language_guide.md:172
+    Pattern: - Check for `send()`, `public_send()`, `method()`, `eval()`
+    Confidence: MEDIUM
+  [INJ001] in cve-reachability-analyzer/references/language_guide.md:238
+    Pattern: - Look for `eval()`, `create_function()`
+    Confidence: MEDIUM
+
+[*] WARNING Issues (16):
+  [CMD002] in cve-reachability-analyzer/SKILL.md:112
+    Pattern: - Search for `eval()`, `exec()`, `Function()` constructor
+    Confidence: MEDIUM
+  [INJ002] in cve-reachability-analyzer/SKILL.md:112
+    Pattern: - Search for `eval()`, `exec()`, `Function()` constructor
+    Confidence: MEDIUM
+  [OBF001] in cve-reachability-analyzer/SKILL.md:112
+    Pattern: - Search for `eval()`, `exec()`, `Function()` constructor
+    Confidence: MEDIUM
+  [OBF002] in cve-reachability-analyzer/SKILL.md:112
+    Pattern: - Search for `eval()`, `exec()`, `Function()` constructor
+    Confidence: MEDIUM
+  [INJ002] in cve-reachability-analyzer/references/language_guide.md:27
+    Pattern: - Check for `getattr()`, `__import__()`, `importlib.import_module()`
+    Confidence: MEDIUM
+  [INJ002] in cve-reachability-analyzer/references/language_guide.md:66
+    Pattern: - Check for `eval()`, `Function()` constructor
+    Confidence: MEDIUM
+  [INJ002] in cve-reachability-analyzer/references/language_guide.md:172
+    Pattern: - Check for `send()`, `public_send()`, `method()`, `eval()`
+    Confidence: MEDIUM
+  [INJ002] in cve-reachability-analyzer/references/language_guide.md:238
+    Pattern: - Look for `eval()`, `create_function()`
+    Confidence: MEDIUM
+  [OBF001] in cve-reachability-analyzer/references/language_guide.md:27
+    Pattern: - Check for `getattr()`, `__import__()`, `importlib.import_module()`
+    Confidence: MEDIUM
+  [OBF001] in cve-reachability-analyzer/references/language_guide.md:66
+    Pattern: - Check for `eval()`, `Function()` constructor
+    Confidence: MEDIUM
+  and 6 more
+
+[*] Summary:
+  Total Files Scanned: 4
+  Critical Issues: 7
+  Warning Issues: 16
+  Info Issues: 0
+  Total Issues: 23
+
+[*] Recommendation: REVIEW NEEDED - 请人工审查后使用
+
+Report saved to: report/cve-reachability-analyzer.html
+Scanning: cve-reachability-analyzer
+
+[*] Scanning Skill: cve-reachability-analyzer
+
+[?] Risk Level: MEDIUM (5.4/10)
+
+[!] CRITICAL Issues (7):
+  [INJ001] in cve-reachability-analyzer/SKILL.md:112
+    Pattern: - Search for `eval()`, `exec()`, `Function()` constructor
+    Confidence: MEDIUM
+  [NET002] in cve-reachability-analyzer/references/language_guide.md:52
+    Pattern: const { func } = require('vulnerable-lib');
+    Confidence: MEDIUM
+  [NET002] in cve-reachability-analyzer/references/language_guide.md:56
+    Pattern: import { func } from 'vulnerable-lib';
+    Confidence: MEDIUM
+  [INJ001] in cve-reachability-analyzer/references/language_guide.md:27
+    Pattern: - Check for `getattr()`, `__import__()`, `importlib.import_module()`
+    Confidence: MEDIUM
+  [INJ001] in cve-reachability-analyzer/references/language_guide.md:66
+    Pattern: - Check for `eval()`, `Function()` constructor
+    Confidence: MEDIUM
+  [INJ001] in cve-reachability-analyzer/references/language_guide.md:172
+    Pattern: - Check for `send()`, `public_send()`, `method()`, `eval()`
+    Confidence: MEDIUM
+  [INJ001] in cve-reachability-analyzer/references/language_guide.md:238
+    Pattern: - Look for `eval()`, `create_function()`
+    Confidence: MEDIUM
+
+[*] WARNING Issues (16):
+  [CMD002] in cve-reachability-analyzer/SKILL.md:112
+    Pattern: - Search for `eval()`, `exec()`, `Function()` constructor
+    Confidence: MEDIUM
+  [INJ002] in cve-reachability-analyzer/SKILL.md:112
+    Pattern: - Search for `eval()`, `exec()`, `Function()` constructor
+    Confidence: MEDIUM
+  [OBF001] in cve-reachability-analyzer/SKILL.md:112
+    Pattern: - Search for `eval()`, `exec()`, `Function()` constructor
+    Confidence: MEDIUM
+  [OBF002] in cve-reachability-analyzer/SKILL.md:112
+    Pattern: - Search for `eval()`, `exec()`, `Function()` constructor
+    Confidence: MEDIUM
+  [INJ002] in cve-reachability-analyzer/references/language_guide.md:27
+    Pattern: - Check for `getattr()`, `__import__()`, `importlib.import_module()`
+    Confidence: MEDIUM
+  [INJ002] in cve-reachability-analyzer/references/language_guide.md:66
+    Pattern: - Check for `eval()`, `Function()` constructor
+    Confidence: MEDIUM
+  [INJ002] in cve-reachability-analyzer/references/language_guide.md:172
+    Pattern: - Check for `send()`, `public_send()`, `method()`, `eval()`
+    Confidence: MEDIUM
+  [INJ002] in cve-reachability-analyzer/references/language_guide.md:238
+    Pattern: - Look for `eval()`, `create_function()`
+    Confidence: MEDIUM
+  [OBF001] in cve-reachability-analyzer/references/language_guide.md:27
+    Pattern: - Check for `getattr()`, `__import__()`, `importlib.import_module()`
+    Confidence: MEDIUM
+  [OBF001] in cve-reachability-analyzer/references/language_guide.md:66
+    Pattern: - Check for `eval()`, `Function()` constructor
+    Confidence: MEDIUM
+  and 6 more
+
+[*] Summary:
+  Total Files Scanned: 4
+  Critical Issues: 7
+  Warning Issues: 16
+  Info Issues: 0
+  Total Issues: 23
+
+[*] Recommendation: REVIEW NEEDED - 请人工审查后使用
+
+Report saved to: report/cve-reachability-analyzer.json
+Scanning: cve-watchlist-action-recommendation-generator
+
+[*] Scanning Skill: cve-watchlist-action-recommendation-generator
+
+[OK] Risk Level: SAFE (0.4/10)
+
+[!] CRITICAL Issues (1):
+  [FILE001] in cve-watchlist-action-recommendation-generator/references/risk_scoring.md:75
+    Pattern: - Handles sensitive data (passwords, PII, financial)
+    Confidence: MEDIUM
+
+[*] Summary:
+  Total Files Scanned: 6
+  Critical Issues: 1
+  Warning Issues: 0
+  Info Issues: 0
+  Total Issues: 1
+
+[*] Recommendation: SAFE - 未检测到明显安全问题
+
+Report saved to: report/cve-watchlist-action-recommendation-generator.html
+Scanning: cve-watchlist-action-recommendation-generator
+
+[*] Scanning Skill: cve-watchlist-action-recommendation-generator
+
+[OK] Risk Level: SAFE (0.4/10)
+
+[!] CRITICAL Issues (1):
+  [FILE001] in cve-watchlist-action-recommendation-generator/references/risk_scoring.md:75
+    Pattern: - Handles sensitive data (passwords, PII, financial)
+    Confidence: MEDIUM
+
+[*] Summary:
+  Total Files Scanned: 6
+  Critical Issues: 1
+  Warning Issues: 0
+  Info Issues: 0
+  Total Issues: 1
+
+[*] Recommendation: SAFE - 未检测到明显安全问题
+
+Report saved to: report/cve-watchlist-action-recommendation-generator.json
 Scanning: dead-code-eliminator
 
 [*] Scanning Skill: dead-code-eliminator
@@ -4660,6 +4878,38 @@ Scanning: mocking-test-generator
 [*] Recommendation: SAFE - 未检测到明显安全问题
 
 Report saved to: report/mocking-test-generator.json
+Scanning: model-guided-code-repair
+
+[*] Scanning Skill: model-guided-code-repair
+
+[OK] Risk Level: SAFE (0.0/10)
+
+[*] Summary:
+  Total Files Scanned: 2
+  Critical Issues: 0
+  Warning Issues: 0
+  Info Issues: 0
+  Total Issues: 0
+
+[*] Recommendation: SAFE - 未检测到明显安全问题
+
+Report saved to: report/model-guided-code-repair.html
+Scanning: model-guided-code-repair
+
+[*] Scanning Skill: model-guided-code-repair
+
+[OK] Risk Level: SAFE (0.0/10)
+
+[*] Summary:
+  Total Files Scanned: 2
+  Critical Issues: 0
+  Warning Issues: 0
+  Info Issues: 0
+  Total Issues: 0
+
+[*] Recommendation: SAFE - 未检测到明显安全问题
+
+Report saved to: report/model-guided-code-repair.json
 Scanning: module-component-generator
 
 [*] Scanning Skill: module-component-generator
@@ -5072,6 +5322,54 @@ Scanning: program-to-model-extractor
 [*] Recommendation: SAFE - 未检测到明显安全问题
 
 Report saved to: report/program-to-model-extractor.json
+Scanning: program-to-tlaplus-spec-generator
+
+[*] Scanning Skill: program-to-tlaplus-spec-generator
+
+[OK] Risk Level: SAFE (0.7/10)
+
+[!] CRITICAL Issues (2):
+  [NET001] in program-to-tlaplus-spec-generator/references/language_patterns.md:307
+    Pattern: StartFetch(url) ==
+    Confidence: MEDIUM
+  [NET001] in program-to-tlaplus-spec-generator/references/language_patterns.md:311
+    Pattern: CompleteFetch(url) ==
+    Confidence: MEDIUM
+
+[*] Summary:
+  Total Files Scanned: 3
+  Critical Issues: 2
+  Warning Issues: 0
+  Info Issues: 0
+  Total Issues: 2
+
+[*] Recommendation: SAFE - 未检测到明显安全问题
+
+Report saved to: report/program-to-tlaplus-spec-generator.html
+Scanning: program-to-tlaplus-spec-generator
+
+[*] Scanning Skill: program-to-tlaplus-spec-generator
+
+[OK] Risk Level: SAFE (0.7/10)
+
+[!] CRITICAL Issues (2):
+  [NET001] in program-to-tlaplus-spec-generator/references/language_patterns.md:307
+    Pattern: StartFetch(url) ==
+    Confidence: MEDIUM
+  [NET001] in program-to-tlaplus-spec-generator/references/language_patterns.md:311
+    Pattern: CompleteFetch(url) ==
+    Confidence: MEDIUM
+
+[*] Summary:
+  Total Files Scanned: 3
+  Critical Issues: 2
+  Warning Issues: 0
+  Info Issues: 0
+  Total Issues: 2
+
+[*] Recommendation: SAFE - 未检测到明显安全问题
+
+Report saved to: report/program-to-tlaplus-spec-generator.json
 Scanning: proof-carrying-code-generator
 
 [*] Scanning Skill: proof-carrying-code-generator
@@ -6014,6 +6312,170 @@ Scanning: replay-oriented-instrumentation
 [*] Recommendation: SAFE - 未检测到明显安全问题
 
 Report saved to: report/replay-oriented-instrumentation.json
+Scanning: report
+
+[*] Scanning Skill: report
+
+[!] Risk Level: CRITICAL (10.0/10)
+
+[!] CRITICAL Issues (2331):
+  [FILE001] in report/framework-migration-assistant.json:21
+    Pattern: "pattern": "token = request.headers.get('Authorization')",
+    Confidence: MEDIUM
+  [FILE001] in report/framework-migration-assistant.json:30
+    Pattern: "pattern": "if not token:",
+    Confidence: MEDIUM
+  [FILE001] in report/framework-migration-assistant.json:39
+    Pattern: "pattern": "user = verify_token(token)",
+    Confidence: MEDIUM
+  [FILE001] in report/framework-migration-assistant.json:48
+    Pattern: "pattern": "user = await verify_token(authorization)",
+    Confidence: MEDIUM
+  [FILE001] in report/framework-migration-assistant.json:57
+    Pattern: "pattern": "password = request.form.get('password')",
+    Confidence: MEDIUM
+  [FILE001] in report/framework-migration-assistant.json:66
+    Pattern: "pattern": "user = authenticate(username, password)",
+    Confidence: MEDIUM
+  [FILE001] in report/framework-migration-assistant.json:75
+    Pattern: "pattern": "return jsonify({'token': user.token})",
+    Confidence: MEDIUM
+  [FILE001] in report/framework-migration-assistant.json:84
+    Pattern: "pattern": "password: str = Form(...)",
+    Confidence: MEDIUM
+  [FILE001] in report/framework-migration-assistant.json:93
+    Pattern: "pattern": "user = await authenticate(username, password)",
+    Confidence: MEDIUM
+  [FILE001] in report/framework-migration-assistant.json:102
+    Pattern: "pattern": "return {'token': user.token}",
+    Confidence: MEDIUM
+  and 2321 more
+
+[*] WARNING Issues (1799):
+  [CMD002] in report/_report.json:435
+    Pattern: "pattern": "\"pattern\": \"- User input in system(), exec(), shell commands\",",
+    Confidence: MEDIUM
+  [CMD002] in report/_report.json:444
+    Pattern: "pattern": "\"pattern\": \"- eval(), exec() with user input\",",
+    Confidence: MEDIUM
+  [CMD002] in report/_report.json:453
+    Pattern: "pattern": "\"pattern\": \"- User input in system(), exec(), shell commands\",",
+    Confidence: MEDIUM
+  [CMD002] in report/_report.json:462
+    Pattern: "pattern": "\"pattern\": \"- eval(), exec() with user input\",",
+    Confidence: MEDIUM
+  [CMD002] in report/_report.json:471
+    Pattern: "pattern": "\"pattern\": \"- User input in system(), exec(), shell commands\",",
+    Confidence: MEDIUM
+  [CMD002] in report/_report.json:480
+    Pattern: "pattern": "\"pattern\": \"- eval(), exec() with user input\",",
+    Confidence: MEDIUM
+  [CMD002] in report/_report.json:489
+    Pattern: "pattern": "\"pattern\": \"- User input in system(), exec(), shell commands\",",
+    Confidence: MEDIUM
+  [CMD002] in report/_report.json:498
+    Pattern: "pattern": "\"pattern\": \"- eval(), exec() with user input\",",
+    Confidence: MEDIUM
+  [CMD002] in report/_report.json:507
+    Pattern: "pattern": "\"pattern\": \"- User input in system(), exec(), shell commands\",",
+    Confidence: MEDIUM
+  [CMD002] in report/_report.json:516
+    Pattern: "pattern": "\"pattern\": \"- eval(), exec() with user input\",",
+    Confidence: MEDIUM
+  and 1789 more
+
+[*] Summary:
+  Total Files Scanned: 117
+  Critical Issues: 2331
+  Warning Issues: 1799
+  Info Issues: 0
+  Total Issues: 4130
+
+[*] Recommendation: DO NOT USE THIS SKILL - 检测到严重安全风险
+
+Report saved to: report/report.html
+Scanning: report
+
+[*] Scanning Skill: report
+
+[!] Risk Level: CRITICAL (10.0/10)
+
+[!] CRITICAL Issues (2331):
+  [FILE001] in report/framework-migration-assistant.json:21
+    Pattern: "pattern": "token = request.headers.get('Authorization')",
+    Confidence: MEDIUM
+  [FILE001] in report/framework-migration-assistant.json:30
+    Pattern: "pattern": "if not token:",
+    Confidence: MEDIUM
+  [FILE001] in report/framework-migration-assistant.json:39
+    Pattern: "pattern": "user = verify_token(token)",
+    Confidence: MEDIUM
+  [FILE001] in report/framework-migration-assistant.json:48
+    Pattern: "pattern": "user = await verify_token(authorization)",
+    Confidence: MEDIUM
+  [FILE001] in report/framework-migration-assistant.json:57
+    Pattern: "pattern": "password = request.form.get('password')",
+    Confidence: MEDIUM
+  [FILE001] in report/framework-migration-assistant.json:66
+    Pattern: "pattern": "user = authenticate(username, password)",
+    Confidence: MEDIUM
+  [FILE001] in report/framework-migration-assistant.json:75
+    Pattern: "pattern": "return jsonify({'token': user.token})",
+    Confidence: MEDIUM
+  [FILE001] in report/framework-migration-assistant.json:84
+    Pattern: "pattern": "password: str = Form(...)",
+    Confidence: MEDIUM
+  [FILE001] in report/framework-migration-assistant.json:93
+    Pattern: "pattern": "user = await authenticate(username, password)",
+    Confidence: MEDIUM
+  [FILE001] in report/framework-migration-assistant.json:102
+    Pattern: "pattern": "return {'token': user.token}",
+    Confidence: MEDIUM
+  and 2321 more
+
+[*] WARNING Issues (1799):
+  [CMD002] in report/_report.json:435
+    Pattern: "pattern": "\"pattern\": \"- User input in system(), exec(), shell commands\",",
+    Confidence: MEDIUM
+  [CMD002] in report/_report.json:444
+    Pattern: "pattern": "\"pattern\": \"- eval(), exec() with user input\",",
+    Confidence: MEDIUM
+  [CMD002] in report/_report.json:453
+    Pattern: "pattern": "\"pattern\": \"- User input in system(), exec(), shell commands\",",
+    Confidence: MEDIUM
+  [CMD002] in report/_report.json:462
+    Pattern: "pattern": "\"pattern\": \"- eval(), exec() with user input\",",
+    Confidence: MEDIUM
+  [CMD002] in report/_report.json:471
+    Pattern: "pattern": "\"pattern\": \"- User input in system(), exec(), shell commands\",",
+    Confidence: MEDIUM
+  [CMD002] in report/_report.json:480
+    Pattern: "pattern": "\"pattern\": \"- eval(), exec() with user input\",",
+    Confidence: MEDIUM
+  [CMD002] in report/_report.json:489
+    Pattern: "pattern": "\"pattern\": \"- User input in system(), exec(), shell commands\",",
+    Confidence: MEDIUM
+  [CMD002] in report/_report.json:498
+    Pattern: "pattern": "\"pattern\": \"- eval(), exec() with user input\",",
+    Confidence: MEDIUM
+  [CMD002] in report/_report.json:507
+    Pattern: "pattern": "\"pattern\": \"- User input in system(), exec(), shell commands\",",
+    Confidence: MEDIUM
+  [CMD002] in report/_report.json:516
+    Pattern: "pattern": "\"pattern\": \"- eval(), exec() with user input\",",
+    Confidence: MEDIUM
+  and 1789 more
+
+[*] Summary:
+  Total Files Scanned: 117
+  Critical Issues: 2331
+  Warning Issues: 1799
+  Info Issues: 0
+  Total Issues: 4130
+
+[*] Recommendation: DO NOT USE THIS SKILL - 检测到严重安全风险
+
+Report saved to: report/report.json
 Scanning: reproduction-trace-instrumenter
 
 [*] Scanning Skill: reproduction-trace-instrumenter
@@ -6408,6 +6870,38 @@ Scanning: requirement-summary
 [*] Recommendation: SAFE - 未检测到明显安全问题
 
 Report saved to: report/requirement-summary.json
+Scanning: requirement-to-tlaplus-property-generator
+
+[*] Scanning Skill: requirement-to-tlaplus-property-generator
+
+[OK] Risk Level: SAFE (0.0/10)
+
+[*] Summary:
+  Total Files Scanned: 4
+  Critical Issues: 0
+  Warning Issues: 0
+  Info Issues: 0
+  Total Issues: 0
+
+[*] Recommendation: SAFE - 未检测到明显安全问题
+
+Report saved to: report/requirement-to-tlaplus-property-generator.html
+Scanning: requirement-to-tlaplus-property-generator
+
+[*] Scanning Skill: requirement-to-tlaplus-property-generator
+
+[OK] Risk Level: SAFE (0.0/10)
+
+[*] Summary:
+  Total Files Scanned: 4
+  Critical Issues: 0
+  Warning Issues: 0
+  Info Issues: 0
+  Total Issues: 0
+
+[*] Recommendation: SAFE - 未检测到明显安全问题
+
+Report saved to: report/requirement-to-tlaplus-property-generator.json
 Scanning: rollback-strategy-advisor
 
 [*] Scanning Skill: rollback-strategy-advisor
@@ -6506,6 +7000,130 @@ Scanning: rollback-strategy-advisor
 [*] Recommendation: REVIEW NEEDED - 请人工审查后使用
 
 Report saved to: report/rollback-strategy-advisor.json
+Scanning: rtl-equivalence-checker
+
+[*] Scanning Skill: rtl-equivalence-checker
+
+[OK] Risk Level: SAFE (1.8/10)
+
+[!] CRITICAL Issues (4):
+  [FILE001] in rtl-equivalence-checker/scripts/equivalence_analyzer.py:236
+    Pattern: tokens_a = set(sens_a.replace(',', ' ').split())
+    Confidence: MEDIUM
+  [FILE001] in rtl-equivalence-checker/scripts/equivalence_analyzer.py:237
+    Pattern: tokens_b = set(sens_b.replace(',', ' ').split())
+    Confidence: MEDIUM
+  [FILE001] in rtl-equivalence-checker/scripts/equivalence_analyzer.py:238
+    Pattern: return tokens_a == tokens_b
+    Confidence: MEDIUM
+  [FILE001] in rtl-equivalence-checker/scripts/equivalence_analyzer.py:249
+    Pattern: all_signals = set(assigns_a.keys()) | set(assigns_b.keys())
+    Confidence: MEDIUM
+
+[*] Summary:
+  Total Files Scanned: 7
+  Critical Issues: 4
+  Warning Issues: 0
+  Info Issues: 0
+  Total Issues: 4
+
+[*] Recommendation: SAFE - 未检测到明显安全问题
+
+Report saved to: report/rtl-equivalence-checker.html
+Scanning: rtl-equivalence-checker
+
+[*] Scanning Skill: rtl-equivalence-checker
+
+[OK] Risk Level: SAFE (1.8/10)
+
+[!] CRITICAL Issues (4):
+  [FILE001] in rtl-equivalence-checker/scripts/equivalence_analyzer.py:236
+    Pattern: tokens_a = set(sens_a.replace(',', ' ').split())
+    Confidence: MEDIUM
+  [FILE001] in rtl-equivalence-checker/scripts/equivalence_analyzer.py:237
+    Pattern: tokens_b = set(sens_b.replace(',', ' ').split())
+    Confidence: MEDIUM
+  [FILE001] in rtl-equivalence-checker/scripts/equivalence_analyzer.py:238
+    Pattern: return tokens_a == tokens_b
+    Confidence: MEDIUM
+  [FILE001] in rtl-equivalence-checker/scripts/equivalence_analyzer.py:249
+    Pattern: all_signals = set(assigns_a.keys()) | set(assigns_b.keys())
+    Confidence: MEDIUM
+
+[*] Summary:
+  Total Files Scanned: 7
+  Critical Issues: 4
+  Warning Issues: 0
+  Info Issues: 0
+  Total Issues: 4
+
+[*] Recommendation: SAFE - 未检测到明显安全问题
+
+Report saved to: report/rtl-equivalence-checker.json
+Scanning: rtl-property-inference
+
+[*] Scanning Skill: rtl-property-inference
+
+[OK] Risk Level: SAFE (0.0/10)
+
+[*] Summary:
+  Total Files Scanned: 3
+  Critical Issues: 0
+  Warning Issues: 0
+  Info Issues: 0
+  Total Issues: 0
+
+[*] Recommendation: SAFE - 未检测到明显安全问题
+
+Report saved to: report/rtl-property-inference.html
+Scanning: rtl-property-inference
+
+[*] Scanning Skill: rtl-property-inference
+
+[OK] Risk Level: SAFE (0.0/10)
+
+[*] Summary:
+  Total Files Scanned: 3
+  Critical Issues: 0
+  Warning Issues: 0
+  Info Issues: 0
+  Total Issues: 0
+
+[*] Recommendation: SAFE - 未检测到明显安全问题
+
+Report saved to: report/rtl-property-inference.json
+Scanning: rtl-specification-consistency-checker
+
+[*] Scanning Skill: rtl-specification-consistency-checker
+
+[OK] Risk Level: SAFE (0.0/10)
+
+[*] Summary:
+  Total Files Scanned: 3
+  Critical Issues: 0
+  Warning Issues: 0
+  Info Issues: 0
+  Total Issues: 0
+
+[*] Recommendation: SAFE - 未检测到明显安全问题
+
+Report saved to: report/rtl-specification-consistency-checker.html
+Scanning: rtl-specification-consistency-checker
+
+[*] Scanning Skill: rtl-specification-consistency-checker
+
+[OK] Risk Level: SAFE (0.0/10)
+
+[*] Summary:
+  Total Files Scanned: 3
+  Critical Issues: 0
+  Warning Issues: 0
+  Info Issues: 0
+  Total Issues: 0
+
+[*] Recommendation: SAFE - 未检测到明显安全问题
+
+Report saved to: report/rtl-specification-consistency-checker.json
 Scanning: runtime-error-explainer
 
 [*] Scanning Skill: runtime-error-explainer
@@ -7106,6 +7724,38 @@ Scanning: smart-mutation-operator-generator
 [*] Recommendation: SAFE - 未检测到明显安全问题
 
 Report saved to: report/smart-mutation-operator-generator.json
+Scanning: smv-model-extractor
+
+[*] Scanning Skill: smv-model-extractor
+
+[OK] Risk Level: SAFE (0.0/10)
+
+[*] Summary:
+  Total Files Scanned: 7
+  Critical Issues: 0
+  Warning Issues: 0
+  Info Issues: 0
+  Total Issues: 0
+
+[*] Recommendation: SAFE - 未检测到明显安全问题
+
+Report saved to: report/smv-model-extractor.html
+Scanning: smv-model-extractor
+
+[*] Scanning Skill: smv-model-extractor
+
+[OK] Risk Level: SAFE (0.0/10)
+
+[*] Summary:
+  Total Files Scanned: 7
+  Critical Issues: 0
+  Warning Issues: 0
+  Info Issues: 0
+  Total Issues: 0
+
+[*] Recommendation: SAFE - 未检测到明显安全问题
+
+Report saved to: report/smv-model-extractor.json
 Scanning: specification-driven-generation
 
 [*] Scanning Skill: specification-driven-generation
@@ -7170,6 +7820,38 @@ Scanning: specification-generator
 [*] Recommendation: SAFE - 未检测到明显安全问题
 
 Report saved to: report/specification-generator.json
+Scanning: specification-to-temporal-logic-generator
+
+[*] Scanning Skill: specification-to-temporal-logic-generator
+
+[OK] Risk Level: SAFE (0.0/10)
+
+[*] Summary:
+  Total Files Scanned: 7
+  Critical Issues: 0
+  Warning Issues: 0
+  Info Issues: 0
+  Total Issues: 0
+
+[*] Recommendation: SAFE - 未检测到明显安全问题
+
+Report saved to: report/specification-to-temporal-logic-generator.html
+Scanning: specification-to-temporal-logic-generator
+
+[*] Scanning Skill: specification-to-temporal-logic-generator
+
+[OK] Risk Level: SAFE (0.0/10)
+
+[*] Summary:
+  Total Files Scanned: 7
+  Critical Issues: 0
+  Warning Issues: 0
+  Info Issues: 0
+  Total Issues: 0
+
+[*] Recommendation: SAFE - 未检测到明显安全问题
+
+Report saved to: report/specification-to-temporal-logic-generator.json
 Scanning: spring-mvc-to-boot-migrator
 
 [*] Scanning Skill: spring-mvc-to-boot-migrator
@@ -8418,6 +9100,278 @@ Scanning: test-suite-prioritizer
 [*] Recommendation: SAFE - 未检测到明显安全问题
 
 Report saved to: report/test-suite-prioritizer.json
+Scanning: time-aware-dependency-cve-scanner
+
+[*] Scanning Skill: time-aware-dependency-cve-scanner
+
+[?] Risk Level: MEDIUM (5.8/10)
+
+[!] CRITICAL Issues (14):
+  [FILE001] in time-aware-dependency-cve-scanner/SKILL.md:249
+    Pattern: - For NVD, get an API key: https://nvd.nist.gov/developers/request-an-api-key
+    Confidence: MEDIUM
+  [FILE001] in time-aware-dependency-cve-scanner/SKILL.md:250
+    Pattern: - For GitHub Advisory, set GITHUB_TOKEN environment variable
+    Confidence: MEDIUM
+  [FILE001] in time-aware-dependency-cve-scanner/references/vulnerability_databases.md:108
+    Pattern: **Requires API key** for higher rate limits. Get one at: https://nvd.nist.gov...
+    Confidence: MEDIUM
+  [FILE001] in time-aware-dependency-cve-scanner/references/vulnerability_databases.md:171
+    Pattern: **Requires GitHub Personal Access Token** with `public_repo` scope.
+    Confidence: MEDIUM
+  [FILE001] in time-aware-dependency-cve-scanner/references/vulnerability_databases.md:226
+    Pattern: | Authentication | None | Optional (API key) | Required (token) |
+    Confidence: MEDIUM
+  [FILE001] in time-aware-dependency-cve-scanner/references/vulnerability_databases.md:246
+    Pattern: - Use API keys/tokens for higher limits
+    Confidence: MEDIUM
+  [NET001] in time-aware-dependency-cve-scanner/scripts/query_cves.py:80
+    Pattern: response = requests.post(url, json=payload, timeout=10)
+    Confidence: MEDIUM
+  [NET001] in time-aware-dependency-cve-scanner/scripts/query_cves.py:149
+    Pattern: response = requests.post(url, json=payload, headers=headers, timeout=10)
+    Confidence: MEDIUM
+  [FILE001] in time-aware-dependency-cve-scanner/scripts/query_cves.py:96
+    Pattern: Note: Requires GITHUB_TOKEN environment variable for authentication.
+    Confidence: MEDIUM
+  [FILE001] in time-aware-dependency-cve-scanner/scripts/query_cves.py:100
+    Pattern: token = os.environ.get("GITHUB_TOKEN")
+    Confidence: MEDIUM
+  and 4 more
+
+[*] Summary:
+  Total Files Scanned: 6
+  Critical Issues: 14
+  Warning Issues: 0
+  Info Issues: 0
+  Total Issues: 14
+
+[*] Recommendation: REVIEW NEEDED - 请人工审查后使用
+
+Report saved to: report/time-aware-dependency-cve-scanner.html
+Scanning: time-aware-dependency-cve-scanner
+
+[*] Scanning Skill: time-aware-dependency-cve-scanner
+
+[?] Risk Level: MEDIUM (5.8/10)
+
+[!] CRITICAL Issues (14):
+  [FILE001] in time-aware-dependency-cve-scanner/SKILL.md:249
+    Pattern: - For NVD, get an API key: https://nvd.nist.gov/developers/request-an-api-key
+    Confidence: MEDIUM
+  [FILE001] in time-aware-dependency-cve-scanner/SKILL.md:250
+    Pattern: - For GitHub Advisory, set GITHUB_TOKEN environment variable
+    Confidence: MEDIUM
+  [FILE001] in time-aware-dependency-cve-scanner/references/vulnerability_databases.md:108
+    Pattern: **Requires API key** for higher rate limits. Get one at: https://nvd.nist.gov...
+    Confidence: MEDIUM
+  [FILE001] in time-aware-dependency-cve-scanner/references/vulnerability_databases.md:171
+    Pattern: **Requires GitHub Personal Access Token** with `public_repo` scope.
+    Confidence: MEDIUM
+  [FILE001] in time-aware-dependency-cve-scanner/references/vulnerability_databases.md:226
+    Pattern: | Authentication | None | Optional (API key) | Required (token) |
+    Confidence: MEDIUM
+  [FILE001] in time-aware-dependency-cve-scanner/references/vulnerability_databases.md:246
+    Pattern: - Use API keys/tokens for higher limits
+    Confidence: MEDIUM
+  [NET001] in time-aware-dependency-cve-scanner/scripts/query_cves.py:80
+    Pattern: response = requests.post(url, json=payload, timeout=10)
+    Confidence: MEDIUM
+  [NET001] in time-aware-dependency-cve-scanner/scripts/query_cves.py:149
+    Pattern: response = requests.post(url, json=payload, headers=headers, timeout=10)
+    Confidence: MEDIUM
+  [FILE001] in time-aware-dependency-cve-scanner/scripts/query_cves.py:96
+    Pattern: Note: Requires GITHUB_TOKEN environment variable for authentication.
+    Confidence: MEDIUM
+  [FILE001] in time-aware-dependency-cve-scanner/scripts/query_cves.py:100
+    Pattern: token = os.environ.get("GITHUB_TOKEN")
+    Confidence: MEDIUM
+  and 4 more
+
+[*] Summary:
+  Total Files Scanned: 6
+  Critical Issues: 14
+  Warning Issues: 0
+  Info Issues: 0
+  Total Issues: 14
+
+[*] Recommendation: REVIEW NEEDED - 请人工审查后使用
+
+Report saved to: report/time-aware-dependency-cve-scanner.json
+Scanning: tlaplus-guided-code-repair
+
+[*] Scanning Skill: tlaplus-guided-code-repair
+
+[OK] Risk Level: SAFE (1.5/10)
+
+[!] CRITICAL Issues (2):
+  [INJ001] in tlaplus-guided-code-repair/scripts/parse_tlc_trace.py:59
+    Pattern: state_pattern = re.compile(r'State\s+(\d+):\s*<([^>]+)>(.*?)(?=State\s+\d+:|$...
+    Confidence: MEDIUM
+  [INJ001] in tlaplus-guided-code-repair/scripts/parse_tlc_trace.py:66
+    Pattern: var_pattern = re.compile(r'/\\\\s*(\w+)\s*=\s*(.+?)(?=\n/\\\\|\n\n|$)', re.DO...
+    Confidence: MEDIUM
+
+[*] WARNING Issues (6):
+  [INJ002] in tlaplus-guided-code-repair/scripts/parse_tlc_trace.py:59
+    Pattern: state_pattern = re.compile(r'State\s+(\d+):\s*<([^>]+)>(.*?)(?=State\s+\d+:|$...
+    Confidence: MEDIUM
+  [INJ002] in tlaplus-guided-code-repair/scripts/parse_tlc_trace.py:66
+    Pattern: var_pattern = re.compile(r'/\\\\s*(\w+)\s*=\s*(.+?)(?=\n/\\\\|\n\n|$)', re.DO...
+    Confidence: MEDIUM
+  [OBF001] in tlaplus-guided-code-repair/scripts/parse_tlc_trace.py:59
+    Pattern: state_pattern = re.compile(r'State\s+(\d+):\s*<([^>]+)>(.*?)(?=State\s+\d+:|$...
+    Confidence: MEDIUM
+  [OBF001] in tlaplus-guided-code-repair/scripts/parse_tlc_trace.py:66
+    Pattern: var_pattern = re.compile(r'/\\\\s*(\w+)\s*=\s*(.+?)(?=\n/\\\\|\n\n|$)', re.DO...
+    Confidence: MEDIUM
+  [OBF002] in tlaplus-guided-code-repair/scripts/parse_tlc_trace.py:59
+    Pattern: state_pattern = re.compile(r'State\s+(\d+):\s*<([^>]+)>(.*?)(?=State\s+\d+:|$...
+    Confidence: MEDIUM
+  [OBF002] in tlaplus-guided-code-repair/scripts/parse_tlc_trace.py:66
+    Pattern: var_pattern = re.compile(r'/\\\\s*(\w+)\s*=\s*(.+?)(?=\n/\\\\|\n\n|$)', re.DO...
+    Confidence: MEDIUM
+
+[*] Summary:
+  Total Files Scanned: 5
+  Critical Issues: 2
+  Warning Issues: 6
+  Info Issues: 0
+  Total Issues: 8
+
+[*] Recommendation: SAFE - 未检测到明显安全问题
+
+Report saved to: report/tlaplus-guided-code-repair.html
+Scanning: tlaplus-guided-code-repair
+
+[*] Scanning Skill: tlaplus-guided-code-repair
+
+[OK] Risk Level: SAFE (1.5/10)
+
+[!] CRITICAL Issues (2):
+  [INJ001] in tlaplus-guided-code-repair/scripts/parse_tlc_trace.py:59
+    Pattern: state_pattern = re.compile(r'State\s+(\d+):\s*<([^>]+)>(.*?)(?=State\s+\d+:|$...
+    Confidence: MEDIUM
+  [INJ001] in tlaplus-guided-code-repair/scripts/parse_tlc_trace.py:66
+    Pattern: var_pattern = re.compile(r'/\\\\s*(\w+)\s*=\s*(.+?)(?=\n/\\\\|\n\n|$)', re.DO...
+    Confidence: MEDIUM
+
+[*] WARNING Issues (6):
+  [INJ002] in tlaplus-guided-code-repair/scripts/parse_tlc_trace.py:59
+    Pattern: state_pattern = re.compile(r'State\s+(\d+):\s*<([^>]+)>(.*?)(?=State\s+\d+:|$...
+    Confidence: MEDIUM
+  [INJ002] in tlaplus-guided-code-repair/scripts/parse_tlc_trace.py:66
+    Pattern: var_pattern = re.compile(r'/\\\\s*(\w+)\s*=\s*(.+?)(?=\n/\\\\|\n\n|$)', re.DO...
+    Confidence: MEDIUM
+  [OBF001] in tlaplus-guided-code-repair/scripts/parse_tlc_trace.py:59
+    Pattern: state_pattern = re.compile(r'State\s+(\d+):\s*<([^>]+)>(.*?)(?=State\s+\d+:|$...
+    Confidence: MEDIUM
+  [OBF001] in tlaplus-guided-code-repair/scripts/parse_tlc_trace.py:66
+    Pattern: var_pattern = re.compile(r'/\\\\s*(\w+)\s*=\s*(.+?)(?=\n/\\\\|\n\n|$)', re.DO...
+    Confidence: MEDIUM
+  [OBF002] in tlaplus-guided-code-repair/scripts/parse_tlc_trace.py:59
+    Pattern: state_pattern = re.compile(r'State\s+(\d+):\s*<([^>]+)>(.*?)(?=State\s+\d+:|$...
+    Confidence: MEDIUM
+  [OBF002] in tlaplus-guided-code-repair/scripts/parse_tlc_trace.py:66
+    Pattern: var_pattern = re.compile(r'/\\\\s*(\w+)\s*=\s*(.+?)(?=\n/\\\\|\n\n|$)', re.DO...
+    Confidence: MEDIUM
+
+[*] Summary:
+  Total Files Scanned: 5
+  Critical Issues: 2
+  Warning Issues: 6
+  Info Issues: 0
+  Total Issues: 8
+
+[*] Recommendation: SAFE - 未检测到明显安全问题
+
+Report saved to: report/tlaplus-guided-code-repair.json
+Scanning: tlaplus-model-reduction
+
+[*] Scanning Skill: tlaplus-model-reduction
+
+[OK] Risk Level: SAFE (0.0/10)
+
+[*] Summary:
+  Total Files Scanned: 2
+  Critical Issues: 0
+  Warning Issues: 0
+  Info Issues: 0
+  Total Issues: 0
+
+[*] Recommendation: SAFE - 未检测到明显安全问题
+
+Report saved to: report/tlaplus-model-reduction.html
+Scanning: tlaplus-model-reduction
+
+[*] Scanning Skill: tlaplus-model-reduction
+
+[OK] Risk Level: SAFE (0.0/10)
+
+[*] Summary:
+  Total Files Scanned: 2
+  Critical Issues: 0
+  Warning Issues: 0
+  Info Issues: 0
+  Total Issues: 0
+
+[*] Recommendation: SAFE - 未检测到明显安全问题
+
+Report saved to: report/tlaplus-model-reduction.json
+Scanning: tlaplus-spec-generator
+
+[*] Scanning Skill: tlaplus-spec-generator
+
+[OK] Risk Level: SAFE (1.4/10)
+
+[!] CRITICAL Issues (3):
+  [FILE001] in tlaplus-spec-generator/scripts/tlaplus_generator.py:97
+    Pattern: for var_name in sorted(state_vars.keys()):
+    Confidence: MEDIUM
+  [FILE001] in tlaplus-spec-generator/scripts/tlaplus_generator.py:107
+    Pattern: var_names = sorted(state_vars.keys())
+    Confidence: MEDIUM
+  [FILE001] in tlaplus-spec-generator/scripts/tlaplus_generator.py:224
+    Pattern: unchanged_vars = set(state_vars.keys()) - modifies
+    Confidence: MEDIUM
+
+[*] Summary:
+  Total Files Scanned: 6
+  Critical Issues: 3
+  Warning Issues: 0
+  Info Issues: 0
+  Total Issues: 3
+
+[*] Recommendation: SAFE - 未检测到明显安全问题
+
+Report saved to: report/tlaplus-spec-generator.html
+Scanning: tlaplus-spec-generator
+
+[*] Scanning Skill: tlaplus-spec-generator
+
+[OK] Risk Level: SAFE (1.4/10)
+
+[!] CRITICAL Issues (3):
+  [FILE001] in tlaplus-spec-generator/scripts/tlaplus_generator.py:97
+    Pattern: for var_name in sorted(state_vars.keys()):
+    Confidence: MEDIUM
+  [FILE001] in tlaplus-spec-generator/scripts/tlaplus_generator.py:107
+    Pattern: var_names = sorted(state_vars.keys())
+    Confidence: MEDIUM
+  [FILE001] in tlaplus-spec-generator/scripts/tlaplus_generator.py:224
+    Pattern: unchanged_vars = set(state_vars.keys()) - modifies
+    Confidence: MEDIUM
+
+[*] Summary:
+  Total Files Scanned: 6
+  Critical Issues: 3
+  Warning Issues: 0
+  Info Issues: 0
+  Total Issues: 3
+
+[*] Recommendation: SAFE - 未检测到明显安全问题
+
+Report saved to: report/tlaplus-spec-generator.json
 Scanning: trace-collection-assistant
 
 [*] Scanning Skill: trace-collection-assistant
