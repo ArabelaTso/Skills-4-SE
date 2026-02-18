@@ -4,7 +4,7 @@
 [![中文](https://img.shields.io/badge/lang-中文-red)](./README-zh.md)
 [![English](https://img.shields.io/badge/lang-English-blue)](./README.md)
 
-This repository is **a comprehensive reusable, task-oriented Skills collection** designed to support **software engineering activities across the entire development lifecycle**, including:
+This repository is **a comprehensive, reusable, task-oriented Skills collection** designed to support **software engineering activities across the entire development lifecycle**, including:
 
 > Requirement understanding, system design, implementation, testing, verification, deployment, and maintenance.
 
@@ -33,7 +33,7 @@ This repository is **a comprehensive reusable, task-oriented Skills collection**
 </p>
 
 Browse, search, and install skills through our interactive web interface. The Skills Manager provides:
-- 📦 One-click installation of all 199+ skills
+- 📦 One-click installation of all 200+ skills
 - ✅ Selective installation of specific skills
 - 🔍 Search and filter by category
 - 📖 Bilingual help documentation (English/中文)
@@ -1560,7 +1560,7 @@ To prevent potential **security risks** that skills may pose when running locall
 
 ## Reference
 
-Special thanks for the following links for constructing and enhancing the skills in this repository:
+Special thanks to the following links for constructing and enhancing the skills in this repository:
 
 - [awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills/)
 - [anthropics-skills](https://github.com/anthropics/skills/)
