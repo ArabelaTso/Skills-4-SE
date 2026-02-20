@@ -81,8 +81,67 @@ CATEGORY_MAP = {
                      'abstract-trace-summarizer', 'control-flow-abstraction-generator',
                      'library-for-proof-advisor', 'requirement-enhancer'],
     'maintenance': ['code-refactoring-assistant', 'deprecated-api-updater', 'code-translation'],
-    'development-tools': ['artifacts-builder', 'mcp-builder', 'codeinterpreter-automation', 'codereadr-automation',
-                          'web-artifacts-builder']
+    'architecture': ['api-design-assistant', 'design-pattern-suggestor', 'interface-specification-generator',
+                     'interface-contract-verifier'],
+    'visualization': ['system-diagram-generator']
+}
+
+# Stage mapping based on category
+STAGE_MAP = {
+    'requirements': ['requirement-summarizer', 'requirement-coverage-checker', 'requirement-comparison-reporter',
+                     'ambiguity-detector', 'scenario-generator', 'specification-generator', 'nl-to-constraints',
+                     'requirement-enhancer'],
+    'design': ['component-boundary-identifier', 'specification-driven-generation'],
+    'implementation': ['function-class-generator', 'module-component-generator', 'template-code-generator',
+                       'test-driven-generation', 'incremental-python-programmer', 'incremental-java-programmer',
+                       'frontend-design', 'pseudocode-extractor', 'code-translation', 'code-refactoring-assistant'],
+    'testing': ['unit-test-generator', 'integration-test-generator', 'java-test-updater', 'flaky-test-detector',
+                'test-oracle-generator', 'edge-case-generator', 'directed-test-input-generator',
+                'fuzzing-input-generator', 'test-suite-prioritizer', 'coverage-enhancer',
+                'test-case-documentation', 'python-test-updater', 'req-to-test',
+                'test-app-automation', 'webapp-testing', 'webapp-testing-anthropics',
+                'python-regression-test-generator', 'java-regression-test-generator',
+                'mocking-test-generator', 'test-guided-bug-detector'],
+    'verification': ['acsl-annotation-assistant', 'assertion-synthesizer', 'invariant-inference',
+                     'static-reasoning-verifier', 'symbolic-execution-assistant', 'counterexample-generator',
+                     'counterexample-explainer', 'formal-spec-generator', 'program-to-model-extractor',
+                     'imperative-to-coq-model-extractor', 'python-to-dafny-translator', 'python-to-lean4-translator',
+                     'c-cpp-to-lean4-translator', 'cpp-to-dafny-translator', 'program-correctness-prover',
+                     'proof-skeleton-generator', 'proof-failure-explainer', 'proof-refactoring-assistant',
+                     'proof-trace-summarizer', 'proof-carrying-code-generator', 'verified-spec-code-mapper',
+                     'verification-boundary-reporter', 'verified-pseudocode-extractor',
+                     'lemma-discovery-assistant', 'tactic-suggestion-assistant', 'refinement-step-generator',
+                     'abstract-domain-explorer', 'abstract-invariant-generator', 'abstract-state-analyzer',
+                     'abstract-trace-summarizer', 'control-flow-abstraction-generator',
+                     'library-for-proof-advisor', 'static-bug-detector', 'semantic-bug-detector',
+                     'static-vulnerability-detector', 'vulnerability-pattern-matcher', 'exploitability-analyzer',
+                     'vulnerability-root-cause-analyzer', 'counterexample-debugger',
+                     'program-to-tlaplus-spec-generator', 'tlaplus-spec-generator',
+                     'requirement-to-tlaplus-property-generator', 'specification-to-temporal-logic-generator',
+                     'tlaplus-model-reduction', 'model-guided-code-repair', 'tlaplus-guided-code-repair',
+                     'counterexample-to-test-generator', 'smv-model-extractor'],
+    'deployment': ['ci-pipeline-synthesizer', 'cd-pipeline-generator', 'containerization-assistant',
+                   'environment-setup-assistant', 'rollback-strategy-advisor',
+                   'circleci-automation', 'buildkite-automation', 'appveyor-automation', 'appcircle-automation',
+                   'docker-hub-automation', 'docker_hub-automation', 'vercel-automation',
+                   'digital-ocean-automation', 'cloudflare-automation', 'cloudflare-api-key-automation',
+                   'cloudflare-browser-rendering-automation', 'npm-automation',
+                   'github-automation', 'gitlab-automation', 'bitbucket-automation', 'sourcegraph-automation',
+                   'slack-automation', 'slackbot-automation', 'discord-automation', 'discordbot-automation',
+                   'slack-gif-creator', 'supabase-automation', 'hookdeck-automation'],
+    'maintenance': ['deprecated-api-updater', 'code-optimizer', 'dead-code-eliminator',
+                    'technical-debt-analyzer', 'code-pattern-extractor', 'code-search-assistant',
+                    'bug-localization', 'bug-to-patch-generator', 'runtime-error-explainer',
+                    'regression-root-cause-analyzer', 'conflict-analyzer', 'issue-report-generator',
+                    'security-patch-advisor', 'code-review-assistant', 'code-smell-detector',
+                    'design-smell-detector', 'api-documentation-generator', 'code-comment-generator',
+                    'markdown-document-structurer', 'readme-generator', 'change-log-generator',
+                    'code-change-summarizer', 'release-notes-writer', 'legacy-code-summarizer',
+                    'python-repo-quickstart', 'error-explanation-generator', 'code-summarizer',
+                    'sentry-automation', 'datadog-automation', 'bugsnag-automation', 'bugbug-automation',
+                    'bugherd-automation', 'pagerduty-automation', 'jira-automation', 'linear-automation',
+                    'confluence-automation', 'artifacts-builder', 'mcp-builder', 'codeinterpreter-automation',
+                    'codereadr-automation', 'web-artifacts-builder']
 }
 
 def get_skill_category(skill_name):
@@ -91,6 +150,27 @@ def get_skill_category(skill_name):
         if skill_name in skills:
             return category
     return 'other'
+
+def get_skill_stage(skill_name):
+    """Get stage for a skill based on STAGE_MAP"""
+    for stage, skills in STAGE_MAP.items():
+        if skill_name in skills:
+            return stage
+    # Default stage based on category if not in STAGE_MAP
+    category = get_skill_category(skill_name)
+    if category == 'requirements':
+        return 'requirements'
+    elif category == 'testing':
+        return 'testing'
+    elif category == 'verification':
+        return 'verification'
+    elif category == 'devops':
+        return 'deployment'
+    elif category in ['quality', 'documentation', 'debugging', 'maintenance']:
+        return 'maintenance'
+    elif category == 'code-generation':
+        return 'implementation'
+    return None
 
 def load_translations():
     """Load Chinese translations"""
@@ -137,6 +217,7 @@ def extract_metadata(skill_path, translations, source_prefix=None, source_dir=No
                     'displayName': frontmatter.get('name', skill_name),
                     'description': description,
                     'category': get_skill_category(skill_name),
+                    'stage': get_skill_stage(skill_name),
                     'installed': False,
                     'path': skill_relative_path,
                     'displayName_zh': skill_translations.get('name', frontmatter.get('name', skill_name)),
