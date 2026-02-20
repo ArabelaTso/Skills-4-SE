@@ -151,14 +151,16 @@ def scan_skills(translations):
     """Scan repository for all skills"""
     skills = []
 
-    # Scan main repository skills
-    for item in REPO_ROOT.iterdir():
-        if item.is_dir() and not item.name.startswith('.') and item.name not in EXCLUDED_DIRS:
-            # Check if it's a skill directory (has SKILL.md)
-            if (item / 'SKILL.md').exists():
-                metadata = extract_metadata(item, translations, source_prefix=None, source_dir=None)
-                if metadata:
-                    skills.append(metadata)
+    # Scan skills directory
+    skills_dir = REPO_ROOT / 'skills'
+    if skills_dir.exists() and skills_dir.is_dir():
+        for item in skills_dir.iterdir():
+            if item.is_dir() and not item.name.startswith('.'):
+                # Check if it's a skill directory (has SKILL.md)
+                if (item / 'SKILL.md').exists():
+                    metadata = extract_metadata(item, translations, source_prefix=None, source_dir='skills')
+                    if metadata:
+                        skills.append(metadata)
 
     # Scan additional skill directories
     # Track skill names to detect duplicates
