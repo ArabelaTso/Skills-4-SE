@@ -1071,7 +1071,7 @@ A Skill in this repo is more than a prompt:
 
 ## 🔁 Skills by Stages
 
-> Stages in Software Deveopment Lifecycle (SDLC)
+> Stages in Software Development Lifecycle (SDLC)
 
 ### 📕 **Requirements**
 - **Requirement Analysis**
@@ -1082,9 +1082,9 @@ A Skill in this repo is more than a prompt:
 
 - **Traceability & Coverage**
     - [Requirement to Test](req-to-test) – Automatically generate test cases from requirements
-    - [Requirement to Contraints](nl-to-constraints) -- Transforms natural language requirements into into formal specifications and constraints (structured, testable specifications with explicit constraints).
+    - [Requirement to Constraints](nl-to-constraints) -- Transforms natural language requirements into formal specifications and constraints (structured, testable specifications with explicit constraints).
     - [Traceability Matrix Generator](traceability-matrix-generator) – Build a traceability matrix connecting requirements → design → implementation → tests
-    - [Requirement Coverage Checker](requirement-coverage-checker) – Check whether existing design/code covers all requirements
+    - [Requirement Coverage Checker](requirement-coverage-checker) – Check whether the existing design/code covers all requirements
     - [Requirement Comparison Reporter](requirement-comparison-reporter) – Compare requirement versions, map changes to code components, and generate modification plans
 
 - **Documentation & Communication**
@@ -1305,10 +1305,6 @@ A Skill in this repo is more than a prompt:
 - **Documentation & Reporting**
     - [Release Notes Writer](release-notes-writer) – Automatically generate user-facing release notes
 
-- **Monitoring & Error Tracking**
-
-- **Integration & Webhooks**
-
 
 ### 🔧 **Maintenance**
 - **Bug & Issue Handling**
@@ -1372,10 +1368,7 @@ A Skill in this repo is more than a prompt:
     - [Multi-Version Behavior Comparator](multi-version-behavior-comparator) – Compare behavior across multiple versions of programs
     - [Interval Difference Analyzer](interval-difference-analyzer) – Analyze differences in program intervals between versions to detect behavioral changes
     - [Interval Profiling Performance Analyzer](interval-profiling-performance-analyzer) – Profile programs to identify performance bottlenecks
-
-- **Team Communication & Collaboration**
     
-
 
 ## Usage
 
