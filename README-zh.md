@@ -26,7 +26,7 @@
 
 
 <p align="center">
-  <img src="./skill-manager-image.png" alt="Skills Manager 界面" width="100%">
+  <img src="./images/skill-manager-image.png" alt="Skills Manager 界面" width="100%">
 </p>
 
 通过我们的交互式网页界面浏览、搜索和安装技能。Skills Manager 提供：
@@ -37,7 +37,7 @@
 - 🎨 现代化响应式界面
 
 <p align="center">
-  <img src="./zh-image.png" alt="Skills Manager Interface" width="100%">
+  <img src="./images/zh-image.png" alt="Skills Manager Interface" width="100%">
 </p>
 
 ## 📦 技能包
@@ -45,7 +45,7 @@
 为常见软件工程工作流组织的相关技能集合。您可以安装精心策划的技能包，将相关功能捆绑在一起，而不是单独安装技能。
 
 <p align="center">
-  <img src="./skill-pack-image.png" alt="Skills Manager Interface" width="100%">
+  <img src="./images/skill-pack-image.png" alt="Skills Manager Interface" width="100%">
 </p>
 
 ### 🚀 可用技能包（共 8 个）

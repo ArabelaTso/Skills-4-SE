@@ -22,7 +22,7 @@ This repository is **a comprehensive, reusable, task-oriented Skills collection*
 > You can also deploy the website locally. 👉 [Guideline](./skill-manager/README.md)
 
 <p align="center">
-  <img src="./skill-manager-image.png" alt="Skills Manager Interface" width="100%">
+  <img src="./images/skill-manager-image.png" alt="Skills Manager Interface" width="100%">
 </p>
 
 Browse, search, and install skills through our interactive web interface. The Skills Manager provides:
@@ -33,7 +33,7 @@ Browse, search, and install skills through our interactive web interface. The Sk
 - 🎨 Modern, responsive interface
 
 <p align="center">
-  <img src="./zh-image.png" alt="Skills Manager Interface" width="100%">
+  <img src="./images/zh-image.png" alt="Skills Manager Interface" width="100%">
 </p>
 
 
@@ -43,7 +43,7 @@ Browse, search, and install skills through our interactive web interface. The Sk
 Organized collections of related skills for common software engineering workflows. Instead of installing skills individually, you can install curated skill packs that bundle related capabilities together.
 
 <p align="center">
-  <img src="./skill-pack-image.png" alt="Skills Manager Interface" width="100%">
+  <img src="./images/skill-pack-image.png" alt="Skills Manager Interface" width="100%">
 </p>
 
 ### 🚀 Available Skill Packs (8 Total)
