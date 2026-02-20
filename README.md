@@ -6,20 +6,13 @@
 
 This repository is **a comprehensive, reusable, task-oriented Skills collection** designed to support **software engineering activities across the entire development lifecycle**, including:
 
-> Requirement understanding, system design, implementation, testing, verification, deployment, and maintenance.
+> *Requirement understanding, system design, implementation, testing, verification, deployment, and maintenance*.
 
-✅ Unlike prompt collections or ad-hoc demos, each Skill in this repository is:
-- **Task-grounded** (solves a concrete software engineering problem)
-- **Reusable** (clearly specified inputs and outputs)
-- **Composable** (can be chained into larger workflows or pipelines)
-- **Tool- and artifact-aware** (operates on real code, tests, specs, configs, logs)
 
-🧰 This repo is intended to serve as a **shared skill layer** for:
-- LLM-based assistants (e.g., Claude Skills, agents)
-- Tool-augmented software engineering workflows
-- Research prototypes and empirical studies
-- Industrial automation and developer productivity tools
-
+**We provide**:
+- 🌐 [**Website**](https://ArabelaTso.github.io/Skills-4-SE/) to quick browse skills
+- 📦 8 [**Core Skill Packs**](#-skill-packs)
+- 🚀 170+ [**Coding Skills**](#list-of-skills)
 
 
 ## 🌐 Skills Manager Web Interface
@@ -1406,41 +1399,7 @@ More details of [**how Claude store skills and other configurations**](https://m
 
 ### Using a Skill
 
-Skills are automatically triggered based on user requests that match the skill's description. You can also explicitly invoke a skill:
-
-> Using "requirement-summarizer" to summarize the requirement "path-to-a-doc.md"
-
-
-
-
-## 🤝 Contributing
-
-We welcome contributions from both:
-- **Researchers** (new Skills, evaluation methods)
-- **Practitioners** (real-world use cases, pipelines)
-
-to:
-- **Contribute new skills** 
-- **Improving existing skills** (serving as baseline, improving procedures, triggering conditions, scripts, and example codes)
-- **Suggesting new skill packs** (packing existing skills to suit new task scenarios)
-
-
-Please read [Contributing Guidelines](CONTRIBUTING.md) before submitting a pull request.
-
-**Quick Contribution Steps**:
-- Ensure your skill is based on a real use case
-- Check for duplicates in existing skills
-- Follow the skill structure template
-- Test your skill across platforms
-- Submit a pull request with clear documentation
-
-## 🎯 Vision
-
-Our long-term vision is to build:
-> **A shared, open Skill layer for LLM-powered Software Engineering systems** 
-
-
-🎉 If you are building or studying LLMs for software engineering, this repo is for you.
+See [here](https://ArabelaTso.github.io/Skills-4-SE/) "How to use".
 
 
 ## ⚡ Risk Disclosure
@@ -1483,6 +1442,49 @@ To prevent potential **security risks** that skills may pose when running locall
 ⚠️ **Note**: High false positive rate; please carefully verify. For example, if the description contains words like "password," it is considered a high-risk skill. Decide for yourself whether to use it.
 
 For more details, please see the [log](./_report/security_scan_raw.log).
+
+
+
+## 🤝 Contributing
+
+We welcome contributions from both:
+- **Researchers** (new Skills, evaluation methods)
+- **Practitioners** (real-world use cases, pipelines)
+
+to:
+- **Contribute new skills** 
+- **Improving existing skills** (serving as baseline, improving procedures, triggering conditions, scripts, and example codes)
+- **Suggesting new skill packs** (packing existing skills to suit new task scenarios)
+
+
+Please read [Contributing Guidelines](CONTRIBUTING.md) before submitting a pull request.
+
+**Quick Contribution Steps**:
+- Ensure your skill is based on a real use case
+- Check for duplicates in existing skills
+- Follow the skill structure template
+- Test your skill across platforms
+- Submit a pull request with clear documentation
+
+## 🎯 Vision
+
+Our long-term vision is to build:
+> **A shared, open Skill layer for LLM-powered Software Engineering systems** 
+
+✅ Unlike prompt collections or ad-hoc demos, each Skill in this repository is:
+- **Task-grounded** (solves a concrete software engineering problem)
+- **Reusable** (clearly specified inputs and outputs)
+- **Composable** (can be chained into larger workflows or pipelines)
+- **Tool- and artifact-aware** (operates on real code, tests, specs, configs, logs)
+
+🧰 This repo is intended to serve as a **shared skill layer** for:
+- AI assistants (e.g., Claude Skills, agents)
+- Tool-augmented software engineering workflows
+- Research prototypes and empirical studies
+- Industrial automation and developer productivity tools
+
+
+🎉 If you are building or studying AI Agent for software engineering, this repo is for you.
 
 
 
