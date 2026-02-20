@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill 安全扫描报告</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        
+        .finding-card {
+            transition: all 0.3s ease;
+        }
+        .finding-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .severity-badge {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        .collapsible-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .collapsible-content.expanded {
+            max-height: 1000px;
+        }
+        .code-block {
+            background: #1f2937;
+            color: #f3f4f6;
+            border-radius: 0.375rem;
+            padding: 0.75rem;
+            font-family: 'Courier New', monospace;
+            font-size: 0.875rem;
+            overflow-x: auto;
+        }
+        
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div class="min-h-screen">
+        <!-- Header -->
+        <header class="bg-gradient-to-r from-blue-500 to-blue-700 text-white shadow-lg">
+            <div class="max-w-7xl mx-auto px-4 py-6 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <h1 class="text-3xl font-bold flex items-center">
+                            <i class="fas fa-shield-alt mr-3"></i>
+                            Skill 安全扫描报告
+                        </h1>
+                        <p class="mt-2 text-white/80">
+                            <i class="far fa-clock mr-1"></i>
+                            生成时间: 2026-02-21 01:05:53
+                        </p>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-6xl font-bold">2.4</div>
+                        <div class="text-xl">LOW</div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
+            <!-- Scanned Paths -->
+            
+
+            <!-- Summary Cards -->
+            
+        <div class="bg-white rounded-lg shadow p-6">
+            <div class="flex items-center justify-between mb-4">
+                <h2 class="text-xl font-semibold text-gray-800">
+                    <i class="fas fa-chart-pie text-purple-500 mr-2"></i>
+                    扫描摘要
+                </h2>
+                <span class="bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                    <i class="fas fa-flag mr-1"></i>
+                    LOW
+                </span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <!-- Total Files -->
+                <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg p-4">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm text-blue-600 font-medium">文件总数</p>
+                            <p class="text-2xl font-bold text-blue-700">3</p>
+                        </div>
+                        <i class="fas fa-file-alt text-3xl text-blue-300"></i>
+                    </div>
+                </div>
+
+                <!-- Critical -->
+                <div class="bg-gradient-to-br from-red-50 to-red-100 rounded-lg p-4">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm text-red-600 font-medium">Critical</p>
+                            <p class="text-2xl font-bold text-red-700">6</p>
+                        </div>
+                        <i class="fas fa-exclamation-triangle text-3xl text-red-300"></i>
+                    </div>
+                </div>
+
+                <!-- Warning -->
+                <div class="bg-gradient-to-br from-yellow-50 to-yellow-100 rounded-lg p-4">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm text-yellow-600 font-medium">Warning</p>
+                            <p class="text-2xl font-bold text-yellow-700">0</p>
+                        </div>
+                        <i class="fas fa-exclamation-circle text-3xl text-yellow-300"></i>
+                    </div>
+                </div>
+
+                <!-- Info -->
+                <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg p-4">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm text-blue-600 font-medium">Info</p>
+                            <p class="text-2xl font-bold text-blue-700">0</p>
+                        </div>
+                        <i class="fas fa-info-circle text-3xl text-blue-300"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-4 p-4 bg-gray-50 rounded-lg">
+                <div class="flex items-center justify-between">
+                    <span class="text-gray-600">问题总数</span>
+                    <span class="text-2xl font-bold text-blue-600">6</span>
+                </div>
+            </div>
+        </div>
+        
+
+            <!-- Filter Controls -->
+            
+        <div class="bg-white rounded-lg shadow p-6 mb-6">
+            <div class="flex flex-wrap items-center gap-3">
+                <span class="text-gray-700 font-medium">筛选:</span>
+                <button onclick="filterFindings('all')" class="filter-btn px-4 py-2 rounded-lg bg-gray-200 hover:bg-gray-300 transition-colors">
+                    <i class="fas fa-list mr-1"></i>全部
+                </button>
+                <button onclick="filterFindings('CRITICAL')" class="filter-btn px-4 py-2 rounded-lg bg-red-100 text-red-700 hover:bg-red-200 transition-colors">
+                    <i class="fas fa-exclamation-triangle mr-1"></i>Critical (6)
+                </button>
+                <button onclick="filterFindings('WARNING')" class="filter-btn px-4 py-2 rounded-lg bg-yellow-100 text-yellow-700 hover:bg-yellow-200 transition-colors">
+                    <i class="fas fa-exclamation-circle mr-1"></i>Warning (0)
+                </button>
+                <button onclick="filterFindings('INFO')" class="filter-btn px-4 py-2 rounded-lg bg-blue-100 text-blue-700 hover:bg-blue-200 transition-colors">
+                    <i class="fas fa-info-circle mr-1"></i>Info (0)
+                </button>
+            </div>
+        </div>
+        
+
+            <!-- Findings -->
+            
+            <div class="finding-section mb-8" data-severity="CRITICAL">
+                <h3 class="text-2xl font-bold text-red-600 mb-4 flex items-center">
+                    <i class="fas fa-exclamation-triangle mr-2"></i>
+                    CRITICAL 问题 (6)
+                </h3>
+                <div class="space-y-4">
+                    
+        <div class="finding-card bg-white rounded-lg shadow-md border-l-4 border-red-500 overflow-hidden">
+            <div class="p-6">
+                <div class="flex items-start justify-between mb-3">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                FILE001
+                            </span>
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm font-medium">
+                                <i class="fas fa-chart-line mr-1"></i>
+                                MEDIUM 置信度
+                            </span>
+                        </div>
+                        <p class="text-gray-600 mb-2">尝试访问敏感文件</p>
+                    </div>
+                    <button onclick="toggleCollapse(0)" class="text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-chevron-down" id="icon-0"></i>
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3 text-sm">
+                    <div class="flex items-center text-gray-600">
+                        <i class="fas fa-file-code mr-2 text-blue-500"></i>
+                        <span class="font-medium">位置:</span>
+                        <code class="ml-2 bg-gray-100 px-2 py-1 rounded text-xs">skills/interval-guided-regression-test-update/references/interval-analysis.md:317</code>
+                    </div>
+                </div>
+
+                <div class="collapsible-content" id="content-0">
+                    <div class="mt-3">
+                        <p class="text-sm text-gray-500 mb-2">
+                            <i class="fas fa-code mr-1"></i>检测到的模式:
+                        </p>
+                        <div class="code-block">
+                            def validate_password(password):
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="finding-card bg-white rounded-lg shadow-md border-l-4 border-red-500 overflow-hidden">
+            <div class="p-6">
+                <div class="flex items-start justify-between mb-3">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                FILE001
+                            </span>
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm font-medium">
+                                <i class="fas fa-chart-line mr-1"></i>
+                                MEDIUM 置信度
+                            </span>
+                        </div>
+                        <p class="text-gray-600 mb-2">尝试访问敏感文件</p>
+                    </div>
+                    <button onclick="toggleCollapse(1)" class="text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-chevron-down" id="icon-1"></i>
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3 text-sm">
+                    <div class="flex items-center text-gray-600">
+                        <i class="fas fa-file-code mr-2 text-blue-500"></i>
+                        <span class="font-medium">位置:</span>
+                        <code class="ml-2 bg-gray-100 px-2 py-1 rounded text-xs">skills/interval-guided-regression-test-update/references/interval-analysis.md:318</code>
+                    </div>
+                </div>
+
+                <div class="collapsible-content" id="content-1">
+                    <div class="mt-3">
+                        <p class="text-sm text-gray-500 mb-2">
+                            <i class="fas fa-code mr-1"></i>检测到的模式:
+                        </p>
+                        <div class="code-block">
+                            if len(password) &lt; 8:
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="finding-card bg-white rounded-lg shadow-md border-l-4 border-red-500 overflow-hidden">
+            <div class="p-6">
+                <div class="flex items-start justify-between mb-3">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                FILE001
+                            </span>
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm font-medium">
+                                <i class="fas fa-chart-line mr-1"></i>
+                                MEDIUM 置信度
+                            </span>
+                        </div>
+                        <p class="text-gray-600 mb-2">尝试访问敏感文件</p>
+                    </div>
+                    <button onclick="toggleCollapse(2)" class="text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-chevron-down" id="icon-2"></i>
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3 text-sm">
+                    <div class="flex items-center text-gray-600">
+                        <i class="fas fa-file-code mr-2 text-blue-500"></i>
+                        <span class="font-medium">位置:</span>
+                        <code class="ml-2 bg-gray-100 px-2 py-1 rounded text-xs">skills/interval-guided-regression-test-update/references/interval-analysis.md:320</code>
+                    </div>
+                </div>
+
+                <div class="collapsible-content" id="content-2">
+                    <div class="mt-3">
+                        <p class="text-sm text-gray-500 mb-2">
+                            <i class="fas fa-code mr-1"></i>检测到的模式:
+                        </p>
+                        <div class="code-block">
+                            elif len(password) &gt; 20:
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="finding-card bg-white rounded-lg shadow-md border-l-4 border-red-500 overflow-hidden">
+            <div class="p-6">
+                <div class="flex items-start justify-between mb-3">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                FILE001
+                            </span>
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm font-medium">
+                                <i class="fas fa-chart-line mr-1"></i>
+                                MEDIUM 置信度
+                            </span>
+                        </div>
+                        <p class="text-gray-600 mb-2">尝试访问敏感文件</p>
+                    </div>
+                    <button onclick="toggleCollapse(3)" class="text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-chevron-down" id="icon-3"></i>
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3 text-sm">
+                    <div class="flex items-center text-gray-600">
+                        <i class="fas fa-file-code mr-2 text-blue-500"></i>
+                        <span class="font-medium">位置:</span>
+                        <code class="ml-2 bg-gray-100 px-2 py-1 rounded text-xs">skills/interval-guided-regression-test-update/references/interval-analysis.md:331</code>
+                    </div>
+                </div>
+
+                <div class="collapsible-content" id="content-3">
+                    <div class="mt-3">
+                        <p class="text-sm text-gray-500 mb-2">
+                            <i class="fas fa-code mr-1"></i>检测到的模式:
+                        </p>
+                        <div class="code-block">
+                            assert validate_password(&quot;abc&quot;) == &quot;too short&quot;      # Interval 1
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="finding-card bg-white rounded-lg shadow-md border-l-4 border-red-500 overflow-hidden">
+            <div class="p-6">
+                <div class="flex items-start justify-between mb-3">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                FILE001
+                            </span>
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm font-medium">
+                                <i class="fas fa-chart-line mr-1"></i>
+                                MEDIUM 置信度
+                            </span>
+                        </div>
+                        <p class="text-gray-600 mb-2">尝试访问敏感文件</p>
+                    </div>
+                    <button onclick="toggleCollapse(4)" class="text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-chevron-down" id="icon-4"></i>
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3 text-sm">
+                    <div class="flex items-center text-gray-600">
+                        <i class="fas fa-file-code mr-2 text-blue-500"></i>
+                        <span class="font-medium">位置:</span>
+                        <code class="ml-2 bg-gray-100 px-2 py-1 rounded text-xs">skills/interval-guided-regression-test-update/references/interval-analysis.md:332</code>
+                    </div>
+                </div>
+
+                <div class="collapsible-content" id="content-4">
+                    <div class="mt-3">
+                        <p class="text-sm text-gray-500 mb-2">
+                            <i class="fas fa-code mr-1"></i>检测到的模式:
+                        </p>
+                        <div class="code-block">
+                            assert validate_password(&quot;password123&quot;) == &quot;valid&quot;  # Interval 2
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="finding-card bg-white rounded-lg shadow-md border-l-4 border-red-500 overflow-hidden">
+            <div class="p-6">
+                <div class="flex items-start justify-between mb-3">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                FILE001
+                            </span>
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm font-medium">
+                                <i class="fas fa-chart-line mr-1"></i>
+                                MEDIUM 置信度
+                            </span>
+                        </div>
+                        <p class="text-gray-600 mb-2">尝试访问敏感文件</p>
+                    </div>
+                    <button onclick="toggleCollapse(5)" class="text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-chevron-down" id="icon-5"></i>
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3 text-sm">
+                    <div class="flex items-center text-gray-600">
+                        <i class="fas fa-file-code mr-2 text-blue-500"></i>
+                        <span class="font-medium">位置:</span>
+                        <code class="ml-2 bg-gray-100 px-2 py-1 rounded text-xs">skills/interval-guided-regression-test-update/references/interval-analysis.md:333</code>
+                    </div>
+                </div>
+
+                <div class="collapsible-content" id="content-5">
+                    <div class="mt-3">
+                        <p class="text-sm text-gray-500 mb-2">
+                            <i class="fas fa-code mr-1"></i>检测到的模式:
+                        </p>
+                        <div class="code-block">
+                            assert validate_password(&quot;a&quot; * 25) == &quot;too long&quot;    # Interval 3
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                </div>
+                
+            </div>
+            
+
+            <!-- Recommendation -->
+            
+        <div class="bg-blue-50 border-blue-500 border-t-4 rounded-lg shadow-lg p-6 mt-8">
+            <div class="flex items-start">
+                <i class="fas fa-info-circle text-4xl text-blue-600 mr-4 mt-1"></i>
+                <div>
+                    <h3 class="text-xl font-bold text-blue-600 mb-2">建议</h3>
+                    <p class="text-gray-700 text-lg">谨慎使用 - 存在轻微风险</p>
+                </div>
+            </div>
+        </div>
+        
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-white border-t mt-12">
+            <div class="max-w-7xl mx-auto px-4 py-6 sm:px-6 lg:px-8">
+                <p class="text-center text-gray-500 text-sm">
+                    <i class="fas fa-code mr-1"></i>
+                    生成工具 skill-security-scan v1.0.0
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    
+        <script>
+            function filterFindings(severity) {
+                const sections = document.querySelectorAll('.finding-section');
+                sections.forEach(section => {
+                    if (severity === 'all' || section.dataset.severity === severity) {
+                        section.style.display = 'block';
+                    } else {
+                        section.style.display = 'none';
+                    }
+                });
+
+                // 更新按钮状态
+                document.querySelectorAll('.filter-btn').forEach(btn => {
+                    btn.classList.remove('ring-2', 'ring-offset-2', 'ring-blue-500');
+                });
+                event.target.classList.add('ring-2', 'ring-offset-2', 'ring-blue-500');
+            }
+
+            function toggleCollapse(index) {
+                const content = document.getElementById('content-' + index);
+                const icon = document.getElementById('icon-' + index);
+
+                content.classList.toggle('expanded');
+                icon.classList.toggle('fa-chevron-down');
+                icon.classList.toggle('fa-chevron-up');
+            }
+        </script>
+        
+</body>
+</html>

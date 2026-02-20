@@ -42,6 +42,40 @@
 - 📖 中英文双语帮助文档
 - 🎨 现代化响应式界面
 
+
+## 📦 技能包
+
+为常见软件工程工作流组织的相关技能集合。您可以安装精心策划的技能包，将相关功能捆绑在一起，而不是单独安装技能。
+
+### 🚀 可用技能包（共 8 个）
+
+- **🐛 [错误修复套件](./skill-packs/bug-fixing-suite/)** - 12 个技能，用于错误检测、定位和自动修复
+- **✨ [代码质量工具包](./skill-packs/code-quality-toolkit/)** - 13 个技能，用于代码质量、重构和技术债务管理
+- **🧪 [测试自动化套件](./skill-packs/test-automation-suite/)** - 18 个技能，用于全面的测试生成和优化
+- **📋 [需求工程套件](./skill-packs/requirements-engineering-suite/)** - 12 个技能，用于需求分析、形式化和可追溯性
+- **🔄 [代码理解与操作套件](./skill-packs/code-understanding-and-manipulation-suite/)** - 19 个技能，用于代码理解、分析、搜索、翻译和操作
+- **🚀 [DevOps 自动化工具包](./skill-packs/devops-automation-toolkit/)** - 10 个技能，用于 CI/CD 流水线、容器化和部署
+- **🔍 [形式化验证工具包](./skill-packs/formal-verification-toolkit/)** - 17 个技能，用于软件系统的形式化验证
+- **🔒 [安全扫描套件](./skill-packs/security-scanner-suite/)** - 13 个技能，用于全面的安全分析
+
+### 快速安装
+
+```bash
+# 安装单个技能包
+cd skill-packs/formal-verification-toolkit
+./install.sh
+
+# 安装多个技能包
+cd skill-packs
+./install-packs.sh formal-verification-toolkit security-scanner-suite
+
+# 安装所有技能包
+cd skill-packs
+./install-all-packs.sh
+```
+
+👉 [了解更多关于技能包的信息](./skill-packs/README.md)
+
 ---
 
 
@@ -1364,6 +1398,12 @@ mkdir ~/.claude/skills
 - **研究人员**（新技能、评估方法）
 - **实践者**（真实世界用例、流水线）
 
+您可以：
+- **提交新技能** 
+- **改进已有技能** （以现有技能作为baseline，改进流程、触发条件、运行脚本或示例代码）
+- **建议新技能包** （将现有工具打包组合，以服务于新任务场景）
+
+
 在提交拉取请求之前，请阅读[贡献指南](CONTRIBUTING.md)。
 
 **快速贡献步骤**：
@@ -1378,10 +1418,6 @@ mkdir ~/.claude/skills
 我们的长期愿景是构建：
 > **一个用于 LLM 驱动的软件工程系统的共享、开放的技能层** 
 
-- 如何提交新技能
-- 技能质量标准
-- 拉取请求流程
-- 行为准则
 
 🎉 如果您正在构建或研究用于软件工程的 LLM，这个仓库适合您。
 
@@ -1390,10 +1426,10 @@ mkdir ~/.claude/skills
 
 📊 Risk Level 统计报告
 
-  风险分布：
+  风险分布（共扫描 174 个技能）：
 
-  - 🔴 CRITICAL: 17 Skills (8.5%) 
-    > Trying to access `\tmp` or other system dirs, installing packages
+  - 🔴 CRITICAL: 16 个 Skill (9.2%)
+    > 尝试访问 `\tmp` 或其他系统目录，安装软件包等
     - framework-migration-assistant
     - vulnerability-pattern-matcher
     - code-smell-detector
@@ -1403,7 +1439,6 @@ mkdir ~/.claude/skills
     - requirement-enhancer
     - security-sensitive-path-instrumenter
     - critical-interval-security-checker
-    - mcp-builder
     - static-vulnerability-detector
     - environment-setup-assistant
     - scenario-generator
@@ -1411,19 +1446,22 @@ mkdir ~/.claude/skills
     - api-documentation-generator
     - test-case-documentation
     - symbolic-execution-assistant
-  - 🟠 HIGH: 5个Skill (2.5%) 
-    > Using `os.system`, `subprocess`, `eval`, `exec`
+  - 🟠 HIGH: 5 个 Skill (2.9%)
+    > 使用 `os.system`、`subprocess`、`eval`、`exec`
     - containerization-assistant
     - bisect-aware-instrumentation
     - code-change-summarizer
     - configuration-generator
     - code-comment-generator
-  - 🟡 MEDIUM: 7个Skill (3.5%)
-  - 🟢 LOW: 24个Skill (12.0%)
-  - ✅ SAFE: 146个Skill (73.4%)
+  - 🟡 MEDIUM: 9 个 Skill (5.2%)
+    > 请求网络
+  - 🟢 LOW: 21 个 Skill (12.1%)
+  - ✅ SAFE: 123 个 Skill (70.7%)
 
 
 ⚠️ 注意：误报高，注意甄别。例如，Skill描述中出现“password”等单词，则被判定为风险级别高。自行决定是否使用。
+
+详情见[日志](./_report/security_scan_raw.log).
 
 
 ## 参考

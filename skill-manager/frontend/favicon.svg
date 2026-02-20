@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="sparkleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Main star -->
+  <path d="M50 10 L55 40 L85 45 L60 65 L65 95 L50 80 L35 95 L40 65 L15 45 L45 40 Z"
+        fill="url(#sparkleGradient)"
+        stroke="#fff"
+        stroke-width="2"/>
+
+  <!-- Small sparkle top right -->
+  <circle cx="75" cy="20" r="3" fill="#ffd700"/>
+  <path d="M75 14 L75 26 M69 20 L81 20" stroke="#ffd700" stroke-width="1.5" stroke-linecap="round"/>
+
+  <!-- Small sparkle bottom left -->
+  <circle cx="25" cy="75" r="2.5" fill="#ffd700"/>
+  <path d="M25 70 L25 80 M20 75 L30 75" stroke="#ffd700" stroke-width="1.5" stroke-linecap="round"/>
+</svg>

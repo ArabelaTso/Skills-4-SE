@@ -33,11 +33,45 @@ This repository is **a comprehensive, reusable, task-oriented Skills collection*
 </p>
 
 Browse, search, and install skills through our interactive web interface. The Skills Manager provides:
-- 📦 One-click installation of all 200+ skills
+- 📦 One-click installation of all 170+ skills
 - ✅ Selective installation of specific skills
 - 🔍 Search and filter by category
 - 📖 Bilingual help documentation (English/中文)
 - 🎨 Modern, responsive interface
+
+
+## 📦 Skill Packs
+
+Organized collections of related skills for common software engineering workflows. Instead of installing skills individually, you can install curated skill packs that bundle related capabilities together.
+
+### 🚀 Available Skill Packs (8 Total)
+
+- **🐛 [Bug Fixing Suite](./skill-packs/bug-fixing-suite/)** - 12 skills for bug detection, localization, and automated repair
+- **✨ [Code Quality Toolkit](./skill-packs/code-quality-toolkit/)** - 13 skills for code quality, refactoring, and technical debt management
+- **🧪 [Test Automation Suite](./skill-packs/test-automation-suite/)** - 18 skills for comprehensive test generation and optimization
+- **📋 [Requirements Engineering Suite](./skill-packs/requirements-engineering-suite/)** - 12 skills for requirements analysis, formalization, and traceability
+- **🔄 [Code Understanding and Manipulation Suite](./skill-packs/code-understanding-and-manipulation-suite/)** - 19 skills for code understanding, analysis, search, translation, and manipulation
+- **🚀 [DevOps Automation Toolkit](./skill-packs/devops-automation-toolkit/)** - 10 skills for CI/CD pipelines, containerization, and deployment
+- **🔍 [Formal Verification Toolkit](./skill-packs/formal-verification-toolkit/)** - 17 skills for formal verification of software systems
+- **🔒 [Security Scanner Suite](./skill-packs/security-scanner-suite/)** - 13 skills for comprehensive security analysis
+
+### Quick Installation
+
+```bash
+# Install a single pack
+cd skill-packs/formal-verification-toolkit
+./install.sh
+
+# Install multiple packs
+cd skill-packs
+./install-packs.sh formal-verification-toolkit security-scanner-suite
+
+# Install all packs
+cd skill-packs
+./install-all-packs.sh
+```
+
+👉 [Learn more about Skill Packs](./skill-packs/README.md)
 
 
 ## ✨ Why Skills (not just prompts)?
@@ -57,7 +91,7 @@ A Skill in this repo is more than a prompt:
 
 > 🤗 Think of this repo as a *standard library of software engineering capabilities* for LLM-powered systems.
 
-## Table of Contents
+## List of Skills 
 
 - [**Skills by Category**](#skills-by-category)
   - ⌨️ [Code Generation](#code-generation)
@@ -1376,6 +1410,12 @@ We welcome contributions from both:
 - **Researchers** (new Skills, evaluation methods)
 - **Practitioners** (real-world use cases, pipelines)
 
+to:
+- **Contribute new skills** 
+- **Improving existing skills** (serving as baseline, improving procedures, triggering conditions, scripts, and example codes)
+- **Suggesting new skill packs** (packing existing skills to suit new task scenarios)
+
+
 Please read [Contributing Guidelines](CONTRIBUTING.md) before submitting a pull request.
 
 **Quick Contribution Steps**:
@@ -1390,10 +1430,6 @@ Please read [Contributing Guidelines](CONTRIBUTING.md) before submitting a pull 
 Our long-term vision is to build:
 > **A shared, open Skill layer for LLM-powered Software Engineering systems** 
 
-- How to submit new skills
-- Skill quality standards
-- Pull request process
-- Code of conduct
 
 🎉 If you are building or studying LLMs for software engineering, this repo is for you.
 
@@ -1403,40 +1439,41 @@ To prevent potential **security risks** that skills may pose when running locall
 
 📊 Risk Level Statistical Report 
 
-- Risk distribution: 
+- Risk distribution (Total: 174 skills scanned):
 
-- 🔴 CRITICAL: 17 Skills (8.5%) 
-    > Trying to access `\tmp` or other system dirs, installing packages 
-    - framework-migration-assistant 
-    - vulnerability-pattern-matcher 
-    - code-smell-detector 
-    - req-to-test 
-    - traceability-matrix-generator 
-    - python-test-updater 
-    - requirement-enhancer 
-    - security-sensitive-path-instrumenter 
-    - critical-interval-security-checker 
-    - mcp-builder 
-    - static-vulnerability-detector 
-    - environment-setup-assistant 
-    - scenario-generator 
-    - security-patch-advisor 
-    - api-documentation-generator 
-    - test-case-documentation 
-    - symbolic-execution-assistant 
-- 🟠 HIGH: 5 files (2.5%)
+- 🔴 CRITICAL: 16 Skills (9.2%)
+    > Trying to access `\tmp` or other system dirs, installing packages
+    - framework-migration-assistant
+    - vulnerability-pattern-matcher
+    - code-smell-detector
+    - req-to-test
+    - traceability-matrix-generator
+    - python-test-updater
+    - requirement-enhancer
+    - security-sensitive-path-instrumenter
+    - critical-interval-security-checker
+    - static-vulnerability-detector
+    - environment-setup-assistant
+    - scenario-generator
+    - security-patch-advisor
+    - api-documentation-generator
+    - test-case-documentation
+    - symbolic-execution-assistant
+- 🟠 HIGH: 5 Skills (2.9%)
     > Using `os.system`, `subprocess`, `eval`, `exec`
     - containerization-assistant
     - bisect-aware-instrumentation
     - code-change-summarizer
     - configuration-generator
     - code-comment-generator
-- 🟡 MEDIUM: 7 files (3.5%)
+- 🟡 MEDIUM: 9 Skills (5.2%)
     > Requesting network
-- 🟢 LOW: 24 files (12.0%)
-- ✅ SAFE: 146 files (73.4%)
+- 🟢 LOW: 21 Skills (12.1%)
+- ✅ SAFE: 123 Skills (70.7%)
 
 ⚠️ **Note**: High false positive rate; please carefully verify. For example, if the description contains words like "password," it is considered a high-risk skill. Decide for yourself whether to use it.
+
+For more details, please see the [log](./_report/security_scan_raw.log).
 
 
 

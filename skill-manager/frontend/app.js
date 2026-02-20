@@ -3,11 +3,12 @@ const SKILLS_DATA_URL = 'skills-data.json?v=' + Date.now();
 
 // State
 let allSkills = [];
+let allSkillPacks = [];
 let allSkillsData = {}; // Store full data including category translations
 let selectedSkills = new Set();
 let selectedCategories = new Set(['all']); // Changed to Set for multi-select
 let currentLang = 'en'; // Default language
-let currentView = 'category'; // 'category' or 'stage'
+let currentView = 'category'; // 'category', 'stage', or 'packs'
 
 // i18n translations
 const translations = {
@@ -21,6 +22,7 @@ const translations = {
         searchPlaceholder: '🔍 Search skills by name or description...',
         viewByCategory: '📂 By Category',
         viewByStage: '🔄 By Stage',
+        viewByPacks: '📦 Skill Packs',
         filterAll: 'All',
         filterInstalled: '✓ Installed',
         filterCodeGen: 'Code Generation',
@@ -69,6 +71,7 @@ const translations = {
         searchPlaceholder: '🔍 按名称或描述搜索技能...',
         viewByCategory: '📂 按类别',
         viewByStage: '🔄 按阶段',
+        viewByPacks: '📦 技能包',
         filterAll: '全部',
         filterInstalled: '✓ 已安装',
         filterCodeGen: '代码生成',
@@ -170,6 +173,7 @@ function setupEventListeners() {
     const langToggle = document.getElementById('langToggle');
     const viewByCategoryBtn = document.getElementById('viewByCategory');
     const viewByStageBtn = document.getElementById('viewByStage');
+    const viewByPacksBtn = document.getElementById('viewByPacks');
 
     if (installAllBtn) installAllBtn.addEventListener('click', installAllSkills);
     if (installSelectedBtn) installSelectedBtn.addEventListener('click', installSelectedSkills);
@@ -179,6 +183,7 @@ function setupEventListeners() {
     if (langToggle) langToggle.addEventListener('click', toggleHelpLanguage);
     if (viewByCategoryBtn) viewByCategoryBtn.addEventListener('click', () => switchView('category'));
     if (viewByStageBtn) viewByStageBtn.addEventListener('click', () => switchView('stage'));
+    if (viewByPacksBtn) viewByPacksBtn.addEventListener('click', () => switchView('packs'));
 
     // Help modal
     const modal = document.getElementById('helpModal');
@@ -324,7 +329,9 @@ async function loadSkills() {
 
         allSkillsData = data; // Store full data
         allSkills = data.skills;
+        allSkillPacks = data.skill_packs || [];
         console.log('Total skills loaded:', allSkills.length);
+        console.log('Total skill packs loaded:', allSkillPacks.length);
         renderSkills();
         updateStats();
     } catch (error) {
@@ -347,6 +354,13 @@ let currentSearchTerms = [];
 // Render skills
 function renderSkills() {
     const container = document.getElementById('skillsList');
+
+    // If in packs view, render skill packs instead
+    if (currentView === 'packs') {
+        renderSkillPacks();
+        return;
+    }
+
     const searchInput = document.getElementById('searchInput').value.toLowerCase().trim();
     console.log('Rendering skills with search term:', searchInput);
 
@@ -515,9 +529,18 @@ function createSkillCard(skill) {
         const stageId = skill.stage ? getStageId(skill.stage) : 'none';
         labelClass = `stage-${stageId}`;
 
-        // Use emoji stage name or translate
+        // Convert stage ID to display name with emoji
         if (skill.stage) {
-            labelText = skill.stage; // Already has emoji like "📕 Requirements"
+            const stageDisplayMap = {
+                'requirements': currentLang === 'zh' ? '📕 需求分析' : '📕 Requirements',
+                'design': currentLang === 'zh' ? '💡 软件设计' : '💡 Software Design',
+                'implementation': currentLang === 'zh' ? '⌨️ 实现' : '⌨️ Implementation',
+                'testing': currentLang === 'zh' ? '👩🏽‍💻 测试' : '👩🏽‍💻 Testing',
+                'verification': currentLang === 'zh' ? '✅ 验证' : '✅ Verification',
+                'deployment': currentLang === 'zh' ? '💻 部署' : '💻 Deployment',
+                'maintenance': currentLang === 'zh' ? '🔧 维护' : '🔧 Maintenance'
+            };
+            labelText = stageDisplayMap[stageId] || skill.stage;
         } else {
             labelText = currentLang === 'zh' ? '未分类' : 'No Stage';
         }
@@ -759,37 +782,49 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
-// Switch between category and stage view
+// Switch between category, stage, and packs view
 function switchView(view) {
     currentView = view;
-    
+
     // Update button states
     const categoryBtn = document.getElementById('viewByCategory');
     const stageBtn = document.getElementById('viewByStage');
-    
+    const packsBtn = document.getElementById('viewByPacks');
+
+    // Remove active from all buttons
+    categoryBtn.classList.remove('active');
+    stageBtn.classList.remove('active');
+    packsBtn.classList.remove('active');
+
+    // Hide all tab containers
+    document.getElementById('categoryTabs').style.display = 'none';
+    document.getElementById('stageTabs').style.display = 'none';
+
     if (view === 'category') {
         categoryBtn.classList.add('active');
-        stageBtn.classList.remove('active');
         document.getElementById('categoryTabs').style.display = 'flex';
-        document.getElementById('stageTabs').style.display = 'none';
-    } else {
+    } else if (view === 'stage') {
         stageBtn.classList.add('active');
-        categoryBtn.classList.remove('active');
-        document.getElementById('categoryTabs').style.display = 'none';
         document.getElementById('stageTabs').style.display = 'flex';
+    } else if (view === 'packs') {
+        packsBtn.classList.add('active');
+        // No tabs for packs view
     }
-    
+
     // Reset selection to 'all'
     selectedCategories.clear();
     selectedCategories.add('all');
-    
+
     // Update active tab
     document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-    const activeTab = view === 'category' 
-        ? document.querySelector('#categoryTabs .tab[data-category="all"]')
-        : document.querySelector('#stageTabs .tab[data-stage="all"]');
-    if (activeTab) activeTab.classList.add('active');
-    
+    if (view === 'category') {
+        const activeTab = document.querySelector('#categoryTabs .tab[data-category="all"]');
+        if (activeTab) activeTab.classList.add('active');
+    } else if (view === 'stage') {
+        const activeTab = document.querySelector('#stageTabs .tab[data-stage="all"]');
+        if (activeTab) activeTab.classList.add('active');
+    }
+
     // Re-setup tab listeners
     setupTabListeners();
     
@@ -871,6 +906,12 @@ function handleTabClick(value, tab, type) {
 
 // Get skill stage ID from stage name
 function getStageId(stageName) {
+    // If stageName is already a simple ID (from JSON data), return it directly
+    if (stageName && !stageName.includes(' ')) {
+        return stageName;
+    }
+
+    // Otherwise, map emoji-prefixed names to IDs
     const stageMap = {
         '📕 Requirements': 'requirements',
         '💡 Software Design': 'design',
@@ -881,4 +922,233 @@ function getStageId(stageName) {
         '🔧 Maintenance': 'maintenance'
     };
     return stageMap[stageName] || null;
+}
+
+// Render skill packs
+function renderSkillPacks() {
+    const container = document.getElementById('skillsList');
+    const searchInput = document.getElementById('searchInput').value.toLowerCase().trim();
+
+    // Split search input into multiple terms
+    const searchTerms = searchInput ? searchInput.split(/\s+/).filter(term => term.length > 0) : [];
+    currentSearchTerms = searchTerms;
+
+    let filteredPacks = allSkillPacks;
+
+    // Apply search filter
+    if (searchTerms.length > 0) {
+        const rankedPacks = [];
+
+        filteredPacks.forEach(pack => {
+            const name = String(pack.name || '').toLowerCase();
+            const nameZh = String(pack.name_zh || '').toLowerCase();
+            const description = String(pack.description || '').toLowerCase();
+            const descriptionZh = String(pack.description_zh || '').toLowerCase();
+
+            let nameMatches = 0;
+            let descriptionMatches = 0;
+
+            searchTerms.forEach(term => {
+                const escapedTerm = term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
+                if (name.includes(term) || nameZh.includes(term)) {
+                    nameMatches++;
+                }
+
+                try {
+                    const descMatches = (description.match(new RegExp(escapedTerm, 'g')) || []).length;
+                    const descZhMatches = (descriptionZh.match(new RegExp(escapedTerm, 'g')) || []).length;
+                    descriptionMatches += descMatches + descZhMatches;
+                } catch (e) {
+                    console.error('Regex error for term:', term, e);
+                }
+            });
+
+            if (nameMatches > 0 || descriptionMatches > 0) {
+                rankedPacks.push({
+                    pack: pack,
+                    nameMatches: nameMatches,
+                    descriptionMatches: descriptionMatches
+                });
+            }
+        });
+
+        rankedPacks.sort((a, b) => {
+            if (a.nameMatches > 0 && b.nameMatches === 0) return -1;
+            if (a.nameMatches === 0 && b.nameMatches > 0) return 1;
+            if (a.nameMatches > 0 && b.nameMatches > 0) {
+                if (a.nameMatches !== b.nameMatches) {
+                    return b.nameMatches - a.nameMatches;
+                }
+            }
+            return b.descriptionMatches - a.descriptionMatches;
+        });
+
+        filteredPacks = rankedPacks.map(item => item.pack);
+    }
+
+    if (filteredPacks.length === 0) {
+        const noResultsText = currentLang === 'zh' ? '未找到技能包' : 'No skill packs found';
+        container.innerHTML = `<div class="loading">${noResultsText}</div>`;
+        return;
+    }
+
+    container.innerHTML = filteredPacks.map(pack => createSkillPackCard(pack)).join('');
+
+    // Add click handlers for install buttons
+    document.querySelectorAll('.pack-install-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const packId = btn.dataset.packId;
+            installSkillPack(packId);
+        });
+    });
+
+    // Add click handlers for expand/collapse
+    document.querySelectorAll('.pack-expand-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const packCard = btn.closest('.skill-pack-card');
+            const skillsList = packCard.querySelector('.pack-skills-list');
+            const isExpanded = packCard.classList.contains('expanded');
+
+            if (isExpanded) {
+                packCard.classList.remove('expanded');
+                skillsList.style.maxHeight = '0';
+                btn.textContent = currentLang === 'zh' ? '▼ 展开查看技能' : '▼ Expand to view skills';
+            } else {
+                packCard.classList.add('expanded');
+                skillsList.style.maxHeight = skillsList.scrollHeight + 'px';
+                btn.textContent = currentLang === 'zh' ? '▲ 收起' : '▲ Collapse';
+            }
+        });
+    });
+}
+
+// Create skill pack card HTML
+function createSkillPackCard(pack) {
+    const packName = currentLang === 'zh' && pack.name_zh ? pack.name_zh : pack.name;
+    const packDescription = currentLang === 'zh' && pack.description_zh ? pack.description_zh : pack.description;
+    const packDifficulty = currentLang === 'zh' && pack.difficulty_zh ? pack.difficulty_zh : pack.difficulty;
+
+    // Apply highlighting if there are search terms
+    let highlightedName = packName;
+    let highlightedDescription = packDescription;
+    if (currentSearchTerms.length > 0) {
+        highlightedName = highlightText(packName, currentSearchTerms);
+        highlightedDescription = highlightText(packDescription, currentSearchTerms);
+    }
+
+    const githubBaseUrl = 'https://github.com/ArabelaTso/LLM4SE-Skills/tree/main';
+    const packGithubUrl = `${githubBaseUrl}/${pack.path}`;
+
+    const installText = currentLang === 'zh' ? '安装' : 'Install';
+    const skillsText = currentLang === 'zh' ? '个技能' : 'skills';
+    const difficultyText = currentLang === 'zh' ? '难度' : 'Difficulty';
+    const expandText = currentLang === 'zh' ? '▼ 展开查看技能' : '▼ Expand to view skills';
+
+    // Generate skills list HTML
+    let skillsListHTML = '';
+    if (pack.skills && pack.skills.length > 0) {
+        const skillsItems = pack.skills.map(skillName => {
+            // Find the skill in allSkills to get display name and path
+            const skill = allSkills.find(s => s.name === skillName);
+            const displayName = skill
+                ? (currentLang === 'zh' && skill.displayName_zh ? skill.displayName_zh : skill.displayName || formatSkillName(skillName))
+                : formatSkillName(skillName);
+
+            // Generate GitHub URL for the skill
+            const githubBaseUrl = 'https://github.com/ArabelaTso/LLM4SE-Skills/tree/main';
+            const skillPath = skill ? skill.path : `skills/${skillName}`;
+            const skillGithubUrl = `${githubBaseUrl}/${skillPath}`;
+
+            return `<li class="pack-skill-item"><a href="${skillGithubUrl}" target="_blank" onclick="event.stopPropagation()">${displayName}</a></li>`;
+        }).join('');
+
+        skillsListHTML = `
+            <div class="pack-skills-list">
+                <ul class="pack-skills-ul">
+                    ${skillsItems}
+                </ul>
+            </div>
+        `;
+    }
+
+    return `
+        <div class="skill-pack-card" data-pack-id="${pack.id}">
+            <div class="pack-header">
+                <div class="pack-icon">${pack.icon}</div>
+                <div class="pack-info">
+                    <div class="pack-name">${highlightedName}</div>
+                    <div class="pack-meta">
+                        <span class="pack-skills-count">${pack.skills_count} ${skillsText}</span>
+                        <span class="pack-difficulty">${difficultyText}: ${packDifficulty}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="pack-description">
+                ${highlightedDescription}
+                <a href="${packGithubUrl}" target="_blank" class="see-more-link" onclick="event.stopPropagation()">
+                    ${currentLang === 'zh' ? '查看详情' : 'See more'}
+                </a>
+            </div>
+            <button class="pack-expand-btn" data-pack-id="${pack.id}">
+                ${expandText}
+            </button>
+            ${skillsListHTML}
+            <button class="pack-install-btn" data-pack-id="${pack.id}">
+                ${installText}
+            </button>
+        </div>
+    `;
+}
+
+// Install skill pack
+function installSkillPack(packId) {
+    const pack = allSkillPacks.find(p => p.id === packId);
+    if (!pack) {
+        showNotification('Skill pack not found', 'error');
+        return;
+    }
+
+    const packName = currentLang === 'zh' && pack.name_zh ? pack.name_zh : pack.name;
+    const sourcePath = pack.path || `skill-packs/${packId}`;
+
+    const message = currentLang === 'zh'
+        ? `要安装 "${packName}" 技能包，请克隆仓库并运行：\n\n` +
+          `git clone https://github.com/ArabelaTso/LLM4SE-Skills.git\n` +
+          `cd LLM4SE-Skills\n` +
+          `mkdir -p ~/.claude/skills\n` +
+          `cp -r ${sourcePath}/* ~/.claude/skills/`
+        : `To install "${packName}" skill pack, clone the repository and run:\n\n` +
+          `git clone https://github.com/ArabelaTso/LLM4SE-Skills.git\n` +
+          `cd LLM4SE-Skills\n` +
+          `mkdir -p ~/.claude/skills\n` +
+          `cp -r ${sourcePath}/* ~/.claude/skills/`;
+
+    const confirmText = currentLang === 'zh'
+        ? `选择安装 "${packName}" 技能包（包含 ${pack.skills_count} 个技能）。\n\n` +
+          `由于这是在 GitHub Pages 上运行，您需要手动安装。\n\n` +
+          `点击确定查看安装说明。`
+        : `Selected "${packName}" skill pack (${pack.skills_count} skills) for installation.\n\n` +
+          `Since this is running on GitHub Pages, you'll need to manually install them.\n\n` +
+          `Click OK to see installation instructions.`;
+
+    if (confirm(confirmText)) {
+        alert(message);
+
+        if (navigator.clipboard) {
+            navigator.clipboard.writeText(message).then(() => {
+                const successText = currentLang === 'zh'
+                    ? '安装说明已复制到剪贴板！'
+                    : 'Installation instructions copied to clipboard!';
+                showNotification(successText, 'success');
+            }).catch(() => {
+                const infoText = currentLang === 'zh'
+                    ? '请手动复制安装说明'
+                    : 'Please copy the installation instructions manually';
+                showNotification(infoText, 'info');
+            });
+        }
+    }
 }
