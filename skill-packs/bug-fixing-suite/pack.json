@@ -1,0 +1,24 @@
+{
+  "name": "bug-fixing-suite",
+  "version": "1.0.0",
+  "description": "Comprehensive toolkit for bug detection, localization, analysis, and automated repair",
+  "category": "debugging",
+  "skills": [
+    "bug-localization",
+    "bug-to-patch-generator",
+    "bug-reproduction-test-generator",
+    "regression-root-cause-analyzer",
+    "semantic-bug-detector",
+    "static-bug-detector",
+    "test-guided-bug-detector",
+    "szz-bug-identifier",
+    "semantic-szz-analyzer",
+    "counterexample-debugger",
+    "runtime-error-explainer",
+    "vulnerability-root-cause-analyzer"
+  ],
+  "dependencies": [],
+  "tags": ["debugging", "bug-fixing", "root-cause-analysis", "automated-repair", "regression"],
+  "author": "ArabelaTso",
+  "license": "MIT"
+}

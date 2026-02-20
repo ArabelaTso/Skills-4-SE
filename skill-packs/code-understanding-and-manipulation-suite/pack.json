@@ -1,0 +1,40 @@
+{
+  "name": "code-understanding-and-manipulation-suite",
+  "version": "2.0.0",
+  "description": "Comprehensive toolkit for code understanding, analysis, translation, and manipulation across languages and frameworks",
+  "category": "code-analysis",
+  "skills": [
+    "code-summarizer",
+    "legacy-code-summarizer",
+    "pseudocode-extractor",
+    "code-search-assistant",
+    "code-pattern-extractor",
+    "component-boundary-identifier",
+    "dependency-resolver",
+    "code-translation",
+    "pseudocode-to-java-code",
+    "pseudocode-to-python-code",
+    "module-level-code-translator",
+    "code-refactoring-assistant",
+    "code-optimizer",
+    "dead-code-eliminator",
+    "spring-mvc-to-boot-migrator",
+    "build-ci-migration-assistant",
+    "test-guided-migration-assistant",
+    "multi-version-behavior-comparator",
+    "behavior-preservation-checker"
+  ],
+  "dependencies": [],
+  "tags": [
+    "code-understanding",
+    "code-analysis",
+    "code-search",
+    "code-translation",
+    "code-manipulation",
+    "refactoring",
+    "migration",
+    "legacy-code"
+  ],
+  "author": "LLM4SE-Skills",
+  "license": "MIT"
+}

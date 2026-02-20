@@ -26,8 +26,8 @@ print(f"Translations file: {TRANSLATIONS_FILE}")
 # Directories to exclude
 EXCLUDED_DIRS = ['skill-manager', 'node_modules', 'skill-creator', '.git', 'awesome-claude-skills', '_report']
 
-# Additional directories to include (from awesome-claude-skills-SE-skills and anthropics-skills-SE-skills)
-ADDITIONAL_SKILL_DIRS = ['awesome-claude-skills-SE-skills', 'anthropics-skills-SE-skills']
+# Additional directories to include
+ADDITIONAL_SKILL_DIRS = []
 
 # Category mapping (from app.js)
 CATEGORY_MAP = {
@@ -160,7 +160,7 @@ def scan_skills(translations):
                 if metadata:
                     skills.append(metadata)
 
-    # Scan additional skill directories (awesome-claude-skills-SE-skills and anthropics-skills-SE-skills)
+    # Scan additional skill directories
     # Track skill names to detect duplicates
     skill_names = {skill['name'] for skill in skills}
 
@@ -174,8 +174,6 @@ def scan_skills(translations):
                     if (item / 'SKILL.md').exists():
                         # Check for duplicate names and add suffix if needed
                         source_prefix = None
-                        if item.name in skill_names and additional_dir_name == 'anthropics-skills-SE-skills':
-                            source_prefix = 'anthropics'
 
                         metadata = extract_metadata(item, translations, source_prefix, additional_dir_name)
                         if metadata:

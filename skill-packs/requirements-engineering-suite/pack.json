@@ -1,0 +1,24 @@
+{
+  "name": "requirements-engineering-suite",
+  "version": "1.0.0",
+  "description": "Complete toolkit for requirements analysis, enhancement, and traceability",
+  "category": "requirements",
+  "skills": [
+    "requirement-enhancer",
+    "requirement-summarizer",
+    "requirement-summary",
+    "requirement-comparison-reporter",
+    "requirement-coverage-checker",
+    "ambiguity-detector",
+    "nl-to-constraints",
+    "requirement-to-tlaplus-property-generator",
+    "specification-to-temporal-logic-generator",
+    "traceability-matrix-generator",
+    "scenario-generator",
+    "req-to-test"
+  ],
+  "dependencies": [],
+  "tags": ["requirements", "specification", "traceability", "formal-methods", "constraints"],
+  "author": "ArabelaTso",
+  "license": "MIT"
+}

@@ -1,0 +1,22 @@
+{
+  "name": "devops-automation-toolkit",
+  "version": "1.0.0",
+  "description": "Complete DevOps automation toolkit for CI/CD, containerization, and deployment",
+  "category": "devops",
+  "skills": [
+    "ci-pipeline-synthesizer",
+    "cd-pipeline-generator",
+    "build-ci-migration-assistant",
+    "containerization-assistant",
+    "configuration-generator",
+    "config-consistency-checker",
+    "release-notes-writer",
+    "change-log-generator",
+    "rollback-strategy-advisor",
+    "time-aware-dependency-cve-scanner"
+  ],
+  "dependencies": [],
+  "tags": ["devops", "ci-cd", "automation", "containerization", "deployment"],
+  "author": "ArabelaTso",
+  "license": "MIT"
+}

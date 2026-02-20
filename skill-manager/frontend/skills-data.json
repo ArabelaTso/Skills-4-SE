@@ -81,36 +81,6 @@
       "description_zh": "从仓库源代码生成全面的 API 文档，包括 OpenAPI 规范、代码注释、文档字符串和现有文档。用于记录 API、创建 API 参考指南或从代码库总结 API 功能。"
     },
     {
-      "name": "appcircle-automation",
-      "displayName": "appcircle-automation",
-      "description": "Automate Appcircle tasks via Rube MCP (Composio). Always search tools first for current schemas.",
-      "category": "devops",
-      "installed": false,
-      "path": "awesome-claude-skills-SE-skills/appcircle-automation",
-      "displayName_zh": "AppCircle 自动化",
-      "description_zh": "Automate Appcircle tasks via Rube MCP (Composio). Always search tools first for current schemas."
-    },
-    {
-      "name": "appveyor-automation",
-      "displayName": "appveyor-automation",
-      "description": "Automate Appveyor tasks via Rube MCP (Composio). Always search tools first for current schemas.",
-      "category": "devops",
-      "installed": false,
-      "path": "awesome-claude-skills-SE-skills/appveyor-automation",
-      "displayName_zh": "AppVeyor 自动化",
-      "description_zh": "Automate Appveyor tasks via Rube MCP (Composio). Always search tools first for current schemas."
-    },
-    {
-      "name": "artifacts-builder",
-      "displayName": "artifacts-builder",
-      "description": "Suite of tools for creating elaborate, multi-component claude.ai HTML artifacts using modern frontend web technologies (React, Tailwind CSS, shadcn/ui). Use for complex artifacts requiring state management, routing, or shadcn/ui components - not for simple single-file HTML/JSX artifacts.",
-      "category": "development-tools",
-      "installed": false,
-      "path": "awesome-claude-skills-SE-skills/artifacts-builder",
-      "displayName_zh": "构件构建器",
-      "description_zh": "Suite of tools for creating elaborate, multi-component claude.ai HTML artifacts using modern frontend web technologies (React, Tailwind CSS, shadcn/ui). Use for complex artifacts requiring state management, routing, or shadcn/ui components - not for simple single-file HTML/JSX artifacts."
-    },
-    {
       "name": "assertion-synthesizer",
       "displayName": "assertion-synthesizer",
       "description": "Generate test assertions from existing code implementation. Use when the user has implementation code without tests or incomplete test coverage, and needs assertions synthesized by analyzing the code's behavior, inputs, outputs, and state changes. Supports Python (pytest/unittest), Java (JUnit/AssertJ), and JavaScript/TypeScript (Jest/Chai). Handles equality checks, collections, exceptions, and state verification.",
@@ -149,16 +119,6 @@
       "path": "bisect-aware-instrumentation",
       "displayName_zh": "二分感知插桩",
       "description_zh": "Instrument code to support efficient git bisect by producing deterministic pass/fail signals and concise runtime summaries for each tested commit. Use when debugging regressions with git bisect, automating bisect workflows, creating bisect test scripts, handling flaky tests during bisection, or needing clear exit codes and logging for automated bisect runs. Helps identify the exact commit that introduced a bug through automated testing."
-    },
-    {
-      "name": "bitbucket-automation",
-      "displayName": "bitbucket-automation",
-      "description": "Automate Bitbucket repositories, pull requests, branches, issues, and workspace management via Rube MCP (Composio). Always search tools first for current schemas.",
-      "category": "devops",
-      "installed": false,
-      "path": "awesome-claude-skills-SE-skills/bitbucket-automation",
-      "displayName_zh": "BitBucket 自动化",
-      "description_zh": "Automate Bitbucket repositories, pull requests, branches, issues, and workspace management via Rube MCP (Composio). Always search tools first for current schemas."
     },
     {
       "name": "bug-history-summarizer",
@@ -201,36 +161,6 @@
       "description_zh": "为识别的 bug 生成补丁。创建最小修复，包含修复的测试用例。"
     },
     {
-      "name": "bugbug-automation",
-      "displayName": "bugbug-automation",
-      "description": "Automate Bugbug tasks via Rube MCP (Composio). Always search tools first for current schemas.",
-      "category": "quality",
-      "installed": false,
-      "path": "awesome-claude-skills-SE-skills/bugbug-automation",
-      "displayName_zh": "BugBug 自动化",
-      "description_zh": "Automate Bugbug tasks via Rube MCP (Composio). Always search tools first for current schemas."
-    },
-    {
-      "name": "bugherd-automation",
-      "displayName": "bugherd-automation",
-      "description": "Automate Bugherd tasks via Rube MCP (Composio). Always search tools first for current schemas.",
-      "category": "quality",
-      "installed": false,
-      "path": "awesome-claude-skills-SE-skills/bugherd-automation",
-      "displayName_zh": "BugHerd 自动化",
-      "description_zh": "Automate Bugherd tasks via Rube MCP (Composio). Always search tools first for current schemas."
-    },
-    {
-      "name": "bugsnag-automation",
-      "displayName": "bugsnag-automation",
-      "description": "Automate Bugsnag tasks via Rube MCP (Composio). Always search tools first for current schemas.",
-      "category": "quality",
-      "installed": false,
-      "path": "awesome-claude-skills-SE-skills/bugsnag-automation",
-      "displayName_zh": "Bugsnag 自动化",
-      "description_zh": "Automate Bugsnag tasks via Rube MCP (Composio). Always search tools first for current schemas."
-    },
-    {
       "name": "build-ci-migration-assistant",
       "displayName": "build-ci-migration-assistant",
       "description": "Automatically migrates build systems and CI/CD configurations to target platforms. Use when modernizing build infrastructure, switching CI/CD providers, or standardizing across projects. Supports common migration paths including Maven↔Gradle, npm↔Yarn, Travis CI→GitHub Actions, CircleCI→GitHub Actions, Jenkins→GitLab CI, and GitLab CI→GitHub Actions. Analyzes existing configuration, generates equivalent target configuration, maps dependencies and commands, and provides validation and migration documentation.",
@@ -239,16 +169,6 @@
       "path": "build-ci-migration-assistant",
       "displayName_zh": "构建 CI 迁移助手",
       "description_zh": "Automatically migrates build systems and CI/CD configurations to target platforms. Use when modernizing build infrastructure, switching CI/CD providers, or standardizing across projects. Supports common migration paths including Maven↔Gradle, npm↔Yarn, Travis CI→GitHub Actions, CircleCI→GitHub Actions, Jenkins→GitLab CI, and GitLab CI→GitHub Actions. Analyzes existing configuration, generates equivalent target configuration, maps dependencies and commands, and provides validation and migration documentation."
-    },
-    {
-      "name": "buildkite-automation",
-      "displayName": "buildkite-automation",
-      "description": "Automate Buildkite tasks via Rube MCP (Composio). Always search tools first for current schemas.",
-      "category": "devops",
-      "installed": false,
-      "path": "awesome-claude-skills-SE-skills/buildkite-automation",
-      "displayName_zh": "BuildKite 自动化",
-      "description_zh": "Automate Buildkite tasks via Rube MCP (Composio). Always search tools first for current schemas."
     },
     {
       "name": "c-cpp-to-lean4-translator",
@@ -289,46 +209,6 @@
       "path": "ci-pipeline-synthesizer",
       "displayName_zh": "CI 流水线合成器",
       "description_zh": "生成用于自动化构建和测试的 CI 流水线配置。支持 GitHub Actions，包含依赖缓存和矩阵测试。包含 Node.js、Python、Go 和 Rust 项目的模板。"
-    },
-    {
-      "name": "circleci-automation",
-      "displayName": "circleci-automation",
-      "description": "Automate CircleCI tasks via Rube MCP (Composio): trigger pipelines, monitor workflows/jobs, retrieve artifacts and test metadata. Always search tools first for current schemas.",
-      "category": "devops",
-      "installed": false,
-      "path": "awesome-claude-skills-SE-skills/circleci-automation",
-      "displayName_zh": "CircleCI 自动化",
-      "description_zh": "Automate CircleCI tasks via Rube MCP (Composio): trigger pipelines, monitor workflows/jobs, retrieve artifacts and test metadata. Always search tools first for current schemas."
-    },
-    {
-      "name": "cloudflare-api-key-automation",
-      "displayName": "cloudflare-api-key-automation",
-      "description": "Automate Cloudflare API tasks via Rube MCP (Composio). Always search tools first for current schemas.",
-      "category": "devops",
-      "installed": false,
-      "path": "awesome-claude-skills-SE-skills/cloudflare-api-key-automation",
-      "displayName_zh": "Cloudflare API 密钥自动化",
-      "description_zh": "Automate Cloudflare API tasks via Rube MCP (Composio). Always search tools first for current schemas."
-    },
-    {
-      "name": "cloudflare-automation",
-      "displayName": "cloudflare-automation",
-      "description": "Automate Cloudflare tasks via Rube MCP (Composio). Always search tools first for current schemas.",
-      "category": "devops",
-      "installed": false,
-      "path": "awesome-claude-skills-SE-skills/cloudflare-automation",
-      "displayName_zh": "Cloudflare 自动化",
-      "description_zh": "Automate Cloudflare tasks via Rube MCP (Composio). Always search tools first for current schemas."
-    },
-    {
-      "name": "cloudflare-browser-rendering-automation",
-      "displayName": "cloudflare-browser-rendering-automation",
-      "description": "Automate Cloudflare Browser Rendering tasks via Rube MCP (Composio). Always search tools first for current schemas.",
-      "category": "devops",
-      "installed": false,
-      "path": "awesome-claude-skills-SE-skills/cloudflare-browser-rendering-automation",
-      "displayName_zh": "Cloudflare 浏览器渲染自动化",
-      "description_zh": "Automate Cloudflare Browser Rendering tasks via Rube MCP (Composio). Always search tools first for current schemas."
     },
     {
       "name": "code-change-summarizer",
@@ -461,26 +341,6 @@
       "description_zh": "在语言之间翻译代码。保持功能，适应目标语言习惯用法。"
     },
     {
-      "name": "codeinterpreter-automation",
-      "displayName": "codeinterpreter-automation",
-      "description": "Automate Codeinterpreter tasks via Rube MCP (Composio). Always search tools first for current schemas.",
-      "category": "development-tools",
-      "installed": false,
-      "path": "awesome-claude-skills-SE-skills/codeinterpreter-automation",
-      "displayName_zh": "Code Interpreter 自动化",
-      "description_zh": "Automate Codeinterpreter tasks via Rube MCP (Composio). Always search tools first for current schemas."
-    },
-    {
-      "name": "codereadr-automation",
-      "displayName": "codereadr-automation",
-      "description": "Automate Codereadr tasks via Rube MCP (Composio). Always search tools first for current schemas.",
-      "category": "development-tools",
-      "installed": false,
-      "path": "awesome-claude-skills-SE-skills/codereadr-automation",
-      "displayName_zh": "CodeReadr 自动化",
-      "description_zh": "Automate Codereadr tasks via Rube MCP (Composio). Always search tools first for current schemas."
-    },
-    {
       "name": "component-boundary-identifier",
       "displayName": "component-boundary-identifier",
       "description": "Identifies boundaries between modules or components in software systems through static code analysis and dependency detection. Use when Claude needs to analyze software architecture, identify module boundaries, detect boundary violations, find circular dependencies, or assess component coupling. Supports Python (packages and imports) and Java (packages and dependencies). Trigger when users ask to \"identify boundaries\", \"find component boundaries\", \"detect boundary violations\", \"analyze module structure\", \"check architecture\", or \"find circular dependencies\".",
@@ -519,16 +379,6 @@
       "path": "conflict-analyzer",
       "displayName_zh": "冲突分析器",
       "description_zh": "分析合并冲突。建议冲突解决方案，解释冲突的变更。"
-    },
-    {
-      "name": "confluence-automation",
-      "displayName": "confluence-automation",
-      "description": "Automate Confluence page creation, content search, space management, labels, and hierarchy navigation via Rube MCP (Composio). Always search tools first for current schemas.",
-      "category": "documentation",
-      "installed": false,
-      "path": "awesome-claude-skills-SE-skills/confluence-automation",
-      "displayName_zh": "Confluence 自动化",
-      "description_zh": "Automate Confluence page creation, content search, space management, labels, and hierarchy navigation via Rube MCP (Composio). Always search tools first for current schemas."
     },
     {
       "name": "containerization-assistant",
@@ -641,16 +491,6 @@
       "description_zh": "Generate prioritized CVE watchlists and actionable security recommendations for repositories. Use when analyzing CVE scan results, creating security reports, prioritizing vulnerability remediation, or generating security gate reports for CI/CD. Takes CVE scan results (JSON/SARIF from npm audit, pip-audit, Snyk), reachability analysis, and cutoff date as input. Combines severity, reachability, exploitability, and dependency criticality to rank CVEs by practical risk. Outputs markdown reports with concrete next-step guidance (immediate upgrade, monitor, ignore with justification, apply mitigation) suitable for issue trackers, security reviews, and CI security gates."
     },
     {
-      "name": "datadog-automation",
-      "displayName": "datadog-automation",
-      "description": "Automate Datadog tasks via Rube MCP (Composio): query metrics, search logs, manage monitors/dashboards, create events and downtimes. Always search tools first for current schemas.",
-      "category": "quality",
-      "installed": false,
-      "path": "awesome-claude-skills-SE-skills/datadog-automation",
-      "displayName_zh": "Datadog 自动化",
-      "description_zh": "Automate Datadog tasks via Rube MCP (Composio): query metrics, search logs, manage monitors/dashboards, create events and downtimes. Always search tools first for current schemas."
-    },
-    {
       "name": "dead-code-eliminator",
       "displayName": "dead-code-eliminator",
       "description": "Identify and analyze unused or redundant code including unused functions/methods, unused variables/imports, unreachable code, and redundant conditions. Use when cleaning up codebases, improving maintainability, reducing technical debt, or conducting code quality audits. Analyzes Python code using AST analysis and produces markdown reports listing dead code locations with line numbers, severity ratings, and recommendations. Triggers when users ask to find dead code, remove unused code, identify unused imports, find unreachable code, or clean up redundant logic.",
@@ -701,16 +541,6 @@
       "description_zh": "识别架构和设计问题。检测设计原则违规，建议设计改进。"
     },
     {
-      "name": "digital-ocean-automation",
-      "displayName": "digital-ocean-automation",
-      "description": "Automate DigitalOcean tasks via Rube MCP (Composio). Always search tools first for current schemas.",
-      "category": "devops",
-      "installed": false,
-      "path": "awesome-claude-skills-SE-skills/digital-ocean-automation",
-      "displayName_zh": "Digital Ocean 自动化",
-      "description_zh": "Automate DigitalOcean tasks via Rube MCP (Composio). Always search tools first for current schemas."
-    },
-    {
       "name": "directed-test-input-generator",
       "displayName": "directed-test-input-generator",
       "description": "Generate targeted test inputs to reach specific code paths and hard-to-reach behaviors in Python code. Use when: (1) Targeting uncovered branches or specific execution paths, (2) Need coverage-guided test generation, (3) Want to leverage LLM understanding of code semantics for meaningful test inputs, (4) Testing boundary conditions and edge cases systematically, (5) Combining symbolic reasoning with fuzzing. Provides path analysis, constraint solving, coverage-guided strategies, and LLM-driven semantic generation for comprehensive test input creation.",
@@ -719,46 +549,6 @@
       "path": "directed-test-input-generator",
       "displayName_zh": "定向测试输入生成器",
       "description_zh": "生成针对性的测试输入。专注于特定代码路径，使用符号执行技术。"
-    },
-    {
-      "name": "discord-automation",
-      "displayName": "discord-automation",
-      "description": "Automate Discord tasks via Rube MCP (Composio): messages, channels, roles, webhooks, reactions. Always search tools first for current schemas.",
-      "category": "devops",
-      "installed": false,
-      "path": "awesome-claude-skills-SE-skills/discord-automation",
-      "displayName_zh": "Discord 自动化",
-      "description_zh": "Automate Discord tasks via Rube MCP (Composio): messages, channels, roles, webhooks, reactions. Always search tools first for current schemas."
-    },
-    {
-      "name": "discordbot-automation",
-      "displayName": "discordbot-automation",
-      "description": "Automate Discordbot tasks via Rube MCP (Composio). Always search tools first for current schemas.",
-      "category": "devops",
-      "installed": false,
-      "path": "awesome-claude-skills-SE-skills/discordbot-automation",
-      "displayName_zh": "Discord Bot 自动化",
-      "description_zh": "Automate Discordbot tasks via Rube MCP (Composio). Always search tools first for current schemas."
-    },
-    {
-      "name": "docker-hub-automation",
-      "displayName": "Docker Hub Automation",
-      "description": "Automate Docker Hub operations -- manage organizations, repositories, teams, members, and webhooks via the Composio MCP integration.",
-      "category": "devops",
-      "installed": false,
-      "path": "awesome-claude-skills-SE-skills/docker-hub-automation",
-      "displayName_zh": "Docker Hub 自动化",
-      "description_zh": "Automate Docker Hub operations -- manage organizations, repositories, teams, members, and webhooks via the Composio MCP integration."
-    },
-    {
-      "name": "docker_hub-automation",
-      "displayName": "docker_hub-automation",
-      "description": "Automate Docker Hub tasks via Rube MCP (Composio): repositories, images, tags, and container registry management. Always search tools first for current schemas.",
-      "category": "devops",
-      "installed": false,
-      "path": "awesome-claude-skills-SE-skills/docker_hub-automation",
-      "displayName_zh": "Docker Hub 自动化",
-      "description_zh": "Automate Docker Hub tasks via Rube MCP (Composio): repositories, images, tags, and container registry management. Always search tools first for current schemas."
     },
     {
       "name": "edge-case-generator",
@@ -841,16 +631,6 @@
       "description_zh": "Automatically migrate Python web applications between frameworks (Flask → FastAPI, Django → FastAPI). Use when you need to migrate an existing web application to a modern framework while preserving functionality. The skill analyzes the codebase, updates routes, handlers, configuration, dependency injection patterns, and tests. Creates git commits for each migration phase and generates a comprehensive summary of all changes. Supports automatic dependency updates, code transformations, and test adaptations."
     },
     {
-      "name": "frontend-design",
-      "displayName": "frontend-design",
-      "description": "Create distinctive, production-grade frontend interfaces with high design quality. Use this skill when the user asks to build web components, pages, artifacts, posters, or applications (examples include websites, landing pages, dashboards, React components, HTML/CSS layouts, or when styling/beautifying any web UI). Generates creative, polished code and UI design that avoids generic AI aesthetics.",
-      "category": "code-generation",
-      "installed": false,
-      "path": "anthropics-skills-SE-skills/frontend-design",
-      "displayName_zh": "前端设计",
-      "description_zh": "Create distinctive, production-grade frontend interfaces with high design quality. Use this skill when the user asks to build web components, pages, artifacts, posters, or applications (examples include websites, landing pages, dashboards, React components, HTML/CSS layouts, or when styling/beautifying any web UI). Generates creative, polished code and UI design that avoids generic AI aesthetics."
-    },
-    {
       "name": "function-class-generator",
       "displayName": "function-class-generator",
       "description": "Generate complete, production-ready functions and classes from formal specifications, design descriptions, type signatures, or natural language requirements. Use this skill when implementing APIs from specifications, creating data structures from schemas, building classes from UML diagrams, generating code from contracts, or translating design documents into code. Supports multiple programming languages and follows language-specific best practices.",
@@ -879,36 +659,6 @@
       "path": "git-bisect-assistant",
       "displayName_zh": "Git 二分 助手",
       "description_zh": "Automatically performs git bisect to identify the first bad commit that introduced a bug or failure. Use when debugging regressions, tracking down when a test started failing, or identifying which commit broke functionality. Handles flaky tests with retry logic and provides comprehensive reports with bisect logs and confidence levels."
-    },
-    {
-      "name": "github-automation",
-      "displayName": "github-automation",
-      "description": "Automate GitHub repositories, issues, pull requests, branches, CI/CD, and permissions via Rube MCP (Composio). Manage code workflows, review PRs, search code, and handle deployments programmatically.",
-      "category": "devops",
-      "installed": false,
-      "path": "awesome-claude-skills-SE-skills/github-automation",
-      "displayName_zh": "GitHub 自动化",
-      "description_zh": "Automate GitHub repositories, issues, pull requests, branches, CI/CD, and permissions via Rube MCP (Composio). Manage code workflows, review PRs, search code, and handle deployments programmatically."
-    },
-    {
-      "name": "gitlab-automation",
-      "displayName": "gitlab-automation",
-      "description": "Automate GitLab project management, issues, merge requests, pipelines, branches, and user operations via Rube MCP (Composio). Always search tools first for current schemas.",
-      "category": "devops",
-      "installed": false,
-      "path": "awesome-claude-skills-SE-skills/gitlab-automation",
-      "displayName_zh": "GitLab 自动化",
-      "description_zh": "Automate GitLab project management, issues, merge requests, pipelines, branches, and user operations via Rube MCP (Composio). Always search tools first for current schemas."
-    },
-    {
-      "name": "hookdeck-automation",
-      "displayName": "hookdeck-automation",
-      "description": "Automate Hookdeck tasks via Rube MCP (Composio). Always search tools first for current schemas.",
-      "category": "devops",
-      "installed": false,
-      "path": "awesome-claude-skills-SE-skills/hookdeck-automation",
-      "displayName_zh": "Hookdeck 自动化",
-      "description_zh": "Automate Hookdeck tasks via Rube MCP (Composio). Always search tools first for current schemas."
     },
     {
       "name": "imperative-to-coq-model-extractor",
@@ -1063,16 +813,6 @@
       "description_zh": "在重构后更新 Java 测试以适配新代码版本。处理签名变更、重构和行为修改，更新方法调用、断言、模拟对象并确保测试通过。"
     },
     {
-      "name": "jira-automation",
-      "displayName": "jira-automation",
-      "description": "Automate Jira tasks via Rube MCP (Composio): issues, projects, sprints, boards, comments, users. Always search tools first for current schemas.",
-      "category": "requirements",
-      "installed": false,
-      "path": "awesome-claude-skills-SE-skills/jira-automation",
-      "displayName_zh": "Jira 自动化",
-      "description_zh": "Automate Jira tasks via Rube MCP (Composio): issues, projects, sprints, boards, comments, users. Always search tools first for current schemas."
-    },
-    {
       "name": "legacy-code-summarizer",
       "displayName": "legacy-code-summarizer",
       "description": "Produces comprehensive summaries and insights about legacy codebases to help understand unfamiliar code. Use when onboarding to a new project, planning refactoring efforts, assessing code for acquisition/migration, or generating documentation for undocumented systems. Analyzes architecture, dependencies, code quality issues, and test coverage. Creates high-level overviews with architecture diagrams, key components, entry points, and actionable insights for understanding and improving legacy code.",
@@ -1103,16 +843,6 @@
       "description_zh": "Recommend relevant Isabelle/HOL or Coq standard library theories, lemmas, and tactics based on proof goals. Use when: (1) Users need library lemmas for their proof, (2) Proof goals match standard library patterns, (3) Users ask what libraries to import, (4) Specific lemmas are needed for list/set/arithmetic operations, (5) Users are stuck and need to know what library support exists, or (6) Guidance on find_theorems/Search commands is needed. Supports both Isabelle/HOL and Coq standard libraries."
     },
     {
-      "name": "linear-automation",
-      "displayName": "linear-automation",
-      "description": "Automate Linear tasks via Rube MCP (Composio): issues, projects, cycles, teams, labels. Always search tools first for current schemas.",
-      "category": "requirements",
-      "installed": false,
-      "path": "awesome-claude-skills-SE-skills/linear-automation",
-      "displayName_zh": "Linear 自动化",
-      "description_zh": "Automate Linear tasks via Rube MCP (Composio): issues, projects, cycles, teams, labels. Always search tools first for current schemas."
-    },
-    {
       "name": "markdown-document-structurer",
       "displayName": "markdown-document-structurer",
       "description": "Reorganizes markdown documents into well-structured, consistent format while preserving content and improving readability. Use when Claude needs to: (1) Fix heading hierarchy issues (skipped levels, multiple h1s), (2) Generate or update table of contents, (3) Standardize formatting (lists, code blocks, emphasis, links), (4) Improve grammar and spelling, (5) Add missing standard sections (installation, usage, etc.), (6) Remove redundant or duplicate content, (7) Restructure technical docs, READMEs, or long-form content for better organization and flow.",
@@ -1121,16 +851,6 @@
       "path": "markdown-document-structurer",
       "displayName_zh": "Markdown 文档结构器",
       "description_zh": "将 Markdown 文档重组为结构良好的格式。修复标题层次结构并生成目录，标准化格式并提高可读性。"
-    },
-    {
-      "name": "mcp-builder",
-      "displayName": "mcp-builder",
-      "description": "Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools. Use when building MCP servers to integrate external APIs or services, whether in Python (FastMCP) or Node/TypeScript (MCP SDK).",
-      "category": "development-tools",
-      "installed": false,
-      "path": "awesome-claude-skills-SE-skills/mcp-builder",
-      "displayName_zh": "MCP 构建器",
-      "description_zh": "Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools. Use when building MCP servers to integrate external APIs or services, whether in Python (FastMCP) or Node/TypeScript (MCP SDK)."
     },
     {
       "name": "metamorphic-property-extractor",
@@ -1227,26 +947,6 @@
       "path": "nl-to-constraints",
       "displayName_zh": "自然语言到约束",
       "description_zh": "将自然语言需求转换为形式化约束。支持约束语言，验证约束一致性。"
-    },
-    {
-      "name": "npm-automation",
-      "displayName": "npm-automation",
-      "description": "Automate NPM tasks via Rube MCP (Composio). Always search tools first for current schemas.",
-      "category": "devops",
-      "installed": false,
-      "path": "awesome-claude-skills-SE-skills/npm-automation",
-      "displayName_zh": "NPM 自动化",
-      "description_zh": "Automate NPM tasks via Rube MCP (Composio). Always search tools first for current schemas."
-    },
-    {
-      "name": "pagerduty-automation",
-      "displayName": "pagerduty-automation",
-      "description": "Automate PagerDuty tasks via Rube MCP (Composio): manage incidents, services, schedules, escalation policies, and on-call rotations. Always search tools first for current schemas.",
-      "category": "quality",
-      "installed": false,
-      "path": "awesome-claude-skills-SE-skills/pagerduty-automation",
-      "displayName_zh": "PagerDuty 自动化",
-      "description_zh": "Automate PagerDuty tasks via Rube MCP (Composio): manage incidents, services, schedules, escalation policies, and on-call rotations. Always search tools first for current schemas."
     },
     {
       "name": "program-correctness-prover",
@@ -1669,46 +1369,6 @@
       "description_zh": "Identify bug-introducing commits using semantic analysis that extends traditional SZZ algorithm. Distinguishes semantic changes from refactorings or code movements using control-flow and data-flow similarity analysis. Use when analyzing bug-fix commits to trace back to bug-introducing changes, investigating software evolution, conducting empirical studies on defect prediction, or reducing false positives in bug localization. Supports git repositories and provides explanations for why commits are identified as bug-introducing."
     },
     {
-      "name": "sentry-automation",
-      "displayName": "sentry-automation",
-      "description": "Automate Sentry tasks via Rube MCP (Composio): manage issues/events, configure alerts, track releases, monitor projects and teams. Always search tools first for current schemas.",
-      "category": "quality",
-      "installed": false,
-      "path": "awesome-claude-skills-SE-skills/sentry-automation",
-      "displayName_zh": "Sentry 自动化",
-      "description_zh": "Automate Sentry tasks via Rube MCP (Composio): manage issues/events, configure alerts, track releases, monitor projects and teams. Always search tools first for current schemas."
-    },
-    {
-      "name": "slack-automation",
-      "displayName": "slack-automation",
-      "description": "Automate Slack messaging, channel management, search, reactions, and threads via Rube MCP (Composio). Send messages, search conversations, manage channels/users, and react to messages programmatically.",
-      "category": "devops",
-      "installed": false,
-      "path": "awesome-claude-skills-SE-skills/slack-automation",
-      "displayName_zh": "Slack 自动化",
-      "description_zh": "Automate Slack messaging, channel management, search, reactions, and threads via Rube MCP (Composio). Send messages, search conversations, manage channels/users, and react to messages programmatically."
-    },
-    {
-      "name": "slack-gif-creator",
-      "displayName": "slack-gif-creator",
-      "description": "Toolkit for creating animated GIFs optimized for Slack, with validators for size constraints and composable animation primitives. This skill applies when users request animated GIFs or emoji animations for Slack from descriptions like \"make me a GIF for Slack of X doing Y\".",
-      "category": "devops",
-      "installed": false,
-      "path": "awesome-claude-skills-SE-skills/slack-gif-creator",
-      "displayName_zh": "Slack GIF 创建器",
-      "description_zh": "Toolkit for creating animated GIFs optimized for Slack, with validators for size constraints and composable animation primitives. This skill applies when users request animated GIFs or emoji animations for Slack from descriptions like \"make me a GIF for Slack of X doing Y\"."
-    },
-    {
-      "name": "slackbot-automation",
-      "displayName": "slackbot-automation",
-      "description": "Automate Slackbot tasks via Rube MCP (Composio). Always search tools first for current schemas.",
-      "category": "devops",
-      "installed": false,
-      "path": "awesome-claude-skills-SE-skills/slackbot-automation",
-      "displayName_zh": "Slack Bot 自动化",
-      "description_zh": "Automate Slackbot tasks via Rube MCP (Composio). Always search tools first for current schemas."
-    },
-    {
       "name": "smart-mutation-operator-generator",
       "displayName": "smart-mutation-operator-generator",
       "description": "Analyzes a repository and its test suite to generate customized mutation operators tailored to the project. Use this skill when setting up mutation testing, improving test quality, or generating project-specific mutants. Considers language constructs, business logic patterns, API calls, data types, and code complexity to produce effective mutation operators that maximize test sensitivity while avoiding trivial or equivalent mutations. Generates prioritized operator sets (high/medium/low value) with impact summaries. Triggers when users ask to generate mutation operators, customize mutation testing, analyze code for mutation opportunities, or create project-specific mutants.",
@@ -1733,16 +1393,6 @@
       "path": "smv-model-extractor",
       "displayName_zh": "smv-model-extractor",
       "description_zh": "Automatically extract abstract finite-state models in SMV/NuSMV format from source code (C/C++, Java, Python) for formal model checking. Use when users need to: (1) Generate SMV models from program code for verification, (2) Extract state-transition models from protocol implementations, (3) Analyze control flow and data flow to construct formal models, (4) Create models for checking safety and liveness properties, (5) Convert imperative code to declarative state machines. Particularly effective for protocol implementations, concurrent systems, and control logic with clear state transitions."
-    },
-    {
-      "name": "sourcegraph-automation",
-      "displayName": "sourcegraph-automation",
-      "description": "Automate Sourcegraph tasks via Rube MCP (Composio). Always search tools first for current schemas.",
-      "category": "devops",
-      "installed": false,
-      "path": "awesome-claude-skills-SE-skills/sourcegraph-automation",
-      "displayName_zh": "Sourcegraph 自动化",
-      "description_zh": "Automate Sourcegraph tasks via Rube MCP (Composio). Always search tools first for current schemas."
     },
     {
       "name": "specification-driven-generation",
@@ -1825,16 +1475,6 @@
       "description_zh": "Statically analyze code to detect security vulnerabilities including buffer overflows, injection risks (SQL, command, XSS), insecure deserialization, improper authentication, hard-coded credentials, and unsafe cryptography. Use when: (1) Performing security code review, (2) Analyzing code for OWASP Top 10 vulnerabilities, (3) Identifying CWE-classified weaknesses, (4) Generating security audit reports, (5) Reviewing code before deployment, or (6) Assessing third-party code security. Findings categorized by CWE ID and severity (Critical/High/Medium/Low)."
     },
     {
-      "name": "supabase-automation",
-      "displayName": "supabase-automation",
-      "description": "Automate Supabase database queries, table management, project administration, storage, edge functions, and SQL execution via Rube MCP (Composio). Always search tools first for current schemas.",
-      "category": "devops",
-      "installed": false,
-      "path": "awesome-claude-skills-SE-skills/supabase-automation",
-      "displayName_zh": "Supabase 自动化",
-      "description_zh": "Automate Supabase database queries, table management, project administration, storage, edge functions, and SQL execution via Rube MCP (Composio). Always search tools first for current schemas."
-    },
-    {
       "name": "symbolic-execution-assistant",
       "displayName": "symbolic-execution-assistant",
       "description": "Performs symbolic execution to detect potential errors by exploring execution paths, solving path constraints, and generating test inputs. Use when you need to analyze code for bugs like null dereferences, division by zero, buffer overflows, or assertion violations. Also use to generate test inputs that exercise different code paths, find edge cases, or explore all reachable program states. Supports Python, Java, and C/C++ through manual symbolic execution techniques and integration with tools like KLEE, angr, Z3, and Symbolic PathFinder.\n",
@@ -1903,16 +1543,6 @@
       "path": "template-code-generator",
       "displayName_zh": "模板代码生成器",
       "description_zh": "从模板创建样板代码。支持常见模式和框架，可定制的模板适用于不同用例。"
-    },
-    {
-      "name": "test-app-automation",
-      "displayName": "test-app-automation",
-      "description": "Automate Test App tasks via Rube MCP (Composio). Always search tools first for current schemas.",
-      "category": "testing",
-      "installed": false,
-      "path": "awesome-claude-skills-SE-skills/test-app-automation",
-      "displayName_zh": "测试应用自动化",
-      "description_zh": "Automate Test App tasks via Rube MCP (Composio). Always search tools first for current schemas."
     },
     {
       "name": "test-case-documentation",
@@ -2075,16 +1705,6 @@
       "description_zh": "为函数和方法生成单元测试。分析代码逻辑，创建测试用例覆盖正常路径、边缘情况和错误条件，支持多种测试框架。"
     },
     {
-      "name": "vercel-automation",
-      "displayName": "vercel-automation",
-      "description": "Automate Vercel tasks via Rube MCP (Composio): manage deployments, domains, DNS, env vars, projects, and teams. Always search tools first for current schemas.",
-      "category": "devops",
-      "installed": false,
-      "path": "awesome-claude-skills-SE-skills/vercel-automation",
-      "displayName_zh": "Vercel 自动化",
-      "description_zh": "Automate Vercel tasks via Rube MCP (Composio): manage deployments, domains, DNS, env vars, projects, and teams. Always search tools first for current schemas."
-    },
-    {
       "name": "verification-boundary-reporter",
       "displayName": "verification-boundary-reporter",
       "description": "Analyze formal verification artifacts (Isabelle, Coq, Dafny, etc.) and produce structured reports identifying the precise boundary between verified, assumed, and unverified components. Use when assessing verification coverage, understanding trust boundaries, auditing formal proofs, or documenting verification scope. Reports explicitly list verified code, assumptions, axioms, trusted computing base, and unverified components. Conservative and explicit about verification status without attempting to repair or mask gaps.",
@@ -2133,39 +1753,9 @@
       "path": "vulnerability-root-cause-analyzer",
       "displayName_zh": "漏洞根因分析器",
       "description_zh": "Analyze vulnerable code to identify underlying root causes such as violated assumptions, incorrect invariants, missing validation checks, or unsafe component interactions. Use when investigating security vulnerabilities, CVEs, exploit code, or security audit findings. Infers why the vulnerability exists beyond surface symptoms, identifies systemic issues, and explains the chain of failures that enable exploitation."
-    },
-    {
-      "name": "web-artifacts-builder",
-      "displayName": "web-artifacts-builder",
-      "description": "Suite of tools for creating elaborate, multi-component claude.ai HTML artifacts using modern frontend web technologies (React, Tailwind CSS, shadcn/ui). Use for complex artifacts requiring state management, routing, or shadcn/ui components - not for simple single-file HTML/JSX artifacts.",
-      "category": "development-tools",
-      "installed": false,
-      "path": "anthropics-skills-SE-skills/web-artifacts-builder",
-      "displayName_zh": "Web 构件构建器",
-      "description_zh": "Suite of tools for creating elaborate, multi-component claude.ai HTML artifacts using modern frontend web technologies (React, Tailwind CSS, shadcn/ui). Use for complex artifacts requiring state management, routing, or shadcn/ui components - not for simple single-file HTML/JSX artifacts."
-    },
-    {
-      "name": "webapp-testing",
-      "displayName": "webapp-testing",
-      "description": "Toolkit for interacting with and testing local web applications using Playwright. Supports verifying frontend functionality, debugging UI behavior, capturing browser screenshots, and viewing browser logs.",
-      "category": "testing",
-      "installed": false,
-      "path": "awesome-claude-skills-SE-skills/webapp-testing",
-      "displayName_zh": "Web 应用测试",
-      "description_zh": "Toolkit for interacting with and testing local web applications using Playwright. Supports verifying frontend functionality, debugging UI behavior, capturing browser screenshots, and viewing browser logs."
-    },
-    {
-      "name": "webapp-testing-anthropics",
-      "displayName": "webapp-testing",
-      "description": "Toolkit for interacting with and testing local web applications using Playwright. Supports verifying frontend functionality, debugging UI behavior, capturing browser screenshots, and viewing browser logs.",
-      "category": "testing",
-      "installed": false,
-      "path": "anthropics-skills-SE-skills/webapp-testing",
-      "displayName_zh": "Web 应用测试",
-      "description_zh": "Toolkit for interacting with and testing local web applications using Playwright. Supports verifying frontend functionality, debugging UI behavior, capturing browser screenshots, and viewing browser logs."
     }
   ],
-  "total": 214,
+  "total": 173,
   "category_names_zh": {
     "code-generation": "代码生成",
     "testing": "测试",

@@ -1,0 +1,30 @@
+{
+  "name": "test-automation-suite",
+  "version": "1.0.0",
+  "description": "Comprehensive test generation, optimization, and automation toolkit",
+  "category": "testing",
+  "skills": [
+    "unit-test-generator",
+    "metamorphic-test-generator",
+    "mutation-test-suite-optimizer",
+    "test-oracle-generator",
+    "test-case-reducer",
+    "test-deduplicator",
+    "test-suite-prioritizer",
+    "coverage-enhancer",
+    "mocking-test-generator",
+    "bug-reproduction-test-generator",
+    "java-regression-test-generator",
+    "python-regression-test-generator",
+    "java-test-updater",
+    "python-test-updater",
+    "req-to-test",
+    "test-case-documentation",
+    "test-driven-generation",
+    "smart-mutation-operator-generator"
+  ],
+  "dependencies": [],
+  "tags": ["testing", "test-generation", "test-automation", "mutation-testing", "metamorphic-testing", "coverage"],
+  "author": "ArabelaTso",
+  "license": "MIT"
+}

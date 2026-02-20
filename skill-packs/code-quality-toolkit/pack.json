@@ -1,0 +1,25 @@
+{
+  "name": "code-quality-toolkit",
+  "version": "1.0.0",
+  "description": "Comprehensive toolkit for code quality analysis, refactoring, and technical debt management",
+  "category": "code-quality",
+  "skills": [
+    "code-smell-detector",
+    "code-refactoring-assistant",
+    "code-review-assistant",
+    "technical-debt-analyzer",
+    "dead-code-eliminator",
+    "code-optimizer",
+    "design-pattern-suggestor",
+    "api-design-assistant",
+    "behavior-preservation-checker",
+    "semantic-equivalence-verifier",
+    "code-comment-generator",
+    "code-summarizer",
+    "legacy-code-summarizer"
+  ],
+  "dependencies": [],
+  "tags": ["code-quality", "refactoring", "technical-debt", "code-review", "optimization"],
+  "author": "ArabelaTso",
+  "license": "MIT"
+}

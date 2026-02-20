@@ -96,519 +96,496 @@ A Skill in this repo is more than a prompt:
 
 ### Code Generation
 
-**[Function/Class Generator](./function-class-generator/)**
+**[Function/Class Generator](./skills/function-class-generator/)**
 - Generates functions and classes from specifications
 - Supports multiple programming languages
 - Includes type hints, documentation, and error handling
 
-**[Module/Component Generator](./module-component-generator/)**
+**[Module/Component Generator](./skills/module-component-generator/)**
 - Builds complete modules from interface contracts
 - Generates layered architectures (model, repository, service)
 - Supports Python and Java with design patterns
 
-**[Template Code Generator](./template-code-generator/)**
+**[Template Code Generator](./skills/template-code-generator/)**
 - Creates boilerplate code from templates
 - Supports common patterns and frameworks
 - Customizable templates for different use cases
 
-**[Specification-Driven Generation](./specification-driven-generation/)**
+**[Specification-Driven Generation](./skills/specification-driven-generation/)**
 - Generates code from formal specifications
 - Ensures specification compliance
 - Validates generated code against requirements
 
-**[Test-Driven Generation](./test-driven-generation/)**
+**[Test-Driven Generation](./skills/test-driven-generation/)**
 - Generates implementation from test cases
 - Follows TDD principles
 - Ensures test coverage
 
-**[Incremental Python Programmer](./incremental-python-programmer/)**
+**[Incremental Python Programmer](./skills/incremental-python-programmer/)**
 - Implements new features in Python repositories from natural language descriptions
 - Generates comprehensive unit and integration tests
 - Ensures all tests pass and follows existing code patterns
 
-**[Incremental Java Programmer](./incremental-java-programmer/)**
+**[Incremental Java Programmer](./skills/incremental-java-programmer/)**
 - Implements new features in Java repositories from natural language descriptions
 - Supports Maven and Gradle build systems
 - Generates JUnit tests and ensures all tests pass successfully
 
-**[Frontend Design](./anthropics-skills-SE-skills/frontend-design/)** *(source: anthropics-skills-SE-skills)*
-- Create distinctive, production-grade frontend interfaces with high design quality
-- Generates creative, polished web components, pages, and applications
-- Avoids generic AI aesthetics with bold, intentional design choices
-
-**[Pseudocode Extractor](./pseudocode-extractor/)**
+**[Pseudocode Extractor](./skills/pseudocode-extractor/)**
 - Extracts programming-language-agnostic pseudocode from source code
 - Preserves control flow and logical structure
 - Filters out implementation details for clarity
 
-**[Module-Level Code Translator](./module-level-code-translator/)**
+**[Module-Level Code Translator](./skills/module-level-code-translator/)**
 - Translates source code between programming languages at module level
 - Preserves behavior and adapts to target language idioms
 - Generates verification tests for translated code
 
-**[Pseudocode to Java Code](./pseudocode-to-java-code/)**
+**[Pseudocode to Java Code](./skills/pseudocode-to-java-code/)**
 - Converts pseudocode descriptions into complete, executable Java programs
 - Preserves original logic and control flow
 - Applies appropriate Java idioms and best practices
 
-**[Pseudocode to Python Code](./pseudocode-to-python-code/)**
+**[Pseudocode to Python Code](./skills/pseudocode-to-python-code/)**
 - Converts pseudocode and algorithm descriptions into executable Python code
 - Provides proper structure, documentation, and tests
 - Maintains algorithmic logic while following Python conventions
 
 ### Testing
 
-**[Unit Test Generator](./unit-test-generator/)**
+**[Unit Test Generator](./skills/unit-test-generator/)**
 - Generates unit tests for functions and classes
 - Supports multiple testing frameworks
 - Includes edge cases and assertions
 
-**[Integration Test Generator](./integration-test-generator/)**
+**[Integration Test Generator](./skills/integration-test-generator/)**
 - Creates integration tests for system components
 - Tests component interactions
 - Includes setup and teardown logic
 
-**[Java Test Updater](./java-test-updater/)**
+**[Java Test Updater](./skills/java-test-updater/)**
 - Updates Java tests to work with new code versions after refactoring
 - Handles signature changes, refactoring, and behavior modifications
 - Updates method calls, assertions, mocks, and ensures tests pass
 
-**[Flaky Test Detector](./flaky-test-detector/)**
+**[Flaky Test Detector](./skills/flaky-test-detector/)**
 - Identifies non-deterministic tests
 - Analyzes test execution patterns
 - Suggests fixes for common flaky patterns
 
-**[Test Oracle Generator](./test-oracle-generator/)**
+**[Test Oracle Generator](./skills/test-oracle-generator/)**
 - Generates expected outputs for test cases
 - Creates assertions and validation logic
 - Supports property-based testing
 
-**[Edge Case Generator](./edge-case-generator/)**
+**[Edge Case Generator](./skills/edge-case-generator/)**
 - Identifies and generates edge case tests
 - Covers boundary conditions
 - Includes corner cases and error scenarios
 
-**[Directed Test Input Generator](./directed-test-input-generator/)**
+**[Directed Test Input Generator](./skills/directed-test-input-generator/)**
 - Generates targeted test inputs
 - Focuses on specific code paths
 - Uses symbolic execution techniques
 
-**[Fuzzing Input Generator](./fuzzing-input-generator/)**
+**[Fuzzing Input Generator](./skills/fuzzing-input-generator/)**
 - Creates randomized test inputs
 - Discovers unexpected behaviors
 - Supports mutation-based fuzzing
 
-**[Test Suite Prioritizer](./test-suite-prioritizer/)**
+**[Test Suite Prioritizer](./skills/test-suite-prioritizer/)**
 - Prioritizes test execution order
 - Optimizes for early failure detection
 - Considers test dependencies and coverage
 
-**[Coverage Enhancer](./coverage-enhancer/)**
+**[Coverage Enhancer](./skills/coverage-enhancer/)**
 - Identifies uncovered code paths
 - Generates tests to improve coverage
 - Reports coverage metrics
 
-**[Test Case Documentation](./test-case-documentation/)**
+**[Test Case Documentation](./skills/test-case-documentation/)**
 - Documents test cases and their purposes
 - Explains test scenarios and expected outcomes
 - Maintains test documentation
 
-**[Python Test Updater](./python-test-updater/)**
+**[Python Test Updater](./skills/python-test-updater/)**
 - Updates Python tests to work with new code versions
 - Fixes broken tests due to signature and behavior changes
 - Analyzes code diffs and updates assertions accordingly
 
-**[Bug Reproduction Test Generator](./bug-reproduction-test-generator/)**
+**[Bug Reproduction Test Generator](./skills/bug-reproduction-test-generator/)**
 - Automatically generates tests that reproduce reported bugs from issue reports
 - Analyzes bug symptoms, stack traces, and triggering conditions
 - Creates minimal, focused tests that reliably trigger the bug
 - Supports Python, Java, and JavaScript test frameworks
 
-**[Interval-Guided Regression Test Update](./interval-guided-regression-test-update/)**
+**[Interval-Guided Regression Test Update](./skills/interval-guided-regression-test-update/)**
 - Updates regression tests based on interval analysis
 
-**[Requirement to Test](./req-to-test/)**
+**[Requirement to Test](./skills/req-to-test/)**
 - Converts requirements to test cases
 - Ensures requirement coverage
 - Traces tests back to requirements
 
-**[Test Case Reducer](./test-case-reducer/)**
+**[Test Case Reducer](./skills/test-case-reducer/)**
 - Reduces test cases to minimal form using delta debugging
 
-**[Java Regression Test Generator](./java-regression-test-generator/)**
+**[Java Regression Test Generator](./skills/java-regression-test-generator/)**
 - Automatically generates regression tests for Java codebases
 - Analyzes changes between old and new code versions
 - Ensures tests cover refactored or modified functionality
 
-**[Python Regression Test Generator](./python-regression-test-generator/)**
+**[Python Regression Test Generator](./skills/python-regression-test-generator/)**
 - Automatically generates regression tests for Python codebases
 - Analyzes changes between code versions and migrates existing tests
 - Generates tests for new functionality
 
-**[Mocking Test Generator](./mocking-test-generator/)**
+**[Mocking Test Generator](./skills/mocking-test-generator/)**
 - Generates unit tests with proper mocking for Python and Java
 - Supports unittest.mock/pytest for Python and Mockito/JUnit for Java
 - Handles external dependencies and complex interactions
 
-**[Test-Guided Bug Detector](./test-guided-bug-detector/)**
+**[Test-Guided Bug Detector](./skills/test-guided-bug-detector/)**
 - Analyzes failing tests to detect functional bugs in code
 - Examines execution behavior, assertions, and stack traces
 - Identifies suspicious code regions causing test failures
 
-**[Web Application Testing](./webapp-testing-anthropics/)**
+**[Web Application Testing](./skills/webapp-testing-anthropics/)**
 - Toolkit for testing local web applications using Playwright
 - Verifies frontend functionality and debugs UI behavior
 - Captures browser screenshots and logs
 
-**[Behavioral Mutation Analyzer](./behavioral-mutation-analyzer/)**
+**[Behavioral Mutation Analyzer](./skills/behavioral-mutation-analyzer/)**
 - Systematically analyzes surviving mutants from mutation testing
 - Identifies test suite weaknesses and generates improvements
 - Categorizes why mutants survived and suggests test enhancements
 
-**[Metamorphic Property Extractor](./metamorphic-property-extractor/)**
+**[Metamorphic Property Extractor](./skills/metamorphic-property-extractor/)**
 - Automatically identifies metamorphic properties from programs
 - Enables metamorphic testing without explicit test oracles
 - Discovers input-output relationships for test generation
 
-**[Metamorphic Test Generator](./metamorphic-test-generator/)**
+**[Metamorphic Test Generator](./skills/metamorphic-test-generator/)**
 - Generates test cases using metamorphic testing principles
 - Applies transformations based on metamorphic properties
 - Expands test suites and detects bugs through input-output relationships
 
-**[Counterexample to Test Generator](./counterexample-to-test-generator/)**
+**[Counterexample to Test Generator](./skills/counterexample-to-test-generator/)**
 - Converts formal verification counterexamples into executable test cases
 - Transforms model checker outputs into unit or integration tests
 - Bridges formal verification and testing workflows
 
-**[Mutation Test Suite Optimizer](./mutation-test-suite-optimizer/)**
+**[Mutation Test Suite Optimizer](./skills/mutation-test-suite-optimizer/)**
 - Optimizes test suites using mutation testing analysis
 - Selects minimal subset of tests maximizing mutation kill rate
 - Reduces execution time and eliminates redundancy
 
-**[Test Deduplicator](./test-deduplicator/)**
+**[Test Deduplicator](./skills/test-deduplicator/)**
 - Analyzes test suites to identify redundant or duplicate tests
 - Examines code coverage, semantic similarity, and execution behavior
 - Groups equivalent tests and explains deduplication rationale
 
-**[Java API Consistency Validator](./java-api-consistency-validator/)**
+**[Java API Consistency Validator](./skills/java-api-consistency-validator/)**
 - Validates API consistency between two versions of Java libraries
 - Compares signatures, behavior, and exceptions
 - Identifies breaking changes and incompatible modifications
 
-**[Python API Consistency Validator](./python-api-consistency-validator/)**
+**[Python API Consistency Validator](./skills/python-api-consistency-validator/)**
 - Validates API consistency between two versions of Python libraries
 - Compares signatures, behavior, and exceptions
 - Identifies breaking changes and provides migration guidance
 
 ### Code Quality & Analysis
 
-**[Code Review Assistant](./code-review-assistant/)**
+**[Code Review Assistant](./skills/code-review-assistant/)**
 - Performs automated code reviews
 - Identifies issues and suggests improvements
 - Checks coding standards compliance
 
-**[Code Smell Detector](./code-smell-detector/)**
+**[Code Smell Detector](./skills/code-smell-detector/)**
 - Detects code smells and anti-patterns
 - Suggests refactoring opportunities
 - Categorizes smells by severity
 
-**[Design Smell Detector](./design-smell-detector/)**
+**[Design Smell Detector](./skills/design-smell-detector/)**
 - Identifies architectural and design issues
 - Detects violations of design principles
 - Suggests design improvements
 
-**[Code Optimizer](./code-optimizer/)**
+**[Code Optimizer](./skills/code-optimizer/)**
 - Optimizes code for performance
 - Identifies bottlenecks
 - Suggests algorithmic improvements
 
-**[Dead Code Eliminator](./dead-code-eliminator/)**
+**[Dead Code Eliminator](./skills/dead-code-eliminator/)**
 - Identifies unused code
 - Safely removes dead code
 - Reports elimination opportunities
 
-**[Technical Debt Analyzer](./technical-debt-analyzer/)**
+**[Technical Debt Analyzer](./skills/technical-debt-analyzer/)**
 - Identifies technical debt
 - Quantifies debt impact
 - Prioritizes debt reduction
 
-**[Code Pattern Extractor](./code-pattern-extractor/)**
+**[Code Pattern Extractor](./skills/code-pattern-extractor/)**
 - Analyzes codebases to identify reusable code patterns and duplications
 - Generates pattern catalogs with refactoring suggestions
 - Creates reusable template code for high-value patterns
 
-**[Code Search Assistant](./code-search-assistant/)**
+**[Code Search Assistant](./skills/code-search-assistant/)**
 - Searches repositories for code related to given snippets
 - Ranks results by call chain, textual, and functional similarity
 - Outputs ranked file lists with matching code snippets
 
-**[Component Boundary Identifier](./component-boundary-identifier/)**
+**[Component Boundary Identifier](./skills/component-boundary-identifier/)**
 - Identifies module/component boundaries
 - Detects boundary violations
 - Analyzes architectural separation
 
-**[Code Summarizer](./code-summarizer/)**
+**[Code Summarizer](./skills/code-summarizer/)**
 - Generates concise summaries of source code at multiple scales
 - Explains code functionality from functions to entire codebases
 - Helps understand complex code structures quickly
 
-**[Static Bug Detector](./static-bug-detector/)**
+**[Static Bug Detector](./skills/static-bug-detector/)**
 - Analyzes source code statically to detect potential functional bugs
 - Identifies null dereferences, incorrect conditions, unreachable code
 - Detects logic errors, resource leaks, and inconsistent state updates
 
-**[Static Vulnerability Detector](./static-vulnerability-detector/)**
+**[Static Vulnerability Detector](./skills/static-vulnerability-detector/)**
 - Statically analyzes code to detect security vulnerabilities
 - Identifies buffer overflows, injection risks, insecure deserialization
 - Detects improper authentication and unsafe cryptographic usage
 
-**[Vulnerability Pattern Matcher](./vulnerability-pattern-matcher/)**
+**[Vulnerability Pattern Matcher](./skills/vulnerability-pattern-matcher/)**
 - Detects security vulnerabilities by matching known patterns
 - Identifies insecure coding idioms and CVE-style patterns
 - Explains why patterns are risky and conditions for exploitation
 
-**[Vulnerability Root Cause Analyzer](./vulnerability-root-cause-analyzer/)**
+**[Vulnerability Root Cause Analyzer](./skills/vulnerability-root-cause-analyzer/)**
 - Analyzes vulnerable code to identify underlying root causes
 - Identifies violated assumptions, incorrect invariants, missing validation
 - Detects unsafe component interactions
 
-**[Exploitability Analyzer](./exploitability-analyzer/)**
+**[Exploitability Analyzer](./skills/exploitability-analyzer/)**
 - Assesses realistic exploitability of detected vulnerabilities
 - Examines control flow, input sources, and sanitization logic
 - Determines if vulnerabilities are practically exploitable
 
-**[Security Patch Advisor](./security-patch-advisor/)**
+**[Security Patch Advisor](./skills/security-patch-advisor/)**
 - Proposes secure remediation strategies for security vulnerabilities
 - Addresses buffer overflows, injection risks, insecure deserialization
 - Provides fixes for improper authentication and unsafe cryptographic usage
 
-**[CVE Reachability Analyzer](./cve-reachability-analyzer/)**
+**[CVE Reachability Analyzer](./skills/cve-reachability-analyzer/)**
 - Analyzes whether CVE vulnerabilities in dependencies are reachable from application code
 - Performs static and dynamic reachability analysis
 - Prioritizes CVE remediation based on actual exploitability
 
-**[CVE Watchlist Action Recommendation Generator](./cve-watchlist-action-recommendation-generator/)**
+**[CVE Watchlist Action Recommendation Generator](./skills/cve-watchlist-action-recommendation-generator/)**
 - Generates actionable recommendations for CVEs in dependency watchlists
 - Prioritizes CVEs based on severity, exploitability, and impact
 - Suggests patching, mitigation, or monitoring strategies
 
-**[Time-Aware Dependency CVE Scanner](./time-aware-dependency-cve-scanner/)**
+**[Time-Aware Dependency CVE Scanner](./skills/time-aware-dependency-cve-scanner/)**
 - Scans dependencies for CVEs with temporal context awareness
 - Tracks CVE disclosure timelines and patch availability
 - Provides time-sensitive vulnerability management recommendations
 
-**[Semantic Bug Detector](./semantic-bug-detector/)**
+**[Semantic Bug Detector](./skills/semantic-bug-detector/)**
 - Detects semantic-level bugs by analyzing code behavior vs. intent
 - Infers intended purpose from names, comments, and documentation
 - Identifies mismatches between implementation and expected behavior
 
-**[Behavior Preservation Checker](./behavior-preservation-checker/)**
+**[Behavior Preservation Checker](./skills/behavior-preservation-checker/)**
 - Validates that migrated or refactored codebase preserves original behavior
 - Compares runtime behavior, test results, and execution traces
 - Identifies behavioral divergences between code versions
 
-**[Semantic Equivalence Verifier](./semantic-equivalence-verifier/)**
+**[Semantic Equivalence Verifier](./skills/semantic-equivalence-verifier/)**
 - Analyzes semantic equivalence between two code artifacts
 - Compares control flow, data flow, and observable behavior
 - Provides rigorous equivalence analysis for functions, classes, or modules
 
-**[Multi-Version Behavior Comparator](./multi-version-behavior-comparator/)**
+**[Multi-Version Behavior Comparator](./skills/multi-version-behavior-comparator/)**
 - Compares behavior across multiple versions of programs
 - Identifies functional changes, regressions, and behavioral divergences
 - Guides safe upgrades and validation processes
 
-**[Regression Consistency Checker](./regression-consistency-checker/)**
+**[Regression Consistency Checker](./skills/regression-consistency-checker/)**
 - Checks whether new version preserves behavior observed by tests on old version
 - Validates behavioral consistency across versions
 - Identifies unexpected behavioral changes
 
-**[Interval Difference Analyzer](./interval-difference-analyzer/)**
+**[Interval Difference Analyzer](./skills/interval-difference-analyzer/)**
 - Analyzes differences in program intervals (variable value ranges) between versions
 - Detects behavioral changes and identifies potential bugs
 - Guides testing efforts based on interval analysis
 
-**[Interval Profiling Performance Analyzer](./interval-profiling-performance-analyzer/)**
+**[Interval Profiling Performance Analyzer](./skills/interval-profiling-performance-analyzer/)**
 - Profiles programs to identify performance bottlenecks
 - Generates optimization recommendations with visualizations
 - Uses interval analysis for performance insights
 
 ### Documentation
 
-**[API Documentation Generator](./api-documentation-generator/)**
+**[API Documentation Generator](./skills/api-documentation-generator/)**
 - Generates API documentation
 - Creates reference documentation
 - Includes usage examples
 
-**[Code Comment Generator](./code-comment-generator/)**
+**[Code Comment Generator](./skills/code-comment-generator/)**
 - Generates inline code comments
 - Explains complex logic
 - Follows documentation standards
 
-**[Markdown Document Structurer](./markdown-document-structurer/)**
+**[Markdown Document Structurer](./skills/markdown-document-structurer/)**
 - Reorganizes markdown documents into well-structured format
 - Fixes heading hierarchy and generates table of contents
 - Standardizes formatting and improves readability
 
-**[README Generator](./readme-generator/)**
+**[README Generator](./skills/readme-generator/)**
 - Generates comprehensive, user-friendly README.md files
 - Includes project introduction, prerequisites, and setup instructions
 - Provides executable usage examples and repository structure overview
 
-**[Change Log Generator](./change-log-generator/)**
+**[Change Log Generator](./skills/change-log-generator/)**
 - Creates change logs from commits
 - Categorizes changes by type
 - Follows semantic versioning
 
-**[Code Change Summarizer](./code-change-summarizer/)**
+**[Code Change Summarizer](./skills/code-change-summarizer/)**
 - Generates structured pull request descriptions from code changes
 - Documents breaking changes with migration guides
 - Adds testing instructions and context enhancements
 
-**[Release Notes Writer](./release-notes-writer/)**
+**[Release Notes Writer](./skills/release-notes-writer/)**
 - Writes release notes
 - Highlights new features and fixes
 - Targets end users
 
-**[Legacy Code Summarizer](./legacy-code-summarizer/)**
+**[Legacy Code Summarizer](./skills/legacy-code-summarizer/)**
 - Summarizes legacy codebases
 - Explains code functionality
 - Aids in understanding old code
 
-**[Python Repository Quick Start](./python-repo-quickstart/)**
+**[Python Repository Quick Start](./skills/python-repo-quickstart/)**
 - Quickly analyzes Python repositories
 - Identifies project type, entry points, and dependencies
 - Generates setup and execution instructions
 
-**[Error Explanation Generator](./error-explanation-generator/)**
+**[Error Explanation Generator](./skills/error-explanation-generator/)**
 - Explains error messages
 - Provides context and solutions
 - Helps with debugging
 
 ### Architecture & Design
 
-**[API Design Assistant](./api-design-assistant/)**
+**[API Design Assistant](./skills/api-design-assistant/)**
 - Assists in API design
 - Suggests RESTful patterns
 - Validates API consistency
 
-**[Design Pattern Suggestor](./design-pattern-suggestor/)**
+**[Design Pattern Suggestor](./skills/design-pattern-suggestor/)**
 - Suggests appropriate design patterns
 - Explains pattern applicability
 - Provides implementation guidance
 
-**[Configuration Generator](./configuration-generator/)**
+**[Configuration Generator](./skills/configuration-generator/)**
 - Generates configuration files
 - Supports multiple formats (YAML, JSON, XML)
 - Validates configuration schemas
 
-**[Dependency Resolver](./dependency-resolver/)**
+**[Dependency Resolver](./skills/dependency-resolver/)**
 - Resolves dependency conflicts
 - Suggests compatible versions
 - Analyzes dependency trees
 
 ### Requirements & Specifications
 
-**[Requirement Summarizer](./requirement-summarizer/)**
+**[Requirement Summarizer](./skills/requirement-summarizer/)**
 - Summarizes requirements documents
 - Extracts key requirements
 - Organizes by priority
 
-**[Requirement Coverage Checker](./requirement-coverage-checker/)**
+**[Requirement Coverage Checker](./skills/requirement-coverage-checker/)**
 - Checks requirement coverage
 - Identifies gaps in implementation
 - Traces requirements to code and test
 
-**[Requirement Comparison Reporter](./requirement-comparison-reporter/)**
+**[Requirement Comparison Reporter](./skills/requirement-comparison-reporter/)**
 - Compares old and new requirement documents
 - Maps requirement changes to code components
 - Generates detailed modification plans in Markdown format
 
-**[Ambiguity Detector](./ambiguity-detector/)**
+**[Ambiguity Detector](./skills/ambiguity-detector/)**
 - Detects ambiguous requirements
 - Highlights unclear specifications
 - Suggests clarifications
 
-**[Scenario Generator](./scenario-generator/)**
+**[Scenario Generator](./skills/scenario-generator/)**
 - Generates usage scenarios
 - Creates user stories
 - Develops test scenarios
 
-**[Specification Generator](./specification-generator/)**
+**[Specification Generator](./skills/specification-generator/)**
 - Generates formal specifications
 - Converts natural language to specs
 - Validates specification completeness
 
-**[Natural Language to Constraints](./nl-to-constraints/)**
+**[Natural Language to Constraints](./skills/nl-to-constraints/)**
 - Converts NL requirements to formal constraints
 - Supports constraint languages
 - Validates constraint consistency
 
 ### DevOps & Deployment
 
-**[AppVeyor Automation](./awesome-claude-skills-SE-skills/appveyor-automation/)** *(source: awesome-claude-skills)*
-- Automate AppVeyor continuous integration and deployment for Windows, Linux, and macOS builds
 
-**[Appcircle Automation](./awesome-claude-skills-SE-skills/appcircle-automation/)** *(source: awesome-claude-skills)*
-- Automate mobile CI/CD workflows with Appcircle for iOS and Android app builds
 
-**[Build/CI Migration Assistant](./build-ci-migration-assistant/)**
+**[Build/CI Migration Assistant](./skills/build-ci-migration-assistant/)**
 - Migrates build systems and CI/CD configurations
 
-**[Buildkite Automation](./awesome-claude-skills-SE-skills/buildkite-automation/)** *(source: awesome-claude-skills)*
-- Automate Buildkite CI/CD operations for pipeline management and build automation
 
-**[CD Pipeline Generator](./cd-pipeline-generator/)**
+**[CD Pipeline Generator](./skills/cd-pipeline-generator/)**
 - Creates CD pipeline configurations for automated deployment
 - Supports AWS, GCP, and Azure cloud platforms
 - Includes environment separation, approval gates, and rollback capabilities
 
-**[CI Pipeline Synthesizer](./ci-pipeline-synthesizer/)**
+**[CI Pipeline Synthesizer](./skills/ci-pipeline-synthesizer/)**
 - Generates CI pipeline configurations for automated building and testing
 - Supports GitHub Actions with dependency caching and matrix testing
 - Includes templates for Node.js, Python, Go, and Rust projects
 
-**[CircleCI Automation](./awesome-claude-skills-SE-skills/circleci-automation/)** *(source: awesome-claude-skills)*
-- Automate CircleCI tasks: trigger pipelines, monitor workflows/jobs, retrieve artifacts and test metadata
 
-**[Cloudflare Automation](./awesome-claude-skills-SE-skills/cloudflare-automation/)** *(source: awesome-claude-skills)*
-- Automate Cloudflare CDN, DNS, security, and performance optimization tasks
 
-**[Config Consistency Checker](./config-consistency-checker/)**
+**[Config Consistency Checker](./skills/config-consistency-checker/)**
 - Detects configuration inconsistencies across environments
 
-**[Containerization Assistant](./containerization-assistant/)**
+**[Containerization Assistant](./skills/containerization-assistant/)**
 - Creates Dockerfiles and container configs
 - Optimizes container images
 - Supports multi-stage builds
 
-**[DigitalOcean Automation](./awesome-claude-skills-SE-skills/digital-ocean-automation/)** *(source: awesome-claude-skills)*
-- Automate DigitalOcean cloud infrastructure management including droplets, databases, and networking
 
-**[Docker Hub Automation](./awesome-claude-skills-SE-skills/docker-hub-automation/)** *(source: awesome-claude-skills)*
-- Automate Docker Hub operations - manage organizations, repositories, teams, and webhooks
 
-**[Environment Setup Assistant](./environment-setup-assistant/)**
+**[Environment Setup Assistant](./skills/environment-setup-assistant/)**
 - Generates environment setup scripts
 - Manages dependencies and configurations
 - Supports multiple platforms
 
-**[NPM Automation](./awesome-claude-skills-SE-skills/npm-automation/)** *(source: awesome-claude-skills)*
-- Automate NPM package management tasks for JavaScript/Node.js projects
 
-**[Rollback Strategy Advisor](./rollback-strategy-advisor/)**
+**[Rollback Strategy Advisor](./skills/rollback-strategy-advisor/)**
 - Suggests rollback strategies
 - Plans deployment reversions
 - Minimizes downtime
 
-**[Vercel Automation](./awesome-claude-skills-SE-skills/vercel-automation/)** *(source: awesome-claude-skills)*
-- Automate Vercel deployments, domains, DNS, environment variables, projects, and teams
 
-**[Cloudflare API Key Automation](./cloudflare-api-key-automation/)**
+**[Cloudflare API Key Automation](./skills/cloudflare-api-key-automation/)**
 - Automates Cloudflare API tasks via Rube MCP (Composio)
 - Manages API keys and authentication
 - Integrates with Cloudflare services
 
-**[Cloudflare Browser Rendering Automation](./cloudflare-browser-rendering-automation/)**
+**[Cloudflare Browser Rendering Automation](./skills/cloudflare-browser-rendering-automation/)**
 - Automates Cloudflare Browser Rendering tasks via Rube MCP (Composio)
 - Manages browser rendering services
 - Supports headless browser automation
@@ -618,497 +595,439 @@ A Skill in this repo is more than a prompt:
 - Manages repositories, images, tags, and container registry
 - Supports Docker Hub operations
 
-**[Slack GIF Creator](./slack-gif-creator/)**
+**[Slack GIF Creator](./skills/slack-gif-creator/)**
 - Creates animated GIFs optimized for Slack
 - Validates size constraints and provides composable animation primitives
 - Supports emoji animations and custom GIFs
 
 ### Version Control & Collaboration
 
-**[GitHub Automation](./awesome-claude-skills-SE-skills/github-automation/)** *(source: awesome-claude-skills)*
-- Automate GitHub repositories, issues, pull requests, branches, CI/CD, and permissions
 
-**[GitLab Automation](./awesome-claude-skills-SE-skills/gitlab-automation/)** *(source: awesome-claude-skills)*
-- Automate GitLab project management, issues, merge requests, pipelines, and branches
 
-**[Bitbucket Automation](./awesome-claude-skills-SE-skills/bitbucket-automation/)** *(source: awesome-claude-skills)*
-- Automate Bitbucket repositories, pull requests, branches, issues, and workspace management
 
-**[Sourcegraph Automation](./awesome-claude-skills-SE-skills/sourcegraph-automation/)** *(source: awesome-claude-skills)*
-- Automate Sourcegraph code search and navigation operations
 
 ### Project Management & Issue Tracking
 
-**[Jira Automation](./awesome-claude-skills-SE-skills/jira-automation/)** *(source: awesome-claude-skills)*
-- Automate Jira tasks: issues, projects, sprints, boards, comments, and agile workflows
 
-**[Linear Automation](./awesome-claude-skills-SE-skills/linear-automation/)** *(source: awesome-claude-skills)*
-- Automate Linear tasks: issues, projects, cycles, teams, and labels for modern issue tracking
 
-**[Confluence Automation](./awesome-claude-skills-SE-skills/confluence-automation/)** *(source: awesome-claude-skills)*
-- Automate Confluence page creation, content search, space management, and documentation
 
 ### Team Communication
 
-**[Slack Automation](./awesome-claude-skills-SE-skills/slack-automation/)** *(source: awesome-claude-skills)*
-- Automate Slack messaging, channel management, search, reactions, and threads
 
-**[Slackbot Automation](./awesome-claude-skills-SE-skills/slackbot-automation/)** *(source: awesome-claude-skills)*
-- Create and manage Slack bots for automated team communication and workflow integration
 
-**[Discord Automation](./awesome-claude-skills-SE-skills/discord-automation/)** *(source: awesome-claude-skills)*
-- Automate Discord server management, messaging, and bot operations for developer communities
 
-**[Discordbot Automation](./awesome-claude-skills-SE-skills/discordbot-automation/)** *(source: awesome-claude-skills)*
-- Build and manage Discord bots for automated community engagement and notifications
 
 ### Monitoring & Error Tracking
 
-**[Sentry Automation](./awesome-claude-skills-SE-skills/sentry-automation/)** *(source: awesome-claude-skills)*
-- Automate Sentry tasks: manage issues/events, configure alerts, track releases, and monitor projects
 
-**[Datadog Automation](./awesome-claude-skills-SE-skills/datadog-automation/)** *(source: awesome-claude-skills)*
-- Automate Datadog tasks: query metrics, search logs, manage monitors/dashboards for full-stack observability
 
-**[Bugsnag Automation](./awesome-claude-skills-SE-skills/bugsnag-automation/)** *(source: awesome-claude-skills)*
-- Automate Bugsnag error monitoring and crash reporting for applications
 
-**[BugBug Automation](./awesome-claude-skills-SE-skills/bugbug-automation/)** *(source: awesome-claude-skills)*
-- Automate bug tracking and test automation workflows with BugBug
 
-**[BugHerd Automation](./awesome-claude-skills-SE-skills/bugherd-automation/)** *(source: awesome-claude-skills)*
-- Manage visual feedback and bug tracking directly on websites with BugHerd
 
-**[PagerDuty Automation](./awesome-claude-skills-SE-skills/pagerduty-automation/)** *(source: awesome-claude-skills)*
-- Automate PagerDuty tasks: manage incidents, services, schedules, escalation policies, and on-call rotations
 
 ### Database & Backend Services
 
-**[Supabase Automation](./awesome-claude-skills-SE-skills/supabase-automation/)** *(source: awesome-claude-skills)*
-- Automate Supabase database queries, table management, storage, edge functions, and SQL execution
 
 ### Development Tools & Builders
 
-**[Artifacts Builder](./awesome-claude-skills-SE-skills/artifacts-builder/)** *(source: awesome-claude-skills)*
-- Create elaborate, multi-component claude.ai HTML artifacts using React, Tailwind CSS, and shadcn/ui
 
-**[Web Artifacts Builder](./anthropics-skills-SE-skills/web-artifacts-builder/)** *(source: anthropics-skills-SE-skills)*
-- Suite of tools for creating elaborate, multi-component claude.ai HTML artifacts
-- Uses modern frontend web technologies (React, Tailwind CSS, shadcn/ui)
-- Includes bundling scripts for single-file artifact generation
 
-**[MCP Builder](./awesome-claude-skills-SE-skills/mcp-builder/)** *(source: awesome-claude-skills)*
-- Guide for creating high-quality MCP servers that enable LLMs to interact with external services
 
-**[Code Interpreter Automation](./awesome-claude-skills-SE-skills/codeinterpreter-automation/)** *(source: awesome-claude-skills)*
-- Execute code in isolated environments for data analysis, visualization, and computational tasks
-
-**[Codereadr Automation](./codereadr-automation/)**
+**[Codereadr Automation](./skills/codereadr-automation/)**
 - Automates Codereadr tasks via Rube MCP (Composio)
 - Manages barcode scanning and data collection workflows
 - Integrates with Codereadr services
 
-**[Code Instrumentation Generator](./code-instrumentation-generator/)**
+**[Code Instrumentation Generator](./skills/code-instrumentation-generator/)**
 - Automatically instruments source code to collect runtime information
 - Preserves program semantics while adding instrumentation
 - Supports various instrumentation strategies for debugging and analysis
 
-**[Security-Sensitive Path Instrumenter](./security-sensitive-path-instrumenter/)**
+**[Security-Sensitive Path Instrumenter](./skills/security-sensitive-path-instrumenter/)**
 - Adds structured logging instrumentation to security-critical code paths
 - Monitors authentication, authorization, input validation, and session management
 - Enables runtime monitoring of security-relevant events
 
-**[Taint Instrumentation Assistant](./taint-instrumentation-assistant/)**
+**[Taint Instrumentation Assistant](./skills/taint-instrumentation-assistant/)**
 - Instruments code to track untrusted and sensitive data flow
 - Detects security vulnerabilities through taint analysis
 - Identifies potential injection points and data leaks
 
-**[Critical Interval Security Checker](./critical-interval-security-checker/)**
+**[Critical Interval Security Checker](./skills/critical-interval-security-checker/)**
 - Analyzes code to identify security-critical time intervals
 - Detects timing vulnerabilities that could compromise security
 - Identifies race conditions and time-of-check-time-of-use issues
 
 ### Testing & Quality Assurance
 
-**[Test App Automation](./awesome-claude-skills-SE-skills/test-app-automation/)** *(source: awesome-claude-skills)*
-- Automate application testing workflows including unit tests, integration tests, and end-to-end testing
 
-**[WebApp Testing](./awesome-claude-skills-SE-skills/webapp-testing/)** *(source: awesome-claude-skills)*
-- Specialized automation for web application testing including UI testing and browser automation
-
-**[Web Application Testing](./anthropics-skills-SE-skills/webapp-testing/)** *(source: anthropics-skills-SE-skills)*
-- Toolkit for interacting with and testing local web applications using Playwright
-- Supports verifying frontend functionality, debugging UI behavior, and capturing screenshots
-- Includes helper scripts for managing server lifecycle
 
 ### Integration & Webhooks
 
-**[Hookdeck Automation](./awesome-claude-skills-SE-skills/hookdeck-automation/)** *(source: awesome-claude-skills)*
-- Manage webhook infrastructure, routing, and monitoring for reliable event-driven architectures
 
 ### Debugging & Error Handling
 
-**[Bug Localization](./bug-localization/)**
+**[Bug Localization](./skills/bug-localization/)**
 - Localizes bugs in code
 - Analyzes stack traces and logs
 - Suggests likely bug locations
 
-**[Bug to Patch Generator](./bug-to-patch-generator/)**
+**[Bug to Patch Generator](./skills/bug-to-patch-generator/)**
 - Generates patches for identified bugs
 - Creates minimal fixes
 - Includes test cases for fixes
 
-**[Conflict Analyzer](./conflict-analyzer/)**
+**[Conflict Analyzer](./skills/conflict-analyzer/)**
 - Analyzes merge conflicts
 - Suggests conflict resolutions
 - Explains conflicting changes
 
-**[Failure-Oriented Instrumentation](./failure-oriented-instrumentation/)**
+**[Failure-Oriented Instrumentation](./skills/failure-oriented-instrumentation/)**
 - Selectively instruments code to capture runtime data for debugging
 
-**[Git Bisect Assistant](./git-bisect-assistant/)**
+**[Git Bisect Assistant](./skills/git-bisect-assistant/)**
 - Automates git bisect to find the first bad commit
 
-**[Regression Root Cause Analyzer](./regression-root-cause-analyzer/)**
+**[Regression Root Cause Analyzer](./skills/regression-root-cause-analyzer/)**
 - Analyzes regression failures
 - Identifies root causes
 - Suggests fixes
 
-**[Replay-Oriented Instrumentation](./replay-oriented-instrumentation/)**
+**[Replay-Oriented Instrumentation](./skills/replay-oriented-instrumentation/)**
 - Records execution for deterministic replay debugging
 
-**[Runtime Error Explainer](./runtime-error-explainer/)**
+**[Runtime Error Explainer](./skills/runtime-error-explainer/)**
 - Explains runtime errors
 - Provides debugging guidance
 - Suggests fixes
 
-**[Issue Report Generator](./issue-report-generator/)**
+**[Issue Report Generator](./skills/issue-report-generator/)**
 - Automatically generates clear, actionable issue reports from failing tests
 - Analyzes test failures to understand expected vs. actual behavior
 - Identifies affected code components and suggests fixes
 
-**[Bug History Summarizer](./bug-history-summarizer/)**
+**[Bug History Summarizer](./skills/bug-history-summarizer/)**
 - Traces and summarizes the complete lifecycle of a bug across code versions
 - Provides historical context for bug evolution
 - Helps understand bug patterns and resolution strategies
 
-**[Bisect-Aware Instrumentation](./bisect-aware-instrumentation/)**
+**[Bisect-Aware Instrumentation](./skills/bisect-aware-instrumentation/)**
 - Instruments code to support efficient git bisect operations
 - Produces deterministic pass/fail signals and concise runtime summaries
 - Creates robust test scripts for bisect workflows
 
-**[Reproduction Trace Instrumenter](./reproduction-trace-instrumenter/)**
+**[Reproduction Trace Instrumenter](./skills/reproduction-trace-instrumenter/)**
 - Instruments source code to capture detailed execution traces for bug reproduction
 - Records function calls, variable values, control flow, and program state
 - Generates replay scripts for deterministic bug reproduction
 
-**[State Snapshot Instrumenter](./state-snapshot-instrumenter/)**
+**[State Snapshot Instrumenter](./skills/state-snapshot-instrumenter/)**
 - Instruments programs to capture snapshots of key program states at runtime
 - Includes variable values, memory state, call stacks, and execution context
 - Saves snapshots in structured JSON format for analysis
 
-**[Trace Collection Assistant](./trace-collection-assistant/)**
+**[Trace Collection Assistant](./skills/trace-collection-assistant/)**
 - Collects, normalizes, and structures execution traces from instrumented programs
 - Processes strace, ltrace, and custom trace formats
 - Makes traces suitable for debugging, reproduction, or performance analysis
 
-**[SZZ Bug Identifier](./szz-bug-identifier/)**
+**[SZZ Bug Identifier](./skills/szz-bug-identifier/)**
 - Performs SZZ algorithm analysis to identify bug-introducing commits
 - Traces modified lines back through version history
 - Links bug fixes to their originating changes
 
-**[Semantic SZZ Analyzer](./semantic-szz-analyzer/)**
+**[Semantic SZZ Analyzer](./skills/semantic-szz-analyzer/)**
 - Extends traditional SZZ algorithm with semantic analysis
 - Distinguishes actual bug-introducing changes from refactoring
 - Provides more accurate identification of bug origins
 
 ### Formal Methods & Verification
 
-**[ACSL Annotation Assistant](./acsl-annotation-assistant/)**
+**[ACSL Annotation Assistant](./skills/acsl-annotation-assistant/)**
 - Assists with ACSL annotations
 - Generates function contracts
 - Validates annotation correctness
 
-**[Assertion Synthesizer](./assertion-synthesizer/)**
+**[Assertion Synthesizer](./skills/assertion-synthesizer/)**
 - Synthesizes program assertions
 - Generates invariants and pre/post-conditions
 - Validates assertion correctness
 
-**[Invariant Inference](./invariant-inference/)**
+**[Invariant Inference](./skills/invariant-inference/)**
 - Infers loop and program invariants
 - Uses static and dynamic analysis
 - Validates inferred invariants
 
-**[Static Reasoning Verifier](./static-reasoning-verifier/)**
+**[Static Reasoning Verifier](./skills/static-reasoning-verifier/)**
 - Verifies code using static analysis
 - Checks correctness properties
 - Reports verification results
 
-**[Symbolic Execution Assistant](./symbolic-execution-assistant/)**
+**[Symbolic Execution Assistant](./skills/symbolic-execution-assistant/)**
 - Assists with symbolic execution
 - Generates path constraints
 - Explores execution paths
 
-**[Counterexample Generator](./counterexample-generator/)**
+**[Counterexample Generator](./skills/counterexample-generator/)**
 - Generates counterexamples for failed proofs
 - Creates test cases from counterexamples
 - Helps understand verification failures
 
-**[Counterexample Explainer](./counterexample-explainer/)**
+**[Counterexample Explainer](./skills/counterexample-explainer/)**
 - Explains counterexamples
 - Provides debugging insights
 - Suggests fixes
 
-**[Counterexample Debugger](./counterexample-debugger/)**
+**[Counterexample Debugger](./skills/counterexample-debugger/)**
 - Debugs proof failures using counterexamples from Nitpick or QuickChick
 - Identifies specification errors and missing preconditions
 - Helps resolve proof strategy issues
 
-**[Abstract Domain Explorer](./abstract-domain-explorer/)**
+**[Abstract Domain Explorer](./skills/abstract-domain-explorer/)**
 - Applies abstract interpretation using different abstract domains
 - Supports intervals, octagons, polyhedra, sign, and congruence domains
 - Infers invariants, value ranges, and relationships
 
-**[Abstract Invariant Generator](./abstract-invariant-generator/)**
+**[Abstract Invariant Generator](./skills/abstract-invariant-generator/)**
 - Uses abstract interpretation to infer loop invariants automatically
 - Generates function preconditions and postconditions
 - Supports formal verification workflows
 
-**[Abstract State Analyzer](./abstract-state-analyzer/)**
+**[Abstract State Analyzer](./skills/abstract-state-analyzer/)**
 - Performs abstract interpretation to infer program states
 - Analyzes variable ranges and data properties without execution
 - Reports potential runtime errors
 
-**[Abstract Trace Summarizer](./abstract-trace-summarizer/)**
+**[Abstract Trace Summarizer](./skills/abstract-trace-summarizer/)**
 - Produces summarized execution traces using abstract interpretation
 - Highlights key control flow paths and variable relationships
 - Generates high-level program behavior representations
 
-**[Control Flow Abstraction Generator](./control-flow-abstraction-generator/)**
+**[Control Flow Abstraction Generator](./skills/control-flow-abstraction-generator/)**
 - Generates abstract Control Flow Graph (CFG) representations
 - Shows loops, branches, and function calls for static analysis
 - Supports verification and program understanding
 
-**[Formal Spec Generator](./formal-spec-generator/)**
+**[Formal Spec Generator](./skills/formal-spec-generator/)**
 - Generates formal specifications in Isabelle/HOL or Coq
 - Converts informal requirements to formal definitions and predicates
 - Creates invariants, pre/post-conditions from natural language
 
-**[C/C++ to Lean4 Translator](./c-cpp-to-lean4-translator/)**
+**[C/C++ to Lean4 Translator](./skills/c-cpp-to-lean4-translator/)**
 - Translates C or C++ programs into equivalent Lean4 code
 - Preserves program semantics and ensures type safety
 - Generates well-typed, executable, and verifiable code
 
-**[C++ to Dafny Translator](./cpp-to-dafny-translator/)**
+**[C++ to Dafny Translator](./skills/cpp-to-dafny-translator/)**
 - Translates C/C++ programs to equivalent Dafny code
 - Preserves semantics and ensures verification
 - Supports formal verification workflows
 
-**[Python to Dafny Translator](./python-to-dafny-translator/)**
+**[Python to Dafny Translator](./skills/python-to-dafny-translator/)**
 - Translates Python programs into equivalent Dafny code
 - Preserves program semantics and ensures verifiability
 - Generates well-typed, executable Dafny code
 
-**[Python to Lean4 Translator](./python-to-lean4-translator/)**
+**[Python to Lean4 Translator](./skills/python-to-lean4-translator/)**
 - Translates Python programs to equivalent Lean4 code
 - Preserves semantics and ensures type safety
 - Supports formal verification in Lean4
 
-**[Imperative to Coq Model Extractor](./imperative-to-coq-model-extractor/)**
+**[Imperative to Coq Model Extractor](./skills/imperative-to-coq-model-extractor/)**
 - Extracts abstract mathematical models from imperative code
 - Supports C, C++, Python, Java for Coq formal reasoning
 - Creates Coq specifications suitable for verification
 
-**[Program to Model Extractor](./program-to-model-extractor/)**
+**[Program to Model Extractor](./skills/program-to-model-extractor/)**
 - Extracts abstract mathematical models from functional code
 - Supports Haskell, OCaml, F# to Isabelle/HOL conversion
 - Enables formal reasoning about functional programs
 
-**[Program Correctness Prover](./program-correctness-prover/)**
+**[Program Correctness Prover](./skills/program-correctness-prover/)**
 - Generates Isabelle or Coq proofs for program correctness
 - Establishes partial or total correctness from specifications
 - Uses Hoare logic and weakest precondition calculus
 
-**[Proof Carrying Code Generator](./proof-carrying-code-generator/)**
+**[Proof Carrying Code Generator](./skills/proof-carrying-code-generator/)**
 - Generates executable code with formal correctness proofs
 - Certifies safety and correctness properties in Isabelle/HOL or Coq
 - Supports verified software and safety-critical systems
 
-**[Proof Skeleton Generator](./proof-skeleton-generator/)**
+**[Proof Skeleton Generator](./skills/proof-skeleton-generator/)**
 - Generates structured proof skeletons with tactics and strategies
 - Creates intermediate lemmas for theorems in Isabelle/HOL or Coq
 - Provides proof outlines for complex theorems
 
-**[Proof Trace Summarizer](./proof-trace-summarizer/)**
+**[Proof Trace Summarizer](./skills/proof-trace-summarizer/)**
 - Summarizes long Isabelle or Coq proof scripts
 - Extracts high-level logical steps and reasoning flow
 - Documents proof strategies for understanding
 
-**[Proof Failure Explainer](./proof-failure-explainer/)**
+**[Proof Failure Explainer](./skills/proof-failure-explainer/)**
 - Analyzes and explains why Isabelle or Coq proofs fail
 - Identifies type mismatches, missing assumptions, incorrect goals
 - Detects unification failures and inapplicable tactics
 
-**[Proof Refactoring Assistant](./proof-refactoring-assistant/)**
+**[Proof Refactoring Assistant](./skills/proof-refactoring-assistant/)**
 - Restructures Isabelle or Coq proofs for better readability
 - Enhances modularity and maintainability without changing semantics
 - Eliminates repeated patterns and improves proof structure
 
-**[Lemma Discovery Assistant](./lemma-discovery-assistant/)**
+**[Lemma Discovery Assistant](./skills/lemma-discovery-assistant/)**
 - Analyzes failed or stuck proofs to propose auxiliary lemmas
 - Helps complete proofs in Isabelle/HOL or Coq
 - Addresses unprovable subgoals and stuck proof states
 
-**[Library Advisor](./library-for-proof-advisor/)**
+**[Library Advisor](./skills/library-for-proof-advisor/)**
 - Recommends relevant Isabelle/HOL or Coq standard library resources
 - Suggests theories, lemmas, and tactics based on proof goals
 - Helps find existing library support for proofs
 
-**[Tactic Suggestion Assistant](./tactic-suggestion-assistant/)**
+**[Tactic Suggestion Assistant](./skills/tactic-suggestion-assistant/)**
 - Analyzes proof states in Isabelle or Coq
 - Suggests applicable tactics to make progress
 - Helps choose next steps in interactive proofs
 
-**[Refinement Step Generator](./refinement-step-generator/)**
+**[Refinement Step Generator](./skills/refinement-step-generator/)**
 - Generates systematic refinement steps from specifications to implementations
 - Works in Isabelle/HOL or Coq with correctness obligations
 - Supports formal verification through refinement
 
-**[Verification Boundary Reporter](./verification-boundary-reporter/)**
+**[Verification Boundary Reporter](./skills/verification-boundary-reporter/)**
 - Analyzes formal verification artifacts (Isabelle, Coq, Dafny)
 - Identifies boundaries between verified, assumed, and unverified components
 - Produces structured reports on verification coverage
 
-**[Verified Pseudocode Extractor](./verified-pseudocode-extractor/)**
+**[Verified Pseudocode Extractor](./skills/verified-pseudocode-extractor/)**
 - Extracts language-agnostic pseudocode from verified programs
 - Preserves verified control flow and data dependencies
 - Maintains algorithmic logic from Isabelle/HOL or Coq code
 
-**[Verified Spec Code Mapper](./verified-spec-code-mapper/)**
+**[Verified Spec Code Mapper](./skills/verified-spec-code-mapper/)**
 - Establishes traceability between formal specifications and verified code
 - Maps preconditions, postconditions, invariants to code components
 - Produces structured Markdown mapping with correctness proofs
 
-**[Requirement Enhancer](./requirement-enhancer/)**
+**[Requirement Enhancer](./skills/requirement-enhancer/)**
 - Iteratively enhances user requirements into clear specifications
 - Analyzes and clarifies incomplete or ambiguous requirements
 - Produces actionable, complete specifications
 
-**[Interface Contract Verifier](./interface-contract-verifier/)**
+**[Interface Contract Verifier](./skills/interface-contract-verifier/)**
 - Verifies that formal contracts (preconditions, postconditions, invariants) are preserved
 - Validates contract compliance when updating to new program versions
 - Ensures interface specifications remain consistent
 
-**[Code Completion Semantic Constraints](./code-completion-semantic-constraints/)**
+**[Code Completion Semantic Constraints](./skills/code-completion-semantic-constraints/)**
 - Completes partial code snippets while satisfying semantic constraints
 - Produces compilable code with verification tests
 - Explains how each constraint was satisfied
 
-**[Model-Guided Code Repair](./model-guided-code-repair/)**
+**[Model-Guided Code Repair](./skills/model-guided-code-repair/)**
 - Automatically repairs code violations of temporal properties using counterexamples
 - Reasons about model-level causes and proposes minimal fixes
 - Validates repairs through re-verification or test generation
 
-**[TLA+ Guided Code Repair](./tlaplus-guided-code-repair/)**
+**[TLA+ Guided Code Repair](./skills/tlaplus-guided-code-repair/)**
 - Repairs code based on TLA+ specification violations
 - Uses TLA+ model checking results to guide repair strategies
 - Ensures repaired code satisfies temporal properties
 
-**[Program to TLA+ Spec Generator](./program-to-tlaplus-spec-generator/)**
+**[Program to TLA+ Spec Generator](./skills/program-to-tlaplus-spec-generator/)**
 - Automatically generates TLA+ specifications from program code
 - Identifies state variables, actions, and invariants
 - Creates formal models for verification
 
-**[TLA+ Spec Generator](./tlaplus-spec-generator/)**
+**[TLA+ Spec Generator](./skills/tlaplus-spec-generator/)**
 - Generates TLA+ specifications from requirements or designs
 - Creates formal specifications with proper syntax
 - Supports concurrent and distributed system modeling
 
-**[Requirement to TLA+ Property Generator](./requirement-to-tlaplus-property-generator/)**
+**[Requirement to TLA+ Property Generator](./skills/requirement-to-tlaplus-property-generator/)**
 - Converts natural language requirements to TLA+ temporal properties
 - Formalizes safety and liveness properties
 - Generates verifiable specifications from informal descriptions
 
-**[Specification to Temporal Logic Generator](./specification-to-temporal-logic-generator/)**
+**[Specification to Temporal Logic Generator](./skills/specification-to-temporal-logic-generator/)**
 - Translates specifications into temporal logic formulas (LTL, CTL)
 - Supports multiple temporal logic notations
 - Enables formal verification of system properties
 
-**[TLA+ Model Reduction](./tlaplus-model-reduction/)**
+**[TLA+ Model Reduction](./skills/tlaplus-model-reduction/)**
 - Reduces TLA+ model complexity while preserving properties
 - Applies abstraction and symmetry reduction techniques
 - Improves model checking performance
 
-**[SMV Model Extractor](./smv-model-extractor/)**
+**[SMV Model Extractor](./skills/smv-model-extractor/)**
 - Extracts SMV models from program code or specifications
 - Generates models suitable for symbolic model checking
 - Supports NuSMV and nuXmv verification tools
 
-**[RTL Specification Consistency Checker](./rtl-specification-consistency-checker/)**
+**[RTL Specification Consistency Checker](./skills/rtl-specification-consistency-checker/)**
 - Checks behavioral consistency between RTL and specifications
 - Identifies satisfied, violated, underspecified, and uncheckable requirements
 - Provides detailed violation reports with execution traces
 
-**[RTL Equivalence Checker](./rtl-equivalence-checker/)**
+**[RTL Equivalence Checker](./skills/rtl-equivalence-checker/)**
 - Verifies equivalence between two RTL implementations
 - Detects functional differences in hardware designs
 - Supports formal equivalence checking workflows
 
-**[RTL Property Inference](./rtl-property-inference/)**
+**[RTL Property Inference](./skills/rtl-property-inference/)**
 - Automatically infers temporal properties from RTL code
 - Discovers invariants and protocol properties
 - Generates assertions for hardware verification
 
 ### Maintenance & Refactoring
 
-**[Code Refactoring Assistant](./code-refactoring-assistant/)**
+**[Code Refactoring Assistant](./skills/code-refactoring-assistant/)**
 - Suggests refactoring opportunities
 - Applies refactoring patterns
 - Ensures behavior preservation
 
-**[Deprecated API Updater](./deprecated-api-updater/)**
+**[Deprecated API Updater](./skills/deprecated-api-updater/)**
 - Updates deprecated API usage
 - Suggests modern alternatives
 - Automates API migration
 
-**[Code Translation](./code-translation/)**
+**[Code Translation](./skills/code-translation/)**
 - Translates code between languages
 - Preserves functionality
 - Adapts to target language idioms
 
-**[Framework Migration Assistant](./framework-migration-assistant/)**
+**[Framework Migration Assistant](./skills/framework-migration-assistant/)**
 - Automatically migrates Python web applications between frameworks
 - Transforms code, configuration, and tests while preserving functionality
 - Handles route migration and request/response patterns
 
-**[Spring MVC to Boot Migrator](./spring-mvc-to-boot-migrator/)**
+**[Spring MVC to Boot Migrator](./skills/spring-mvc-to-boot-migrator/)**
 - Automatically migrates Spring MVC applications to Spring Boot
 - Transforms build configuration, annotations, and XML configuration
 - Preserves existing functionality while modernizing architecture
 
-**[Test-Guided Migration Assistant](./test-guided-migration-assistant/)**
+**[Test-Guided Migration Assistant](./skills/test-guided-migration-assistant/)**
 - Automatically updates codebase to new language or framework versions
 - Ensures all tests continue to pass during migration
 - Provides safe, test-driven migration path
 
-**[Test-Guided Debloating](./test-guided-debloating/)**
+**[Test-Guided Debloating](./skills/test-guided-debloating/)**
 - Removes unnecessary code from repository while preserving test-exercised behavior
 - Identifies and eliminates dead code safely
 - Maintains exactly the functionality covered by test suite
 
-**[Smart Mutation Operator Generator](./smart-mutation-operator-generator/)**
+**[Smart Mutation Operator Generator](./skills/smart-mutation-operator-generator/)**
 - Generates customized mutation operators tailored to specific codebase
 - Maximizes mutation testing effectiveness
 - Creates domain-specific mutations for better test evaluation
 
-**[Code Repair Generation Combo](./code-repair-generation-combo/)**
+**[Code Repair Generation Combo](./skills/code-repair-generation-combo/)**
 - Automatically repairs buggy code and generates comprehensive tests
 - Supports Python, Java, and C++ programs
 - Diagnoses bugs, generates fixes, and creates tests to prevent regressions
 
 ### Visualization
 
-**[System Diagram Generator](./system-diagram-generator/)**
+**[System Diagram Generator](./skills/system-diagram-generator/)**
 - Creates system architecture diagrams
 - Supports Mermaid, PlantUML, Graphviz
 - Generates data flow and deployment diagrams
@@ -1140,9 +1059,6 @@ A Skill in this repo is more than a prompt:
     - [Requirement Enhancer](requirement-enhancer) – Iteratively enhance user requirements into clear, complete, actionable specifications through analysis and clarification
 
 - **Project Management & Issue Tracking**
-    - [Jira Automation](awesome-claude-skills-SE-skills/jira-automation) *(source: awesome-claude-skills)* – Automate Jira tasks: issues, projects, sprints, boards, comments, and agile workflows
-    - [Linear Automation](awesome-claude-skills-SE-skills/linear-automation) *(source: awesome-claude-skills)* – Automate Linear tasks: issues, projects, cycles, teams, and labels for modern issue tracking
-    - [Confluence Automation](awesome-claude-skills-SE-skills/confluence-automation) *(source: awesome-claude-skills)* – Automate Confluence page creation, content search, space management, and documentation
 
 
 ### 💡 **Software Design**
@@ -1166,7 +1082,6 @@ A Skill in this repo is more than a prompt:
     - [Template/Skeleton-based Code Generator](template-code-generator) – Produce boilerplate code or project templates/skeleton automatically
     - [Incremental Python Programmer](incremental-python-programmer) – Implement new features in Python repositories from natural language descriptions with automated testing
     - [Incremental Java Programmer](incremental-java-programmer) – Implement new features in Java repositories (Maven/Gradle) from natural language descriptions with JUnit test generation
-    - [Frontend Design](anthropics-skills-SE-skills/frontend-design) *(source: anthropics-skills)* – Create distinctive, production-grade frontend interfaces with high design quality
 
 - **Refactoring & Optimization**
     - [Refactoring Assistant](code-refactoring-assistant) – Suggest ongoing code improvements to enhance maintainability
@@ -1194,19 +1109,10 @@ A Skill in this repo is more than a prompt:
     - [Code Translation](code-translation) – Convert code between programming languages while preserving functionality
 
 - **Development Tools & Builders**
-    - [Artifacts Builder](awesome-claude-skills-SE-skills/artifacts-builder) *(source: awesome-claude-skills)* – Create elaborate, multi-component claude.ai HTML artifacts using React, Tailwind CSS, and shadcn/ui
-    - [Web Artifacts Builder](anthropics-skills-SE-skills/web-artifacts-builder) *(source: anthropics-skills)* – Suite of tools for creating elaborate, multi-component claude.ai HTML artifacts with modern frontend technologies
-    - [MCP Builder](awesome-claude-skills-SE-skills/mcp-builder) *(source: awesome-claude-skills)* – Guide for creating high-quality MCP servers that enable LLMs to interact with external services
-    - [Code Interpreter Automation](awesome-claude-skills-SE-skills/codeinterpreter-automation) *(source: awesome-claude-skills)* – Execute code in isolated environments for data analysis, visualization, and computational tasks
 
 - **Database & Backend Services**
-    - [Supabase Automation](awesome-claude-skills-SE-skills/supabase-automation) *(source: awesome-claude-skills)* – Automate Supabase database queries, table management, storage, edge functions, and SQL execution
 
 - **Version Control & Collaboration**
-    - [GitHub Automation](awesome-claude-skills-SE-skills/github-automation) *(source: awesome-claude-skills)* – Automate GitHub repositories, issues, pull requests, branches, CI/CD, and permissions
-    - [GitLab Automation](awesome-claude-skills-SE-skills/gitlab-automation) *(source: awesome-claude-skills)* – Automate GitLab project management, issues, merge requests, pipelines, and branches
-    - [Bitbucket Automation](awesome-claude-skills-SE-skills/bitbucket-automation) *(source: awesome-claude-skills)* – Automate Bitbucket repositories, pull requests, branches, issues, and workspace management
-    - [Sourcegraph Automation](awesome-claude-skills-SE-skills/sourcegraph-automation) *(source: awesome-claude-skills)* – Automate Sourcegraph code search and navigation operations
 
 ### 👩🏽‍💻 **Testing**
 - **Test Generation**
@@ -1259,9 +1165,6 @@ A Skill in this repo is more than a prompt:
     - [Test Case Reducer](test-case-reducer) – Reduces test cases to minimal form using delta debugging
 
 - **Testing Automation & Tools**
-    - [Test App Automation](awesome-claude-skills-SE-skills/test-app-automation) *(source: awesome-claude-skills)* – Automate application testing workflows including unit tests, integration tests, and end-to-end testing
-    - [WebApp Testing](awesome-claude-skills-SE-skills/webapp-testing) *(source: awesome-claude-skills)* – Specialized automation for web application testing including UI testing and browser automation
-    - [Web Application Testing](anthropics-skills-SE-skills/webapp-testing) *(source: anthropics-skills)* – Toolkit for interacting with and testing local web applications using Playwright
     - [Web Application Testing (Anthropics)](webapp-testing-anthropics) – Toolkit for testing local web applications using Playwright with frontend functionality verification and UI debugging
 
 
@@ -1352,17 +1255,8 @@ A Skill in this repo is more than a prompt:
     - [CI Pipeline Synthesizer](ci-pipeline-synthesizer) – Create CI pipelines for automated building and testing
     - [CD Pipeline Generator](cd-pipeline-generator) – Produce scripts for automated deployment to staging or production
     - [Build/CI Migration Assistant](build-ci-migration-assistant) – Migrates build systems and CI/CD configurations
-    - [CircleCI Automation](awesome-claude-skills-SE-skills/circleci-automation) *(source: awesome-claude-skills)* – Automate CircleCI tasks: trigger pipelines, monitor workflows/jobs, retrieve artifacts and test metadata
-    - [Buildkite Automation](awesome-claude-skills-SE-skills/buildkite-automation) *(source: awesome-claude-skills)* – Automate Buildkite CI/CD operations for pipeline management and build automation
-    - [AppVeyor Automation](awesome-claude-skills-SE-skills/appveyor-automation) *(source: awesome-claude-skills)* – Automate AppVeyor continuous integration and deployment for Windows, Linux, and macOS builds
-    - [Appcircle Automation](awesome-claude-skills-SE-skills/appcircle-automation) *(source: awesome-claude-skills)* – Automate mobile CI/CD workflows with Appcircle for iOS and Android app builds
 
 - **Cloud & Infrastructure Deployment**
-    - [Docker Hub Automation](awesome-claude-skills-SE-skills/docker-hub-automation) *(source: awesome-claude-skills)* – Automate Docker Hub operations - manage organizations, repositories, teams, and webhooks
-    - [Vercel Automation](awesome-claude-skills-SE-skills/vercel-automation) *(source: awesome-claude-skills)* – Automate Vercel deployments, domains, DNS, environment variables, projects, and teams
-    - [DigitalOcean Automation](awesome-claude-skills-SE-skills/digital-ocean-automation) *(source: awesome-claude-skills)* – Automate DigitalOcean cloud infrastructure management including droplets, databases, and networking
-    - [Cloudflare Automation](awesome-claude-skills-SE-skills/cloudflare-automation) *(source: awesome-claude-skills)* – Automate Cloudflare CDN, DNS, security, and performance optimization tasks
-    - [NPM Automation](awesome-claude-skills-SE-skills/npm-automation) *(source: awesome-claude-skills)* – Automate NPM package management tasks for JavaScript/Node.js projects
     - [Cloudflare API Key Automation](cloudflare-api-key-automation) – Automate Cloudflare API tasks via Rube MCP (Composio) for API key management and authentication
     - [Cloudflare Browser Rendering Automation](cloudflare-browser-rendering-automation) – Automate Cloudflare Browser Rendering tasks via Rube MCP (Composio) for headless browser automation
     - [Docker Hub Automation](docker_hub-automation) – Automate Docker Hub tasks via Rube MCP (Composio) for repositories, images, tags, and container registry management
@@ -1376,15 +1270,8 @@ A Skill in this repo is more than a prompt:
     - [Release Notes Writer](release-notes-writer) – Automatically generate user-facing release notes
 
 - **Monitoring & Error Tracking**
-    - [Sentry Automation](awesome-claude-skills-SE-skills/sentry-automation) *(source: awesome-claude-skills)* – Automate Sentry tasks: manage issues/events, configure alerts, track releases, and monitor projects
-    - [Datadog Automation](awesome-claude-skills-SE-skills/datadog-automation) *(source: awesome-claude-skills)* – Automate Datadog tasks: query metrics, search logs, manage monitors/dashboards for full-stack observability
-    - [Bugsnag Automation](awesome-claude-skills-SE-skills/bugsnag-automation) *(source: awesome-claude-skills)* – Automate Bugsnag error monitoring and crash reporting for applications
-    - [BugBug Automation](awesome-claude-skills-SE-skills/bugbug-automation) *(source: awesome-claude-skills)* – Automate bug tracking and test automation workflows with BugBug
-    - [BugHerd Automation](awesome-claude-skills-SE-skills/bugherd-automation) *(source: awesome-claude-skills)* – Manage visual feedback and bug tracking directly on websites with BugHerd
-    - [PagerDuty Automation](awesome-claude-skills-SE-skills/pagerduty-automation) *(source: awesome-claude-skills)* – Automate PagerDuty tasks: manage incidents, services, schedules, escalation policies, and on-call rotations
 
 - **Integration & Webhooks**
-    - [Hookdeck Automation](awesome-claude-skills-SE-skills/hookdeck-automation) *(source: awesome-claude-skills)* – Manage webhook infrastructure, routing, and monitoring for reliable event-driven architectures
 
 
 ### 🔧 **Maintenance**
@@ -1451,10 +1338,6 @@ A Skill in this repo is more than a prompt:
     - [Interval Profiling Performance Analyzer](interval-profiling-performance-analyzer) – Profile programs to identify performance bottlenecks
 
 - **Team Communication & Collaboration**
-    - [Slack Automation](awesome-claude-skills-SE-skills/slack-automation) *(source: awesome-claude-skills)* – Automate Slack messaging, channel management, search, reactions, and threads
-    - [Slackbot Automation](awesome-claude-skills-SE-skills/slackbot-automation) *(source: awesome-claude-skills)* – Create and manage Slack bots for automated team communication and workflow integration
-    - [Discord Automation](awesome-claude-skills-SE-skills/discord-automation) *(source: awesome-claude-skills)* – Automate Discord server management, messaging, and bot operations for developer communities
-    - [Discordbot Automation](awesome-claude-skills-SE-skills/discordbot-automation) *(source: awesome-claude-skills)* – Build and manage Discord bots for automated community engagement and notifications
     
 
 

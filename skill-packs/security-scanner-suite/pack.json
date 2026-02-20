@@ -1,0 +1,39 @@
+{
+  "name": "security-scanner-suite",
+  "version": "1.0.0",
+  "displayName": "Security Scanner Suite",
+  "displayName_zh": "安全扫描套件",
+  "description": "Comprehensive security analysis toolkit for detecting vulnerabilities, analyzing CVEs, and generating security patches",
+  "description_zh": "全面的安全分析工具包，用于检测漏洞、分析CVE和生成安全补丁",
+  "category": "security",
+  "skills": [
+    "static-vulnerability-detector",
+    "vulnerability-pattern-matcher",
+    "vulnerability-root-cause-analyzer",
+    "exploitability-analyzer",
+    "security-patch-advisor",
+    "cve-reachability-analyzer",
+    "cve-watchlist-action-recommendation-generator",
+    "time-aware-dependency-cve-scanner",
+    "static-bug-detector",
+    "semantic-bug-detector",
+    "security-sensitive-path-instrumenter",
+    "taint-instrumentation-assistant",
+    "critical-interval-security-checker"
+  ],
+  "dependencies": [],
+  "use_cases": [
+    "Security audit of codebases",
+    "CVE vulnerability management",
+    "Automated security patching",
+    "Dependency vulnerability scanning",
+    "Security-critical code monitoring"
+  ],
+  "workflow": "demo/security-audit-workflow.md",
+  "examples": [
+    "examples/sql-injection-detection",
+    "examples/cve-dependency-analysis",
+    "examples/buffer-overflow-fix"
+  ],
+  "author": "ArabelaTso"
+}

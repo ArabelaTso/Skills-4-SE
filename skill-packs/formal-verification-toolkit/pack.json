@@ -1,0 +1,42 @@
+{
+  "name": "formal-verification-toolkit",
+  "version": "1.0.0",
+  "displayName": "Formal Verification Toolkit",
+  "displayName_zh": "形式化验证工具包",
+  "description": "Complete toolkit for formal verification of software systems, from specification generation to automated repair",
+  "description_zh": "完整的软件系统形式化验证工具包，从规范生成到自动修复",
+  "category": "verification",
+  "skills": [
+    "program-to-tlaplus-spec-generator",
+    "tlaplus-spec-generator",
+    "requirement-to-tlaplus-property-generator",
+    "specification-to-temporal-logic-generator",
+    "tlaplus-model-reduction",
+    "model-guided-code-repair",
+    "tlaplus-guided-code-repair",
+    "counterexample-to-test-generator",
+    "smv-model-extractor",
+    "formal-spec-generator",
+    "abstract-invariant-generator",
+    "invariant-inference",
+    "verified-pseudocode-extractor",
+    "c-cpp-to-lean4-translator",
+    "cpp-to-dafny-translator",
+    "python-to-dafny-translator",
+    "python-to-lean4-translator"
+  ],
+  "dependencies": [],
+  "use_cases": [
+    "Concurrent system verification",
+    "Distributed protocol verification",
+    "Safety-critical system validation",
+    "Algorithm correctness proving"
+  ],
+  "workflow": "demo/verification-workflow.md",
+  "examples": [
+    "examples/concurrent-counter",
+    "examples/distributed-consensus",
+    "examples/mutex-protocol"
+  ],
+  "author": "ArabelaTso"
+}
