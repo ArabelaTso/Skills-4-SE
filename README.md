@@ -39,10 +39,19 @@ Browse, search, and install skills through our interactive web interface. The Sk
 - 📖 Bilingual help documentation (English/中文)
 - 🎨 Modern, responsive interface
 
+<p align="center">
+  <img src="./zh-image.png" alt="Skills Manager Interface" width="100%">
+</p>
+
+
 
 ## 📦 Skill Packs
 
 Organized collections of related skills for common software engineering workflows. Instead of installing skills individually, you can install curated skill packs that bundle related capabilities together.
+
+<p align="center">
+  <img src="./skill-pack-image.png" alt="Skills Manager Interface" width="100%">
+</p>
 
 ### 🚀 Available Skill Packs (8 Total)
 
