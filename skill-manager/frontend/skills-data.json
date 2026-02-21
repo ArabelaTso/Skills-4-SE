@@ -56,6 +56,17 @@
       "description_zh": "为 C/C++ 程序创建 ACSL（ANSI/ISO C 规范语言）形式化注解。用于形式化验证、添加函数契约（requires/ensures）、循环不变量、断言、内存安全注解或任何 ACSL 规范。"
     },
     {
+      "name": "agent-browser",
+      "displayName": "agent-browser",
+      "description": "CLI-based browser automation with persistent page state using ref-based element interaction. Use for web testing, form filling, screenshots, scraping, and browser workflows via command-line interface.",
+      "category": "other",
+      "stage": null,
+      "installed": false,
+      "path": "skills/agent-browser",
+      "displayName_zh": "agent-browser",
+      "description_zh": "CLI-based browser automation with persistent page state using ref-based element interaction. Use for web testing, form filling, screenshots, scraping, and browser workflows via command-line interface."
+    },
+    {
       "name": "ambiguity-detector",
       "displayName": "ambiguity-detector",
       "description": "Detects and analyzes ambiguous language in software requirements and user stories. Use when reviewing requirements documents, user stories, specifications, or any software requirement text to identify vague quantifiers, unclear scope, undefined terms, missing edge cases, subjective language, and incomplete specifications. Provides detailed analysis with clarifying questions and suggested improvements.",
@@ -551,6 +562,17 @@
       "description_zh": "识别和移除死代码。检测未使用的函数、变量、导入和代码块，帮助清理代码库并减少维护负担。"
     },
     {
+      "name": "dead-code-removal",
+      "displayName": "dead-code-removal",
+      "description": "Systematic dead code removal with LSP-verified safety, parallel execution, and atomic commits. Use when cleaning up unused code across a project with zero false positives.",
+      "category": "other",
+      "stage": null,
+      "installed": false,
+      "path": "skills/dead-code-removal",
+      "displayName_zh": "dead-code-removal",
+      "description_zh": "Systematic dead code removal with LSP-verified safety, parallel execution, and atomic commits. Use when cleaning up unused code across a project with zero false positives."
+    },
+    {
       "name": "dependency-resolver",
       "displayName": "dependency-resolver",
       "description": "Identify, analyze, and manage software dependencies before deployment. Use this skill when preparing applications for deployment, resolving dependency conflicts, updating dependencies, auditing security vulnerabilities, managing package versions, or troubleshooting dependency-related issues. Supports multiple package managers (npm, pip, maven, cargo, go mod, composer) and provides actionable recommendations for dependency management.",
@@ -694,6 +716,17 @@
       "description_zh": "Automatically migrate Python web applications between frameworks (Flask → FastAPI, Django → FastAPI). Use when you need to migrate an existing web application to a modern framework while preserving functionality. The skill analyzes the codebase, updates routes, handlers, configuration, dependency injection patterns, and tests. Creates git commits for each migration phase and generates a comprehensive summary of all changes. Supports automatic dependency updates, code transformations, and test adaptations."
     },
     {
+      "name": "frontend-ui-ux",
+      "displayName": "frontend-ui-ux",
+      "description": "Designer-turned-developer who crafts stunning UI/UX even without design mockups. Use for any frontend implementation requiring visual design decisions, aesthetic direction, or pixel-perfect UI work.",
+      "category": "other",
+      "stage": null,
+      "installed": false,
+      "path": "skills/frontend-ui-ux",
+      "displayName_zh": "frontend-ui-ux",
+      "description_zh": "Designer-turned-developer who crafts stunning UI/UX even without design mockups. Use for any frontend implementation requiring visual design decisions, aesthetic direction, or pixel-perfect UI work."
+    },
+    {
       "name": "function-class-generator",
       "displayName": "function-class-generator",
       "description": "Generate complete, production-ready functions and classes from formal specifications, design descriptions, type signatures, or natural language requirements. Use this skill when implementing APIs from specifications, creating data structures from schemas, building classes from UML diagrams, generating code from contracts, or translating design documents into code. Supports multiple programming languages and follows language-specific best practices.",
@@ -727,6 +760,28 @@
       "description_zh": "Automatically performs git bisect to identify the first bad commit that introduced a bug or failure. Use when debugging regressions, tracking down when a test started failing, or identifying which commit broke functionality. Handles flaky tests with retry logic and provides comprehensive reports with bisect logs and confidence levels."
     },
     {
+      "name": "git-master",
+      "displayName": "git-master",
+      "description": "Git expert combining atomic commits, rebase/squash, and history search (blame, bisect, log -S). Use for any git operations requiring structured commit strategies, history rewriting, or code archaeology.",
+      "category": "other",
+      "stage": null,
+      "installed": false,
+      "path": "skills/git-master",
+      "displayName_zh": "git-master",
+      "description_zh": "Git expert combining atomic commits, rebase/squash, and history search (blame, bisect, log -S). Use for any git operations requiring structured commit strategies, history rewriting, or code archaeology."
+    },
+    {
+      "name": "github-triage",
+      "displayName": "github-triage",
+      "description": "Automated GitHub issue and PR triage. Classifies open items, answers questions from codebase, analyzes bugs, reviews PRs, and produces a structured triage report. Use when processing multiple GitHub issues or PRs in batch.",
+      "category": "other",
+      "stage": null,
+      "installed": false,
+      "path": "skills/github-triage",
+      "displayName_zh": "github-triage",
+      "description_zh": "Automated GitHub issue and PR triage. Classifies open items, answers questions from codebase, analyzes bugs, reviews PRs, and produces a structured triage report. Use when processing multiple GitHub issues or PRs in batch."
+    },
+    {
       "name": "imperative-to-coq-model-extractor",
       "displayName": "imperative-to-coq-model-extractor",
       "description": "Extract abstract mathematical models from imperative code (C, C++, Python, Java, etc.) suitable for formal reasoning in Coq. Use when the user asks to model imperative code in Coq, create Coq specifications from imperative programs, extract mathematical models for verification, or translate imperative algorithms to Coq for formal reasoning and proof.",
@@ -758,6 +813,17 @@
       "path": "skills/incremental-python-programmer",
       "displayName_zh": "增量 Python 编程器",
       "description_zh": "根据自然语言描述在 Python 仓库中实现新功能。生成全面的单元测试和集成测试，确保所有测试通过并遵循现有代码模式。"
+    },
+    {
+      "name": "init-deep",
+      "displayName": "init-deep",
+      "description": "Generates hierarchical context files (CLAUDE.md) throughout a project directory tree, providing AI agents with directory-specific knowledge for better code understanding. Use when setting up a new project for AI-assisted development.",
+      "category": "other",
+      "stage": null,
+      "installed": false,
+      "path": "skills/init-deep",
+      "displayName_zh": "init-deep",
+      "description_zh": "Generates hierarchical context files (CLAUDE.md) throughout a project directory tree, providing AI agents with directory-specific knowledge for better code understanding. Use when setting up a new project for AI-assisted development."
     },
     {
       "name": "integration-test-generator",
@@ -926,6 +992,17 @@
       "description_zh": "Recommend relevant Isabelle/HOL or Coq standard library theories, lemmas, and tactics based on proof goals. Use when: (1) Users need library lemmas for their proof, (2) Proof goals match standard library patterns, (3) Users ask what libraries to import, (4) Specific lemmas are needed for list/set/arithmetic operations, (5) Users are stuck and need to know what library support exists, or (6) Guidance on find_theorems/Search commands is needed. Supports both Isabelle/HOL and Coq standard libraries."
     },
     {
+      "name": "lsp-refactoring",
+      "displayName": "lsp-refactoring",
+      "description": "Intelligent code refactoring using IDE-level tools (rename, find-references, go-to-definition), AST-aware pattern matching, and TDD verification. Use for safe, large-scale refactoring with precision.",
+      "category": "other",
+      "stage": null,
+      "installed": false,
+      "path": "skills/lsp-refactoring",
+      "displayName_zh": "lsp-refactoring",
+      "description_zh": "Intelligent code refactoring using IDE-level tools (rename, find-references, go-to-definition), AST-aware pattern matching, and TDD verification. Use for safe, large-scale refactoring with precision."
+    },
+    {
       "name": "markdown-document-structurer",
       "displayName": "markdown-document-structurer",
       "description": "Reorganizes markdown documents into well-structured, consistent format while preserving content and improving readability. Use when Claude needs to: (1) Fix heading hierarchy issues (skipped levels, multiple h1s), (2) Generate or update table of contents, (3) Standardize formatting (lists, code blocks, emphasis, links), (4) Improve grammar and spelling, (5) Add missing standard sections (installation, usage, etc.), (6) Remove redundant or duplicate content, (7) Restructure technical docs, READMEs, or long-form content for better organization and flow.",
@@ -979,6 +1056,17 @@
       "path": "skills/model-guided-code-repair",
       "displayName_zh": "model-guided-code-repair",
       "description_zh": "Automatically repair code violations of temporal properties using model-checking counterexamples as guidance. Use when working with formal verification results, temporal logic property violations (LTL, CTL), model checking counterexamples, or when asked to repair property violations, fix counterexamples, repair temporal properties, fix model checking violations, or repair code based on counterexamples. Applicable to concurrent systems, state machines, synchronization issues, safety/liveness properties, and resource management violations."
+    },
+    {
+      "name": "modular-code-enforcement",
+      "displayName": "modular-code-enforcement",
+      "description": "Enforces strict modular code architecture with Single Responsibility Principle, file size limits, and anti-pattern detection. Use when reviewing or writing code to maintain clean module boundaries.",
+      "category": "other",
+      "stage": null,
+      "installed": false,
+      "path": "skills/modular-code-enforcement",
+      "displayName_zh": "modular-code-enforcement",
+      "description_zh": "Enforces strict modular code architecture with Single Responsibility Principle, file size limits, and anti-pattern detection. Use when reviewing or writing code to maintain clean module boundaries."
     },
     {
       "name": "module-component-generator",
@@ -1040,6 +1128,17 @@
       "path": "skills/nl-to-constraints",
       "displayName_zh": "自然语言到约束",
       "description_zh": "将自然语言需求转换为形式化约束。支持约束语言，验证约束一致性。"
+    },
+    {
+      "name": "playwright-automation",
+      "displayName": "playwright-automation",
+      "description": "Browser automation via Playwright for web testing, screenshots, form filling, scraping, and verification. Use when tasks require navigating websites, interacting with web pages, or testing web applications.",
+      "category": "other",
+      "stage": null,
+      "installed": false,
+      "path": "skills/playwright-automation",
+      "displayName_zh": "playwright-automation",
+      "description_zh": "Browser automation via Playwright for web testing, screenshots, form filling, scraping, and verification. Use when tasks require navigating websites, interacting with web pages, or testing web applications."
     },
     {
       "name": "program-correctness-prover",
@@ -1240,6 +1339,17 @@
       "description_zh": "生成全面、用户友好的 README.md 文件。包含项目介绍、先决条件和设置说明，提供可执行的使用示例和仓库结构概览。"
     },
     {
+      "name": "reference-searcher",
+      "displayName": "reference-searcher",
+      "description": "Systematic external reference searching across documentation, open-source repositories, and web resources. Use when working with unfamiliar libraries, APIs, or when needing production-quality implementation examples.",
+      "category": "other",
+      "stage": null,
+      "installed": false,
+      "path": "skills/reference-searcher",
+      "displayName_zh": "reference-searcher",
+      "description_zh": "Systematic external reference searching across documentation, open-source repositories, and web resources. Use when working with unfamiliar libraries, APIs, or when needing production-quality implementation examples."
+    },
+    {
       "name": "refinement-step-generator",
       "displayName": "refinement-step-generator",
       "description": "Generate systematic refinement steps from high-level specifications to concrete implementations in Isabelle/HOL or Coq, preserving correctness obligations at each step. Use when working with formal verification, program refinement, proof development, or when translating abstract specifications into executable code while maintaining formal guarantees. Supports data refinement (abstract types → concrete structures), algorithmic refinement (specifications → algorithms), and stepwise refinement with proof obligations.",
@@ -1271,6 +1381,17 @@
       "path": "skills/regression-root-cause-analyzer",
       "displayName_zh": "回归根因分析器",
       "description_zh": "分析回归失败。识别根本原因，建议修复方法。"
+    },
+    {
+      "name": "release-change-analyzer",
+      "displayName": "release-change-analyzer",
+      "description": "Compares HEAD with the latest published version to analyze real changes, group by type, and recommend version bumps. Use before publishing a release to understand what actually changed.",
+      "category": "other",
+      "stage": null,
+      "installed": false,
+      "path": "skills/release-change-analyzer",
+      "displayName_zh": "release-change-analyzer",
+      "description_zh": "Compares HEAD with the latest published version to analyze real changes, group by type, and recommend version bumps. Use before publishing a release to understand what actually changed."
     },
     {
       "name": "release-notes-writer",
@@ -1504,6 +1625,17 @@
       "description_zh": "Identify bug-introducing commits using semantic analysis that extends traditional SZZ algorithm. Distinguishes semantic changes from refactorings or code movements using control-flow and data-flow similarity analysis. Use when analyzing bug-fix commits to trace back to bug-introducing changes, investigating software evolution, conducting empirical studies on defect prediction, or reducing false positives in bug localization. Supports git repositories and provides explanations for why commits are identified as bug-introducing."
     },
     {
+      "name": "session-handoff",
+      "displayName": "session-handoff",
+      "description": "Creates structured context summaries for continuing work across AI sessions. Use when ending a session to enable seamless continuation in a new session without losing context.",
+      "category": "other",
+      "stage": null,
+      "installed": false,
+      "path": "skills/session-handoff",
+      "displayName_zh": "session-handoff",
+      "description_zh": "Creates structured context summaries for continuing work across AI sessions. Use when ending a session to enable seamless continuation in a new session without losing context."
+    },
+    {
       "name": "skill-creator",
       "displayName": "skill-creator",
       "description": "Guide for creating effective skills. This skill should be used when users want to create a new skill (or update an existing skill) that extends Claude's capabilities with specialized knowledge, workflows, or tool integrations.",
@@ -1629,6 +1761,17 @@
       "path": "skills/static-vulnerability-detector",
       "displayName_zh": "静态漏洞检测器",
       "description_zh": "Statically analyze code to detect security vulnerabilities including buffer overflows, injection risks (SQL, command, XSS), insecure deserialization, improper authentication, hard-coded credentials, and unsafe cryptography. Use when: (1) Performing security code review, (2) Analyzing code for OWASP Top 10 vulnerabilities, (3) Identifying CWE-classified weaknesses, (4) Generating security audit reports, (5) Reviewing code before deployment, or (6) Assessing third-party code security. Findings categorized by CWE ID and severity (Critical/High/Medium/Low)."
+    },
+    {
+      "name": "strategic-planner",
+      "displayName": "strategic-planner",
+      "description": "Interview-based strategic planning for complex software tasks. Conducts structured requirements gathering, gap analysis, and generates detailed work plans before implementation begins.",
+      "category": "other",
+      "stage": null,
+      "installed": false,
+      "path": "skills/strategic-planner",
+      "displayName_zh": "strategic-planner",
+      "description_zh": "Interview-based strategic planning for complex software tasks. Conducts structured requirements gathering, gap analysis, and generates detailed work plans before implementation begins."
     },
     {
       "name": "symbolic-execution-assistant",
@@ -2167,7 +2310,7 @@
       "path": "skill-packs/test-automation-suite"
     }
   ],
-  "total": 174,
+  "total": 187,
   "total_packs": 8,
   "category_names_zh": {
     "code-generation": "代码生成",

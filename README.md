@@ -113,6 +113,7 @@ A Skill in this repo is more than a prompt:
   - 🔨 [Debugging & Error Handling](#debugging--error-handling)
   - ✅ [Formal Methods & Verification](#formal-methods--verification)
   - 🔧 [Maintenance & Refactoring](#maintenance--refactoring)
+  - 🎨 [UI/UX Design](#uiux-design)
   - 👀 [Visualization](#visualization)
 - [**Skills by Stages**](#-skills-by-stages)
   - 📕 [Requirement Analysis](#-requirements)
@@ -458,6 +459,16 @@ A Skill in this repo is more than a prompt:
 - Generates optimization recommendations with visualizations
 - Uses interval analysis for performance insights
 
+**[Modular Code Enforcement](https://github.com/ArabelaTso/Skills-4-SE/tree/main/skills/modular-code-enforcement/)** (Inspired by [oh-my-opencode](https://github.com/code-yeongyu/oh-my-opencode))
+- Enforces strict modular architecture with SRP and 200 LOC limits
+- Bans catch-all files (utils.ts, helpers.ts) in favor of focused modules
+- Detects and splits files with multiple responsibilities
+
+**[Dead Code Removal](https://github.com/ArabelaTso/Skills-4-SE/tree/main/skills/dead-code-removal/)** (Inspired by [oh-my-opencode](https://github.com/code-yeongyu/oh-my-opencode))
+- Systematic dead code removal with LSP-verified safety
+- Parallel batch processing with conflict-free execution
+- Atomic commits per batch with automatic rollback on failure
+
 ### Documentation
 
 **[API Documentation Generator](https://github.com/ArabelaTso/Skills-4-SE/tree/main/skills/api-documentation-generator/)**
@@ -509,6 +520,16 @@ A Skill in this repo is more than a prompt:
 - Explains error messages
 - Provides context and solutions
 - Helps with debugging
+
+**[Init Deep](https://github.com/ArabelaTso/Skills-4-SE/tree/main/skills/init-deep/)** (Inspired by [oh-my-opencode](https://github.com/code-yeongyu/oh-my-opencode))
+- Generates hierarchical AGENTS.md context files throughout a project tree
+- Provides AI agents with directory-specific knowledge automatically
+- Supports max-depth control and incremental generation
+
+**[Session Handoff](https://github.com/ArabelaTso/Skills-4-SE/tree/main/skills/session-handoff/)** (Inspired by [oh-my-opencode](https://github.com/code-yeongyu/oh-my-opencode))
+- Creates structured context summaries for cross-session continuation
+- Captures completed work, remaining tasks, key files, and gotchas
+- Enables seamless handoff between AI sessions or teammates
 
 ### Architecture & Design
 
@@ -568,6 +589,11 @@ A Skill in this repo is more than a prompt:
 - Converts NL requirements to formal constraints
 - Supports constraint languages
 - Validates constraint consistency
+
+**[Strategic Planner](https://github.com/ArabelaTso/Skills-4-SE/tree/main/skills/strategic-planner/)** (Inspired by [oh-my-opencode](https://github.com/code-yeongyu/oh-my-opencode))
+- Interview-based strategic planning for complex software tasks
+- Conducts gap analysis to catch hidden intentions and ambiguities
+- Generates detailed work plans with acceptance criteria and test strategy
 
 ### DevOps & Deployment
 
@@ -638,6 +664,11 @@ A Skill in this repo is more than a prompt:
 - Analyzes code to identify security-critical time intervals
 - Detects timing vulnerabilities that could compromise security
 - Identifies race conditions and time-of-check-time-of-use issues
+
+**[Release Change Analyzer](https://github.com/ArabelaTso/Skills-4-SE/tree/main/skills/release-change-analyzer/)** (Inspired by [oh-my-opencode](https://github.com/code-yeongyu/oh-my-opencode))
+- Compares HEAD with latest published version to analyze real changes
+- Groups changes by type (feat/fix/refactor) with actual diff descriptions
+- Recommends version bump (major/minor/patch) with reasoning
 
 
 
@@ -1001,12 +1032,55 @@ A Skill in this repo is more than a prompt:
 - Supports Python, Java, and C++ programs
 - Diagnoses bugs, generates fixes, and creates tests to prevent regressions
 
+**[LSP Refactoring](https://github.com/ArabelaTso/Skills-4-SE/tree/main/skills/lsp-refactoring/)** (Inspired by [oh-my-opencode](https://github.com/code-yeongyu/oh-my-opencode))
+- Intelligent refactoring using LSP tools (rename, find-references, go-to-definition)
+- AST-aware pattern matching and replacement across 25 languages
+- TDD verification workflow with automatic rollback on failure
+
 ### Visualization
 
 **[System Diagram Generator](https://github.com/ArabelaTso/Skills-4-SE/tree/main/skills/system-diagram-generator/)**
 - Creates system architecture diagrams
 - Supports Mermaid, PlantUML, Graphviz
 - Generates data flow and deployment diagrams
+
+### Version Control & Collaboration
+
+**[Git Master](https://github.com/ArabelaTso/Skills-4-SE/tree/main/skills/git-master/)** (Inspired by [oh-my-opencode](https://github.com/code-yeongyu/oh-my-opencode))
+- Atomic commit discipline with automatic style detection from repo history
+- Rebase surgeon for history rewriting, conflict resolution, and branch cleanup
+- History archaeologist using git blame, bisect, log -S for code archaeology
+
+### Project Management & Issue Tracking
+
+**[GitHub Triage](https://github.com/ArabelaTso/Skills-4-SE/tree/main/skills/github-triage/)** (Inspired by [oh-my-opencode](https://github.com/code-yeongyu/oh-my-opencode))
+- Automated GitHub issue and PR triage with parallel processing
+- Classifies issues (question/bug/feature), answers questions from codebase
+- Reviews bugfix PRs and auto-merges when all safety conditions are met
+
+### Development Tools & Builders
+
+**[Playwright Automation](https://github.com/ArabelaTso/Skills-4-SE/tree/main/skills/playwright-automation/)** (Inspired by [oh-my-opencode](https://github.com/code-yeongyu/oh-my-opencode))
+- Browser automation via Playwright for testing, screenshots, and scraping
+- Persistent page state with incremental script-based workflow
+- Supports accessibility snapshots, network interception, and device emulation
+
+**[Agent Browser](https://github.com/ArabelaTso/Skills-4-SE/tree/main/skills/agent-browser/)** (Inspired by [oh-my-opencode](https://github.com/code-yeongyu/oh-my-opencode))
+- CLI-based browser automation with ref-based element interaction
+- Snapshot-driven workflow: discover elements, interact by ref, re-snapshot
+- Supports form filling, screenshots, PDFs, cookies, and network control
+
+**[Reference Searcher](https://github.com/ArabelaTso/Skills-4-SE/tree/main/skills/reference-searcher/)** (Inspired by [oh-my-opencode](https://github.com/code-yeongyu/oh-my-opencode))
+- Systematic external reference searching across docs, OSS repos, and web
+- Three-layer strategy: official docs, GitHub examples, web search
+- Synthesizes findings into actionable recommendations
+
+### UI/UX Design
+
+**[Frontend UI/UX](https://github.com/ArabelaTso/Skills-4-SE/tree/main/skills/frontend-ui-ux/)** (Inspired by [oh-my-opencode](https://github.com/code-yeongyu/oh-my-opencode))
+- Designer-turned-developer approach to crafting stunning UI without mockups
+- Bold aesthetic direction with distinctive typography, color, and motion
+- Anti-pattern enforcement against generic fonts and cookie-cutter design
 
 
 ## 🔁 Skills by Stages
