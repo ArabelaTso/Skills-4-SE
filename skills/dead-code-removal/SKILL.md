@@ -1,40 +1,62 @@
 ---
 name: dead-code-removal
-description: Systematic dead code removal with LSP-verified safety, parallel execution, and atomic commits. Use when cleaning up unused code across a project with zero false positives.
+description: "Dead code removal via parallel scanning, reference verification, batch execution, and atomic commits. You are the ORCHESTRATOR — you scan, verify, batch, then delegate ALL removals."
 ---
 
 # Dead Code Removal
 
-Orchestrated dead code removal using LSP verification, parallel batch processing, and atomic commits. Goes beyond simple detection — this is a complete removal workflow.
+Dead code removal via massively parallel scanning and execution. You are the ORCHESTRATOR — you scan, verify, batch, then execute all removals with atomic commits.
 
-## When to Use This Skill
+**Rules:**
+- **Reference verification is law.** Verify with grep/language tools before ANY removal decision.
+- **Never remove entry points.** Main entry files, test files, config files — off-limits.
 
-- Cleaning up unused imports, functions, types, or constants
-- Removing orphaned files not imported anywhere
-- Post-refactoring cleanup of leftover code
-- Reducing codebase size with verified safety
+**False-positive guards — NEVER mark as dead:**
+- Symbols in entry point files or barrel `index` re-exports
+- Symbols referenced in test files (tests are valid consumers)
+- Symbols with `@public` / `@api` doc tags
+- Hook factories (`createXXXHook`), tool factories (`createXXXTool`), plugin definitions
+- Command templates, skill definitions, config objects
+- Symbols in package exports
 
-## What This Skill Does
+---
 
-### Phase 1: Scan — Find Candidates (Parallel)
+## PHASE 1: SCAN — Find Dead Code Candidates
 
-Run all scanners simultaneously:
+Run ALL of these in parallel:
 
-1. **Compiler strict mode** (primary scanner):
-   ```bash
-   # TypeScript example
-   npx tsc --noEmit --noUnusedLocals --noUnusedParameters 2>&1
-   # Python example
-   vulture src/ --min-confidence 80
-   ```
+**Compiler/linter strict mode (primary scanner — run FIRST):**
+```bash
+# TypeScript
+npx tsc --noEmit --noUnusedLocals --noUnusedParameters 2>&1
 
-2. **Orphaned file detection**: Find source files not imported by any other file. Exclude entry points, test files, configs.
+# Python
+vulture src/ --min-confidence 80
 
-3. **Unused export detection**: Find exported symbols never imported elsewhere. Cross-reference each export across the codebase.
+# Go
+staticcheck -checks U1000 ./...
+```
+This gives you the definitive list of unused locals, imports, parameters, and types with exact file:line locations.
 
-### Phase 2: Verify — Reference Confirmation (Zero False Positives)
+**Orphaned file detection (run simultaneously):**
+Find files in src/ NOT imported by any other file. Check all import statements.
+EXCLUDE: index files, test files, entry points, markdown, config files.
+Return: file paths.
 
-For EACH candidate, verify with grep or language-specific tools:
+**Unused export detection (run simultaneously):**
+Find exported functions/types/constants that are never imported by other files.
+Cross-reference: for each export, grep the symbol name across src/ — if it only appears in its own file, it's a candidate.
+EXCLUDE: entry point exports, test files.
+Return: file path, line, symbol name, export type.
+
+Collect all results into a master candidate list.
+
+---
+
+## PHASE 2: VERIFY — Reference Confirmation (Zero False Positives)
+
+For EACH candidate from Phase 1:
+
 ```bash
 # Search for all references (excluding the declaration itself)
 grep -rn "symbolName" src/ --include="*.ts" | grep -v "declaration_file.ts"
@@ -48,65 +70,126 @@ grep -rn "symbolName" src/ --include="*.ts" | grep -v "declaration_file.ts"
 # 1+ references = NOT dead, drop from list
 ```
 
-**False-positive guards — NEVER mark as dead:**
-- Symbols in entry point files or barrel re-exports
-- Symbols referenced in test files
-- Symbols with `@public` / `@api` doc tags
-- Factory functions, hook creators, plugin definitions
-- Symbols in package exports
+Also apply the false-positive guards above. Produce a confirmed list:
 
-### Phase 3: Batch — Group for Conflict-Free Parallelism
+```
+| # | File | Symbol | Type | Action |
+|---|------|--------|------|--------|
+| 1 | src/foo.ts:42 | unusedFunc | function | REMOVE |
+| 2 | src/bar.ts:10 | OldType | type | REMOVE |
+| 3 | src/baz.ts:7 | ctx | parameter | PREFIX _ |
+```
 
-1. Group confirmed items by file path
-2. All items in the SAME file go to the SAME batch
-3. Entire file deletions get their own batch
-4. Target 5-15 batches for parallel execution
+**Action types:**
+- `REMOVE` — delete the symbol/import/file entirely
+- `PREFIX _` — unused function parameter required by signature → rename to `_paramName`
 
-### Phase 4: Execute — Parallel Removal
+If ZERO confirmed: report "No dead code found" and STOP.
 
-For each batch:
-1. Read files to understand exact syntax at target lines
-2. Re-verify with grep (another batch may have changed things)
-3. Apply changes:
-   - Unused import (only symbol): remove entire import line
-   - Unused import (one of many): remove only that symbol
-   - Unused function/type/constant: remove declaration
-   - Unused parameter: prefix with `_` (preserve signature)
-   - Dead file: delete entirely
-4. Run type checker / build to verify
+---
+
+## PHASE 3: BATCH — Group by File for Conflict-Free Parallelism
+
+**Goal: maximize parallel execution with ZERO conflicts.**
+
+1. Group confirmed dead code items by FILE PATH
+2. All items in the SAME file go to the SAME batch (prevents two agents editing the same file)
+3. If a dead FILE (entire file deletion) exists, it's its own batch
+4. Target 5-15 batches. If fewer than 5 items total, use 1 batch per item.
+
+**Example batching:**
+```
+Batch A: [src/hooks/foo/hook.ts — 3 unused imports]
+Batch B: [src/features/bar/manager.ts — 2 unused constants, 1 dead function]
+Batch C: [src/tools/baz/tool.ts — 1 unused param, src/tools/baz/types.ts — 1 unused type]
+Batch D: [src/dead-file.ts — entire file deletion]
+```
+
+Files in the same directory CAN be batched together (they won't conflict as long as no two agents edit the same file). Maximize batch count for parallelism.
+
+---
+
+## PHASE 4: EXECUTE — Apply Removals
+
+For EACH batch:
+
+### Protocol
+
+1. Read each file to understand exact syntax at the target lines
+2. Re-verify with grep that the symbol is still dead (another batch may have changed things)
+3. Apply the change:
+   - Unused import (only symbol in line): remove entire import line
+   - Unused import (one of many): remove only that symbol from the import list
+   - Unused constant/function/type: remove the declaration. Clean up trailing blank lines.
+   - Unused parameter: prefix with `_` (do NOT remove — required by signature)
+   - Dead file: delete with `rm`
+4. After ALL edits in this batch, run the type checker / build
 5. If build fails: `git checkout -- [files]` and report failure
-6. If build passes: atomic commit for this batch only
+6. If build passes: stage ONLY your files and commit:
+   `git add [your-specific-files] && git commit -m "refactor: remove dead code from [brief file list]"`
+7. Report what you removed and the commit hash
 
-### Phase 5: Final Verification
+### Critical Rules
+- Stage ONLY your batch's files (`git add [specific files]`). NEVER `git add -A` — other batches may be running in parallel.
+- If build fails after your edits, REVERT all changes and report. Do not attempt to fix.
+- Pre-existing test failures in other files are expected. Only the type checker / build matters for your batch.
+
+---
+
+## PHASE 5: FINAL VERIFICATION
+
+After ALL batches complete:
 
 ```bash
-# Must all pass after removal
-typecheck   # language-specific
-test        # note NEW failures vs pre-existing
-build       # must pass
+# Language-specific type check (must pass)
+npx tsc --noEmit          # TypeScript
+mypy src/                  # Python
+go vet ./...               # Go
+
+# Tests (note any NEW failures vs pre-existing)
+npm test
+pytest
+
+# Build (must pass)
+npm run build
 ```
 
-## Safety Rules
+Produce summary:
 
-- Reference verification is mandatory before ANY removal
-- Never remove entry points, test files, or config files
-- Stage ONLY your batch's files — never `git add -A` during parallel execution
-- If build fails after edits, REVERT all changes and report
-- Abort if more than 50 candidates found (ask user to narrow scope)
+```markdown
+## Dead Code Removal Complete
 
-## Example
+### Removed
+| # | Symbol | File | Type | Commit |
+|---|--------|------|------|--------|
+| 1 | unusedFunc | src/foo.ts | function | abc1234 |
 
-**User**: "Remove dead code from this project"
+### Skipped (verification failed)
+| # | Symbol | File | Reason |
+|---|--------|------|--------|
 
-**Output**:
+### Verification
+- Type check: PASS/FAIL
+- Tests: X passing, Y failing (Z pre-existing)
+- Build: PASS/FAIL
+- Total removed: N symbols across M files
+- Total commits: K atomic commits
 ```
-Dead Code Removal Complete
-- Scanned: 142 source files
-- Candidates found: 23
-- LSP-verified dead: 18
-- Removed: 18 symbols across 12 files
-- Commits: 4 atomic commits
-- Build: PASS | Tests: 47 passing, 2 pre-existing failures
-```
+
+---
+
+## SCOPE CONTROL
+
+If a specific scope is provided, narrow the scan:
+- File path → only that file
+- Directory → only that directory
+- Symbol name → only that symbol
+- `all` or empty → full project scan (default)
+
+## ABORT CONDITIONS
+
+STOP and report if:
+- More than 50 candidates found (ask user to narrow scope or confirm proceeding)
+- Build breaks and cannot be fixed by reverting
 
 **Inspired by:** [oh-my-opencode](https://github.com/code-yeongyu/oh-my-opencode) remove-deadcode command
