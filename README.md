@@ -12,7 +12,7 @@ This repository is **a comprehensive, reusable, task-oriented Skills collection*
 **We provide**:
 - 🌐 [**Website**](https://ArabelaTso.github.io/Skills-4-SE/) to quick browse skills
 - 📦 8 [**Core Skill Packs**](#-skill-packs)
-- 🚀 170+ [**Coding Skills**](#list-of-skills)
+- 🚀 180+ [**Coding Skills**](#list-of-skills)
 
 
 ## 🌐 Skills Manager Web Interface
