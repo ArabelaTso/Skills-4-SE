@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>✨ Skills-4-SE Manager</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css?v=7">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-top">
+                <div>
+                    <h1>✨ Skills-4-SE Manager</h1>
+                    <p class="subtitle" data-i18n="subtitle">Manage and install Claude Code skills for software engineering</p>
+                </div>
+                <div class="header-controls">
+                    <a href="https://github.com/ArabelaTso/LLM4SE-Skills#-skills-4-se-useful-skills-for-software-engineering" target="_blank" class="github-link" title="View on GitHub">
+                        <svg width="24" height="24" viewBox="0 0 16 16" fill="currentColor">
+                            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+                        </svg>
+                    </a>
+                    <button id="langToggleMain" class="lang-toggle-main">中文</button>
+                </div>
+            </div>
+            <div class="info-banner" data-i18n="infoBanner">
+                ℹ️ Running in static mode. Click install buttons to get installation commands.
+            </div>
+        </header>
+
+        <div class="actions">
+            <button id="installAll" class="btn btn-primary">
+                <span data-i18n="installAll">📦 Install All Skills</span>
+            </button>
+            <button id="installSelected" class="btn btn-secondary">
+                <span data-i18n="installSelected">✅ Install Selected Skills</span>
+            </button>
+            <button id="helpBtn" class="btn btn-help">
+                <span data-i18n="help">📖 How to Use</span>
+            </button>
+        </div>
+
+        <div class="search-bar">
+            <input type="text" id="searchInput" data-i18n-placeholder="searchPlaceholder" placeholder="🔍 Search skills by name or description...">
+        </div>
+
+        <div class="view-toggle">
+            <button id="viewByCategory" class="view-toggle-btn active" data-i18n="viewByCategory">📂 By Category</button>
+            <button id="viewByStage" class="view-toggle-btn" data-i18n="viewByStage">🔄 By Stage</button>
+            <button id="viewByPacks" class="view-toggle-btn" data-i18n="viewByPacks">📦 Skill Packs</button>
+        </div>
+
+        <div class="filter-tabs" id="categoryTabs">
+            <button class="tab active" data-category="all" data-i18n="filterAll">All</button>
+            <button class="tab" data-category="installed" data-i18n="filterInstalled">✓ Installed</button>
+            <button class="tab" data-category="code-generation" data-i18n="filterCodeGen">Code Generation</button>
+            <button class="tab" data-category="testing" data-i18n="filterTesting">Testing</button>
+            <button class="tab" data-category="quality" data-i18n="filterQuality">Code Quality & Analysis</button>
+            <button class="tab" data-category="documentation" data-i18n="filterDocs">Documentation</button>
+            <button class="tab" data-category="architecture" data-i18n="filterArchitecture">Architecture & Design</button>
+            <button class="tab" data-category="requirements" data-i18n="filterReqs">Requirements & Specifications</button>
+            <button class="tab" data-category="devops" data-i18n="filterDevOps">DevOps & Deployment</button>
+            <button class="tab" data-category="debugging" data-i18n="filterDebug">Debugging & Error Handling</button>
+            <button class="tab" data-category="verification" data-i18n="filterVerify">Formal Methods & Verification</button>
+            <button class="tab" data-category="maintenance" data-i18n="filterMaint">Maintenance & Refactoring</button>
+            <button class="tab" data-category="visualization" data-i18n="filterVisualization">Visualization</button>
+        </div>
+
+        <div class="filter-tabs" id="stageTabs" style="display: none;">
+            <button class="tab active" data-stage="all" data-i18n="filterAll">All</button>
+            <button class="tab" data-stage="installed" data-i18n="filterInstalled">✓ Installed</button>
+            <button class="tab" data-stage="requirements" data-i18n="stageRequirements">📕 Requirements</button>
+            <button class="tab" data-stage="design" data-i18n="stageDesign">💡 Software Design</button>
+            <button class="tab" data-stage="implementation" data-i18n="stageImplementation">⌨️ Implementation</button>
+            <button class="tab" data-stage="testing" data-i18n="stageTesting">👩🏽‍💻 Testing</button>
+            <button class="tab" data-stage="verification" data-i18n="stageVerification">✅ Verification</button>
+            <button class="tab" data-stage="deployment" data-i18n="stageDeployment">💻 Deployment</button>
+            <button class="tab" data-stage="maintenance" data-i18n="stageMaintenance">🔧 Maintenance</button>
+        </div>
+
+        <div class="stats">
+            <span id="totalSkills">Loading...</span>
+            <span id="selectedCount">0 selected</span>
+        </div>
+
+        <div id="skillsList" class="skills-list">
+            <div class="loading">Loading skills...</div>
+        </div>
+
+        <div id="notification" class="notification"></div>
+    </div>
+
+    <!-- Help Modal -->
+    <div id="helpModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="helpTitle">📖 如何使用 Skills</h2>
+                <div class="modal-controls">
+                    <button id="langToggle" class="lang-toggle">EN</button>
+                    <span class="close">&times;</span>
+                </div>
+            </div>
+
+            <!-- Chinese Version -->
+            <div id="helpContentZh" class="help-content">
+                <div class="help-section">
+                    <h3>1️⃣ 安装 Skills</h3>
+                    <p>在本页面浏览并选择你需要的 skills，然后按照以下步骤安装：</p>
+                    <ol>
+                        <li><strong>克隆仓库：</strong><code>git clone https://github.com/YOUR_USERNAME/LLM4SE-Skills.git</code></li>
+                        <li><strong>进入目录：</strong><code>cd LLM4SE-Skills</code></li>
+                        <li><strong>创建 skills 目录：</strong><code>mkdir -p ~/.claude/skills</code></li>
+                        <li><strong>复制 skills：</strong><code>cp -r skill-name ~/.claude/skills/</code></li>
+                    </ol>
+                    <p class="note">💡 点击 "Install" 按钮会显示具体的安装命令并复制到剪贴板</p>
+                    <p class="note">📦 安装后的 skills 会保存到 <code>~/.claude/skills/</code> 目录</p>
+                </div>
+
+                <div class="help-section">
+                    <h3>2️⃣ 在 Claude Code 中使用 Skills</h3>
+                    <p>安装完成后，在 Claude Code 中有三种方式使用 skills：</p>
+
+                    <h4>方式一：自动触发（推荐）</h4>
+                    <p>直接描述你的需求，Claude 会自动选择合适的 skill：</p>
+                    <div class="code-example">
+                        <code>帮我为这个 Python 函数生成单元测试</code>
+                        <span class="comment">→ 自动触发 unit-test-generator</span>
+                    </div>
+                    <div class="code-example">
+                        <code>分析这个需求文档中的歧义</code>
+                        <span class="comment">→ 自动触发 ambiguity-detector</span>
+                    </div>
+
+                    <h4>方式二：显式调用</h4>
+                    <p>使用 "Use the skill" 明确指定要使用的 skill：</p>
+                    <div class="code-example">
+                        <code>Use the skill 'unit-test-generator' to generate tests for my code</code>
+                    </div>
+                    <div class="code-example">
+                        <code>使用 'code-review-assistant' skill 审查我的代码</code>
+                    </div>
+
+                    <h4>方式三：斜杠命令（如果 skill 支持）</h4>
+                    <p>某些 skills 可能支持快捷命令：</p>
+                    <div class="code-example">
+                        <code>/review</code>
+                        <span class="comment">→ 代码审查</span>
+                    </div>
+                </div>
+
+                <div class="help-section">
+                    <h3>3️⃣ 常用 Skills 示例</h3>
+
+                    <div class="skill-example">
+                        <h4>🧪 测试相关</h4>
+                        <ul>
+                            <li><strong>unit-test-generator:</strong> "为这个函数生成单元测试"</li>
+                            <li><strong>python-test-updater:</strong> "更新测试以适配新的代码版本"</li>
+                            <li><strong>coverage-enhancer:</strong> "提高测试覆盖率"</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-example">
+                        <h4>📝 文档相关</h4>
+                        <ul>
+                            <li><strong>api-documentation-generator:</strong> "生成 API 文档"</li>
+                            <li><strong>code-comment-generator:</strong> "为这段代码添加注释"</li>
+                            <li><strong>readme-generator:</strong> "生成项目 README"</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-example">
+                        <h4>🔍 代码质量</h4>
+                        <ul>
+                            <li><strong>code-review-assistant:</strong> "审查这段代码"</li>
+                            <li><strong>code-smell-detector:</strong> "检测代码异味"</li>
+                            <li><strong>code-optimizer:</strong> "优化这段代码的性能"</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-example">
+                        <h4>⚙️ 代码生成</h4>
+                        <ul>
+                            <li><strong>incremental-python-programmer:</strong> "在这个 Python 项目中实现用户认证功能"</li>
+                            <li><strong>function-class-generator:</strong> "根据这个规范生成类"</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="help-section">
+                    <h3>4️⃣ 验证 Skills 安装</h3>
+                    <p>在终端运行以下命令查看已安装的 skills：</p>
+                    <div class="code-example">
+                        <code>claude skills list</code>
+                    </div>
+                    <p>或者检查目录：</p>
+                    <div class="code-example">
+                        <code>ls ~/.claude/skills/</code>
+                    </div>
+                </div>
+
+                <div class="help-section">
+                    <h3>5️⃣ 本地部署 Skills Manager</h3>
+                    <p>如果你想在本地运行 Skills Manager：</p>
+
+                    <h4>方法一：Python HTTP 服务器（推荐）</h4>
+                    <div class="code-example">
+                        <code>git clone https://github.com/ArabelaTso/Skills-4-SE.git</code><br>
+                        <code>cd Skills-4-SE/skill-manager/frontend</code><br>
+                        <code>python3 -m http.server 8000</code>
+                    </div>
+                    <p>然后访问 <code>http://localhost:8000</code></p>
+
+                    <h4>方法二：直接打开 HTML</h4>
+                    <div class="code-example">
+                        <code>open index.html</code>
+                        <span class="comment"># macOS</span>
+                    </div>
+                    <p class="note">💡 注意：直接打开可能遇到 CORS 限制，推荐使用 HTTP 服务器</p>
+                </div>
+
+                <div class="help-section">
+                    <h3>6️⃣ 提示和技巧</h3>
+                    <ul>
+                        <li>💡 <strong>清晰描述需求：</strong>越具体的描述，Claude 越容易选择正确的 skill</li>
+                        <li>🎯 <strong>提供上下文：</strong>告诉 Claude 你的代码语言、框架、项目类型</li>
+                        <li>🔄 <strong>组合使用：</strong>可以在一个对话中使用多个 skills</li>
+                        <li>📚 <strong>查看文档：</strong>每个 skill 目录下都有 SKILL.md 详细说明</li>
+                    </ul>
+                </div>
+
+                <div class="help-section">
+                    <h3>❓ 常见问题</h3>
+                    <details>
+                        <summary><strong>Q: 安装后 Claude Code 看不到 skills？</strong></summary>
+                        <p>A: 重启 Claude Code 应用，或运行 <code>claude skills list</code> 验证安装。</p>
+                    </details>
+                    <details>
+                        <summary><strong>Q: 如何知道哪个 skill 被触发了？</strong></summary>
+                        <p>A: Claude 会在响应中说明使用了哪个 skill，或者你可以显式指定。</p>
+                    </details>
+                    <details>
+                        <summary><strong>Q: 可以卸载 skills 吗？</strong></summary>
+                        <p>A: 可以，直接删除 <code>~/.claude/skills/</code> 下对应的目录即可。</p>
+                    </details>
+                    <details>
+                        <summary><strong>Q: Skills 会自动更新吗？</strong></summary>
+                        <p>A: 不会，需要重新运行 Skills Manager 安装最新版本。</p>
+                    </details>
+                </div>
+
+                <div class="help-footer">
+                    <p>🎉 现在你可以开始使用 skills 提升开发效率了！</p>
+                    <p>快捷键：按 <kbd>?</kbd> 打开/关闭帮助 | 按 <kbd>ESC</kbd> 关闭</p>
+                </div>
+            </div>
+
+            <!-- English Version -->
+            <div id="helpContentEn" class="help-content" style="display: none;">
+                <div class="help-section">
+                    <h3>1️⃣ Installing Skills</h3>
+                    <p>Browse and select the skills you need on this page, then follow these steps to install:</p>
+                    <ol>
+                        <li><strong>Clone the repository:</strong> <code>git clone https://github.com/YOUR_USERNAME/LLM4SE-Skills.git</code></li>
+                        <li><strong>Navigate to directory:</strong> <code>cd LLM4SE-Skills</code></li>
+                        <li><strong>Create skills directory:</strong> <code>mkdir -p ~/.claude/skills</code></li>
+                        <li><strong>Copy skills:</strong> <code>cp -r skill-name ~/.claude/skills/</code></li>
+                    </ol>
+                    <p class="note">💡 Clicking "Install" buttons will show specific installation commands and copy them to clipboard</p>
+                    <p class="note">📦 Installed skills are saved to <code>~/.claude/skills/</code> directory</p>
+                </div>
+
+                <div class="help-section">
+                    <h3>2️⃣ Using Skills in Claude Code</h3>
+                    <p>After installation, there are three ways to use skills in Claude Code:</p>
+
+                    <h4>Method 1: Auto-trigger (Recommended)</h4>
+                    <p>Simply describe your needs, and Claude will automatically select the appropriate skill:</p>
+                    <div class="code-example">
+                        <code>Generate unit tests for this Python function</code>
+                        <span class="comment">→ Auto-triggers unit-test-generator</span>
+                    </div>
+                    <div class="code-example">
+                        <code>Analyze ambiguities in this requirements document</code>
+                        <span class="comment">→ Auto-triggers ambiguity-detector</span>
+                    </div>
+
+                    <h4>Method 2: Explicit Invocation</h4>
+                    <p>Use "Use the skill" to explicitly specify which skill to use:</p>
+                    <div class="code-example">
+                        <code>Use the skill 'unit-test-generator' to generate tests for my code</code>
+                    </div>
+                    <div class="code-example">
+                        <code>Use 'code-review-assistant' skill to review my code</code>
+                    </div>
+
+                    <h4>Method 3: Slash Commands (if supported)</h4>
+                    <p>Some skills may support shortcut commands:</p>
+                    <div class="code-example">
+                        <code>/review</code>
+                        <span class="comment">→ Code review</span>
+                    </div>
+                </div>
+
+                <div class="help-section">
+                    <h3>3️⃣ Common Skills Examples</h3>
+
+                    <div class="skill-example">
+                        <h4>🧪 Testing</h4>
+                        <ul>
+                            <li><strong>unit-test-generator:</strong> "Generate unit tests for this function"</li>
+                            <li><strong>python-test-updater:</strong> "Update tests to work with new code version"</li>
+                            <li><strong>coverage-enhancer:</strong> "Improve test coverage"</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-example">
+                        <h4>📝 Documentation</h4>
+                        <ul>
+                            <li><strong>api-documentation-generator:</strong> "Generate API documentation"</li>
+                            <li><strong>code-comment-generator:</strong> "Add comments to this code"</li>
+                            <li><strong>readme-generator:</strong> "Generate project README"</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-example">
+                        <h4>🔍 Code Quality</h4>
+                        <ul>
+                            <li><strong>code-review-assistant:</strong> "Review this code"</li>
+                            <li><strong>code-smell-detector:</strong> "Detect code smells"</li>
+                            <li><strong>code-optimizer:</strong> "Optimize this code's performance"</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-example">
+                        <h4>⚙️ Code Generation</h4>
+                        <ul>
+                            <li><strong>incremental-python-programmer:</strong> "Implement user authentication in this Python project"</li>
+                            <li><strong>function-class-generator:</strong> "Generate class from this specification"</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="help-section">
+                    <h3>4️⃣ Verify Skills Installation</h3>
+                    <p>Run the following command in terminal to view installed skills:</p>
+                    <div class="code-example">
+                        <code>claude skills list</code>
+                    </div>
+                    <p>Or check the directory:</p>
+                    <div class="code-example">
+                        <code>ls ~/.claude/skills/</code>
+                    </div>
+                </div>
+
+                <div class="help-section">
+                    <h3>5️⃣ Deploy Skills Manager Locally</h3>
+                    <p>If you want to run Skills Manager locally:</p>
+
+                    <h4>Method 1: Python HTTP Server (Recommended)</h4>
+                    <div class="code-example">
+                        <code>git clone https://github.com/ArabelaTso/Skills-4-SE.git</code><br>
+                        <code>cd Skills-4-SE/skill-manager/frontend</code><br>
+                        <code>python3 -m http.server 8000</code>
+                    </div>
+                    <p>Then visit <code>http://localhost:8000</code></p>
+
+                    <h4>Method 2: Open HTML Directly</h4>
+                    <div class="code-example">
+                        <code>open index.html</code>
+                        <span class="comment"># macOS</span>
+                    </div>
+                    <p class="note">💡 Note: Opening directly may encounter CORS restrictions, HTTP server is recommended</p>
+                </div>
+
+                <div class="help-section">
+                    <h3>6️⃣ Tips and Tricks</h3>
+                    <ul>
+                        <li>💡 <strong>Clear descriptions:</strong> The more specific your description, the easier for Claude to select the right skill</li>
+                        <li>🎯 <strong>Provide context:</strong> Tell Claude your code language, framework, and project type</li>
+                        <li>🔄 <strong>Combine skills:</strong> You can use multiple skills in one conversation</li>
+                        <li>📚 <strong>Check documentation:</strong> Each skill directory has a detailed SKILL.md file</li>
+                    </ul>
+                </div>
+
+                <div class="help-section">
+                    <h3>❓ FAQ</h3>
+                    <details>
+                        <summary><strong>Q: Can't see skills in Claude Code after installation?</strong></summary>
+                        <p>A: Restart Claude Code app, or run <code>claude skills list</code> to verify installation.</p>
+                    </details>
+                    <details>
+                        <summary><strong>Q: How do I know which skill was triggered?</strong></summary>
+                        <p>A: Claude will mention which skill was used in the response, or you can explicitly specify one.</p>
+                    </details>
+                    <details>
+                        <summary><strong>Q: Can I uninstall skills?</strong></summary>
+                        <p>A: Yes, simply delete the corresponding directory under <code>~/.claude/skills/</code>.</p>
+                    </details>
+                    <details>
+                        <summary><strong>Q: Do skills auto-update?</strong></summary>
+                        <p>A: No, you need to re-run Skills Manager to install the latest version.</p>
+                    </details>
+                </div>
+
+                <div class="help-footer">
+                    <p>🎉 You're ready to boost your development productivity with skills!</p>
+                    <p>Shortcuts: Press <kbd>?</kbd> to open/close help | Press <kbd>ESC</kbd> to close</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
