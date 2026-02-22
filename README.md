@@ -26,7 +26,7 @@ This repository is **a comprehensive, reusable, task-oriented Skills collection*
 </p>
 
 Browse, search, and install skills through our interactive web interface. The Skills Manager provides:
-- 📦 One-click installation of all 170+ skills
+- 📦 One-click installation of all skills
 - ✅ Selective installation of specific skills
 - 🔍 Search and filter by category
 - 📖 Bilingual help documentation (English/中文)
