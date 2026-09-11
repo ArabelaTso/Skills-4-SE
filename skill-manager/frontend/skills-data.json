@@ -959,6 +959,17 @@
       "description_zh": "在重构后更新 Java 测试以适配新代码版本。处理签名变更、重构和行为修改，更新方法调用、断言、模拟对象并确保测试通过。"
     },
     {
+      "name": "ledger-tasks-yylo",
+      "displayName": "ledger-tasks-yylo",
+      "description": "Operates a git-native Kanban task board for coding agents from the CLI. Create, search, update, and archive tasks, manage blocked-by dependencies, and resolve safe execution order, with task state stored as hash-chained Markdown inside the repository. Use for task management in agent-driven software engineering workflows.",
+      "category": "other",
+      "stage": null,
+      "installed": false,
+      "path": "skills/ledger-tasks-yylo",
+      "displayName_zh": "ledger-tasks-yylo",
+      "description_zh": "通过命令行操作面向编码代理的 git 原生看板任务板：创建、搜索、更新和归档任务，管理 blocked-by 依赖并解析安全执行顺序，任务状态以哈希链 Markdown 形式存储在仓库内。适用于代理驱动的软件工程工作流中的任务管理。"
+    },
+    {
       "name": "legacy-code-summarizer",
       "displayName": "legacy-code-summarizer",
       "description": "Produces comprehensive summaries and insights about legacy codebases to help understand unfamiliar code. Use when onboarding to a new project, planning refactoring efforts, assessing code for acquisition/migration, or generating documentation for undocumented systems. Analyzes architecture, dependencies, code quality issues, and test coverage. Creates high-level overviews with architecture diagrams, key components, entry points, and actionable insights for understanding and improving legacy code.",
@@ -2310,7 +2321,7 @@
       "path": "skill-packs/test-automation-suite"
     }
   ],
-  "total": 187,
+  "total": 188,
   "total_packs": 8,
   "category_names_zh": {
     "code-generation": "代码生成",

@@ -1058,6 +1058,11 @@ A Skill in this repo is more than a prompt:
 - Classifies issues (question/bug/feature), answers questions from codebase
 - Reviews bugfix PRs and auto-merges when all safety conditions are met
 
+**[Ledger Tasks YYLO](https://github.com/ArabelaTso/Skills-4-SE/tree/main/skills/ledger-tasks-yylo/)** (Source: [yylo-skills](https://github.com/yylo-dev/yylo-skills))
+- Git-native Kanban task board for coding agents, driven entirely from the CLI (`yy ledger`)
+- Dependency management with blocked-by links, cycle detection, ready lists, and topological ordering
+- Task state stored as hash-chained Markdown inside the repository, with mutation receipts and archives
+
 ### Development Tools & Builders
 
 **[Playwright Automation](https://github.com/ArabelaTso/Skills-4-SE/tree/main/skills/playwright-automation/)** (Inspired by [oh-my-opencode](https://github.com/code-yeongyu/oh-my-opencode))
